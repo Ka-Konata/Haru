@@ -1,7 +1,7 @@
 import discord
 import asyncio
 import random
-import secret
+import token.secret
 
 client = discord.Client()
 TOKEN  = secret.set_token()
