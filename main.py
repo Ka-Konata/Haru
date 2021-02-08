@@ -1,10 +1,10 @@
 import discord
 import asyncio
 import random
-import token/secret
+import secret_token
 
 client = discord.Client()
-TOKEN  = secret.set_token()
+TOKEN  = secret_token.get_token()  # Make your file with your token
 
 @client.event
 async def on_ready():
@@ -34,4 +34,3 @@ async def on_message(message):
             await message.channel.send("Você não tem permissão para executar esse comando")
 
 client.run(TOKEN)
-print("helo")
