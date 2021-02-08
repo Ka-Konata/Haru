@@ -1,2 +1,2 @@
 def set_token():
-    return ""
+    return "token secret test"
