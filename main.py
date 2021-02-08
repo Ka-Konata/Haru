@@ -1,8 +1,10 @@
 import discord
 import asyncio
 import random
+import secret
 
 client = discord.Client()
+TOKEN  = secret.set_token()
 
 @client.event
 async def on_ready():
@@ -31,4 +33,4 @@ async def on_message(message):
         else:
             await message.channel.send("Você não tem permissão para executar esse comando")
 
-client.run("ODA4MTAwMTk4ODk5Mzg0MzUy.YCBn9Q.nsaNN5PQEX0UfsQtkxr1kcIS4a0")
+client.run(TOKEN)
