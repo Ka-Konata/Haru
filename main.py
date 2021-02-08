@@ -34,3 +34,4 @@ async def on_message(message):
             await message.channel.send("Você não tem permissão para executar esse comando")
 
 client.run(TOKEN)
+print("helo")
