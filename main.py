@@ -1,10 +1,11 @@
 import discord
 import asyncio
 import random
-import secret_token
+from sys import exit
+import bot_token.secret_token as token
 
 client = discord.Client()
-TOKEN  = secret_token.get_token()  # Make your file with your token
+TOKEN  = token.get_token()  # Make your file with your token
 
 @client.event
 async def on_ready():
@@ -22,7 +23,6 @@ async def on_message(message):
 
     
     if message.content.lower().startswith("?coinflip"):
-        print(message.author.id)
         if message.author.id == 502687173099913216:
             choice = random.randint(1, 2)
             if choice == 1:
@@ -30,6 +30,16 @@ async def on_message(message):
             if choice == 2:
                 await message.add_reaction("👉")
 
+        else:
+            await message.channel.send("Você não tem permissão para executar esse comando")
+
+    if message.content.lower().startswith("?stoprunning"):
+        if message.author.id == 502687173099913216:
+            await message.channel.send("Encerrando o programa.")
+            print("Encerrando o programa.")
+            exit()
+            
+        
         else:
             await message.channel.send("Você não tem permissão para executar esse comando")
 
