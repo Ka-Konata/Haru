@@ -4,6 +4,11 @@ class Utils:
 
 
     def write_json(self, file, description):
+        """
+        create and/or write in a .json file
+        file:   file name
+        description:  the value to be saved in the file
+        """
         import json
 
         if not ".json" in file:
@@ -15,6 +20,11 @@ class Utils:
 
 
     def open_json(self, file):
+        """
+        open a .json file
+        file:   file name 
+        return returns a variable with the contents of the file
+        """
         import json
 
         if not ".json" in file:
@@ -26,6 +36,12 @@ class Utils:
 
 
     def ins_prefix(self, prefix, command):
+        """
+        inserts the prefix in each alias of a command
+        prefix:     inserts the prefix in each alias of a command
+        command:    command alias list
+        return alias list with the prefix
+        """
         aliases = []
         for aliase in command:
             aliase = prefix + aliase

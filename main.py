@@ -2,16 +2,22 @@ import discord
 import asyncio
 import random
 from sys import exit
-from utils import Utils
-import bot_token.secret_token as token
-import morse
-import aliases
-
+from utils.usual import Utils
+from utils import morse, aliases
+from scripts.bot_token import secret_token as token
 
 client  = discord.Client()
 TOKEN   = token.get_token()  # Make your file with your token
 prefixo = "?"
 utils   = Utils(TOKEN)
+
+# languages
+português = utils.open_json("languages\português")
+english = utils.open_json("languages\english.json")
+languages = {"portugûes":português, "english":english}
+lang = None
+
+
 
 # Cores color
 roxo     = 0x8E44AD
@@ -37,6 +43,9 @@ async def on_ready():
 @client.event
 async def on_message(message):
     channel = message.channel
+    print(str(message.guild.id))
+    print(utils.open_json("languages\guild_language")[str(message.guild.id)])
+    lang = languages[utils.open_json("languages\guild_language")[str(message.guild.id)]]
 
     # Comando Test, para testar se o bot está online
     if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.test)):
@@ -59,13 +68,13 @@ async def on_message(message):
         num = random.randint(0, 1)
         coin = ["cara", "coroa"]
         if not "cara" in message.content.lower() and not "coroa" in message.content.lower():
-            await channel.send(f"Não se esqueça de colocar **cara** ou **coroa** ao lado do comando! \nexemplo: `{prefixo}coinflip cara`")
+            await channel.send("Não se esqueça de colocar **cara** ou **coroa** ao lado do comando!" + f"\nexemple: `{prefixo}coinflip cara`")
         else:
             result = "venceu" if coin[num] in message.content.lower().split()[1] else "perdeu"
             if num == 0:
-                await channel.send(f"**FLIP!** | deu cara, você **{result}**!")
+                await channel.send("**FLIP!** | deu cara, você "+ f"**{result}**!")
             elif num == 1:
-                await channel.send(f"**FLIP!** | deu coroa, você **{result}**!")
+                await channel.send("**FLIP!** | deu coroa, você "+ f"**{result}**!")
 
 
     # Comando Morse
