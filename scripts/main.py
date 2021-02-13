@@ -2,16 +2,22 @@ import discord
 import asyncio
 import random
 from sys import exit
+from utils import Utils
 import bot_token.secret_token as token
 import morse
+import aliases
 
 
 client  = discord.Client()
 TOKEN   = token.get_token()  # Make your file with your token
 prefixo = "?"
+utils   = Utils(TOKEN)
+
+# Cores color
+roxo     = 0x8E44AD
+ciano    = 0x00FA9A
 
 guild    = None
-color    = 0x8E44AD
 msg_id   = None
 msg_user = None
 
@@ -19,6 +25,9 @@ morse_códigos = morse.get_morse()
 
 @client.event
 async def on_ready():
+    channel = client.get_channel(788785603105259574)
+    embed_msg = discord.Embed(title="BOT ONLINE - HELLO WORLD", color=ciano, description=f"**Bot UserName:**  {client.user.name} \n**Bot UserID:**  {client.user.id} \n**Canal:**  {channel.mention}")
+    await channel.send(embed=embed_msg)
     print("BOT ONLINE - HELLO WORLD")
     print(client.user.name)
     print(client.user.id)
@@ -30,11 +39,13 @@ async def on_message(message):
     channel = message.channel
 
     # Comando Test, para testar se o bot está online
-    if message.content.lower().startswith(prefixo + "test"):
+    if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.test)):
+        print(utils.ins_prefix(prefixo, aliases.test))
         await channel.send("Hello world, I'm alive.")
 
+
     # Comando Stop Running, restrição: bot onwer
-    if message.content.lower().startswith(prefixo + "stoprunning"):
+    if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.stoprunning)):
         if message.author.id == 502687173099913216:
             await channel.send("Encerrando o script...")
             print("Encerrando o script...")
@@ -42,8 +53,9 @@ async def on_message(message):
         else:
             await channel.send("Você não tem permissão para executar esse comando")
 
+
     # Comando coinflip
-    if message.content.lower().startswith(f"{prefixo}coinflip"):
+    if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.coinflip)):
         num = random.randint(0, 1)
         coin = ["cara", "coroa"]
         if not "cara" in message.content.lower() and not "coroa" in message.content.lower():
@@ -55,8 +67,9 @@ async def on_message(message):
             elif num == 1:
                 await channel.send(f"**FLIP!** | deu coroa, você **{result}**!")
 
+
     # Comando Morse
-    if message.content.lower().startswith(f"{prefixo}morse"):
+    if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.morse)):
         if len(message.content.split()) < 2:
             await channel.send(f"Escreva a frase ou texto a ser traduzida ao lado do comando \nexemplo: `{prefixo}morse Oi linda`")
         else:
@@ -81,16 +94,17 @@ async def on_message(message):
                 if breakl:
                     break
                 elif n == len(frase) - 1:
-                    embed_msg = discord.Embed(title=f"Convertido para código morse:", color=color, description=description)
+                    embed_msg = discord.Embed(title=f"Convertido para código morse:", color=roxo, description=description)
                     await channel.send(embed=embed_msg)
 
+
     # Comando Lol (uso apenas para teste durante a criação do bot)
-    if message.content.lower().startswith(prefixo + "lol"):
+    if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.lol)):
         global msg_id, msg_user, guild
         msg_user = message.author
         guild = message.guild
 
-        embed_msg = discord.Embed(title = "Escolha seu Elo!", color = color, description = "- bronze = 🌰 \n" "- prata = 🥄  \n" "- ouro = 🏆 \n")
+        embed_msg = discord.Embed(title="Escolha seu Elo!", color=roxo, description="- bronze = 🌰 \n" "- prata = 🥄  \n" "- ouro = 🏆 \n")
 
         bot_msg = await channel.send(embed=embed_msg)
         await bot_msg.add_reaction("🌰")
