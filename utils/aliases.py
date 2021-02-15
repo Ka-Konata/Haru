@@ -1,22 +1,26 @@
 test = (
-    "testar", "t"
+    "test", "testar", "t"
 )
 
 
 stoprunning = (
-    "stop", "quit"
+    "stoprunning", "stop", "quit"
 )
+
+help = {
+    "help", "ajuda"
+}
 
 
 coinflip = (
-    "cf", "flip"
+    "coinflip", "cf", "flip"
 )
 
 
 morse = (
-    "codigomorse", "cm", "m"
+    "morse", "codigomorse", "cm", "m"
 )
 
 lol = (
-    "elo"
+    "lol", "elo"
 )

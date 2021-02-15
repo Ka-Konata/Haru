@@ -1,11 +1,34 @@
 {
-    "INITIAL_MESSAGE_TITLE":"BOT ONLINE - OLá MUNDO",
+    "INITIAL_MESSAGE_TITLE":"BOT ONLINE - OLÁ MUNDO",
 
-    "FINAL_MESSAGE_EXECUTING":"encerrando script",
+    "FINAL_MESSAGE_EXECUTING":"encerrando o script",
 
-    "FINAL_MESSAGE_PERMISSION_ERROR":"Você não tem permissão para executar esse comando",
+    "MESSAGE_PERMISSION_ERROR":"Você não tem permissão para executar esse comando",
 
-    "COINFLIP_MISSING_ERROR":"Não se esqueça de colocar **cara** ou **coroa** ao lado do comando!"
+    "COINFLIP_MISSING_ERROR":"Não se esqueça de colocar **cara** ou **coroa** ao lado do comando!",
 
+    "WIN":"venceu",
+
+    "LOSE":"perdeu",
+
+    "COINFLIP_RESULT_CARA":"**FLIP!** | deu cara, você",
+
+    "COINFLIP_RESULT_COROA":"**FLIP!** | deu coroa, você",
+
+    "MORSE_MISSING_ERROR":"Escreva a frase ou texto a ser traduzida ao lado do comando",
+
+    "MORSE_UNKNOWN_CHARACTER_ERROR":"A mensagem a ser traduzida contém caracteres que eu não sou capaz de entender.",
+
+    "MORSE_TRANSLATED_TITLE":"Convertido para código morse:",
+
+    "HELP":{
+        "HELP_EMBED_TITLE":"Haru - Help", 
+        "HELP_EMBED_DESCRIPTION":"Ahoy! meu nome é Haru. Um simples bot para o discord, essas são as minhas funcionalidades:", 
+        "HELP_EMBED_AUTHOR_NAME":"Como usar a Haru", 
+        "HELP_EMBED_FIELD_NAME":"Para ver detalhadamente:", 
+        "HELP_EMBED_FIELD_VALUE":"use `?help [comando]`",
+        "HELP_EMBED_UTILITY_NAME":"utilidade",
+        "HELP_EMBED_UTILITY_VALUE":"`coinflip`, `morse`" 
+    }
 
 }

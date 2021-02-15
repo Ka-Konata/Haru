@@ -1,20 +1,21 @@
 class Utils:
-    def __init__(self, token):
+    def __init__(self, token=None):
         self.TOKEN = token
 
 
-    def write_json(self, file, description):
+    def write_json(self, file, description, encoding="utf-8"):
         """
         create and/or write in a .json file
-        file:   file name
-        description:  the value to be saved in the file
+        file:          file name
+        description:   the value to be saved in the file
+        encoding:      encoding wich will be used
         """
         import json
 
         if not ".json" in file:
             file += ".json"
 
-        with open(file, "w") as json_file:
+        with open(file, "w", encoding=encoding) as json_file:
      
            json.dump(description, json_file, indent=4)
 
@@ -31,9 +32,8 @@ class Utils:
         if not ".json" in file:
             file += ".json"
 
-        with open(file, "r", encoding) as json_file:
+        with open(file, "r", encoding=encoding) as json_file:
             content = json.load(json_file)
-            print(content)
         return content
 
 
