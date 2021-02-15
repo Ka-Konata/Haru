@@ -2,7 +2,6 @@ import discord
 import asyncio
 
 client = discord.Client()
-roxoclaro = 0xbbabc5
 
 
 class Utils:
@@ -37,11 +36,11 @@ class Cmd_help:
         pass
 
     @client.event
-    async def help(self, message, aliases):
-        lang    = languages[utils.open_json("languages/guild_language")[str(message.guild.id)]]["HELP"]
+    async def help(self, message, aliases, lang, colors, prefixo):
+        lang    = lang["HELP"]
         channel = message.channel
 
-        embed   = discord.Embed(title=lang["HELP_EMBED_TITLE"], description=lang["HELP_EMBED_DESCRIPTION"], color=roxoclaro)
+        embed   = discord.Embed(title=lang["HELP_EMBED_TITLE"], description=lang["HELP_EMBED_DESCRIPTION"], color=colors.roxoclaro)
         embed.set_author(name=lang["HELP_EMBED_AUTHOR_NAME"], icon_url="https://cdn.discordapp.com/avatars/502687173099913216/a_a1113f8f92b108969aad7d6925adb774.gif")
         embed.set_thumbnail(url="https://cdn.discordapp.com/avatars/808100198899384352/abdd8567a2531e4749fa0d29320bfe97.png")
         embed.add_field(name=lang["HELP_EMBED_FIELD_NAME"], value=lang["HELP_EMBED_FIELD_VALUE"], inline=False)
@@ -61,12 +60,17 @@ class Cmd_help:
 
             elif cmd in aliases.help:
                 print("help")
-
+            
+            # Help comando Coin Flip
             elif cmd in aliases.coinflip:
-                embed=discord.Embed(title="Comando coinflip", description="Deixe que a Haru joque uma moeda e tente adivinhar qual lado dela cairá virado para cima, cara ou coroa.")
-embed.set_author(name="USE `h!help`  PARA VER TODOS OS COMANDOS.", icon_url="https://cdn.discordapp.com/avatars/502687173099913216/a_a1113f8f92b108969aad7d6925adb774.gif")
-embed.add_field(name="undefined", value="undefined", inline=False)
-await ctx.send(embed=embed)
+                langcf = lang["COINFLIP"]
+                embed_coinflip = discord.Embed(title=langcf["TITLE"], description=langcf["DESCRIPTION"], color=colors.Thistle)
+                embed_coinflip.set_author(name=langcf["AUTHOR_NAME1"] + f"{prefixo}help" + langcf["AUTHOR_NAME2"], icon_url="https://cdn.discordapp.com/avatars/502687173099913216/a_a1113f8f92b108969aad7d6925adb774.gif")
+                embed_coinflip.add_field(name=langcf["USE_NAME"], value=f"`{prefixo}coinflip`", inline=True)
+                ex_value = f"`{prefixo}coinflip " + langcf["EX_VAL1"] + "`" + f" `{prefixo}coinflip " + langcf["EX_VAL2"] + "`"
+                embed_coinflip.add_field(name=langcf["EXAMPLE_NAME"], value=ex_value, inline=True)
+                embed_coinflip.add_field(name=langcf["ALIASES_NAME"], value=f"`{prefixo}coinflip` `{prefixo}cf` `{prefixo}flip`", inline=True)
+                await channel.send(embed=embed_coinflip)
 
             elif cmd in aliases.morse:
                 print("morse")

@@ -1,9 +1,12 @@
 import discord
 import importlib
-from cogs.utility import oi
+from utils.usual import Utils
+#from cogs.usual import Utils
 
-c = "aa1"
-dic = {"aaa":"aa1", "bbb":"aa2"}
+utils = Utils()
 
-if c in dic.values():
-    print("SIM")
+file        = "languages/guild_languages.json"
+newKey      = "788518735752724480"
+
+
+lang = utils.set_language("?", "788518735752724482")

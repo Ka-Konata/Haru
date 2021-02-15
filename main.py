@@ -15,20 +15,11 @@ utility = Cmd_utility()
 
 client  = discord.Client()
 TOKEN   = token.get_token()  # Make your file with your token
-prefixo = "h!"
+prefixo = ";"
 utils   = Utils(TOKEN)
 
-# languages
-português = utils.open_json("languages/português")
-english = utils.open_json("languages/english.json")
-languages = {"português":português, "english":english}
-lang = None
-
-
-
 # Cores color
-roxo     = 0x8E44AD
-ciano    = 0x00FA9A
+from utils import colors
 
 guild    = None
 msg_id   = None
@@ -39,7 +30,7 @@ morse_códigos = morse.get_morse()
 @client.event
 async def on_ready():
     channel = client.get_channel(788785603105259574)
-    embed_msg = discord.Embed(title="BOT ONLINE - HELLO WORLD", color=ciano, description=f"**Bot UserName:**  {client.user.name} \n**Bot UserID:**  {client.user.id} \n**Channel:**  {channel.mention}")
+    embed_msg = discord.Embed(title="BOT ONLINE - HELLO WORLD", color=colors.ciano, description=f"**Bot UserName:**  {client.user.name} \n**Bot UserID:**  {client.user.id} \n**Channel:**  {channel.mention}")
     await channel.send(embed=embed_msg)
     print("BOT ONLINE - HELLO WORLD")
     print(client.user.name)
@@ -50,11 +41,12 @@ async def on_ready():
 @client.event
 async def on_message(message):
     channel = message.channel
-    lang    = languages[utils.open_json("languages/guild_language")[str(message.guild.id)]]
+    
+    lang = utils.set_language(prefixo, str(message.guild.id))
 
     # Comando Help
     if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.help)):
-        await help.help(message, aliases)
+        await help.help(message, aliases, lang, colors, prefixo)
 
     # Comando Test, para testar se o bot está online
     if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.test)):
@@ -74,38 +66,12 @@ async def on_message(message):
 
     # Comando coinflip
     if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.coinflip)):
-        await utility.coinflip(message, prefixo)
+        await utility.coinflip(message, prefixo, lang)
 
 
     # Comando Morse
     if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.morse)):
-        if len(message.content.split()) < 2:
-            await channel.send(lang["MORSE_MISSING_ERROR"] + f"\nexample: `{prefixo}morse Oi linda`")
-        else:
-            description = "**"
-            frase = message.content.lower().split()[1:]
-
-            for n, word in enumerate(frase):
-                breakl = False
-                word = list(word)
-                for n2, letter in enumerate(word):
-
-                    try:
-                        description = description + morse_códigos[letter] + " "
-                    except KeyError:
-                        await channel.send("MORSE_UNKNOWN_CHARACTER_ERROR")
-                        breakl = True
-                        break
-
-                    if n2 == len(word) - 1 and n < len(frase) - 1:
-                        description = description + "/ "
-
-                if breakl:
-                    break
-                elif n == len(frase) - 1:
-                    description = description + "**"
-                    embed_msg = discord.Embed(title=lang["MORSE_TRANSLATED_TITLE"], color=roxo, description=description)
-                    await channel.send(embed=embed_msg)
+        await utility.morse(message, prefixo, lang, morse_códigos, colors)
 
 
     # Comando Lol (uso apenas para teste durante a criação do bot)
@@ -114,7 +80,7 @@ async def on_message(message):
         msg_user = message.author
         guild = message.guild
 
-        embed_msg = discord.Embed(title="Escolha seu Elo!", color=roxo, description="- bronze = 🌰 \n" "- prata = 🥄  \n" "- ouro = 🏆 \n")
+        embed_msg = discord.Embed(title="Escolha seu Elo!", color=colors.roxo, description="- bronze = 🌰 \n" "- prata = 🥄  \n" "- ouro = 🏆 \n")
 
         bot_msg = await channel.send(embed=embed_msg)
         await bot_msg.add_reaction("🌰")
@@ -140,7 +106,6 @@ async def on_reaction_add(reaction, user):
     if reaction.emoji == "🏆" and msg.id == msg_id and user == msg_user:
         role = discord.utils.get(guild.roles, name="Ouro")
         await discord.Member.add_roles(msg_user, role)
-
 
 
 client.run(TOKEN)
