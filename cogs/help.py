@@ -65,7 +65,7 @@ class Cmd_help:
             elif cmd in aliases.coinflip:
                 langcf = lang["COINFLIP"]
                 embed_coinflip = discord.Embed(title=langcf["TITLE"], description=langcf["DESCRIPTION"], color=colors.Thistle)
-                embed_coinflip.set_author(name=langcf["AUTHOR_NAME1"] + f"{prefixo}help" + langcf["AUTHOR_NAME2"], icon_url="https://cdn.discordapp.com/avatars/502687173099913216/a_a1113f8f92b108969aad7d6925adb774.gif")
+                embed_coinflip.set_author(name=langcf["AUTHOR_NAME1"] + f" {prefixo}help " + langcf["AUTHOR_NAME2"], icon_url="https://cdn.discordapp.com/avatars/502687173099913216/a_a1113f8f92b108969aad7d6925adb774.gif")
                 embed_coinflip.add_field(name=langcf["USE_NAME"], value=f"`{prefixo}coinflip`", inline=True)
                 ex_value = f"`{prefixo}coinflip " + langcf["EX_VAL1"] + "`" + f" `{prefixo}coinflip " + langcf["EX_VAL2"] + "`"
                 embed_coinflip.add_field(name=langcf["EXAMPLE_NAME"], value=ex_value, inline=True)
@@ -73,7 +73,14 @@ class Cmd_help:
                 await channel.send(embed=embed_coinflip)
 
             elif cmd in aliases.morse:
-                print("morse")
+                langm = lang["MORSE"]
+                embed_morse = discord.Embed(title=langm["TITLE"], description=langm["DESCRIPTION"], color=colors.Thistle)
+                embed_morse.set_author(name=langm["AUTHOR_NAME1"] + f" {prefixo}help " + langm["AUTHOR_NAME2"], icon_url="https://cdn.discordapp.com/avatars/502687173099913216/a_a1113f8f92b108969aad7d6925adb774.gif")
+                embed_morse.add_field(name=langm["USE_NAME"], value=f"`{prefixo}morse`", inline=True)
+                ex_value = f"`{prefixo}morse Holla` `{prefixo}morse " + langm["EX_VAL1"] + "`"
+                embed_morse.add_field(name=langm["EXAMPLE_NAME"], value=ex_value, inline=True)
+                embed_morse.add_field(name=langm["ALIASES_NAME"], value=f"`{prefixo}morse` `{prefixo}codigomorse` `{prefixo}cm` `{prefixo}m` ", inline=True)
+                await channel.send(embed=embed_morse)
 
             else:
                 await channel.send(embed=embed)

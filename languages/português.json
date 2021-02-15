@@ -39,6 +39,17 @@
             "EX_VAL1":"cara",
             "EX_VAL2":"coroa",
             "ALIASES_NAME":"Aliases:"
+        },
+
+        "MORSE":{
+            "TITLE":"Comando morse",
+            "DESCRIPTION":"Escreva uma palavra ou frase desejada e eu irei traduzi-la para código morse por você! Lembre-se que eu não sou capaz de converter alguns caracterers especiais.",
+            "AUTHOR_NAME1":"USE",
+            "AUTHOR_NAME2":"PARA VER TODOS OS COMANDOS.",
+            "USE_NAME":"Como usar:",
+            "EXAMPLE_NAME":"Exemplos:",
+            "EX_VAL1":"desculpa por ser homem",
+            "ALIASES_NAME":"Aliases:"
         }
     }
 }
