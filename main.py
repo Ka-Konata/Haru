@@ -74,38 +74,5 @@ async def on_message(message):
         await utility.morse(message, prefixo, lang, morse_códigos, colors)
 
 
-    # Comando Lol (uso apenas para teste durante a criação do bot)
-    if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.lol)):
-        global msg_id, msg_user, guild
-        msg_user = message.author
-        guild = message.guild
-
-        embed_msg = discord.Embed(title="Escolha seu Elo!", color=colors.roxo, description="- bronze = 🌰 \n" "- prata = 🥄  \n" "- ouro = 🏆 \n")
-
-        bot_msg = await channel.send(embed=embed_msg)
-        await bot_msg.add_reaction("🌰")
-        await bot_msg.add_reaction("🥄")
-        await bot_msg.add_reaction("🏆")
-        
-        msg_id = bot_msg.id
-
-
-@client.event
-async def on_reaction_add(reaction, user):
-    msg  = reaction.message
-
-    # Comando Lol (uso apenas para teste durante a criação do bot)
-    if reaction.emoji == "🌰" and msg.id == msg_id and user == msg_user:
-        role = discord.utils.get(guild.roles, name="Bronze")
-        await discord.Member.add_roles(msg_user, role)
-
-    if reaction.emoji == "🥄" and msg.id == msg_id and user == msg_user:
-        role = discord.utils.get(guild.roles, name="Prata")
-        await discord.Member.add_roles(msg_user, role)
-
-    if reaction.emoji == "🏆" and msg.id == msg_id and user == msg_user:
-        role = discord.utils.get(guild.roles, name="Ouro")
-        await discord.Member.add_roles(msg_user, role)
-
 
 client.run(TOKEN)
