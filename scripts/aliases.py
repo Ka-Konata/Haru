@@ -20,7 +20,7 @@ setlanguage = (
 )
 
 setprefix = (
-    "setprefix", "prefix", "mudarprefixo", "prefixo"
+    "setprefix", "changeprefix", "prefix", "mudarprefixo", "prefixo"
 )
 
 # ---------- UTILITY ----------

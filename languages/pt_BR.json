@@ -56,6 +56,18 @@
             "EXAMPLE_NAME":"Exemplos:",
             "LANGUAGES_NAME":"Idiomas:",
             "ALIASES_NAME":"Aliases:"
+        },
+        
+        "SETPREFIX":{
+            "TITLE":"Comando setprefix",
+            "DESCRIPTION":"Você tem tido problemas com comandos iguais em vários bots diferentes, por terem o mesmo prefixo? Então mude o prefixo usado no seu servidor colocando um novo e personalisado!",
+            "AUTHOR_NAME1":"USE",
+            "AUTHOR_NAME2":"PARA VER TODOS OS COMANDOS.",
+            "USE_NAME":"Como usar:",
+            "EXAMPLE_NAME":"Exemplos:",
+            "LIMIT_SIZE_T":"Tamanho limite:",
+            "LIMIT_SIZE_VAL":"2 caracteres:",
+            "ALIASES_NAME":"Aliases:"
         }
     },
 
@@ -64,7 +76,8 @@
     },
 
     "SETPREFIX": {
-        "":""
+        "EMBED_TITLE":"novo prefixo:",
+        "AUTHOR_NAME":"Prefixo alterado com sucesso!"
     },
 
     "COINFLIP":{

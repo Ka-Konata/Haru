@@ -24,7 +24,7 @@ class Cmd_Configuration:
                 utils.write_json("languages/guild_languages.json", content)
                 lang  = utils.set_language(prefixo, str(message.guild.id))["SETLANGUAGE"]
 
-                embed = discord.Embed(title=message.content.split()[1])
+                embed = discord.Embed(title=message.content.split()[1], color=colors.Thistle)
                 embed.set_author(name=lang["AUTHOR_NAME"], icon_url="https://cdn.discordapp.com/avatars/502687173099913216/a_a1113f8f92b108969aad7d6925adb774.gif")
                 await channel.send(embed=embed)
 
@@ -56,8 +56,11 @@ class Cmd_Configuration:
                             utils.write_json(file, f)
                         else:
                             utils.write_json(file, model)
-                        embed = discord.Embed(title=lang["EMBED_TITLE"], description=lang["EMBED_DESCRIPTION"])
+
+                        embed = discord.Embed(title=lang["EMBED_TITLE"], description=message.content.split()[1], color=colors.Thistle)
                         embed.set_author(name=lang["AUTHOR_NAME"], icon_url="https://cdn.discordapp.com/avatars/502687173099913216/a_a1113f8f92b108969aad7d6925adb774.gif")
+                        await channel.send(embed=embed)
+
                     except:
                         await channel.send("`an unexpected error occurred`")
                 else:

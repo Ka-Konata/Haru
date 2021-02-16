@@ -48,11 +48,20 @@ class Cmd_help:
                 ex_value = f"`{prefixo}setlanguage en` `{prefixo}setlanguage pt_BR`"
                 embed_setlanguage.add_field(name=langcf["EXAMPLE_NAME"], value=ex_value, inline=True)
                 embed_setlanguage.add_field(name=langcf["LANGUAGES_NAME"], value="en, pt_BR", inline=True)
-                embed_setlanguage.add_field(name=langcf["ALIASES_NAME"], value=f"`{prefixo}setlanguage` `{prefixo}changelanguage` `{prefixo}language` `{prefixo}mudaridioma` `{prefixo}idioma`", inline=True)
+                embed_setlanguage.add_field(name=langcf["ALIASES_NAME"], value=f"`{prefixo}changelanguage` `{prefixo}language` `{prefixo}mudaridioma` `{prefixo}idioma`", inline=True)
                 await channel.send(embed=embed_setlanguage)
 
             elif cmd in aliases.setprefix:
-                await channel.send("<help.setprefix>")
+                langsp = lang["SETPREFIX"]
+                embed_setprefix = discord.Embed(title=langsp["TITLE"], description=langsp["DESCRIPTION"], color=colors.Thistle)
+                embed_setprefix.set_author(name=langsp["AUTHOR_NAME1"] + f" {prefixo}help " + langsp["AUTHOR_NAME2"], icon_url="https://cdn.discordapp.com/avatars/502687173099913216/a_a1113f8f92b108969aad7d6925adb774.gif")
+                embed_setprefix.add_field(name=langsp["USE_NAME"], value=f"`{prefixo}setprefix`", inline=True)
+                ex_value = f"`{prefixo}setprefix ?` `{prefixo}setprefix h!`"
+                embed_setprefix.add_field(name=langsp["EXAMPLE_NAME"], value=ex_value, inline=True)
+                embed_setprefix.add_field(name=langsp["LIMIT_SIZE_T"], value=langsp["LIMIT_SIZE_VAL"], inline=True)
+                embed_setprefix.add_field(name=langsp["ALIASES_NAME"], value=f"`{prefixo}changeprefix` `{prefixo}prefix` `{prefixo}mudarprefixo` `{prefixo}prefixo`", inline=True)
+                await channel.send(embed=embed_setprefix)
+
 
             # ---------- UTILITY ----------
 
@@ -63,7 +72,7 @@ class Cmd_help:
                 embed_morse.add_field(name=langm["USE_NAME"], value=f"`{prefixo}morse`", inline=True)
                 ex_value = f"`{prefixo}morse Holla` `{prefixo}morse " + langm["EX_VAL1"] + "`"
                 embed_morse.add_field(name=langm["EXAMPLE_NAME"], value=ex_value, inline=True)
-                embed_morse.add_field(name=langm["ALIASES_NAME"], value=f"`{prefixo}morse` `{prefixo}codigomorse` `{prefixo}cm` `{prefixo}m` ", inline=True)
+                embed_morse.add_field(name=langm["ALIASES_NAME"], value=f"`{prefixo}codigomorse` `{prefixo}cm` `{prefixo}m` ", inline=True)
                 await channel.send(embed=embed_morse)
 
             # ---------- GAMES ----------
@@ -76,7 +85,7 @@ class Cmd_help:
                 embed_coinflip.add_field(name=langcf["USE_NAME"], value=f"`{prefixo}coinflip`", inline=True)
                 ex_value = f"`{prefixo}coinflip " + langcf["EX_VAL1"] + "`" + f" `{prefixo}coinflip " + langcf["EX_VAL2"] + "`"
                 embed_coinflip.add_field(name=langcf["EXAMPLE_NAME"], value=ex_value, inline=True)
-                embed_coinflip.add_field(name=langcf["ALIASES_NAME"], value=f"`{prefixo}coinflip` `{prefixo}cf` `{prefixo}flip`", inline=True)
+                embed_coinflip.add_field(name=langcf["ALIASES_NAME"], value=f"`{prefixo}cf` `{prefixo}flip`", inline=True)
                 await channel.send(embed=embed_coinflip)
 
             else:
