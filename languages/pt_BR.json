@@ -1,0 +1,80 @@
+{
+    "INITIAL_MESSAGE_TITLE": "BOT ONLINE - OLÁ MUNDO",
+    
+    "FINAL_MESSAGE_EXECUTING": "encerrando o script",
+
+    "MESSAGE_PERMISSION_ERROR": "Você não tem permissão para executar esse comando",
+
+    "PERMISSION_ERROR_TITLE":"isso ocorre quando você executa um comando no qual requer alguma permissão especial",
+
+    "PERMISSION_ERROR_AUTHOR_NAME":"Erro - Você não tem permissão para executar esse comando.",
+
+    "PERMISSION_ERROR_FIELD_NAME":":no_entry: permissão necessária:",
+
+    "HELP": {
+        "HELP_EMBED_TITLE": "Haru - Help", 
+        "HELP_EMBED_DESCRIPTION": "Ahoy! meu nome é Haru. Um simples bot para o discord, essas são as minhas funcionalidades:", 
+        "HELP_EMBED_AUTHOR_NAME": "Como usar a Haru", 
+        "HELP_EMBED_FIELD_NAME": "Para ver detalhadamente:", 
+        "HELP_EMBED_FIELD_VALUE": "use `?help [comando]`",
+        "HELP_EMBED_CONFGS_NAME": "configurações", 
+        "HELP_EMBED_CONFGS_VALUE": "`setlanguage`, `setprefix`",
+        "HELP_EMBED_UTILITY_NAME": "utilidade", 
+        "HELP_EMBED_UTILITY_VALUE": "`morse`",
+        "HELP_EMBED_GAMES_NAME": "jogos", 
+        "HELP_EMBED_GAMES_VALUE": "`coinflip`",
+
+        "COINFLIP":{
+            "TITLE":"Comando coinflip",
+            "DESCRIPTION":"Deixe que a Haru joque uma moeda e tente adivinhar qual lado dela cairá virado para cima, cara ou coroa.",
+            "AUTHOR_NAME1":"USE",
+            "AUTHOR_NAME2":"PARA VER TODOS OS COMANDOS.",
+            "USE_NAME":"Como usar:",
+            "EXAMPLE_NAME":"Exemplos:",
+            "EX_VAL1":"cara",
+            "EX_VAL2":"coroa",
+            "ALIASES_NAME":"Aliases:"
+        },
+
+        "MORSE":{
+            "TITLE":"Comando morse",
+            "DESCRIPTION":"Escreva uma palavra ou frase desejada e eu irei traduzi-la para código morse por você! Lembre-se que eu não sou capaz de converter alguns caracterers especiais.",
+            "AUTHOR_NAME1":"USE",
+            "AUTHOR_NAME2":"PARA VER TODOS OS COMANDOS.",
+            "USE_NAME":"Como usar:",
+            "EXAMPLE_NAME":"Exemplos:",
+            "EX_VAL1":"desculpa por ser homem",
+            "ALIASES_NAME":"Aliases:"
+        },
+        
+        "SETLANGUAGE":{
+            "TITLE":"Comando setlanguage",
+            "DESCRIPTION":"Selecione o idioma padrão para este servidor, lembre-se de usar o idioma da forma descrita no help.",
+            "AUTHOR_NAME1":"USE",
+            "AUTHOR_NAME2":"PARA VER TODOS OS COMANDOS.",
+            "USE_NAME":"Como usar:",
+            "EXAMPLE_NAME":"Exemplos:",
+            "LANGUAGES_NAME":"Idiomas:",
+            "ALIASES_NAME":"Aliases:"
+        }
+    },
+
+    "SETLANGUAGE": {
+        "AUTHOR_NAME":"idioma alterado para:"
+    },
+
+    "COINFLIP":{
+
+        "COINFLIP_MISSING_ERROR": "Não se esqueça de colocar **cara** ou **coroa** ao lado do comando!", 
+        "WIN": "venceu", 
+        "LOSE": "perdeu", 
+        "COINFLIP_RESULT_CARA": "**FLIP!** | deu cara, você", 
+        "COINFLIP_RESULT_COROA": "**FLIP!** | deu coroa, você"
+    },
+
+    "MORSE":{
+        "MORSE_MISSING_ERROR": "Escreva a frase ou texto a ser traduzida ao lado do comando",
+        "MORSE_UNKNOWN_CHARACTER_ERROR": "A mensagem a ser traduzida contém caracteres que eu não sou capaz de entender.", 
+        "MORSE_TRANSLATED_TITLE": "Convertido para código morse:"
+    }
+}

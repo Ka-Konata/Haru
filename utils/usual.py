@@ -1,5 +1,6 @@
 import discord
 import os
+from discord.ext.commands import has_permissions, MissingPermissions
 
 client = discord.Client()
 
@@ -64,18 +65,56 @@ class Utils:
         guild:       guild id of the message
         """
 
-        usu         = Utils()
+        usu          = Utils()
 
-        português   = usu.open_json("languages/português")
-        english     = usu.open_json("languages/english.json")
-        languages   = {"português":português, "english":english}
+        português_BR = usu.open_json("languages/pt_BR")
+        english      = usu.open_json("languages/en.json")
+        languages    = {"pt_BR":português_BR, "en":english}
 
         try:
-            lang    = languages[usu.open_json("languages/guild_languages")[guild_id]]
+            lang     = languages[usu.open_json("languages/guild_languages")[guild_id]]
 
-        except Exception as erro:
+        except:
             guilds_langs           = usu.open_json("languages/guild_languages")
-            guilds_langs[guild_id] = "português"
+            guilds_langs[guild_id] = "pt_BR"
             usu.write_json("languages/guild_languages", guilds_langs)
-            lang    = languages[usu.open_json("languages/guild_languages")[guild_id]]
+            lang     = languages[usu.open_json("languages/guild_languages")[guild_id]]
         return lang
+
+    
+    def get_permissions(self, member, requeriments):
+        """"""
+        perms = member.guild_permissions
+        level = requeriments.Requeriments()
+        
+        if perms.administrator:
+            level.admin  = True
+            level.mod    = True
+            level.member = True
+
+        elif perms.ban_members:
+            level.admin  = False
+            level.mod    = True
+            level.member = True
+
+        elif perms.send_messages:
+            level.admin  = False
+            level.mod    = False
+            level.member = True
+
+        return level
+    
+
+    def permission_error(self, permission, lang):
+        embed = discord.Embed(title=lang["PERMISSION_ERROR_TITLE"])
+        embed.set_author(name=lang["PERMISSION_ERROR_AUTHOR_NAME"], icon_url="https://cdn.discordapp.com/avatars/502687173099913216/a_a1113f8f92b108969aad7d6925adb774.gif")
+        embed.add_field(name=lang["PERMISSION_ERROR_FIELD_NAME"], value=permission, inline=True)
+
+        return embed
+
+    def guild_confgs_model(self):
+        model = {
+            "prefix":"h!"
+        }
+
+        return model

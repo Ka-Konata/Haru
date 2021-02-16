@@ -18,9 +18,9 @@ coinflip = (
 
 
 morse = (
-    "morse", "codigomorse", "cm", "m"
+    "morse", "codigomorse"
 )
 
-lol = (
-    "lol", "elo"
+setlanguage = (
+    "setlanguage", "changelanguage", "language", "mudaridioma", "idioma"
 )

@@ -5,20 +5,11 @@
 
     "MESSAGE_PERMISSION_ERROR": "Você não tem permissão para executar esse comando",
 
-    "COINFLIP":{
+    "PERMISSION_ERROR_TITLE":"isso ocorre quando você executa um comando no qual requer alguma permissão especial",
 
-        "COINFLIP_MISSING_ERROR": "Não se esqueça de colocar **cara** ou **coroa** ao lado do comando!", 
-        "WIN": "venceu", 
-        "LOSE": "perdeu", 
-        "COINFLIP_RESULT_CARA": "**FLIP!** | deu cara, você", 
-        "COINFLIP_RESULT_COROA": "**FLIP!** | deu coroa, você"
-    },
+    "PERMISSION_ERROR_AUTHOR_NAME":"Erro - Você não tem permissão para executar esse comando.",
 
-    "MORSE":{
-        "MORSE_MISSING_ERROR": "Escreva a frase ou texto a ser traduzida ao lado do comando",
-        "MORSE_UNKNOWN_CHARACTER_ERROR": "A mensagem a ser traduzida contém caracteres que eu não sou capaz de entender.", 
-        "MORSE_TRANSLATED_TITLE": "Convertido para código morse:"
-    },
+    "PERMISSION_ERROR_FIELD_NAME":":no_entry: permissão necessária:",
 
     "HELP": {
         "HELP_EMBED_TITLE": "Haru - Help", 
@@ -51,5 +42,24 @@
             "EX_VAL1":"desculpa por ser homem",
             "ALIASES_NAME":"Aliases:"
         }
+    },
+
+    "SETLANGUAGE": {
+        "AUTHOR_NAME":"language changeded to:"
+    },
+
+    "COINFLIP":{
+
+        "COINFLIP_MISSING_ERROR": "Não se esqueça de colocar **cara** ou **coroa** ao lado do comando!", 
+        "WIN": "venceu", 
+        "LOSE": "perdeu", 
+        "COINFLIP_RESULT_CARA": "**FLIP!** | deu cara, você", 
+        "COINFLIP_RESULT_COROA": "**FLIP!** | deu coroa, você"
+    },
+
+    "MORSE":{
+        "MORSE_MISSING_ERROR": "Escreva a frase ou texto a ser traduzida ao lado do comando",
+        "MORSE_UNKNOWN_CHARACTER_ERROR": "A mensagem a ser traduzida contém caracteres que eu não sou capaz de entender.", 
+        "MORSE_TRANSLATED_TITLE": "Convertido para código morse:"
     }
 }
