@@ -118,3 +118,20 @@ class Utils:
         }
 
         return model
+
+    def get_prefix(self, guild_id):
+        from os import path
+
+        usu  = Utils()
+        file = "configs/guilds configs/" + str(guild_id)  + ".json"
+
+        if not path.exists(file):
+            model = usu.guild_confgs_model()
+            model["prefix"] = "h!"
+            usu.write_json(file, model)
+            return "h!"
+ 
+        else:
+            f = usu.open_json(file)
+            prefix = f["prefix"]
+            return prefix

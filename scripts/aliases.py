@@ -7,20 +7,30 @@ stoprunning = (
     "stoprunning", "stop", "quit"
 )
 
+# ---------- HELP ----------
+
 help = {
     "help", "ajuda"
 }
 
+# ---------- CONFIGURATION ----------
 
-coinflip = (
-    "coinflip", "cf", "flip"
+setlanguage = (
+    "setlanguage", "changelanguage", "language", "mudaridioma", "idioma"
 )
 
+setprefix = (
+    "setprefix", "prefix", "mudarprefixo", "prefixo"
+)
+
+# ---------- UTILITY ----------
 
 morse = (
     "morse", "codigomorse"
 )
 
-setlanguage = (
-    "setlanguage", "changelanguage", "language", "mudaridioma", "idioma"
+# ---------- GAMES ----------
+
+coinflip = (
+    "coinflip", "cf", "flip"
 )

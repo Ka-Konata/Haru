@@ -63,6 +63,10 @@
         "AUTHOR_NAME":"idioma alterado para:"
     },
 
+    "SETPREFIX": {
+        "":""
+    },
+
     "COINFLIP":{
 
         "COINFLIP_MISSING_ERROR": "Não se esqueça de colocar **cara** ou **coroa** ao lado do comando!", 

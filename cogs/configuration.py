@@ -36,26 +36,34 @@ class Cmd_Configuration:
 
 
     @client.event
-    async def setprefix(self, message, lang, member_perms, colors, utils, prefixo):
-        lang    = lang["PREFIX"]
+    async def setprefix(self, message, _lang, member_perms, colors, utils, _help, aliases, prefixo):
+        import os
+        lang    = _lang["SETPREFIX"]
         channel = message.channel
 
-        if message.content.split() > 1:
-            if len(message.content.split()[1]) <= 3:
+        if len(message.content.split()) > 1:
+            if len(message.content.split()[1]) <= 2:
                 if member_perms.admin:
 
-                    file = "configs/guilds configs/" + str(message.guild.id) + ".json"
+                    file = "configs/guilds configs/" + str(message.guild.id)  + ".json"  
                     model = utils.guild_confgs_model()
                     model["prefix"] = message.content.split()[1]
 
                     try:
-                        f = utils.open_json(file)
-                    except FileNotFoundError:
-                        utils.write_json(file, model)
-
+                        if os.path.exists(file):
+                            f = utils.open_json(file)
+                            f["prefix"] = message.content.split()[1]
+                            utils.write_json(file, f)
+                        else:
+                            utils.write_json(file, model)
+                        embed = discord.Embed(title=lang["EMBED_TITLE"], description=lang["EMBED_DESCRIPTION"])
+                        embed.set_author(name=lang["AUTHOR_NAME"], icon_url="https://cdn.discordapp.com/avatars/502687173099913216/a_a1113f8f92b108969aad7d6925adb774.gif")
+                    except:
+                        await channel.send("`an unexpected error occurred`")
                 else:
-                    pass
+                    embed = utils.permission_error("administrator", _lang)
+                    await channel.send(embed=embed)
             else:
-                pass
+                await _help.help(message, aliases, _lang, colors, prefixo, request="setprefix")
         else:
-            pass
+            await _help.help(message, aliases, _lang, colors, prefixo, request="setprefix")

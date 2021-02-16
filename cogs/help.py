@@ -51,6 +51,9 @@ class Cmd_help:
                 embed_setlanguage.add_field(name=langcf["ALIASES_NAME"], value=f"`{prefixo}setlanguage` `{prefixo}changelanguage` `{prefixo}language` `{prefixo}mudaridioma` `{prefixo}idioma`", inline=True)
                 await channel.send(embed=embed_setlanguage)
 
+            elif cmd in aliases.setprefix:
+                await channel.send("<help.setprefix>")
+
             # ---------- UTILITY ----------
 
             elif cmd in aliases.morse:

@@ -11,10 +11,13 @@ from scripts.bot_token import secret_token as token
 # Importando os comandos
 from cogs.help import Cmd_help
 help = Cmd_help()
-from cogs.utility import Cmd_utility
-utility = Cmd_utility()
 from cogs.configuration import Cmd_Configuration
 confgs = Cmd_Configuration()
+from cogs.utility import Cmd_utility
+utility = Cmd_utility()
+from cogs.games import Cmd_Games
+games = Cmd_Games()
+
 
 client  = discord.Client()
 TOKEN   = token.get_token()  # Make your file with your token
@@ -44,6 +47,7 @@ async def on_ready():
 @client.event
 async def on_message(message):
     member_perms = utils.get_permissions(message.author, requeriments)
+    prefixo = utils.get_prefix(message.guild.id)
     channel = message.channel
     
     lang = utils.set_language(prefixo, str(message.guild.id))
@@ -78,20 +82,22 @@ async def on_message(message):
     if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.setlanguage)):
         await confgs.setlanguage(message, lang, colors, member_perms, utils, help, aliases, prefixo)
 
+    # Comando Set Prefix
+    if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.setprefix)):
+        await confgs.setprefix(message, lang, member_perms, colors, utils, help, aliases, prefixo)
+
 
     # ---------- UTILITY ----------
-
-    # Comando coinflip
-    if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.coinflip)):
-        await utility.coinflip(message, prefixo, lang)
-
-
-    # ---------- GAMES ----------
     
     # Comando Morse
     if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.morse)):
         await utility.morse(message, prefixo, lang, morse_códigos, colors)
 
+    # ---------- GAMES ----------
+
+    # Comando coinflip
+    if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.coinflip)):
+        await games.coinflip(message, prefixo, lang)
 
 
 client.run(TOKEN)
