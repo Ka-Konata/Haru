@@ -38,6 +38,7 @@ class Cmd_help:
             if cmd in aliases.help:
                 print("help")
 
+
             # ---------- CONFIGURATION ----------
 
             elif cmd in aliases.setlanguage:
@@ -63,6 +64,8 @@ class Cmd_help:
                 await channel.send(embed=embed_setprefix)
 
 
+            # ---------- MODERATION----------
+
             # ---------- UTILITY ----------
 
             elif cmd in aliases.morse:
@@ -74,6 +77,7 @@ class Cmd_help:
                 embed_morse.add_field(name=langm["EXAMPLE_NAME"], value=ex_value, inline=True)
                 embed_morse.add_field(name=langm["ALIASES_NAME"], value=f"`{prefixo}codigomorse` `{prefixo}cm` `{prefixo}m` ", inline=True)
                 await channel.send(embed=embed_morse)
+
 
             # ---------- GAMES ----------
             
@@ -87,6 +91,9 @@ class Cmd_help:
                 embed_coinflip.add_field(name=langcf["EXAMPLE_NAME"], value=ex_value, inline=True)
                 embed_coinflip.add_field(name=langcf["ALIASES_NAME"], value=f"`{prefixo}cf` `{prefixo}flip`", inline=True)
                 await channel.send(embed=embed_coinflip)
+
+
+            # ---------- FUN ----------
 
             else:
                 await channel.send(embed=embed)

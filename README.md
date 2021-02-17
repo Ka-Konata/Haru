@@ -27,6 +27,14 @@ setprefix | admin | Change the guild prefix
 
 &nbsp;
 
+~~~python
+Moderation module
+~~~
+
+command | permission | explination
+:------ | :--------: | :----------
+&nbsp;
+
 ~~~phyton
 Utility module
 ~~~

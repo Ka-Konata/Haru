@@ -75,6 +75,8 @@ async def on_message(message):
     if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.help)):
         await help.help(message, aliases, lang, colors, prefixo)
 
+    # ---------- MODERATION----------
+
 
     # ---------- CONFIGURATION ----------
 
@@ -98,6 +100,8 @@ async def on_message(message):
     # Comando coinflip
     if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.coinflip)):
         await games.coinflip(message, prefixo, lang)
+
+    # ---------- FUN ----------
 
 
 client.run(TOKEN)
