@@ -9,6 +9,8 @@
 ### Help module
 
 > help all
+>
+> help module
 
 &nbsp;
 
@@ -71,6 +73,8 @@
 > box [present box]
 >
 > guess [guess number]
+>
+> jokempo
 
 &nbsp;
 

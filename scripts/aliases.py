@@ -34,3 +34,9 @@ morse = (
 coinflip = (
     "coinflip", "cf", "flip"
 )
+
+# ---------- FUN ----------
+
+say = (
+    "say", "diga", "dizer"
+)

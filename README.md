@@ -33,6 +33,7 @@ Moderation module
 
 command | permission | explination
 :------ | :--------: | :----------
+
 &nbsp;
 
 ~~~phyton
@@ -52,3 +53,12 @@ Games module
 command | permission | explination
 :------ | :--------: | :----------
 coinflip | member | coinflip...
+
+&nbsp;
+
+~~~phyton
+Fun module
+~~~
+
+command | permission | explination
+:------ | :--------: | :----------

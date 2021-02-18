@@ -4,21 +4,25 @@ import asyncio
 client = discord.Client()
 
 class Cmd_utility:
-    def __init__(self):
-        pass    
+    def __init__(self, message, aliases, prefixo, lang, colors):
+        self.message = message
+        self.aliases = aliases
+        self.prefixo = prefixo
+        self.lang    = lang
+        self.colors  = colors
 
     # Comando Morse
     @client.event
-    async def morse(self, message, prefixo, lang, morse_códigos, colors):
+    async def morse(self, morse_códigos):
         import random
-        lang    = lang["MORSE"]
-        channel = message.channel
+        lang    = self.lang["MORSE"]
+        channel = self.message.channel
 
-        if len(message.content.split()) < 2:
-            await channel.send(lang["MORSE_MISSING_ERROR"] + f"\nexample: `{prefixo}morse My name is Haru`")
+        if len(self.message.content.split()) < 2:
+            await channel.send(lang["MORSE_MISSING_ERROR"] + f"\nexample: `{self.prefixo}morse My name is Haru`")
         else:
             description = "**"
-            frase = message.content.lower().split()[1:]
+            frase = self.message.content.lower().split()[1:]
 
             for n, word in enumerate(frase):
                 breakl = False
@@ -39,5 +43,5 @@ class Cmd_utility:
                     break
                 elif n == len(frase) - 1:
                     description = description + "**"
-                    embed_msg = discord.Embed(title=lang["MORSE_TRANSLATED_TITLE"], color=colors.Thistle, description=description)
+                    embed_msg = discord.Embed(title=lang["MORSE_TRANSLATED_TITLE"], color=self.colors.Thistle, description=description)
                     await channel.send(embed=embed_msg)

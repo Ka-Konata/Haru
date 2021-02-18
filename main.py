@@ -11,12 +11,12 @@ from scripts.bot_token import secret_token as token
 # Importando os comandos
 from cogs.help import Cmd_help
 help = Cmd_help()
-from cogs.configuration import Cmd_Configuration
-confgs = Cmd_Configuration()
+from cogs.configuration import Cmd_configuration
+confgs = Cmd_configuration()
 from cogs.utility import Cmd_utility
 utility = Cmd_utility()
-from cogs.games import Cmd_Games
-games = Cmd_Games()
+from cogs.games import Cmd_games
+games = Cmd_games()
 
 
 client  = discord.Client()
@@ -52,6 +52,19 @@ async def on_message(message):
     
     lang = utils.set_language(prefixo, str(message.guild.id))
 
+    # Importanto os comandos
+    from cogs.help import Cmd_help
+    help = Cmd_help(message, aliases, lang, colors, prefixo)
+    from cogs.configuration import Cmd_configuration
+    confgs = Cmd_configuration(message, lang, colors, member_perms, utils, help, prefixo)
+    from cogs.utility import Cmd_utility
+    utility = Cmd_utility(message, aliases, prefixo, lang, colors)
+    from cogs.games import Cmd_games
+    games = Cmd_games(message, aliases, prefixo, lang, colors)
+    from cogs.fun import Cmd_fun
+    fun = Cmd_fun(message, aliases, lang, colors, prefixo, help)
+
+
     # Comando Test, para testar se o bot está online
     if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.test)):
         print(utils.ins_prefix(prefixo, aliases.test))
@@ -73,7 +86,7 @@ async def on_message(message):
 
     # Comando Help
     if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.help)):
-        await help.help(message, aliases, lang, colors, prefixo)
+        await help.help()
 
     # ---------- MODERATION----------
 
@@ -82,26 +95,30 @@ async def on_message(message):
 
     # Comando Set Language
     if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.setlanguage)):
-        await confgs.setlanguage(message, lang, colors, member_perms, utils, help, aliases, prefixo)
+        await confgs.setlanguage()
 
     # Comando Set Prefix
     if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.setprefix)):
-        await confgs.setprefix(message, lang, member_perms, colors, utils, help, aliases, prefixo)
+        await confgs.setprefix()
 
 
     # ---------- UTILITY ----------
     
     # Comando Morse
     if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.morse)):
-        await utility.morse(message, prefixo, lang, morse_códigos, colors)
+        await utility.morse(morse_códigos)
 
     # ---------- GAMES ----------
 
     # Comando coinflip
     if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.coinflip)):
-        await games.coinflip(message, prefixo, lang)
+        await games.coinflip()
 
     # ---------- FUN ----------
+
+    # Comando Say
+    if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.say)):
+        await fun.say()
 
 
 client.run(TOKEN)
