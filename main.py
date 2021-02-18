@@ -8,17 +8,6 @@ from scripts import aliases, requeriments
 from scripts.bot_token import secret_token as token
 
 
-# Importando os comandos
-from cogs.help import Cmd_help
-help = Cmd_help()
-from cogs.configuration import Cmd_configuration
-confgs = Cmd_configuration()
-from cogs.utility import Cmd_utility
-utility = Cmd_utility()
-from cogs.games import Cmd_games
-games = Cmd_games()
-
-
 client  = discord.Client()
 TOKEN   = token.get_token()  # Make your file with your token
 prefixo = ";"
