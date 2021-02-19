@@ -120,5 +120,9 @@ async def on_message(message):
         if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.send)):
             await fun.send()
 
+        # Comando Ship
+        if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.ship)):
+            await fun.ship()
+
 
 client.run(TOKEN)

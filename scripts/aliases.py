@@ -44,3 +44,7 @@ say = (
 send = (
     "send", "enviar", "dm"
 )
+
+ship = (
+    "ship", "shippar"
+)

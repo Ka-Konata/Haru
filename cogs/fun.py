@@ -57,3 +57,20 @@ class Cmd_fun:
                 await self.message.channel.send(lang["COULDNT_SEND"])
         else:
             await self._help.help("send")
+
+
+    # Comando Ship
+    @client.event
+    async def ship(self):
+        users = []
+        content = self.message.content.split()
+
+        if len(content) > 1:
+            for n, user in enumerate(content[1:2]):
+                try:
+                    users[n] = self.client.get_user(int(user))
+                except IndexError as erro:
+                    await self.message.channel.send(erro)
+        else:
+            pass
+
