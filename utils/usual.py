@@ -5,8 +5,9 @@ from discord.ext.commands import has_permissions, MissingPermissions
 client = discord.Client()
 
 class Utils:
-    def __init__(self, token=None):
-        self.TOKEN = token
+    def __init__(self, icon_url, token=None):
+        self.TOKEN    = token
+        self.icon_url = icon_url
 
 
     def write_json(self, file, description, encoding="utf-8"):
@@ -65,7 +66,7 @@ class Utils:
         guild:       guild id of the message
         """
 
-        usu          = Utils()
+        usu          = Utils(self.icon_url)
 
         português_BR = usu.open_json("languages/pt_BR")
         english      = usu.open_json("languages/en.json")
@@ -107,7 +108,7 @@ class Utils:
 
     def permission_error(self, permission, lang):
         embed = discord.Embed(title=lang["PERMISSION_ERROR_TITLE"])
-        embed.set_author(name=lang["PERMISSION_ERROR_AUTHOR_NAME"], icon_url="https://cdn.discordapp.com/avatars/502687173099913216/a_a1113f8f92b108969aad7d6925adb774.gif")
+        embed.set_author(name=lang["PERMISSION_ERROR_AUTHOR_NAME"], icon_url=self.icon_url)
         embed.add_field(name=lang["PERMISSION_ERROR_FIELD_NAME"], value=permission, inline=True)
 
         return embed
@@ -122,7 +123,8 @@ class Utils:
     def get_prefix(self, guild_id):
         from os import path
 
-        usu  = Utils()
+        usu  = Utils(self.icon_url)
+
         file = "configs/guilds configs/" + str(guild_id)  + ".json"
 
         if not path.exists(file):
@@ -135,3 +137,28 @@ class Utils:
             f = usu.open_json(file)
             prefix = f["prefix"]
             return prefix
+
+
+    def embed_model(self, lang, prefixo, colors, ex_value, aliases, extra1=False, extra2=False, howToUse=False):
+        embed = discord.Embed(title=lang["TITLE"], description=lang["DESCRIPTION"], color=colors.Thistle)
+        embed.set_author(name=lang["AUTHOR_NAME1"] + f" {prefixo}help " + lang["AUTHOR_NAME2"], icon_url=self.icon_url)
+
+        if howToUse:
+            embed.add_field(name=lang["USE_NAME"], value="```" + prefixo + lang["USE_VALUE"] + "```", inline=True)
+        if extra1:
+            embed.add_field(name=lang["EXTRA1_NAME"], value=lang["EXTRA1_VALUE"], inline=True)
+        if extra2:
+            embed.add_field(name=lang["EXTRA2_NAME"], value=lang["EXTRA2_VALUE"], inline=True)
+
+        embed.add_field(name=lang["EXAMPLE_NAME"], value=ex_value, inline=True)
+
+        _aliases = "```"
+        for n, alias in enumerate(aliases):
+            if n + 1 == len(aliases):
+                _aliases = _aliases + alias + "```"
+                break
+            _aliases = _aliases + alias + ", " 
+
+        embed.add_field(name=lang["ALIASES_NAME"], value=_aliases, inline=True)
+
+        return embed

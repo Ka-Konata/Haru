@@ -40,3 +40,7 @@ coinflip = (
 say = (
     "say", "diga", "dizer"
 )
+
+send = (
+    "send", "enviar", "dm"
+)

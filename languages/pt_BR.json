@@ -18,40 +18,55 @@
         "HELP_EMBED_FIELD_NAME": "Para ver detalhadamente:", 
         "HELP_EMBED_FIELD_VALUE": "use `?help [comando]`",
         "HELP_EMBED_CONFGS_NAME": "configurações", 
-        "HELP_EMBED_CONFGS_VALUE": "`setlanguage`, `setprefix`",
+        "HELP_EMBED_CONFGS_VALUE": "```setlanguage, setprefix```",
         "HELP_EMBED_UTILITY_NAME": "utilidade", 
-        "HELP_EMBED_UTILITY_VALUE": "`morse`",
+        "HELP_EMBED_UTILITY_VALUE": "```morse```",
         "HELP_EMBED_GAMES_NAME": "jogos", 
-        "HELP_EMBED_GAMES_VALUE": "`coinflip`",
+        "HELP_EMBED_GAMES_VALUE": "```coinflip```",
+        "HELP_EMBED_FUN_NAME": "diversão", 
+        "HELP_EMBED_FUN_VALUE": "```say, send```",
+        "HELP_COMMAND_NOT_FOUND":"Não foi possível encontrar nenhum comando com o nome",
+        "HELP_COMMAND_NOT_FOUND2":"verifique se não o escreveu de forma errada ou até mesmo se o comando existe!",
         
         "SETLANGUAGE":{
             "TITLE":"Comando setlanguage",
             "DESCRIPTION":"Selecione o idioma padrão para este servidor, lembre-se de usar o idioma da forma descrita no help.",
-            "AUTHOR_NAME1":"USE",
-            "AUTHOR_NAME2":"PARA VER TODOS OS COMANDOS.",
-            "USE_NAME":"Como usar:",
+            "AUTHOR_NAME1":"Use",
+            "AUTHOR_NAME2":"para ver todos os comandos.",
+            "EXTRA1_NAME":"Idiomas:",
+            "EXTRA1_VALUE":"```en, pt_BR```",
             "EXAMPLE_NAME":"Exemplos:",
-            "LANGUAGES_NAME":"Idiomas:",
             "ALIASES_NAME":"Aliases:"
         },
         
         "SETPREFIX":{
             "TITLE":"Comando setprefix",
             "DESCRIPTION":"Você tem tido problemas com comandos iguais em vários bots diferentes, por terem o mesmo prefixo? Então mude o prefixo usado no seu servidor colocando um novo e personalisado!",
-            "AUTHOR_NAME1":"USE",
-            "AUTHOR_NAME2":"PARA VER TODOS OS COMANDOS.",
+            "AUTHOR_NAME1":"Use",
+            "AUTHOR_NAME2":"para ver todos os comandos.",
             "USE_NAME":"Como usar:",
+            "USE_VALUE":"setprefix [novo prefixo]",
+            "EXTRA1_NAME":"Tamanho limite:",
+            "EXTRA1_VALUE":"```2 caracteres```",
             "EXAMPLE_NAME":"Exemplos:",
-            "LIMIT_SIZE_T":"Tamanho limite:",
-            "LIMIT_SIZE_VAL":"2 caracteres:",
+            "ALIASES_NAME":"Aliases:"
+        },
+
+        "MORSE":{
+            "TITLE":"Comando morse",
+            "DESCRIPTION":"Escreva uma palavra ou frase desejada e eu irei traduzi-la para código morse por você! Lembre-se que eu não sou capaz de converter alguns caracterers especiais.",
+            "AUTHOR_NAME1":"Use",
+            "AUTHOR_NAME2":"para ver todos os comandos.",
+            "EXAMPLE_NAME":"Exemplos:",
+            "EX_VAL1":"desculpa por ser homem",
             "ALIASES_NAME":"Aliases:"
         },
 
         "COINFLIP":{
             "TITLE":"Comando coinflip",
             "DESCRIPTION":"Deixe que a Haru joque uma moeda e tente adivinhar qual lado dela cairá virado para cima, cara ou coroa.",
-            "AUTHOR_NAME1":"USE",
-            "AUTHOR_NAME2":"PARA VER TODOS OS COMANDOS.",
+            "AUTHOR_NAME1":"Use",
+            "AUTHOR_NAME2":"para ver todos os comandos.",
             "USE_NAME":"Como usar:",
             "EXAMPLE_NAME":"Exemplos:",
             "EX_VAL1":"cara",
@@ -59,16 +74,27 @@
             "ALIASES_NAME":"Aliases:"
         },
 
-        "MORSE":{
-            "TITLE":"Comando morse",
-            "DESCRIPTION":"Escreva uma palavra ou frase desejada e eu irei traduzi-la para código morse por você! Lembre-se que eu não sou capaz de converter alguns caracterers especiais.",
-            "AUTHOR_NAME1":"USE",
-            "AUTHOR_NAME2":"PARA VER TODOS OS COMANDOS.",
-            "USE_NAME":"Como usar:",
+        "SAY":{
+            "TITLE":"Comando say",
+            "DESCRIPTION":"Farei das suas palavras as minhas! use este comando para me fazer falar algo de sua vontade.",
+            "AUTHOR_NAME1":"Use",
+            "AUTHOR_NAME2":"para ver todos os comandos.",
             "EXAMPLE_NAME":"Exemplos:",
-            "EX_VAL1":"desculpa por ser homem",
+            "ALIASES_NAME":"Aliases:"
+        },
+
+        "SEND":{
+            "TITLE":"Comando send",
+            "DESCRIPTION":"Que tal me usar para enviar recados na dm dos seus amigos? mas lembre-se de me dizer oque falar!",
+            "AUTHOR_NAME1":"Use",
+            "AUTHOR_NAME2":"para ver todos os comandos.",
+            "USE_NAME":"Como usar:",
+            "USE_VALUE":"send <User/ID> [texto]",
+            "EXAMPLE_NAME":"Exemplos:",
             "ALIASES_NAME":"Aliases:"
         }
+
+
     },
 
     "SETLANGUAGE": {
@@ -93,5 +119,13 @@
         "MORSE_MISSING_ERROR": "Escreva a frase ou texto a ser traduzida ao lado do comando",
         "MORSE_UNKNOWN_CHARACTER_ERROR": "A mensagem a ser traduzida contém caracteres que eu não sou capaz de entender.", 
         "MORSE_TRANSLATED_TITLE": "Convertido para código morse:"
+    },
+
+    "SAY":{},
+
+    "SEND":{
+        "USER_NOT_FOUND_ERROR":"Eu não encontrei nenhum usuário ou membro com o nome/ID ",
+        "MESSAGE_SENT":"mensagem enviada com sucesso! eu acho",
+        "COULDNT_SEND":"Algo deu errado... provávelmente essa pessoa **configurou a dm para ser fechada** apenas para amigos, e eu não posso enviar mensagens assim."
     }
 }

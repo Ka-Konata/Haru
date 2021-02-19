@@ -18,6 +18,8 @@
 
 > nsfw
 >
+> settings
+>
 > lockcommand
 >
 > unlockcommand
