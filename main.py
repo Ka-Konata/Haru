@@ -1,10 +1,13 @@
 import discord
 import asyncio
 import random
-from sys import exit
-from utils.usual import Utils
-from utils import morse
-from scripts import aliases, requeriments
+import requests
+from scripts           import ship
+from sys               import exit
+from utils.usual       import Utils
+from utils             import morse
+from scripts           import aliases, requeriments
+from scripts.format    import toPNG
 from scripts.bot_token import secret_token as token
 
 morse_códigos = morse.get_morse()
@@ -41,24 +44,30 @@ async def on_ready():
 @client.event
 async def on_message(message):
     if message.author.bot == False:
+        global icon_url
+        url = message.author.avatar
+        if url != None:
+            icon_url = url
+
         member_perms = utils.get_permissions(message.author, requeriments)
-        prefixo = utils.get_prefix(message.guild.id)
-        channel = message.channel
-        mentions = message.mentions
+        prefixo      = utils.get_prefix(message.guild.id)
+        channel      = message.channel
+        mentions     = message.mentions
         
         lang = utils.set_language(prefixo, str(message.guild.id))
 
         # Importanto os comandos
-        from cogs.help import Cmd_help
-        help = Cmd_help(message, aliases, lang, colors, prefixo, utils)
+        from cogs.help          import Cmd_help
         from cogs.configuration import Cmd_configuration
-        confgs = Cmd_configuration(message, lang, colors, member_perms, utils, help, prefixo)
-        from cogs.utility import Cmd_utility
+        from cogs.utility       import Cmd_utility
+        from cogs.games         import Cmd_games
+        from cogs.fun           import Cmd_fun 
+
+        help    = Cmd_help(message, aliases, lang, colors, prefixo, utils)
+        confgs  = Cmd_configuration(message, lang, colors, member_perms, utils, help, prefixo)
         utility = Cmd_utility(message, aliases, prefixo, lang, colors)
-        from cogs.games import Cmd_games
-        games = Cmd_games(message, aliases, prefixo, lang, colors)
-        from cogs.fun import Cmd_fun 
-        fun = Cmd_fun(message, client, aliases, lang, colors, prefixo, help, mentions)
+        games   = Cmd_games(message, aliases, prefixo, lang, colors)
+        fun     = Cmd_fun(message, client, aliases, lang, colors, prefixo, help, mentions)
 
 
         # Comando Test, para testar se o bot está online
@@ -122,7 +131,7 @@ async def on_message(message):
 
         # Comando Ship
         if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.ship)):
-            await fun.ship()
+            await fun.ship(ship, toPNG)
 
 
 client.run(TOKEN)

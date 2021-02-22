@@ -47,6 +47,7 @@ class Cmd_fun:
                     await self.message.channel.send(lang["USER_NOT_FOUND_ERROR"] + "`" + content[1] + "`.")
             else: 
                 user_tosend = self.mentions[0]
+                
             msg_tosend = ""
             for n, word in enumerate(content):
                 if n > 1:
@@ -61,16 +62,40 @@ class Cmd_fun:
 
     # Comando Ship
     @client.event
-    async def ship(self):
-        users = []
+    async def ship(self, ship, toPNG):
+        users   = []
         content = self.message.content.split()
+        lang    = self.lang["SHIP"]
 
         if len(content) > 1:
-            for n, user in enumerate(content[1:2]):
+            num = 0
+            error = False
+            for n, user in enumerate(content[1:3]):
                 try:
-                    users[n] = self.client.get_user(int(user))
-                except IndexError as erro:
-                    await self.message.channel.send(erro)
-        else:
-            pass
+                    users.append(self.client.get_user(int(user)))
+                    n = users[n].id
+                except (ValueError, AttributeError):
+                    try:
+                        users.append(self.mentions[num])
+                        num += 1
+                    except IndexError:
+                        error = True
+                        await self.message.channel.send(lang["USER_NOT_FOUND_ERROR"] + "`" + user + "`")  # send a message error for user not found
+                        break
+                finally:
 
+                    assets_ch = self.message.guild.get_channel(813497519539617812)
+
+                    if len(content) == 2 and len(users) > 0 and not error:
+                        users.append(self.message.author)
+                        await ship.get_couple(users, toPNG, assets_ch, self.message)
+                        break
+
+                    elif len(content) > 2 and content[1] == content[2] and not error:
+                        users.append(users[0])
+                        await ship.get_couple(users, toPNG, assets_ch, self.message)
+                        break
+
+                    elif len(content) > 2 and len(users) == 2 and not error:
+                        await ship.get_couple(users, toPNG, assets_ch, self.message)
+            pass

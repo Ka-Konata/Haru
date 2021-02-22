@@ -24,7 +24,7 @@
         "HELP_EMBED_GAMES_NAME": "jogos", 
         "HELP_EMBED_GAMES_VALUE": "```coinflip```",
         "HELP_EMBED_FUN_NAME": "diversão", 
-        "HELP_EMBED_FUN_VALUE": "```say, send```",
+        "HELP_EMBED_FUN_VALUE": "```say, send, ship```",
         "HELP_COMMAND_NOT_FOUND":"Não foi possível encontrar nenhum comando com o nome",
         "HELP_COMMAND_NOT_FOUND2":"verifique se não o escreveu de forma errada ou até mesmo se o comando existe!",
         
@@ -84,6 +84,8 @@
         },
 
         "SEND":{
+            "EX_VAL1":"@Haru#0001 oi por quanto você vende o pack da mão?",
+            "EX_VAL2":"@Haru#0001 me manda uma foto da parte de trás do seu cartão é pro meu TCC```",
             "TITLE":"Comando send",
             "DESCRIPTION":"Que tal me usar para enviar recados na dm dos seus amigos? mas lembre-se de me dizer oque falar!",
             "AUTHOR_NAME1":"Use",
@@ -92,9 +94,18 @@
             "USE_VALUE":"send <User/ID> [texto]",
             "EXAMPLE_NAME":"Exemplos:",
             "ALIASES_NAME":"Aliases:"
+        },
+
+        "SHIP":{
+            "TITLE":"Comando ship",
+            "DESCRIPTION":"Quer se iludir com um comando que estipula quais são suas chances com aquela pessoa que você tanto ama? Então esse comando serve perfeitamente pra você! apenas me diga com quem você quer que eu faça o ship, lembrando caso queira você também pode shipar outras pessoas.",
+            "AUTHOR_NAME1":"Use",
+            "AUTHOR_NAME2":"para ver todos os comandos.",
+            "USE_NAME":"Como usar:",
+            "USE_VALUE":"ship <User/ID> (2° pessoa opcional)",
+            "EXAMPLE_NAME":"Exemplos:",
+            "ALIASES_NAME":"Aliases:"
         }
-
-
     },
 
     "SETLANGUAGE": {
@@ -127,5 +138,9 @@
         "USER_NOT_FOUND_ERROR":"Eu não encontrei nenhum usuário ou membro com o nome/ID ",
         "MESSAGE_SENT":"mensagem enviada com sucesso! eu acho",
         "COULDNT_SEND":"Algo deu errado... provávelmente essa pessoa **configurou a dm para ser fechada** apenas para amigos, e eu não posso enviar mensagens assim."
+    },
+
+    "SHIP":{
+        "USER_NOT_FOUND_ERROR":"Eu não encontrei nenhum usuário ou membro com o nome/ID "
     }
 }
