@@ -29,6 +29,10 @@ morse = (
     "morse", "codigomorse"
 )
 
+invite = (
+    "invite", "joinserver", "convite"
+)
+
 # ---------- GAMES ----------
 
 coinflip = (

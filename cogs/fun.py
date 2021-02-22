@@ -99,4 +99,5 @@ class Cmd_fun:
 
                     elif len(content) > 2 and len(users) == 2 and not error:
                         await ship.get_couple(users, toPNG, assets_ch, self.message)
-            pass
+        else:
+            self._help.help(request="ship")

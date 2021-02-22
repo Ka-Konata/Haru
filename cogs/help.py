@@ -75,6 +75,13 @@ class Cmd_help:
                 
                 await channel.send(embed=embed_morse)
 
+            elif cmd in self.aliases.invite:
+                lang     = lang["MORSE"]
+                ex_value = f"```{self.prefixo}invite```"
+                embed_morse = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.morse)
+                
+                await channel.send(embed=embed_morse)
+
 
             # ---------- GAMES ----------
             

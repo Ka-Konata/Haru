@@ -82,12 +82,6 @@
 
 ### Fun module
 
-> say
->
-> send
->
-> ship
->
 > kiss
 >
 > hug

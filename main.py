@@ -19,9 +19,9 @@ intents.members = True
 
 client  = discord.Client(intents=intents)
 TOKEN   = token.get_token()  # Make your file with your token
-prefixo = ";"
+prefixo = "h!"
 utils   = Utils(icon_url)
-guilds_security_coding = ("788518735752724480")  # "796451246864203816" "803997027733471242"
+guilds_security_coding = ["788518735752724480"]  # "796451246864203816" "803997027733471242"
 
 # Cores color
 from scripts import colors
@@ -44,8 +44,22 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+    global icon_url, guilds_security_coding
+
+    # Security Guild Coding edit
+    if message.author.id == 502687173099913216:
+        if message.content.lower().startswith(f"h!addguildtocodingtests"):
+            guilds_security_coding.append(str(message.guild.id))
+            await message.add_reaction("✅")
+            print(guilds_security_coding)
+
+        elif message.content.lower().startswith(f"h!removeguildfromcodingtests") and str(message.guild.id) in guilds_security_coding:
+            n = guilds_security_coding.index(str(message.guild.id))
+            guilds_security_coding.remove(n)
+            await message.add_reaction("✅")
+            print(guilds_security_coding)
+
     if message.author.bot == False and str(message.guild.id) in guilds_security_coding:
-        global icon_url
         url = message.author.avatar
         if url != None:
             icon_url = url
@@ -113,6 +127,10 @@ async def on_message(message):
         # Comando Morse
         if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.morse)):
             await utility.morse(morse_códigos)
+
+        # Comando Invite
+        if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.invite)):
+            await utility.invite()
 
         # ---------- GAMES ----------
 

@@ -45,3 +45,15 @@ class Cmd_utility:
                     description = description + "**"
                     embed_msg = discord.Embed(title=lang["MORSE_TRANSLATED_TITLE"], color=self.colors.Thistle, description=description)
                     await channel.send(embed=embed_msg)
+
+
+    # Comando Invite
+    @client.event
+    async def invite(self):
+        lang = self.lang["INVITE"]
+
+        permissions = "8"
+        bot_id      = "808100198899384352"
+        invite      = "https://discord.com/oauth2/authorize?client_id=" + bot_id + "&scope=bot&permissions=" + permissions
+
+        await self.message.reply(lang["INVITE_MSG"] + "\n" + invite)

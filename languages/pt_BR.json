@@ -20,7 +20,7 @@
         "HELP_EMBED_CONFGS_NAME": "configurações", 
         "HELP_EMBED_CONFGS_VALUE": "```setlanguage, setprefix```",
         "HELP_EMBED_UTILITY_NAME": "utilidade", 
-        "HELP_EMBED_UTILITY_VALUE": "```morse```",
+        "HELP_EMBED_UTILITY_VALUE": "```morse, invite```",
         "HELP_EMBED_GAMES_NAME": "jogos", 
         "HELP_EMBED_GAMES_VALUE": "```coinflip```",
         "HELP_EMBED_FUN_NAME": "diversão", 
@@ -59,6 +59,15 @@
             "AUTHOR_NAME2":"para ver todos os comandos.",
             "EXAMPLE_NAME":"Exemplos:",
             "EX_VAL1":"desculpa por ser homem",
+            "ALIASES_NAME":"Aliases:"
+        },
+
+        "INVITE":{
+            "TITLE":"Comando invite",
+            "DESCRIPTION":"Precisa do link para me adicionar ao seu servidor? apenas use este comando",
+            "AUTHOR_NAME1":"Use",
+            "AUTHOR_NAME2":"para ver todos os comandos.",
+            "EXAMPLE_NAME":"Exemplos:",
             "ALIASES_NAME":"Aliases:"
         },
 
@@ -130,6 +139,10 @@
         "MORSE_MISSING_ERROR": "Escreva a frase ou texto a ser traduzida ao lado do comando",
         "MORSE_UNKNOWN_CHARACTER_ERROR": "A mensagem a ser traduzida contém caracteres que eu não sou capaz de entender.", 
         "MORSE_TRANSLATED_TITLE": "Convertido para código morse:"
+    },
+
+    "INVITE":{
+        "INVITE_MSG":"Use esse link para adicionar a Haru ao seu servidor:"
     },
 
     "SAY":{},
