@@ -21,6 +21,7 @@ client  = discord.Client(intents=intents)
 TOKEN   = token.get_token()  # Make your file with your token
 prefixo = ";"
 utils   = Utils(icon_url)
+guilds_security_coding = ("788518735752724480")  # "796451246864203816" "803997027733471242"
 
 # Cores color
 from scripts import colors
@@ -43,7 +44,7 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.author.bot == False:
+    if message.author.bot == False and str(message.guild.id) in guilds_security_coding:
         global icon_url
         url = message.author.avatar
         if url != None:
