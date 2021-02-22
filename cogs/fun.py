@@ -84,7 +84,8 @@ class Cmd_fun:
                         break
                 finally:
 
-                    assets_ch = self.message.guild.get_channel(813497519539617812)
+                    guild_ast = self.client.get_guild(788518735752724480)
+                    assets_ch = guild_ast.get_channel(813497519539617812)
 
                     if len(content) == 2 and len(users) > 0 and not error:
                         users.append(self.message.author)
