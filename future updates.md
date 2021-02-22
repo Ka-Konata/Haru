@@ -54,8 +54,6 @@
 >
 > currency [Currency Converter]
 >
-> invite
->
 > random
 >
 > anime [my anime list]
