@@ -76,3 +76,7 @@ shoot = (
 dance = (
     "dance", "dançar"
 )
+
+mugistrong = (
+    "mugistrong", "mugimuscle", "mugiforte"
+)

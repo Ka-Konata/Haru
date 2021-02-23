@@ -178,7 +178,9 @@ async def on_message(message):
         if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.dance)):
             await fun.dance(gifs)
 
-        
+        # Comando Mugi Strong
+        if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.mugistrong)):
+            await fun.mugistrong(gifs)
 
     if message.author.id == 808100198899384352:
         try:

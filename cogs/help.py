@@ -159,6 +159,13 @@ class Cmd_help:
 
                 await channel.send(embed=embed_send)
 
+            elif cmd in self.aliases.mugistrong:
+                lang     = lang["MUGISTRONG"]
+                ex_value = f"```{self.prefixo}mugistrong```"
+                embed_send = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.dance)
+
+                await channel.send(embed=embed_send)
+
 
 
             else:
