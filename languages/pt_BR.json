@@ -169,6 +169,8 @@
     },
 
     "KISS":{
-        "USER_NOT_FOUND_ERROR":"Eu não encontrei nenhum usuário ou membro com o nome/ID "
+        "USER_NOT_FOUND_ERROR":"Eu não encontrei nenhum usuário ou membro com o nome/ID ",
+        "KISSED":"beijou",
+        "REPLY":"retríbuiu o beijo de"
     }
 }

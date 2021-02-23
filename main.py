@@ -47,8 +47,16 @@ async def on_ready():
 async def on_message(message):
     global icon_url, guilds_security_coding
 
+    prefixo      = utils.get_prefix(message.guild.id)
+    channel      = message.channel
+    mentions     = message.mentions
+        
+    lang = utils.set_language(prefixo, str(message.guild.id))
+
     # Security Guild Coding edit
     if message.author.id == 502687173099913216:
+        member_perms = utils.get_permissions(message.author, requeriments)
+
         if message.content.lower().startswith(f"h!addguildtocodingtests"):
             guilds_security_coding.append(str(message.guild.id))
             await message.add_reaction("✅")
@@ -64,13 +72,6 @@ async def on_message(message):
         url = message.author.avatar
         if url != None:
             icon_url = url
-
-        member_perms = utils.get_permissions(message.author, requeriments)
-        prefixo      = utils.get_prefix(message.guild.id)
-        channel      = message.channel
-        mentions     = message.mentions
-        
-        lang = utils.set_language(prefixo, str(message.guild.id))
 
         # Importanto os comandos
         from cogs.help          import Cmd_help
@@ -156,6 +157,49 @@ async def on_message(message):
         # Comando Kiss
         if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.kiss)):
             await fun.kiss(gifs)
+
+    if message.author.id == 808100198899384352:
+        try:
+            if lang["KISS"]["KISSED"] in message.embeds[0].description:
+                await message.add_reaction("↪️")
+
+        except:
+            pass 
+
+
+@client.event
+async def on_reaction_add(reaction, user):
+    prefixo = utils.get_prefix(reaction.message.guild.id)
+        
+    lang = utils.set_language(prefixo, str(reaction.message.guild.id))
+
+    if reaction.message.author.id == 808100198899384352:
+        
+        reference = reaction.message.reference.resolved
+
+        # Importings the commands
+        from cogs.help import Cmd_help
+        from cogs.fun  import Cmd_fun
+        help = Cmd_help(reference, aliases, lang, colors, prefixo, utils)
+        fun  = Cmd_fun(reference, client, aliases, lang, colors, prefixo, help, reference.mentions)
+
+        print(str(user.id))
+        print(reference.content)
+        if str(user.id) in reference.content:
+            print("sim, está")
+
+        same = False
+        try:
+            if user.id == reference.mentions[0].id:
+                same = True
+        except IndexError:
+            pass
+
+        if prefixo in reference.content and (same or str(user.id) in reference.content) and reaction.emoji == "↪️":
+            print("SIM!!")
+
+            if lang["KISS"]["KISSED"] in reaction.message.embeds[0].description:
+                await fun.kiss(gifs, reply=True)
 
 
 client.run(TOKEN)

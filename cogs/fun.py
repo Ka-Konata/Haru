@@ -105,8 +105,9 @@ class Cmd_fun:
 
 
     @client.event
-    async def kiss(self, gifs):
-        lang = self.lang["KISS"]
+    async def kiss(self, gifs, reply=False):
+        lang  = self.lang["KISS"]
+        error = False
 
         if len(self.message.content.split()) > 1:
 
@@ -120,12 +121,29 @@ class Cmd_fun:
                 try:
                     users.append(self.mentions[0])
                 except IndexError:
+                    error = True
                     await self.message.channel.send(lang["USER_NOT_FOUND_ERROR"] + "`" + user + "`")  # send a message error for user not found
 
-            embed = discord.Embed(description=users[0].mention + " beijou " + users[1].mention)
-            embed.set_author(name=self.message.author.name + "#" + self.message.author.discriminator, icon_url=self.message.author.avatar_url)
-            url   = random.choice(gifs.kiss)
-            embed.set_image(url=url)
-            await self.message.reply(embed=embed)
+            interp = lang["KISSED"]
+            if reply:
+                u0 = users[0]
+                u1 = users[1]
+                users = [u1, u0]
+                interp = lang["REPLY"]
+
+            if not error:
+                embed = discord.Embed(description=users[0].mention + interp + users[1].mention)
+                embed.set_author(name=self.message.author.name + "#" + self.message.author.discriminator, icon_url=self.message.author.avatar_url)
+                url   = random.choice(gifs.kiss)
+                embed.set_image(url=url)
+                await self.message.reply(embed=embed)
         else:
             await self._help.help(request="kiss")
+
+
+
+
+
+
+
+
