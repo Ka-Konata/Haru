@@ -66,8 +66,6 @@
 
 > coinflip update
 >
-> dados
->
 > endining
 >
 > box [present box]

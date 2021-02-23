@@ -83,7 +83,7 @@ async def on_message(message):
         help    = Cmd_help(message, aliases, lang, colors, prefixo, utils)
         confgs  = Cmd_configuration(message, lang, colors, member_perms, utils, help, prefixo)
         utility = Cmd_utility(message, aliases, prefixo, lang, colors)
-        games   = Cmd_games(message, aliases, prefixo, lang, colors)
+        games   = Cmd_games(message, aliases, prefixo, lang, colors, help)
         fun     = Cmd_fun(message, client, aliases, lang, colors, prefixo, help, utils, mentions)
 
 
@@ -139,6 +139,10 @@ async def on_message(message):
         # Comando coinflip
         if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.coinflip)):
             await games.coinflip()
+
+        # Comando Dice
+        if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.dice)):
+            await games.dice()
 
         # ---------- FUN ----------
 

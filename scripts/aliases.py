@@ -80,3 +80,7 @@ dance = (
 mugistrong = (
     "mugistrong", "mugimuscle", "mugiforte"
 )
+
+dice = (
+    "dice", "die", "dado", "dados"
+)

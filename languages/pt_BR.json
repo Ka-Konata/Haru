@@ -22,7 +22,7 @@
         "HELP_EMBED_UTILITY_NAME": "utilidade", 
         "HELP_EMBED_UTILITY_VALUE": "```morse, invite```",
         "HELP_EMBED_GAMES_NAME": "jogos", 
-        "HELP_EMBED_GAMES_VALUE": "```coinflip```",
+        "HELP_EMBED_GAMES_VALUE": "```coinflip, dado```",
         "HELP_EMBED_FUN_NAME": "diversão", 
         "HELP_EMBED_FUN_VALUE": "```say, send, ship, kiss, hug, pat, slap, shoot, mugistrong```",
         "HELP_COMMAND_NOT_FOUND":"Não foi possível encontrar nenhum comando com o nome",
@@ -80,6 +80,15 @@
             "EXAMPLE_NAME":"Exemplos:",
             "EX_VAL1":"cara",
             "EX_VAL2":"coroa",
+            "ALIASES_NAME":"Aliases:"
+        },
+
+        "DICE":{
+            "TITLE":"Comando dado",
+            "DESCRIPTION":"Me faça rolar um dado por você e eu te darei o resultado. Caso não seja dado um valor máximo o dado terá 6 lados por padrão.",
+            "AUTHOR_NAME1":"Use",
+            "AUTHOR_NAME2":"para ver todos os comandos.",
+            "EXAMPLE_NAME":"Exemplos:",
             "ALIASES_NAME":"Aliases:"
         },
 
@@ -268,5 +277,10 @@
         "REPLY":"retríbuiu a dança de"
     },
 
-    "MUGISTRONG":{}
+    "MUGISTRONG":{},
+
+    "DICE":{
+        "ROLLING":" rolou ",
+        "RESULT":" e tirou: "
+    }
 }

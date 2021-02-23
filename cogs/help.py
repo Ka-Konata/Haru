@@ -52,16 +52,16 @@ class Cmd_help:
             elif cmd in self.aliases.setlanguage:
                 lang     = lang["SETLANGUAGE"]
                 ex_value = f"```{self.prefixo}setlanguage en\n{self.prefixo}setlanguage pt_BR```"
-                embed_setlanguage = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.setlanguage, extra1=True)
+                embed = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.setlanguage, extra1=True)
                 
-                await channel.send(embed=embed_setlanguage)
+                await channel.send(embed=embed)
 
             elif cmd in self.aliases.setprefix:
                 lang     = lang["SETPREFIX"]
                 ex_value = f"```{self.prefixo}setprefix ?\n{self.prefixo}setprefix h!```"
-                embed_setprefix = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.setprefix, extra1=True, howToUse=True)
+                embed = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.setprefix, extra1=True, howToUse=True)
 
-                await channel.send(embed=embed_setprefix)
+                await channel.send(embed=embed)
 
 
             # ---------- MODERATION----------
@@ -71,16 +71,16 @@ class Cmd_help:
             elif cmd in self.aliases.morse:
                 lang     = lang["MORSE"]
                 ex_value = f"```{self.prefixo}morse Holla \n{self.prefixo}morse " + lang["EX_VAL1"] + "```"
-                embed_morse = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.morse)
+                embed = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.morse)
                 
-                await channel.send(embed=embed_morse)
+                await channel.send(embed=embed)
 
             elif cmd in self.aliases.invite:
                 lang     = lang["MORSE"]
                 ex_value = f"```{self.prefixo}invite```"
-                embed_morse = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.morse)
+                embed = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.morse)
                 
-                await channel.send(embed=embed_morse)
+                await channel.send(embed=embed)
 
 
             # ---------- GAMES ----------
@@ -89,9 +89,16 @@ class Cmd_help:
             elif cmd in self.aliases.coinflip:
                 lang     = lang["COINFLIP"]
                 ex_value = f"```{self.prefixo}coinflip " + lang["EX_VAL1"] + "\n" + f"{self.prefixo}coinflip " + lang["EX_VAL2"] + "```"
-                embed_coinflip = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.coinflip)
+                embed = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.coinflip)
                 
-                await channel.send(embed=embed_coinflip)
+                await channel.send(embed=embed)
+
+            elif cmd in self.aliases.dice:
+                lang     = lang["DICE"]
+                ex_value = f"```{self.prefixo}dice " + "\n" + f"{self.prefixo}dice 9" + "```"
+                embed = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.dice)
+                
+                await channel.send(embed=embed)
 
 
             # ---------- FUN ----------
@@ -99,72 +106,72 @@ class Cmd_help:
             elif cmd in self.aliases.say:
                 lang     = lang["SAY"]
                 ex_value = f"```{self.prefixo}say Keanu Reeves é um grande gostoso" + f"\n{self.prefixo}say meu nome não é Haru```"
-                embed_say = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.say)
+                embed = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.say)
 
-                await channel.send(embed=embed_say)
+                await channel.send(embed=embed)
 
             elif cmd in self.aliases.send:
                 lang     = lang["SEND"]
                 ex_value = f"```{self.prefixo}send " + lang["EX_VAL1"]+ f"\n{self.prefixo}send " + lang["EX_VAL2"]
-                embed_send = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.send, howToUse=True)
+                embed = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.send, howToUse=True)
 
-                await channel.send(embed=embed_send)
+                await channel.send(embed=embed)
 
             elif cmd in self.aliases.ship:
                 lang     = lang["SHIP"]
                 ex_value = f"```{self.prefixo}ship @Haru#0001" + f"\n{self.prefixo}ship 808100198899384352" + f"\n{self.prefixo}ship @Haru#0001 @Takagi#9867```"
-                embed_send = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.ship, howToUse=True)
+                embed = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.ship, howToUse=True)
 
-                await channel.send(embed=embed_send)
+                await channel.send(embed=embed)
 
             elif cmd in self.aliases.kiss:
                 lang     = lang["KISS"]
                 ex_value = f"```{self.prefixo}kiss @Haru#0001" + f"\n{self.prefixo}kiss 808100198899384352```"
-                embed_send = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.kiss, howToUse=True)
+                embed = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.kiss, howToUse=True)
 
-                await channel.send(embed=embed_send)
+                await channel.send(embed=embed)
 
             elif cmd in self.aliases.hug:
                 lang     = lang["HUG"]
                 ex_value = f"```{self.prefixo}hug @Haru#0001" + f"\n{self.prefixo}hug 808100198899384352```"
-                embed_send = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.hug, howToUse=True)
+                embed = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.hug, howToUse=True)
 
-                await channel.send(embed=embed_send)
+                await channel.send(embed=embed)
 
             elif cmd in self.aliases.pat:
                 lang     = lang["PAT"]
                 ex_value = f"```{self.prefixo}pat @Haru#0001" + f"\n{self.prefixo}pat 808100198899384352```"
-                embed_send = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.pat, howToUse=True)
+                embed = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.pat, howToUse=True)
 
-                await channel.send(embed=embed_send)
+                await channel.send(embed=embed)
 
             elif cmd in self.aliases.slap:
                 lang     = lang["SLAP"]
                 ex_value = f"```{self.prefixo}slap @Haru#0001" + f"\n{self.prefixo}slap 808100198899384352```"
-                embed_send = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.slap, howToUse=True)
+                embed = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.slap, howToUse=True)
 
-                await channel.send(embed=embed_send)
+                await channel.send(embed=embed)
 
             elif cmd in self.aliases.shoot:
                 lang     = lang["SHOOT"]
                 ex_value = f"```{self.prefixo}shoot @Haru#0001" + f"\n{self.prefixo}shoot 808100198899384352```"
-                embed_send = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.shoot, howToUse=True)
+                embed = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.shoot, howToUse=True)
 
-                await channel.send(embed=embed_send)
+                await channel.send(embed=embed)
 
             elif cmd in self.aliases.dance:
                 lang     = lang["DANCE"]
                 ex_value = f"```{self.prefixo}dance @Haru#0001" + f"\n{self.prefixo}dance 808100198899384352```"
-                embed_send = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.dance, howToUse=True)
+                embed = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.dance, howToUse=True)
 
-                await channel.send(embed=embed_send)
+                await channel.send(embed=embed)
 
             elif cmd in self.aliases.mugistrong:
                 lang     = lang["MUGISTRONG"]
                 ex_value = f"```{self.prefixo}mugistrong```"
-                embed_send = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.dance)
+                embed = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.dance)
 
-                await channel.send(embed=embed_send)
+                await channel.send(embed=embed)
 
 
 
