@@ -17,3 +17,9 @@ slap = (
 shoot = (
     "https://i.imgur.com/L6c7JdL.gif", "https://i.imgur.com/eK9yozO.gif", "https://i.imgur.com/SmhaKa0.gif","https://i.imgur.com/8uX5UFp.gif", "https://i.imgur.com/zh9edDe.gif"
 )
+
+dance = (
+    "https://i.imgur.com/81mI9Xe.gif", "https://i.imgur.com/CDgZHKR.gif", "https://i.imgur.com/qAVGFDr.gif", "https://i.imgur.com/7g5HCcX.gif", "https://i.imgur.com/QjuwqhV.gif", "https://i.imgur.com/IXLPWY4.gif"
+)
+
+mugistrong = "https://i.imgur.com/vu9rcMr.gif"

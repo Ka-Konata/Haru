@@ -80,6 +80,4 @@
 
 ### Fun module
 
-> dance
->
-> mugistrong
+> nenhum

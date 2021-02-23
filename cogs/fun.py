@@ -129,3 +129,12 @@ class Cmd_fun:
     async def shoot(self, gifs, reply=False):
         await self.utils.command_gif(self.message, self.mentions, self.lang, "SHOOT", self.client, self._help, gifs.shoot, "shoot", reply=reply)
 
+
+    @client.event
+    async def dance(self, gifs, reply=False):
+        await self.utils.command_gif(self.message, self.mentions, self.lang, "DANCE", self.client, self._help, gifs.dance, "dance", reply=reply)
+
+
+    @client.event
+    async def mugistrong(self, gifs):
+        await self.message.channel.send(gifs.mugistrong)

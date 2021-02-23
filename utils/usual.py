@@ -196,7 +196,7 @@ class Utils:
             if not error:
                 embed = discord.Embed(description=users[0].mention + " " + interp + " " + users[1].mention, color=Thistle)
                 embed.set_author(name=message.author.name + "#" + message.author.discriminator, icon_url=message.author.avatar_url)
-                url   = gifs[int(message.content.split()[2])] #choice(gifs)
+                url   = choice(gifs)
                 embed.set_image(url=url)
                 await message.reply(embed=embed)
         else:

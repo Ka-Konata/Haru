@@ -55,7 +55,6 @@ async def on_message(message):
 
     # Security Guild Coding edit
     if message.author.id == 502687173099913216:
-        member_perms = utils.get_permissions(message.author, requeriments)
 
         if message.content.lower().startswith(f"h!addguildtocodingtests"):
             guilds_security_coding.append(str(message.guild.id))
@@ -69,6 +68,7 @@ async def on_message(message):
             print(guilds_security_coding)
 
     if message.author.bot == False and str(message.guild.id) in guilds_security_coding:
+        member_perms = utils.get_permissions(message.author, requeriments)
         url = message.author.avatar
         if url != None:
             icon_url = url
@@ -174,6 +174,12 @@ async def on_message(message):
         if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.shoot)):
             await fun.shoot(gifs)
 
+        # Comando Dance
+        if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.dance)):
+            await fun.dance(gifs)
+
+        
+
     if message.author.id == 808100198899384352:
         try:
             if lang["KISS"]["MADE"] in message.embeds[0].description:
@@ -189,6 +195,9 @@ async def on_message(message):
                 await message.add_reaction("↪️")
 
             elif lang["SHOOT"]["MADE"] in message.embeds[0].description:
+                await message.add_reaction("↪️")
+
+            elif lang["DANCE"]["MADE"] in message.embeds[0].description:
                 await message.add_reaction("↪️")
 
         except:
@@ -234,6 +243,9 @@ async def on_reaction_add(reaction, user):
 
             elif lang["SHOOT"]["MADE"] in reaction.message.embeds[0].description:
                 await fun.shoot(gifs, reply=True)
+
+            elif lang["DANCE"]["MADE"] in reaction.message.embeds[0].description:
+                await fun.dance(gifs, reply=True)
 
 
 client.run(TOKEN)

@@ -72,3 +72,7 @@ slap = (
 shoot = (
     "shoot", "shot", "atirar"
 )
+
+dance = (
+    "dance", "dançar"
+)
