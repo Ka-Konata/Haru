@@ -56,3 +56,7 @@ ship = (
 kiss = (
     "kiss", "beijar"
 )
+
+hug = (
+    "hug", "abraçar"
+)

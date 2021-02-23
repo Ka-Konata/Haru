@@ -24,7 +24,7 @@
         "HELP_EMBED_GAMES_NAME": "jogos", 
         "HELP_EMBED_GAMES_VALUE": "```coinflip```",
         "HELP_EMBED_FUN_NAME": "diversão", 
-        "HELP_EMBED_FUN_VALUE": "```say, send, ship, kiss```",
+        "HELP_EMBED_FUN_VALUE": "```say, send, ship, kiss, hug```",
         "HELP_COMMAND_NOT_FOUND":"Não foi possível encontrar nenhum comando com o nome",
         "HELP_COMMAND_NOT_FOUND2":"verifique se não o escreveu de forma errada ou até mesmo se o comando existe!",
         
@@ -125,6 +125,17 @@
             "USE_VALUE":"kiss <User/ID>",
             "EXAMPLE_NAME":"Exemplos:",
             "ALIASES_NAME":"Aliases:"
+        },
+
+        "HUG":{
+            "TITLE":"Comando hug",
+            "DESCRIPTION":"Você pode abraçar alguém com este comando.",
+            "AUTHOR_NAME1":"Use",
+            "AUTHOR_NAME2":"para ver todos os comandos.",
+            "USE_NAME":"Como usar:",
+            "USE_VALUE":"hug <User/ID>",
+            "EXAMPLE_NAME":"Exemplos:",
+            "ALIASES_NAME":"Aliases:"
         }
     },
 
@@ -170,7 +181,13 @@
 
     "KISS":{
         "USER_NOT_FOUND_ERROR":"Eu não encontrei nenhum usuário ou membro com o nome/ID ",
-        "KISSED":"beijou",
+        "MADE":"beijou",
         "REPLY":"retríbuiu o beijo de"
+    },
+
+    "HUG":{
+        "USER_NOT_FOUND_ERROR":"Eu não encontrei nenhum usuário ou membro com o nome/ID ",
+        "MADE":"abraçou",
+        "REPLY":"retríbuiu o abraço de"
     }
 }

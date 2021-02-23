@@ -9,13 +9,14 @@ intents.members = True
 client  = discord.Client(intents=intents)
 
 class Cmd_fun:
-    def __init__(self, message, client, aliases, lang, colors, prefixo, help, mentions):
+    def __init__(self, message, client, aliases, lang, colors, prefixo, help, utils, mentions):
         self.message  = message
         self.aliases  = aliases
         self.lang     = lang
         self.colors   = colors
         self.prefixo  = prefixo
         self._help    = help
+        self.utils    = utils
         self.mentions = mentions 
         self.client   = client
 
@@ -106,44 +107,10 @@ class Cmd_fun:
 
     @client.event
     async def kiss(self, gifs, reply=False):
-        lang  = self.lang["KISS"]
-        error = False
-
-        if len(self.message.content.split()) > 1:
-
-            users = [self.message.author]
-            user  = self.message.content.split()[1] 
-
-            try:
-                users.append(self.client.get_user(int(user)))
-                users[1].id = users[1].id
-            except (ValueError, AttributeError):
-                try:
-                    users.append(self.mentions[0])
-                except IndexError:
-                    error = True
-                    await self.message.channel.send(lang["USER_NOT_FOUND_ERROR"] + "`" + user + "`")  # send a message error for user not found
-
-            interp = lang["KISSED"]
-            if reply:
-                u0 = users[0]
-                u1 = users[1]
-                users = [u1, u0]
-                interp = lang["REPLY"]
-
-            if not error:
-                embed = discord.Embed(description=users[0].mention + interp + users[1].mention)
-                embed.set_author(name=self.message.author.name + "#" + self.message.author.discriminator, icon_url=self.message.author.avatar_url)
-                url   = random.choice(gifs.kiss)
-                embed.set_image(url=url)
-                await self.message.reply(embed=embed)
-        else:
-            await self._help.help(request="kiss")
+        await self.utils.command_gif(self.message, self.mentions, self.lang, "KISS", self.client, self._help, gifs.kiss, "kiss", reply=reply)
 
 
-
-
-
-
-
+    @client.event
+    async def hug(self, gifs, reply=False):
+        await self.utils.command_gif(self.message, self.mentions, self.lang, "HUG", self.client, self._help, gifs.hug, "hug", reply=reply)
 

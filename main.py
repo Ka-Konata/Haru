@@ -84,7 +84,7 @@ async def on_message(message):
         confgs  = Cmd_configuration(message, lang, colors, member_perms, utils, help, prefixo)
         utility = Cmd_utility(message, aliases, prefixo, lang, colors)
         games   = Cmd_games(message, aliases, prefixo, lang, colors)
-        fun     = Cmd_fun(message, client, aliases, lang, colors, prefixo, help, mentions)
+        fun     = Cmd_fun(message, client, aliases, lang, colors, prefixo, help, utils, mentions)
 
 
         # Comando Test, para testar se o bot está online
@@ -158,9 +158,16 @@ async def on_message(message):
         if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.kiss)):
             await fun.kiss(gifs)
 
+        # Comando Hug
+        if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.hug)):
+            await fun.hug(gifs)
+
     if message.author.id == 808100198899384352:
         try:
-            if lang["KISS"]["KISSED"] in message.embeds[0].description:
+            if lang["KISS"]["MADE"] in message.embeds[0].description:
+                await message.add_reaction("↪️")
+
+            elif lang["HUG"]["MADE"] in message.embeds[0].description:
                 await message.add_reaction("↪️")
 
         except:
@@ -181,25 +188,25 @@ async def on_reaction_add(reaction, user):
         from cogs.help import Cmd_help
         from cogs.fun  import Cmd_fun
         help = Cmd_help(reference, aliases, lang, colors, prefixo, utils)
-        fun  = Cmd_fun(reference, client, aliases, lang, colors, prefixo, help, reference.mentions)
-
-        print(str(user.id))
-        print(reference.content)
-        if str(user.id) in reference.content:
-            print("sim, está")
+        fun  = Cmd_fun(reference, client, aliases, lang, colors, prefixo, help, utils, reference.mentions)
 
         same = False
         try:
-            if user.id == reference.mentions[0].id:
+            if user.id == reference.mentions[1].id:
                 same = True
         except IndexError:
             pass
 
-        if prefixo in reference.content and (same or str(user.id) in reference.content) and reaction.emoji == "↪️":
-            print("SIM!!")
+        print("mentions: ", reference.mentions)
+        print("men[0]: ", reference.mentions[0])
+        print("ref: ", reference.content.split()[1])
+        if prefixo in reference.content and (same or str(user.id) in reference.content.split()[1]) and reaction.emoji == "↪️":
 
-            if lang["KISS"]["KISSED"] in reaction.message.embeds[0].description:
+            if lang["KISS"]["MADE"] in reaction.message.embeds[0].description:
                 await fun.kiss(gifs, reply=True)
+
+            elif lang["HUG"]["MADE"] in reaction.message.embeds[0].description:
+                await fun.hug(gifs, reply=True)
 
 
 client.run(TOKEN)

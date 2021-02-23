@@ -2,7 +2,8 @@ import discord
 import os
 from discord.ext.commands import has_permissions, MissingPermissions
 
-client = discord.Client()
+client  = discord.Client()
+Thistle	= 0xD8BFD8	
 
 class Utils:
     def __init__(self, icon_url, token=None):
@@ -162,3 +163,41 @@ class Utils:
         embed.add_field(name=lang["ALIASES_NAME"], value=_aliases, inline=True)
 
         return embed
+
+
+    @client.event
+    async def command_gif(self, message, mentions, lang, lang_key, client, _help, gifs, help_request, reply=False):
+        from random import choice
+        lang  = lang[lang_key]
+        error = False
+
+        if len(message.content.split()) > 1:
+
+            users = [message.author]
+            user  = message.content.split()[1] 
+
+            try:
+                users.append(client.get_user(int(user)))
+                users[1].id = users[1].id
+            except (ValueError, AttributeError):
+                try:
+                    users.append(mentions[0])
+                except IndexError:
+                    error = True
+                    await message.channel.send(lang["USER_NOT_FOUND_ERROR"] + "`" + user + "`")  # send a message error for user not found
+
+            interp = lang["MADE"]
+            if reply:
+                u0 = users[0]
+                u1 = users[1]
+                users = [u1, u0]
+                interp = lang["REPLY"]
+
+            if not error:
+                embed = discord.Embed(description=users[0].mention + " " + interp + " " + users[1].mention, color=Thistle)
+                embed.set_author(name=message.author.name + "#" + message.author.discriminator, icon_url=message.author.avatar_url)
+                url   = choice(gifs)
+                embed.set_image(url=url)
+                await message.reply(embed=embed)
+        else:
+            await _help.help(request=help_request)

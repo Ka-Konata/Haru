@@ -124,6 +124,13 @@ class Cmd_help:
 
                 await channel.send(embed=embed_send)
 
+            elif cmd in self.aliases.hug:
+                lang     = lang["HUG"]
+                ex_value = f"```{self.prefixo}hug @Haru#0001" + f"\n{self.prefixo}kiss 808100198899384352```"
+                embed_send = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.hug, howToUse=True)
+
+                await channel.send(embed=embed_send)
+
 
             else:
                 await channel.send(lang["HELP_COMMAND_NOT_FOUND"] + f" `{cmd}` " + lang["HELP_COMMAND_NOT_FOUND2"])
