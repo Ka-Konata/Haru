@@ -80,12 +80,8 @@
 
 ### Fun module
 
-> pat
->
-> slap
->
 > shoot
 >
-> kill
+> dance
 >
 > mugistrong
