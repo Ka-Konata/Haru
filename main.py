@@ -166,6 +166,10 @@ async def on_message(message):
         if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.pat)):
             await fun.pat(gifs)
 
+        # Comando Slap
+        if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.slap)):
+            await fun.slap(gifs)
+
     if message.author.id == 808100198899384352:
         try:
             if lang["KISS"]["MADE"] in message.embeds[0].description:
@@ -175,6 +179,9 @@ async def on_message(message):
                 await message.add_reaction("↪️")
 
             elif lang["PAT"]["MADE"] in message.embeds[0].description:
+                await message.add_reaction("↪️")
+
+            elif lang["SLAP"]["MADE"] in message.embeds[0].description:
                 await message.add_reaction("↪️")
 
         except:
@@ -203,10 +210,7 @@ async def on_reaction_add(reaction, user):
                 same = True
         except IndexError:
             pass
-
-        print("mentions: ", reference.mentions)
-        print("men[0]: ", reference.mentions[0])
-        print("ref: ", reference.content.split()[1])
+        
         if prefixo in reference.content and (same or str(user.id) in reference.content.split()[1]) and reaction.emoji == "↪️":
 
             if lang["KISS"]["MADE"] in reaction.message.embeds[0].description:
@@ -216,7 +220,10 @@ async def on_reaction_add(reaction, user):
                 await fun.hug(gifs, reply=True)
 
             elif lang["PAT"]["MADE"] in reaction.message.embeds[0].description:
-                await fun.hug(gifs, reply=True)
+                await fun.pat(gifs, reply=True)
+
+            elif lang["SLAP"]["MADE"] in reaction.message.embeds[0].description:
+                await fun.slap(gifs, reply=True)
 
 
 client.run(TOKEN)

@@ -9,3 +9,7 @@ hug = (
 pat = (
     "https://i.imgur.com/j3P0EAx.gif", "https://i.imgur.com/zIDU2Au.gif", "https://i.imgur.com/EFnne9V.gif", "https://i.imgur.com/Fej7L1t.gif", "https://i.imgur.com/RjU95oc.gif", "https://i.imgur.com/mVBj2jd.gif", "https://i.imgur.com/yRcHzEb.gif"
 )
+
+slap = (
+    "https://i.imgur.com/GHomcpf.gif", "https://i.imgur.com/97QKVxK.gif", "https://i.imgur.com/T2l5303.gif", "https://i.imgur.com/6YuFhoH.gif", "https://i.imgur.com/ExebQH7.gif", "https://i.imgur.com/7wg5g6M.gif", "https://i.imgur.com/TzLDJtM.gif"
+    )
