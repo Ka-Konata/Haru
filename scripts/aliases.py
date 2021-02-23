@@ -26,7 +26,7 @@ setprefix = (
 # ---------- UTILITY ----------
 
 morse = (
-    "morse", "codigomorse"
+    "morse", "codigomorse", "códigomorse"
 )
 
 invite = (
@@ -59,4 +59,12 @@ kiss = (
 
 hug = (
     "hug", "abraçar"
+)
+
+pat = (
+    "pat", "headpat", "cafune", "cafuné"
+)
+
+slap = (
+    "slap", "tapa", "bater"
 )

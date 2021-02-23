@@ -114,3 +114,8 @@ class Cmd_fun:
     async def hug(self, gifs, reply=False):
         await self.utils.command_gif(self.message, self.mentions, self.lang, "HUG", self.client, self._help, gifs.hug, "hug", reply=reply)
 
+
+    @client.event
+    async def pat(self, gifs, reply=False):
+        await self.utils.command_gif(self.message, self.mentions, self.lang, "PAT", self.client, self._help, gifs.pat, "pat", reply=reply)
+

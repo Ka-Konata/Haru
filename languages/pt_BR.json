@@ -24,7 +24,7 @@
         "HELP_EMBED_GAMES_NAME": "jogos", 
         "HELP_EMBED_GAMES_VALUE": "```coinflip```",
         "HELP_EMBED_FUN_NAME": "diversão", 
-        "HELP_EMBED_FUN_VALUE": "```say, send, ship, kiss, hug```",
+        "HELP_EMBED_FUN_VALUE": "```say, send, ship, kiss, hug, pat, slap```",
         "HELP_COMMAND_NOT_FOUND":"Não foi possível encontrar nenhum comando com o nome",
         "HELP_COMMAND_NOT_FOUND2":"verifique se não o escreveu de forma errada ou até mesmo se o comando existe!",
         
@@ -136,6 +136,28 @@
             "USE_VALUE":"hug <User/ID>",
             "EXAMPLE_NAME":"Exemplos:",
             "ALIASES_NAME":"Aliases:"
+        },
+
+        "PAT":{
+            "TITLE":"Comando pat",
+            "DESCRIPTION":"Você pode fazer cafuné em alguém com este comando.",
+            "AUTHOR_NAME1":"Use",
+            "AUTHOR_NAME2":"para ver todos os comandos.",
+            "USE_NAME":"Como usar:",
+            "USE_VALUE":"pat <User/ID>",
+            "EXAMPLE_NAME":"Exemplos:",
+            "ALIASES_NAME":"Aliases:"
+        },
+
+        "SLAP":{
+            "TITLE":"Comando slap",
+            "DESCRIPTION":"Você pode dar um tapa em alguém com este comando.",
+            "AUTHOR_NAME1":"Use",
+            "AUTHOR_NAME2":"para ver todos os comandos.",
+            "USE_NAME":"Como usar:",
+            "USE_VALUE":"slap <User/ID>",
+            "EXAMPLE_NAME":"Exemplos:",
+            "ALIASES_NAME":"Aliases:"
         }
     },
 
@@ -189,5 +211,17 @@
         "USER_NOT_FOUND_ERROR":"Eu não encontrei nenhum usuário ou membro com o nome/ID ",
         "MADE":"abraçou",
         "REPLY":"retríbuiu o abraço de"
+    },
+
+    "PAT":{
+        "USER_NOT_FOUND_ERROR":"Eu não encontrei nenhum usuário ou membro com o nome/ID ",
+        "MADE":"fez cafuné em",
+        "REPLY":"retríbuiu o cafuné de"
+    },
+
+    "SLAP":{
+        "USER_NOT_FOUND_ERROR":"Eu não encontrei nenhum usuário ou membro com o nome/ID ",
+        "MADE":"deu um tapa em",
+        "REPLY":"retríbuiu o tapa de"
     }
 }

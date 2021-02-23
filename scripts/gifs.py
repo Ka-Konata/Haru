@@ -5,3 +5,7 @@ kiss = (
 hug = (
     "https://i.imgur.com/JupEThS.gif", "https://i.imgur.com/gdFHXA2.gif", "https://i.imgur.com/IVs0jxI.gif", "https://i.imgur.com/sknl06j.gif", "https://i.imgur.com/8RBOJmg.gif", "https://i.imgur.com/bvzm3rS.gif"
 )
+
+pat = (
+    "https://i.imgur.com/j3P0EAx.gif", "https://i.imgur.com/zIDU2Au.gif", "https://i.imgur.com/EFnne9V.gif", "https://i.imgur.com/Fej7L1t.gif", "https://i.imgur.com/RjU95oc.gif", "https://i.imgur.com/mVBj2jd.gif", "https://i.imgur.com/yRcHzEb.gif"
+)

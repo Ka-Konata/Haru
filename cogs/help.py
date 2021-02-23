@@ -126,8 +126,22 @@ class Cmd_help:
 
             elif cmd in self.aliases.hug:
                 lang     = lang["HUG"]
-                ex_value = f"```{self.prefixo}hug @Haru#0001" + f"\n{self.prefixo}kiss 808100198899384352```"
+                ex_value = f"```{self.prefixo}hug @Haru#0001" + f"\n{self.prefixo}hug 808100198899384352```"
                 embed_send = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.hug, howToUse=True)
+
+                await channel.send(embed=embed_send)
+
+            elif cmd in self.aliases.pat:
+                lang     = lang["PAT"]
+                ex_value = f"```{self.prefixo}pat @Haru#0001" + f"\n{self.prefixo}pat 808100198899384352```"
+                embed_send = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.pat, howToUse=True)
+
+                await channel.send(embed=embed_send)
+
+            elif cmd in self.aliases.slap:
+                lang     = lang["SLAP"]
+                ex_value = f"```{self.prefixo}slap @Haru#0001" + f"\n{self.prefixo}slap 808100198899384352```"
+                embed_send = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.slap, howToUse=True)
 
                 await channel.send(embed=embed_send)
 
