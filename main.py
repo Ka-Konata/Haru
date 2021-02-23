@@ -23,8 +23,9 @@ prefixo = "h!"
 utils   = Utils(icon_url)
 guilds_security_coding = ["788518735752724480"]  # "796451246864203816" "803997027733471242"
 
-# Cores color
+# Cores e Gifs
 from scripts import colors
+from scripts import gifs
 
 guild    = None
 msg_id   = None
@@ -151,6 +152,10 @@ async def on_message(message):
         # Comando Ship
         if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.ship)):
             await fun.ship(ship, toPNG)
+
+        # Comando Kiss
+        if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.kiss)):
+            await fun.kiss(gifs)
 
 
 client.run(TOKEN)

@@ -1,5 +1,6 @@
 import discord
 import asyncio
+import random
 
 
 intents = discord.Intents.default()
@@ -100,4 +101,31 @@ class Cmd_fun:
                     elif len(content) > 2 and len(users) == 2 and not error:
                         await ship.get_couple(users, toPNG, assets_ch, self.message)
         else:
-            self._help.help(request="ship")
+            await self._help.help(request="ship")
+
+
+    @client.event
+    async def kiss(self, gifs):
+        lang = self.lang["KISS"]
+
+        if len(self.message.content.split()) > 1:
+
+            users = [self.message.author]
+            user  = self.message.content.split()[1] 
+
+            try:
+                users.append(self.client.get_user(int(user)))
+                users[1].id = users[1].id
+            except (ValueError, AttributeError):
+                try:
+                    users.append(self.mentions[0])
+                except IndexError:
+                    await self.message.channel.send(lang["USER_NOT_FOUND_ERROR"] + "`" + user + "`")  # send a message error for user not found
+
+            embed = discord.Embed(description=users[0].mention + " beijou " + users[1].mention)
+            embed.set_author(name=self.message.author.name + "#" + self.message.author.discriminator, icon_url=self.message.author.avatar_url)
+            url   = random.choice(gifs.kiss)
+            embed.set_image(url=url)
+            await self.message.reply(embed=embed)
+        else:
+            await self._help.help(request="kiss")

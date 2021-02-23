@@ -52,3 +52,7 @@ send = (
 ship = (
     "ship", "shippar"
 )
+
+kiss = (
+    "kiss", "beijar"
+)

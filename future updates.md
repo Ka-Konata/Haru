@@ -80,8 +80,6 @@
 
 ### Fun module
 
-> kiss
->
 > hug
 >
 > pat
