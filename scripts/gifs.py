@@ -13,3 +13,7 @@ pat = (
 slap = (
     "https://i.imgur.com/GHomcpf.gif", "https://i.imgur.com/97QKVxK.gif", "https://i.imgur.com/T2l5303.gif", "https://i.imgur.com/6YuFhoH.gif", "https://i.imgur.com/ExebQH7.gif", "https://i.imgur.com/7wg5g6M.gif", "https://i.imgur.com/TzLDJtM.gif"
     )
+
+shoot = (
+    "https://i.imgur.com/L6c7JdL.gif", "https://i.imgur.com/eK9yozO.gif", "https://i.imgur.com/SmhaKa0.gif","https://i.imgur.com/8uX5UFp.gif", "https://i.imgur.com/zh9edDe.gif"
+)

@@ -68,3 +68,7 @@ pat = (
 slap = (
     "slap", "tapa", "bater"
 )
+
+shoot = (
+    "shoot", "shot", "atirar"
+)

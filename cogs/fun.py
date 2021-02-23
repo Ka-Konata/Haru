@@ -124,3 +124,8 @@ class Cmd_fun:
     async def slap(self, gifs, reply=False):
         await self.utils.command_gif(self.message, self.mentions, self.lang, "SLAP", self.client, self._help, gifs.slap, "slap", reply=reply)
 
+
+    @client.event
+    async def shoot(self, gifs, reply=False):
+        await self.utils.command_gif(self.message, self.mentions, self.lang, "SHOOT", self.client, self._help, gifs.shoot, "shoot", reply=reply)
+

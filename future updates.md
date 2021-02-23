@@ -80,8 +80,6 @@
 
 ### Fun module
 
-> shoot
->
 > dance
 >
 > mugistrong

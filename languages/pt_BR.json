@@ -24,7 +24,7 @@
         "HELP_EMBED_GAMES_NAME": "jogos", 
         "HELP_EMBED_GAMES_VALUE": "```coinflip```",
         "HELP_EMBED_FUN_NAME": "diversão", 
-        "HELP_EMBED_FUN_VALUE": "```say, send, ship, kiss, hug, pat, slap```",
+        "HELP_EMBED_FUN_VALUE": "```say, send, ship, kiss, hug, pat, slap, shoot```",
         "HELP_COMMAND_NOT_FOUND":"Não foi possível encontrar nenhum comando com o nome",
         "HELP_COMMAND_NOT_FOUND2":"verifique se não o escreveu de forma errada ou até mesmo se o comando existe!",
         
@@ -158,6 +158,17 @@
             "USE_VALUE":"slap <User/ID>",
             "EXAMPLE_NAME":"Exemplos:",
             "ALIASES_NAME":"Aliases:"
+        },
+
+        "SHOOT":{
+            "TITLE":"Comando shoot",
+            "DESCRIPTION":"Você pode atirar em alguém com este comando.",
+            "AUTHOR_NAME1":"Use",
+            "AUTHOR_NAME2":"para ver todos os comandos.",
+            "USE_NAME":"Como usar:",
+            "USE_VALUE":"shoot <User/ID>",
+            "EXAMPLE_NAME":"Exemplos:",
+            "ALIASES_NAME":"Aliases:"
         }
     },
 
@@ -223,5 +234,11 @@
         "USER_NOT_FOUND_ERROR":"Eu não encontrei nenhum usuário ou membro com o nome/ID ",
         "MADE":"deu um tapa em",
         "REPLY":"retríbuiu o tapa de"
+    },
+
+    "SHOOT":{
+        "USER_NOT_FOUND_ERROR":"Eu não encontrei nenhum usuário ou membro com o nome/ID ",
+        "MADE":"atirou em",
+        "REPLY":"atirou de volta em"
     }
 }

@@ -170,6 +170,10 @@ async def on_message(message):
         if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.slap)):
             await fun.slap(gifs)
 
+        # Comando Shoot
+        if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.shoot)):
+            await fun.shoot(gifs)
+
     if message.author.id == 808100198899384352:
         try:
             if lang["KISS"]["MADE"] in message.embeds[0].description:
@@ -182,6 +186,9 @@ async def on_message(message):
                 await message.add_reaction("↪️")
 
             elif lang["SLAP"]["MADE"] in message.embeds[0].description:
+                await message.add_reaction("↪️")
+
+            elif lang["SHOOT"]["MADE"] in message.embeds[0].description:
                 await message.add_reaction("↪️")
 
         except:
@@ -224,6 +231,9 @@ async def on_reaction_add(reaction, user):
 
             elif lang["SLAP"]["MADE"] in reaction.message.embeds[0].description:
                 await fun.slap(gifs, reply=True)
+
+            elif lang["SHOOT"]["MADE"] in reaction.message.embeds[0].description:
+                await fun.shoot(gifs, reply=True)
 
 
 client.run(TOKEN)
