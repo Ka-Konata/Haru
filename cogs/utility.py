@@ -68,8 +68,10 @@ class Cmd_utility:
 
         if len(content) > 1:
             new_content = ""
-            for c in content[1:]:
-                new_content += l
+            for word in content[1:]:
+                for letter in word:
+                    new_content = letter + new_content
+                new_content = " " + new_content
 
             await self.message.reply(new_content)
 
