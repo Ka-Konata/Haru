@@ -72,3 +72,34 @@ class Cmd_games:
                 await self._help.help(request="guess")
         else:
             await self._help.help(request="guess")
+
+
+    # Comando jokempo
+    @client.event
+    async def jokempo(self):
+        from random import choice 
+        lang     = self.lang["JOKEMPO"]
+        content  = self.message.content.split()
+        emojis   = ["✊", "✋", "✌️"]
+
+        if len(content) > 1:
+            if content[1] in lang["CHOICES"] or content[1] in lang["CHOICES_EMOJI"]:
+                choice = choice(emojis)
+                j      = content[1]
+
+                if j in lang["CHOICES_EMOJI"]:
+                    j = lang[j]
+
+                if j == lang[choice]:
+                    result = lang["BREAK_EVEN"]
+                elif lang[choice] == lang["CH"][j]:
+                    result = lang["WIN"]
+                else:
+                    result = lang["LOSE"]
+
+                await self.message.reply(lang["I_CHOSED"] + lang[choice] + " " + choice + result)
+
+            else:
+                await self.message.reply("Escolha entre um desses para jogar: \n**" + lang["CHOICES"] + "** " + lang["CHOICES_EMOJI"])
+        else:
+            await self._help.help(request="jokempo")

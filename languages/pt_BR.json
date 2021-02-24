@@ -275,7 +275,20 @@
         "LOSE":"**, você **perdeu!**"
     },
 
-    "JOKEMPO":{},
+    "JOKEMPO":{
+        "CHOICES":"pedra, papel ou tesoura",
+        "CHOICES_EMOJI":"(ou com emojis: ✊, ✋ e ✌️)",
+        "✊":"pedra",
+        "✋":"papel",
+        "✌️":"tesoura",
+        "CH":{
+            "pedra": "tesoura", "papel": "pedra", "tesoura": "papel"
+        },
+        "I_CHOSED":"Eu escolhi ",
+        "WIN":" | você **venceu!**",
+        "LOSE":" | você **perdeu!**",
+        "BREAK_EVEN":" | nós **empatamos!**"
+    },
 
     "MORSE":{
         "MORSE_MISSING_ERROR": "Escreva a frase ou texto a ser traduzida ao lado do comando",

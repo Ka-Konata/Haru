@@ -96,3 +96,7 @@ mugistrong = (
 guess = (
     "guess", "guessnumber", "adivinhar", "adivinharnumero"
 )
+
+jokempo = (
+    "jokempo", "jokempô"
+)

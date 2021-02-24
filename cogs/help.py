@@ -125,7 +125,7 @@ class Cmd_help:
 
             elif cmd in self.aliases.jokempo:
                 lang     = lang["JOKEMPO"]
-                ex_value = f"```{self.prefixo}jokempo pedra```"
+                ex_value = f"```{self.prefixo}jokempo pedra\n {self.prefixo}jokempo ✋```"
                 embed = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.jokempo)
                 
                 await channel.send(embed=embed)
