@@ -34,7 +34,7 @@
         "HELP_EMBED_CONFGS_NAME": "configurações", 
         "HELP_EMBED_CONFGS_VALUE": "```setlanguage, setprefix```",
         "HELP_EMBED_MOD_NAME": "moderação", 
-        "HELP_EMBED_MOD_VALUE": "```addrole, removerole```",
+        "HELP_EMBED_MOD_VALUE": "```addrole, removerole, permissions```",
         "HELP_EMBED_UTILITY_NAME": "utilidade", 
         "HELP_EMBED_UTILITY_VALUE": "```morse, invite, flipmsg, avatar```",
         "HELP_EMBED_GAMES_NAME": "jogos", 
@@ -86,6 +86,17 @@
             "AUTHOR_NAME2":"para ver todos os comandos.",
             "USE_NAME":"Como usar:",
             "USE_VALUE":"removerole <User/ID> <CargoID>",
+            "EXAMPLE_NAME":"Exemplos:",
+            "ALIASES_NAME":"Aliases:"
+        },
+        
+        "PERMISSIONS":{
+            "TITLE":"Comando permissions",
+            "DESCRIPTION":"receba uma lista das permissões que algum membro possui.",
+            "AUTHOR_NAME1":"Use",
+            "AUTHOR_NAME2":"para ver todos os comandos.",
+            "USE_NAME":"Como usar:",
+            "USE_VALUE":"permissions <User/ID>",
             "EXAMPLE_NAME":"Exemplos:",
             "ALIASES_NAME":"Aliases:"
         },
@@ -295,6 +306,50 @@
     "ADDROLE": {},
 
     "REMOVEROLE": {},
+
+    "PERMISSIONS":{
+        "PERMS_FIELD_NAME":":tickets: permissões:",
+        "PERMS_DESC_MEMBER":"membro: ",
+        "PERMS_DESC_ROLE":"cargo: ",
+        "USER_NOT_FOUND_ERROR":"Eu não encontrei nenhum membro ou cargo com o nome/ID ",
+
+        "add_reactions":"adicionar reações",            
+        "administrator":"adiministrador",            
+        "attach_files":"anexar_arquivos",             
+        "ban_members":"banir_membros",              
+        "change_nickname":"alterar apelido",          
+        "connect":"conectar",                  
+        "create_instant_invite":"criar convite",    
+        "deafen_members":"ensurdecer_membros",           
+        "embed_links":"inserir_links",              
+        "external_emojis":"emojis_externos",          
+        "kick_members":"expulsar membros",             
+        "manage_channels":"gerenciar_canais",          
+        "manage_emojis":"gerenciar_emojis",            
+        "manage_guild":"gerenciar_servidor",             
+        "manage_messages":"gerenciar_mensagens",          
+        "manage_nicknames":"gerenciar_apelidos",         
+        "manage_permissions":"gerenciar_permissões",       
+        "manage_roles":"gerenciar_cargos",             
+        "manage_webhooks":"gerenciar_webhooks",          
+        "mention_everyone":"mencionar_cargos",         
+        "move_members":"mover_membros",             
+        "mute_members":"silenciar_membros",             
+        "priority_speaker":"voz_prioritária",         
+        "read_message_history":"ler_histórico_de_mensagens",     
+        "read_messages":"ler_mensagens",            
+        "send_messages":"enviar_mensagens",            
+        "send_tts_messages":"enviar_mensagens_em_tts",        
+        "speak":"falar",                    
+        "stream":"vídeo",                   
+        "use_external_emojis":"usar_emojis_externos",      
+        "use_slash_commands":"usar_comandos_de_barra",      
+        "use_voice_activation":"usar_detecção_de_voz",     
+        "value":"valor",                    
+        "view_audit_log":"ver_registro_de_auditoria",           
+        "view_channel":"ver_canais",             
+        "view_guild_insights":"ver_server_insights"      
+    },
 
     "COINFLIP":{
 

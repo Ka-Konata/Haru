@@ -23,6 +23,20 @@ setprefix = (
     "setprefix", "changeprefix", "prefix", "mudarprefixo", "prefixo"
 )
 
+# ---------- MODERATION ----------
+
+addrole = (
+    "addrole", "addtag", "addcargo", "dartag", "darcargo"
+)
+
+removerole = (
+    "removerole", "removetag", "removercargo", "removertag"
+)
+
+permissions = (
+    "permissions", "perms", "permissoes", "permissões"
+)
+
 # ---------- UTILITY ----------
 
 morse = (
@@ -49,6 +63,14 @@ coinflip = (
 
 dice = (
     "dice", "die", "dado", "dados"
+)
+
+guess = (
+    "guess", "guessnumber", "adivinhar", "adivinharnumero"
+)
+
+jokempo = (
+    "jokempo", "jokempô"
 )
 
 # ---------- FUN ----------
@@ -91,20 +113,4 @@ dance = (
 
 mugistrong = (
     "mugistrong", "mugimuscle", "mugiforte"
-)
-
-guess = (
-    "guess", "guessnumber", "adivinhar", "adivinharnumero"
-)
-
-jokempo = (
-    "jokempo", "jokempô"
-)
-
-addrole = (
-    "addrole", "addtag", "addcargo", "dartag", "darcargo"
-)
-
-removerole = (
-    "removerole", "removetag", "removercargo", "removertag"
 )

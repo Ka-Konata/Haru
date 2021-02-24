@@ -87,3 +87,30 @@ class Cmd_mod:
         else:
             embed = self.utils.bot_permission_error("manege_roles", self.lang)
             await self.message.reply(embed=embed)
+
+
+    @client.event
+    async def permissions(self, permissions):
+        lang    = self.lang["PERMISSIONS"]
+        content = self.message.content.split()
+        member  = None
+
+        if len(content) > 1:
+            try:
+                role    = self.message.guild.get_role(int(content[1]))
+                perms   = role.permissions
+            except (ValueError, AttributeError) as erro:
+                member  = await self.utils.get_member(content[1], self.mentions, self.message, lang)
+                role    = None
+
+            if member  != None :
+                perms   = member.guild_permissions
+                embed   = permissions.embed(member, role, perms, lang, self.colors, self.message)
+                await self.message.reply(embed=embed)
+            elif role != None:
+                perms   = role.permissions
+                embed   = permissions.embed(member, role, perms, lang, self.colors, self.message)
+                await self.message.reply(embed=embed)
+
+        else:
+            await self._help.help(request="permissions")

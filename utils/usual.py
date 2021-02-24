@@ -240,7 +240,6 @@ class Utils:
             try:
                 member = mentions[0]
             except IndexError as erro:
-                print(erro)
                 member = None
                 await message.reply(_lang["USER_NOT_FOUND_ERROR"] + "`" + content + "`")
         return member

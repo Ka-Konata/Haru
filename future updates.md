@@ -30,10 +30,6 @@
 
 ### Moderation module
 
-> addrole
->
-> removerole
->
 > permissions
 
 &nbsp;

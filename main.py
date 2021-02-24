@@ -6,7 +6,7 @@ from scripts           import ship
 from sys               import exit
 from utils.usual       import Utils
 from utils             import morse
-from scripts           import aliases, requeriments
+from scripts           import aliases, requeriments, permissions
 from scripts.format    import toPNG
 from scripts.bot_token import secret_token as token
 
@@ -70,7 +70,6 @@ async def on_message(message):
     if message.author.bot == False and str(message.guild.id) in guilds_security_coding:
         member_perms = utils.get_permissions(message.author, requeriments)
         bot_perms    = message.guild.get_member(808100198899384352).guild_permissions
-        print(bot_perms)
         url = message.author.avatar_url
         if url != None:
             icon_url = url
@@ -134,6 +133,9 @@ async def on_message(message):
         if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.removerole)):
             await mod.removerole()
 
+        # Comando Permissions
+        if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.permissions)):
+            await mod.permissions(permissions)
 
 
         # ---------- UTILITY ----------

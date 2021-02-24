@@ -81,6 +81,13 @@ class Cmd_help:
                 
                 await channel.send(embed=embed)
 
+            elif cmd in self.aliases.permissions:
+                lang     = lang["PERMISSIONS"]
+                ex_value = f"```{self.prefixo}permissions @Haru#0001 \n{self.prefixo}permissions 808100198899384352```"
+                embed = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.permissions, howToUse=True)
+                
+                await channel.send(embed=embed)
+
             # ---------- UTILITY ----------
 
             elif cmd in self.aliases.morse:
