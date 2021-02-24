@@ -82,7 +82,7 @@ async def on_message(message):
 
         help    = Cmd_help(message, aliases, lang, colors, prefixo, utils)
         confgs  = Cmd_configuration(message, lang, colors, member_perms, utils, help, prefixo)
-        utility = Cmd_utility(message, aliases, prefixo, lang, colors)
+        utility = Cmd_utility(message, aliases, prefixo, lang, colors, help, client)
         games   = Cmd_games(message, aliases, prefixo, lang, colors, help)
         fun     = Cmd_fun(message, client, aliases, lang, colors, prefixo, help, utils, mentions)
 
@@ -133,6 +133,14 @@ async def on_message(message):
         # Comando Invite
         if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.invite)):
             await utility.invite()
+
+        # Comando Flip MSG
+        if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.flipmsg)):
+            await utility.flipmsg()
+
+        # Comando Avatar
+        if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.avatar)):
+            await utility.avatar()
 
         # ---------- GAMES ----------
 

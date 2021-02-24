@@ -4,12 +4,14 @@ import asyncio
 client = discord.Client()
 
 class Cmd_utility:
-    def __init__(self, message, aliases, prefixo, lang, colors):
+    def __init__(self, message, aliases, prefixo, lang, colors, help, _client):
         self.message = message
         self.aliases = aliases
         self.prefixo = prefixo
         self.lang    = lang
         self.colors  = colors
+        self._help   = help
+        self.client  = _client
 
     # Comando Morse
     @client.event
@@ -57,3 +59,49 @@ class Cmd_utility:
         invite      = "https://discord.com/oauth2/authorize?client_id=" + bot_id + "&scope=bot&permissions=" + permissions
 
         await self.message.reply(lang["INVITE_MSG"] + "\n" + invite)
+
+    
+    # Comando flipmsg
+    @client.event
+    async def flipmsg(self):
+        content = self.message.content.split()
+
+        if len(content) > 1:
+            new_content = ""
+            for c in content[1:]:
+                new_content += l
+
+            await self.message.reply(new_content)
+
+        else:
+            self._help.help(request="flipmsg") 
+
+    # Comando avatar
+    @client.event
+    async def avatar(self):
+        lang    = self.lang["AVATAR"]
+        error   = False
+        content = self.message.content.split()
+
+        if len(content) > 1:
+            try:
+                user    = self.client.get_user(int(content[1]))
+                user.id = user.id
+                url = user.avatar_url
+            except (ValueError, AttributeError) as erro:
+                print(erro)
+                try:
+                    user = self.message.mentions[0]
+                    url = user.avatar_url
+                except IndexError as erro:
+                    print(erro)
+                    error = True
+                    await self.message.channel.send(lang["USER_NOT_FOUND_ERROR"] + "`" + content[1] + "`")
+        else:
+            url = self.message.author.avatar_url
+        if not error:
+            embed = discord.Embed(title=lang["DOWNLAOD_IMG"], url=str(url), color=self.colors.Thistle)
+            embed.set_author(name=self.message.author.name + "#" + self.message.author.discriminator, icon_url=self.message.author.avatar_url)
+            embed.set_image(url=url)
+            print("url", url)
+            await self.message.reply(embed=embed)

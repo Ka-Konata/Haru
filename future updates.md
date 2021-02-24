@@ -40,10 +40,6 @@
 
 ### Utility module
 
-> flipmsg
->
-> avatar
->
 > userinfo
 >
 > serverinfo
@@ -65,8 +61,6 @@
 ### Games module
 
 > coinflip update
->
-> endining
 >
 > box [present box]
 >

@@ -33,10 +33,22 @@ invite = (
     "invite", "joinserver", "convite"
 )
 
+flipmsg = (
+    "flipmsg", "invertermensagem", "intertermsg", "inverterletras"
+)
+
+avatar = (
+    "avatar", "icon"
+)
+
 # ---------- GAMES ----------
 
 coinflip = (
-    "coinflip", "cf", "flip"
+    "coinflip", "cf", "flipcoin"
+)
+
+dice = (
+    "dice", "die", "dado", "dados"
 )
 
 # ---------- FUN ----------
@@ -79,8 +91,4 @@ dance = (
 
 mugistrong = (
     "mugistrong", "mugimuscle", "mugiforte"
-)
-
-dice = (
-    "dice", "die", "dado", "dados"
 )

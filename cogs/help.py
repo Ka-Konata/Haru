@@ -82,6 +82,22 @@ class Cmd_help:
                 
                 await channel.send(embed=embed)
 
+            elif cmd in self.aliases.invite:
+                lang     = lang["FLIPMSG"]
+                ex_value = f"```{self.prefixo}flipmsg Kono Dio da!```"
+                embed = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.flipmsg, howToUse=True)
+                
+                await channel.send(embed=embed)
+
+            elif cmd in self.aliases.invite:
+                lang     = lang["AVATAR"]
+                ex_value = f"```{self.prefixo}avatar \n" + f"{self.prefixo}avatar @Haru#0001" + "```"
+                embed = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.avatar)
+                
+                await channel.send(embed=embed)
+
+
+
 
             # ---------- GAMES ----------
             

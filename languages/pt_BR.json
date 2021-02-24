@@ -20,7 +20,7 @@
         "HELP_EMBED_CONFGS_NAME": "configurações", 
         "HELP_EMBED_CONFGS_VALUE": "```setlanguage, setprefix```",
         "HELP_EMBED_UTILITY_NAME": "utilidade", 
-        "HELP_EMBED_UTILITY_VALUE": "```morse, invite```",
+        "HELP_EMBED_UTILITY_VALUE": "```morse, invite, flipmsg, avatar```",
         "HELP_EMBED_GAMES_NAME": "jogos", 
         "HELP_EMBED_GAMES_VALUE": "```coinflip, dado```",
         "HELP_EMBED_FUN_NAME": "diversão", 
@@ -64,9 +64,31 @@
 
         "INVITE":{
             "TITLE":"Comando invite",
-            "DESCRIPTION":"Precisa do link para me adicionar ao seu servidor? apenas use este comando",
+            "DESCRIPTION":"Precisa do link para me adicionar ao seu servidor? Apenas use este comando.",
             "AUTHOR_NAME1":"Use",
             "AUTHOR_NAME2":"para ver todos os comandos.",
+            "EXAMPLE_NAME":"Exemplos:",
+            "ALIASES_NAME":"Aliases:"
+        },
+
+        "FLIPMSG":{
+            "TITLE":"Comando flipmsg",
+            "DESCRIPTION":"Com esse comando eu posso inverter a ordem das letras em qualquer palavra ou frase.",
+            "AUTHOR_NAME1":"Use",
+            "AUTHOR_NAME2":"para ver todos os comandos.",
+            "USE_NAME":"Como usar:",
+            "USE_VALUE":"flipmsg [texto]",
+            "EXAMPLE_NAME":"Exemplos:",
+            "ALIASES_NAME":"Aliases:"
+        },
+
+        "AVATAR":{
+            "TITLE":"Comando avatar",
+            "DESCRIPTION":"Para te ajudar a ver melhor ou baixar o avatar(icon) de outra pessoa ou até mesmo o seu!",
+            "AUTHOR_NAME1":"Use",
+            "AUTHOR_NAME2":"para ver todos os comandos.",
+            "USE_NAME":"Como usar:",
+            "USE_VALUE":"avatar <User/ID>",
             "EXAMPLE_NAME":"Exemplos:",
             "ALIASES_NAME":"Aliases:"
         },
@@ -227,6 +249,13 @@
 
     "INVITE":{
         "INVITE_MSG":"Use esse link para adicionar a Haru ao seu servidor:"
+    },
+
+    "FLIPMSG":{},
+
+    "AVATAR":{
+        "USER_NOT_FOUND_ERROR":"Eu não encontrei nenhum usuário ou membro com o nome/ID ",
+        "DOWNLAOD_IMG":"baixar imagem"
     },
 
     "SAY":{},
