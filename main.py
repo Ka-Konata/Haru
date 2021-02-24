@@ -20,7 +20,7 @@ intents.members = True
 client  = discord.Client(intents=intents)
 TOKEN   = token.get_token()  # Make your file with your token
 prefixo = "h!"
-utils   = Utils(icon_url)
+utils   = Utils(icon_url, client)
 guilds_security_coding = ["788518735752724480"]  # "796451246864203816" "803997027733471242"
 
 # Cores e Gifs
@@ -69,19 +69,23 @@ async def on_message(message):
 
     if message.author.bot == False and str(message.guild.id) in guilds_security_coding:
         member_perms = utils.get_permissions(message.author, requeriments)
-        url = message.author.avatar
+        bot_perms    = message.guild.get_member(808100198899384352).guild_permissions
+        print(bot_perms)
+        url = message.author.avatar_url
         if url != None:
             icon_url = url
 
         # Importanto os comandos
         from cogs.help          import Cmd_help
         from cogs.configuration import Cmd_configuration
+        from cogs.moderation    import Cmd_mod
         from cogs.utility       import Cmd_utility
         from cogs.games         import Cmd_games
         from cogs.fun           import Cmd_fun 
 
         help    = Cmd_help(message, aliases, lang, colors, prefixo, utils)
-        confgs  = Cmd_configuration(message, lang, colors, member_perms, utils, help, prefixo)
+        confgs  = Cmd_configuration(message, lang, colors, member_perms, bot_perms, utils, help, prefixo)
+        mod     = Cmd_mod(message, aliases, prefixo, lang, client, colors, help, mentions, member_perms, bot_perms, utils, icon_url)
         utility = Cmd_utility(message, aliases, prefixo, lang, colors, help, client)
         games   = Cmd_games(message, aliases, prefixo, lang, colors, help)
         fun     = Cmd_fun(message, client, aliases, lang, colors, prefixo, help, utils, mentions)
@@ -110,9 +114,6 @@ async def on_message(message):
         if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.help)):
             await help.help()
 
-        # ---------- MODERATION----------
-
-
         # ---------- CONFIGURATION ----------
 
         # Comando Set Language
@@ -122,6 +123,17 @@ async def on_message(message):
         # Comando Set Prefix
         if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.setprefix)):
             await confgs.setprefix()
+
+        # ---------- MODERATION----------
+
+        # Comando Add Role
+        if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.addrole)):
+            await mod.addrole()
+
+        # Comando Remove Role
+        if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.removerole)):
+            await mod.removerole()
+
 
 
         # ---------- UTILITY ----------
@@ -160,7 +172,7 @@ async def on_message(message):
         if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.jokempo)):
             await games.jokempo()
 
-        # ---------- FUN ----------kkkkkkkkkkkkkkkkkkkkk
+        # ---------- FUN ----------
 
         # Comando Say
         if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.say)):

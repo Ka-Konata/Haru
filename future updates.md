@@ -64,9 +64,7 @@
 >
 > box [present box]
 >
-> guess [guess number]
->
-> jokempo
+> guess update
 
 &nbsp;
 

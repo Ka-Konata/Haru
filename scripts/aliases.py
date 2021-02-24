@@ -100,3 +100,11 @@ guess = (
 jokempo = (
     "jokempo", "jokempô"
 )
+
+addrole = (
+    "addrole", "addtag", "addcargo", "dartag", "darcargo"
+)
+
+removerole = (
+    "removerole", "removetag", "removercargo", "removertag"
+)

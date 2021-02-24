@@ -6,9 +6,10 @@ client  = discord.Client()
 Thistle	= 0xD8BFD8	
 
 class Utils:
-    def __init__(self, icon_url, token=None):
+    def __init__(self, icon_url, client, token=None):
         self.TOKEN    = token
         self.icon_url = icon_url
+        self.client   = client
 
 
     def write_json(self, file, description, encoding="utf-8"):
@@ -67,7 +68,7 @@ class Utils:
         guild:       guild id of the message
         """
 
-        usu          = Utils(self.icon_url)
+        usu          = Utils(self.icon_url, client)
 
         português_BR = usu.open_json("languages/pt_BR")
         english      = usu.open_json("languages/en.json")
@@ -113,6 +114,15 @@ class Utils:
         embed.add_field(name=lang["PERMISSION_ERROR_FIELD_NAME"], value=permission, inline=True)
 
         return embed
+    
+
+    def bot_permission_error(self, permission, lang):
+        embed = discord.Embed(title=lang["BOT_PERM_ERROR_TITLE"])
+        embed.set_author(name=lang["BOT_PERM_ERROR_AUTHOR_NAME"], icon_url=self.icon_url)
+        embed.add_field(name=lang["BOT_PERM_ERROR_FIELD_NAME"], value=permission, inline=True)
+
+        return embed
+
 
     def guild_confgs_model(self):
         model = {
@@ -124,7 +134,7 @@ class Utils:
     def get_prefix(self, guild_id):
         from os import path
 
-        usu  = Utils(self.icon_url)
+        usu  = Utils(self.icon_url, self.client)
 
         file = "configs/guilds configs/" + str(guild_id)  + ".json"
 
@@ -201,3 +211,36 @@ class Utils:
                 await message.reply(embed=embed)
         else:
             await _help.help(request=help_request)
+
+
+    @client.event
+    async def get_user(self, content, mentions, message, _lang):
+        user = None
+        try:
+            user    = self.client.get_user(int(content))
+            user.id = user.id
+        except (ValueError, AttributeError) as erro:
+            print(erro)
+            try:
+                user = mentions[0]
+            except IndexError as erro:
+                print(erro)
+                user = None
+                await message.reply(_lang["USER_NOT_FOUND_ERROR"] + "`" + content + "`")
+        return user
+
+
+    @client.event
+    async def get_member(self, content, mentions, message, _lang):
+        member = None
+        try:
+            member    = message.guild.get_member(int(content))
+            erro = member.id
+        except (ValueError, AttributeError) as erro:
+            try:
+                member = mentions[0]
+            except IndexError as erro:
+                print(erro)
+                member = None
+                await message.reply(_lang["USER_NOT_FOUND_ERROR"] + "`" + content + "`")
+        return member

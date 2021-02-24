@@ -26,6 +26,7 @@ class Cmd_help:
 
         embed.add_field(name=lang["HELP_EMBED_FIELD_NAME"],   value=lang["HELP_EMBED_FIELD_VALUE"], inline=False)
         embed.add_field(name=lang["HELP_EMBED_CONFGS_NAME"],  value=lang["HELP_EMBED_CONFGS_VALUE"], inline=False)
+        embed.add_field(name=lang["HELP_EMBED_MOD_NAME"],  value=lang["HELP_EMBED_MOD_VALUE"],   inline=False)
         embed.add_field(name=lang["HELP_EMBED_UTILITY_NAME"], value=lang["HELP_EMBED_UTILITY_VALUE"], inline=True)
         embed.add_field(name=lang["HELP_EMBED_GAMES_NAME"],   value=lang["HELP_EMBED_GAMES_VALUE"], inline=True)
         embed.add_field(name=lang["HELP_EMBED_FUN_NAME"],     value=lang["HELP_EMBED_FUN_VALUE"], inline=True)
@@ -65,6 +66,20 @@ class Cmd_help:
 
 
             # ---------- MODERATION----------
+
+            elif cmd in self.aliases.addrole:
+                lang     = lang["ADDROLE"]
+                ex_value = f"```{self.prefixo}addrole @Haru#0001 808101728594821181 \n{self.prefixo}addrole 808100198899384352 808101728594821181```"
+                embed = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.addrole, howToUse=True)
+                
+                await channel.send(embed=embed)
+
+            elif cmd in self.aliases.removerole:
+                lang     = lang["REMOVEROLE"]
+                ex_value = f"```{self.prefixo}removerole @Haru#0001 808101728594821181 \n{self.prefixo}removerole 808100198899384352 808101728594821181```"
+                embed = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.removerole, howToUse=True)
+                
+                await channel.send(embed=embed)
 
             # ---------- UTILITY ----------
 
@@ -125,7 +140,7 @@ class Cmd_help:
 
             elif cmd in self.aliases.jokempo:
                 lang     = lang["JOKEMPO"]
-                ex_value = f"```{self.prefixo}jokempo pedra\n {self.prefixo}jokempo ✋```"
+                ex_value = f"```{self.prefixo}jokempo pedra \n{self.prefixo}jokempo ✋```"
                 embed = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.jokempo)
                 
                 await channel.send(embed=embed)

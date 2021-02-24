@@ -4,7 +4,7 @@ import asyncio
 client = discord.Client()
 
 class Cmd_configuration:
-    def __init__(self, message, lang, colors, member_perms, utils, help, prefixo):
+    def __init__(self, message, lang, colors, member_perms, bot_perms, utils, help, prefixo):
         self.message      = message
         self.lang         = lang
         self.colors       = colors
@@ -76,3 +76,4 @@ class Cmd_configuration:
                 await self.help.help("setprefix")
         else:
             await self.help.help("setprefix")
+            
