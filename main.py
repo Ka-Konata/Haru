@@ -152,7 +152,15 @@ async def on_message(message):
         if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.dice)):
             await games.dice()
 
-        # ---------- FUN ----------
+        # Comando Guess
+        if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.guess)):
+            await games.guess()
+
+        """# Comando Jokempo
+        if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.jokempo)):
+            await games.jokempo()"""
+
+        # ---------- FUN ----------kkkkkkkkkkkkkkkkkkkkk
 
         # Comando Say
         if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.say)):

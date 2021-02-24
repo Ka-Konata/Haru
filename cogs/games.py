@@ -34,6 +34,7 @@ class Cmd_games:
                 await channel.send(lang["COINFLIP_RESULT_COROA"] + f" **{result}**!")
 
     
+    # Comando Dice
     @client.event
     async def dice(self):
         from random import randint
@@ -45,9 +46,29 @@ class Cmd_games:
             try:
                 lados = int(content[1])
             except ValueError:
-                self._help.help(request="dice")
+                pass 
         else:
             lados = 6
 
         choice = randint(0, lados)
         await self.message.reply("🎲| " + self.message.author.mention + lang["ROLLING"] + "**" + str(lados) + "**" + lang["RESULT"] + "**" + str(choice) + "!**")
+
+
+    # Comando guess
+    @client.event
+    async def guess(self):
+        from random import randint
+        lang    = self.lang["GUESS"]
+        content = self.message.content.split()
+
+        if len(content) > 1:
+            if content[1].isnumeric():
+                num = randint(0, 10)
+                if int(content[1]) == num:
+                    await self.message.reply(lang["MIND"] + str(num) + lang["GUESSED"] + content[1] + lang["WIN"])
+                else:
+                    await self.message.reply(lang["MIND"] + str(num) + lang["GUESSED"] + content[1] + lang["LOSE"])
+            else:
+                await self._help.help(request="guess")
+        else:
+            await self._help.help(request="guess")
