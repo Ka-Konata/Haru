@@ -92,3 +92,7 @@ dance = (
 mugistrong = (
     "mugistrong", "mugimuscle", "mugiforte"
 )
+
+guess = (
+    "guess", "guessnumber", "adivinhar", "adivinharnumero"
+)

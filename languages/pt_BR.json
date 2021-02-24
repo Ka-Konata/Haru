@@ -22,7 +22,7 @@
         "HELP_EMBED_UTILITY_NAME": "utilidade", 
         "HELP_EMBED_UTILITY_VALUE": "```morse, invite, flipmsg, avatar```",
         "HELP_EMBED_GAMES_NAME": "jogos", 
-        "HELP_EMBED_GAMES_VALUE": "```coinflip, dado```",
+        "HELP_EMBED_GAMES_VALUE": "```coinflip, dado, guess, jokempo```",
         "HELP_EMBED_FUN_NAME": "diversão", 
         "HELP_EMBED_FUN_VALUE": "```say, send, ship, kiss, hug, pat, slap, shoot, mugistrong```",
         "HELP_COMMAND_NOT_FOUND":"Não foi possível encontrar nenhum comando com o nome",
@@ -110,6 +110,28 @@
             "DESCRIPTION":"Me faça rolar um dado por você e eu te darei o resultado. Caso não seja dado um valor máximo o dado terá 6 lados por padrão.",
             "AUTHOR_NAME1":"Use",
             "AUTHOR_NAME2":"para ver todos os comandos.",
+            "EXAMPLE_NAME":"Exemplos:",
+            "ALIASES_NAME":"Aliases:"
+        },
+
+        "GUESS":{
+            "TITLE":"Comando guess",
+            "DESCRIPTION":"Eu vou pensar em um número de 1 a 10 e você vai tentar adivinhar qual foi ele.",
+            "AUTHOR_NAME1":"Use",
+            "AUTHOR_NAME2":"para ver todos os comandos.",
+            "USE_NAME":"Como usar:",
+            "USE_VALUE":"guess [número]",
+            "EXAMPLE_NAME":"Exemplos:",
+            "ALIASES_NAME":"Aliases:"
+        },
+
+        "JOKEMPO":{
+            "TITLE":"Comando guess",
+            "DESCRIPTION":"O famoso e clássico pedra papel e tesoura. Lembre-se de escolher a sua jogada!",
+            "AUTHOR_NAME1":"Use",
+            "AUTHOR_NAME2":"para ver todos os comandos.",
+            "USE_NAME":"Como usar:",
+            "USE_VALUE":"jokempo [escolha]",
             "EXAMPLE_NAME":"Exemplos:",
             "ALIASES_NAME":"Aliases:"
         },
@@ -241,6 +263,15 @@
         "COINFLIP_RESULT_COROA": "**FLIP!** | deu coroa, você"
     },
 
+    "DICE":{
+        "ROLLING":" rolou ",
+        "RESULT":" e tirou: "
+    },
+
+    "GUESS":{},
+
+    "JOKEMPO":{},
+
     "MORSE":{
         "MORSE_MISSING_ERROR": "Escreva a frase ou texto a ser traduzida ao lado do comando",
         "MORSE_UNKNOWN_CHARACTER_ERROR": "A mensagem a ser traduzida contém caracteres que eu não sou capaz de entender.", 
@@ -306,10 +337,5 @@
         "REPLY":"retríbuiu a dança de"
     },
 
-    "MUGISTRONG":{},
-
-    "DICE":{
-        "ROLLING":" rolou ",
-        "RESULT":" e tirou: "
-    }
+    "MUGISTRONG":{}
 }

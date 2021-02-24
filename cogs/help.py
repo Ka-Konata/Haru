@@ -116,6 +116,20 @@ class Cmd_help:
                 
                 await channel.send(embed=embed)
 
+            elif cmd in self.aliases.guess:
+                lang     = lang["GUESS"]
+                ex_value = f"```{self.prefixo}guess 7```"
+                embed = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.guess)
+                
+                await channel.send(embed=embed)
+
+            elif cmd in self.aliases.jokempo:
+                lang     = lang["JOKEMPO"]
+                ex_value = f"```{self.prefixo}jokempo pedra```"
+                embed = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.jokempo)
+                
+                await channel.send(embed=embed)
+
 
             # ---------- FUN ----------
 
