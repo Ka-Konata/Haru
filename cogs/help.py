@@ -64,6 +64,56 @@ class Cmd_help:
 
                 await channel.send(embed=embed)
 
+            elif cmd in self.aliases.nsfw:
+                lang     = lang["NSFW"]
+                ex_value = f"```{self.prefixo}nsfw enable\n{self.prefixo}nsfw on```"
+                embed = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.nsfw, extra1=True, howToUse=True)
+
+                await channel.send(embed=embed)
+
+            elif cmd in self.aliases.settings:
+                lang     = lang["SETTINGS"]
+                ex_value = f"```{self.prefixo}settings```"
+                embed = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.settings)
+
+                await channel.send(embed=embed)
+
+            elif cmd in self.aliases.lockcommand:
+                lang     = lang["LOCKCOMMAND"]
+                ex_value = f"```{self.prefixo}lockcommand addrole\n{self.prefixo}lockcommand permissions```"
+                embed = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.lockcommand, howToUse=True)
+
+                await channel.send(embed=embed)
+
+            elif cmd in self.aliases.unlockcommand:
+                lang     = lang["UNLOCKCOMMAND"]
+                ex_value = f"```{self.prefixo}unlockcommand addrole\n{self.prefixo}unlockcommand permissions```"
+                embed = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.unlockcommand, howToUse=True)
+
+                await channel.send(embed=embed)
+
+            elif cmd in self.aliases.lockmodule:
+                lang     = lang["LOCKMODULE"]
+                ex_value = f"```{self.prefixo}lockmodule utility\n{self.prefixo}lockmodule moderation```"
+                embed = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.lockmodule, extra1=True, howToUse=True)
+
+                await channel.send(embed=embed)
+
+            elif cmd in self.aliases.unlockmodule:
+                lang     = lang["UNLOCKMODULE"]
+                ex_value = f"```{self.prefixo}unlockmodule utility\n{self.prefixo}unlockmodule moderation```"
+                embed = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.unlockmodule, extra1=True, howToUse=True)
+
+                await channel.send(embed=embed)
+
+            elif cmd in self.aliases.lockedcommands:
+                lang     = lang["LOCKEDCOMMANDS"]
+                ex_value = f"```{self.prefixo}lockedcommands utility\n{self.prefixo}lockedcommands moderation```"
+                embed = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.lockedcommands, howToUse=True)
+
+                await channel.send(embed=embed)
+
+
 
             # ---------- MODERATION----------
 

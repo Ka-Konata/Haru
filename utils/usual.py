@@ -126,10 +126,29 @@ class Utils:
 
     def guild_confgs_model(self):
         model = {
-            "prefix":"h!"
+            "prefix":"h!",
+            "locked_commands":{},
+            "nsfw":True
         }
 
         return model
+
+    
+    def get_guild_configs(self, guild):
+        usu     = Utils(self.icon_url, self.client)
+        arq     = "configs/guilds configs/" + str(guild.id)
+        configs = usu.open_json(arq)
+
+        return configs
+
+    def change_guild_config(self, guild, new_config, confg_key):
+        usu     = Utils(self.icon_url, self.client)
+        arq     = "configs/guilds configs/" + str(guild.id)
+        configs = usu.open_json(arq)
+
+        configs[confg_key] = new_config
+        usu.write_json(arq, configs)
+
 
     def get_prefix(self, guild_id):
         from os import path

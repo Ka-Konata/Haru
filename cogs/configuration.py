@@ -76,4 +76,72 @@ class Cmd_configuration:
                 await self.help.help("setprefix")
         else:
             await self.help.help("setprefix")
+
+
+    @client.event
+    async def nsfw(self):
+        import os
+        lang    = self.lang["NSFW"]
+        configs = self.utils.get_guild_configs(self.message.guild)
+        content = self.message.content.split()
+        arq     = "configs/guilds configs/" + str(self.message.guild.id)
+
+        if len(content) > 1:
+            if content[1].lower() in "enable/on":
+
+                if configs["nsfw"] == False:
+                    configs["nsfw"] = True
+                    self.utils.write_json(arq, configs)
+                    await self.message.add_reaction("✅")
+                else:
+                    await self.message.reply(lang["ALREADY_ON"])
+
+            elif content[1].lower() in "disable/off":
+                if configs["nsfw"] == True:
+                    configs["nsfw"] = False
+                    self.utils.write_json(arq, configs)
+                    await self.message.add_reaction("✅")
+
+                else:
+                    await self.message.reply(lang["ALREADY_OFF"])
+            else:
+                await self.help.help(request="nsfw")
+        else:
+            await self.help.help(request="nsfw")
+
+
+    @client.event
+    async def settings(self):
+        import os
+        lang    = self.lang["SETTINGS"]
+
+
+    @client.event
+    async def lockcommand(self):
+        import os
+        lang    = self.lang["LOCKCOMMAND"]
+
+
+    @client.event
+    async def unlockcommand(self):
+        import os
+        lang    = self.lang["UNLOCKCOMMAND"]
+
+
+    @client.event
+    async def lockmodule(self):
+        import os
+        lang    = self.lang["LOCKMODULE"]
+
+
+    @client.event
+    async def unlockmodule(self):
+        import os
+        lang    = self.lang["UNLOCKMODULE"]
+
+
+    @client.event
+    async def lockedcommands(self):
+        import os
+        lang    = self.lang["LOCKEDCOMMANDS"]
             

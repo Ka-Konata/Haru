@@ -123,6 +123,34 @@ async def on_message(message):
         if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.setprefix)):
             await confgs.setprefix()
 
+        # Comando NSFW
+        if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.nsfw)):
+            await confgs.nsfw()
+
+        # Comando Settings
+        if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.nsfw)):
+            await confgs.settings()
+
+        # Comando Lock Command
+        if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.lockcommand)):
+            await confgs.lockcommand()
+
+        # Comando Unlock Command
+        if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.unlockcommand)):
+            await confgs.unlockcommand()
+
+        # Comando Lock Module
+        if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.lockmodule)):
+            await confgs.lockmodule()
+
+        # Comando Unlock Module
+        if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.unlockmodule)):
+            await confgs.unlockmodule()
+
+        # Comando Locked Commands
+        if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.lockedcommands)):
+            await confgs.lockedcommands()
+
         # ---------- MODERATION----------
 
         # Comando Add Role

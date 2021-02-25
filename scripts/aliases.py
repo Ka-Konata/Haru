@@ -23,6 +23,34 @@ setprefix = (
     "setprefix", "changeprefix", "prefix", "mudarprefixo", "prefixo"
 )
 
+nsfw = (
+    "nsfw", "notsafeforwork", "nsfwconfigs"
+)
+
+settings = (
+    "settings", "stts"
+)
+
+lockcommand = (
+    "lockcommand", "lockcmd"
+)
+
+unlockcommand = (
+    "unlockcommand", "unlockcmd"
+)
+
+lockmodule = (
+    "lockmodule", "lockmod"
+)
+
+unlockmodule = (
+    "unlockmodule", "unlockmod"
+)
+
+lockedcommands = (
+    "lockedcommands", "lockedlist", "lockedcmd"
+)
+
 # ---------- MODERATION ----------
 
 addrole = (

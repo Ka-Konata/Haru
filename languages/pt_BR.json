@@ -32,7 +32,7 @@
         "HELP_EMBED_FIELD_NAME": "Para ver detalhadamente:", 
         "HELP_EMBED_FIELD_VALUE": "use `?help [comando]`",
         "HELP_EMBED_CONFGS_NAME": "configurações", 
-        "HELP_EMBED_CONFGS_VALUE": "```setlanguage, setprefix```",
+        "HELP_EMBED_CONFGS_VALUE": "```setlanguage, setprefix, nsfw, settings, lockcommand, unlockcommand, lockmodule, unlockmodule, lockedcommands```",
         "HELP_EMBED_MOD_NAME": "moderação", 
         "HELP_EMBED_MOD_VALUE": "```addrole, removerole, permissions```",
         "HELP_EMBED_UTILITY_NAME": "utilidade", 
@@ -43,7 +43,7 @@
         "HELP_EMBED_FUN_VALUE": "```say, send, ship, kiss, hug, pat, slap, shoot, mugistrong```",
         "HELP_COMMAND_NOT_FOUND":"Não foi possível encontrar nenhum comando com o nome",
         "HELP_COMMAND_NOT_FOUND2":"verifique se não o escreveu de forma errada ou até mesmo se o comando existe!",
-        
+
         "SETLANGUAGE":{
             "TITLE":"Comando setlanguage",
             "DESCRIPTION":"Selecione o idioma padrão para este servidor, lembre-se de usar o idioma da forma descrita no help.",
@@ -64,6 +64,85 @@
             "USE_VALUE":"setprefix [novo prefixo]",
             "EXTRA1_NAME":"Tamanho limite:",
             "EXTRA1_VALUE":"```2 caracteres```",
+            "EXAMPLE_NAME":"Exemplos:",
+            "ALIASES_NAME":"Aliases:"
+        },
+        
+        "NSFW":{
+            "TITLE":"Comando nsfw",
+            "DESCRIPTION":"Ative ou desative todos os comandos nsfw (not safe for work) no seu servidor.",
+            "AUTHOR_NAME1":"Use",
+            "AUTHOR_NAME2":"para ver todos os comandos.",
+            "USE_NAME":"Como usar:",
+            "USE_VALUE":"nsfw [parâmetro]",
+            "EXTRA1_NAME":"parâmetros:",
+            "EXTRA1_VALUE":"```enable/disable \non/off```",
+            "EXAMPLE_NAME":"Exemplos:",
+            "ALIASES_NAME":"Aliases:"
+        },
+        
+        "SETTINGS":{
+            "TITLE":"Comando settings",
+            "DESCRIPTION":"Veja a lista de configurações do seu servidor.",
+            "AUTHOR_NAME1":"Use",
+            "AUTHOR_NAME2":"para ver todos os comandos.",
+            "EXAMPLE_NAME":"Exemplos:",
+            "ALIASES_NAME":"Aliases:"
+        },
+        
+        "LOCKCOMMAND":{
+            "TITLE":"Comando lockcommand",
+            "DESCRIPTION":"Bloqueie o uso de comandos específicos do seu servidor.",
+            "AUTHOR_NAME1":"Use",
+            "AUTHOR_NAME2":"para ver todos os comandos.",
+            "USE_NAME":"Como usar:",
+            "USE_VALUE":"lockcommand [comando]",
+            "EXAMPLE_NAME":"Exemplos:",
+            "ALIASES_NAME":"Aliases:"
+        },
+        
+        "UNLOCKCOMMAND":{
+            "TITLE":"Comando unlockcommand",
+            "DESCRIPTION":"Desbloqueie o uso de comandos específicos do seu servidor.",
+            "AUTHOR_NAME1":"Use",
+            "AUTHOR_NAME2":"para ver todos os comandos.",
+            "USE_NAME":"Como usar:",
+            "USE_VALUE":"unlockcommand [comando]",
+            "EXAMPLE_NAME":"Exemplos:",
+            "ALIASES_NAME":"Aliases:"
+        },
+        
+        "LOCKMODULE":{
+            "TITLE":"Comando lockmodule",
+            "DESCRIPTION":"Bloqueie o uso de todos os comandos de um modulo específico do seu servidor.",
+            "AUTHOR_NAME1":"Use",
+            "AUTHOR_NAME2":"para ver todos os comandos.",
+            "USE_NAME":"Como usar:",
+            "USE_VALUE":"lockmodule [modulo]",
+            "EXTRA1_NAME":"modulos:",
+            "EXTRA1_VALUE":"```help, configuration, moderation, utility, games, fun```",
+            "EXAMPLE_NAME":"Exemplos:",
+            "ALIASES_NAME":"Aliases:"
+        },
+        
+        "UNLOCKMODULE":{
+            "TITLE":"Comando lockmodule",
+            "DESCRIPTION":"Desbloqueie o uso de todos os comandos de um modulo específico do seu servidor.",
+            "AUTHOR_NAME1":"Use",
+            "AUTHOR_NAME2":"para ver todos os comandos.",
+            "USE_NAME":"Como usar:",
+            "USE_VALUE":"unlockmodule [modulo]",
+            "EXTRA1_NAME":"modulos:",
+            "EXTRA1_VALUE":"```help, configuration, moderation, utility, games, fun```",
+            "EXAMPLE_NAME":"Exemplos:",
+            "ALIASES_NAME":"Aliases:"
+        },
+        
+        "LOCKEDCOMMANDS":{
+            "TITLE":"Comando lockedcommands",
+            "DESCRIPTION":"Veja a lista de todos os comandos bloqueados no seu servidor.",
+            "AUTHOR_NAME1":"Use",
+            "AUTHOR_NAME2":"para ver todos os comandos.",
             "EXAMPLE_NAME":"Exemplos:",
             "ALIASES_NAME":"Aliases:"
         },
@@ -96,7 +175,7 @@
             "AUTHOR_NAME1":"Use",
             "AUTHOR_NAME2":"para ver todos os comandos.",
             "USE_NAME":"Como usar:",
-            "USE_VALUE":"permissions <User/ID>",
+            "USE_VALUE":"permissions <User/ID> ou <cargoID>",
             "EXAMPLE_NAME":"Exemplos:",
             "ALIASES_NAME":"Aliases:"
         },
@@ -302,6 +381,23 @@
         "EMBED_TITLE":"novo prefixo:",
         "AUTHOR_NAME":"Prefixo alterado com sucesso!"
     },
+
+    "NSFW":{
+        "ALREADY_ON":"Comandos NSFW já estão ativados neste servidor",
+        "ALREADY_OFF":"Comandos NSFW já estão desativados neste servidor"
+    },
+
+    "SETTINGS":{},
+
+    "LOCKCOMMAND":{},
+
+    "UNLOCKCOMMAND":{},
+
+    "LOCKMODULE":{},
+
+    "UNLOCKMODULE":{},
+
+    "LOCKEDCOMMANDS":{},
 
     "ADDROLE": {},
 

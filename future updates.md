@@ -24,13 +24,17 @@
 >
 > unlockcommand
 >
+> lockmodule
+>
+> unlockmodule
+>
 > lockedcommands
 
 &nbsp;
 
 ### Moderation module
 
-> permissions
+> nenhum
 
 &nbsp;
 
