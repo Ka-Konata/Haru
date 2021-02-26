@@ -123,7 +123,7 @@ class Utils:
         model = {
             "language":"pt-br",
             "prefix":"h!",
-            "locked_commands":{},
+            "locked_commands":[],
             "nsfw":True
         }
 

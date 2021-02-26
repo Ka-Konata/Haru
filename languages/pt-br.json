@@ -3,6 +3,12 @@
     
     "FINAL_MESSAGE_EXECUTING": "encerrando o script",
 
+    "COMMAND_LOCKED_ERROR":"🔒 | **Comando bloquado nesse servidor.** ",
+
+    "CMD_NOT_FOUND_ERROR":"Eu não encontrei nenhum comando chamado ",
+
+    "CMD_NOT_FOUND_ERROR_2":" (lembre-se que não pode usar nenhum alias aqui!)",
+
     "ROLE_NOT_FOUND_ERROR":"Eu não encontrei nenhum cargo com o ID ",
 
     "USER_NOT_FOUND_ERROR":"Eu não encontrei nenhum usuário ou membro com o nome/ID ",
@@ -398,7 +404,9 @@
         "EMBED_NSFW_NAME":"**🍩 NSFW: **"
     },
 
-    "LOCKCOMMAND":{},
+    "LOCKCOMMAND":{
+        "ALREADY_LOCKED":"Esse comando já está bloqueado."
+    },
 
     "UNLOCKCOMMAND":{},
 

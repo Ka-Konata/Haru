@@ -4,7 +4,7 @@ import asyncio
 client = discord.Client()
 
 class Cmd_configuration:
-    def __init__(self, message, lang, colors, member_perms, bot_perms, utils, help, prefixo):
+    def __init__(self, message, lang, colors, member_perms, bot_perms, utils, help, prefixo, aliases):
         self.message      = message
         self.lang         = lang
         self.colors       = colors
@@ -12,6 +12,7 @@ class Cmd_configuration:
         self.utils        = utils
         self.help         = help
         self.prefixo      = prefixo
+        self.aliases      = aliases
 
     # Comando Set Language
     @client.event
@@ -112,7 +113,6 @@ class Cmd_configuration:
 
     @client.event
     async def settings(self):
-        import os
         lang    = self.lang["SETTINGS"]
         confgs  = self.utils.get_guild_configs(self.message.guild)
         
@@ -134,30 +134,61 @@ class Cmd_configuration:
 
     @client.event
     async def lockcommand(self):
-        import os
         lang    = self.lang["LOCKCOMMAND"]
+        content = self.message.content.split()
+        configs = self.utils.get_guild_configs(self.message.guild)
+
+        if len(content) > 1:
+            if content[1].lower() in self.aliases.all:
+                if not content[1].lower() in configs["locked_commands"]:
+
+                    configs["locked_commands"].append(content[1].lower())
+                    arq = "configs/guilds configs/" + str(self.message.guild.id)
+                    self.utils.write_json(arq, configs)
+                    await self.message.add_reaction("✅")
+
+                else:
+                    await self.message.reply(lang["ALREADY_LOCKED"])
+            else:
+                await self.message.reply(self.lang["CMD_NOT_FOUND_ERROR"] + f"´{content[1]}´" + self.lang["CMD_NOT_FOUND_ERROR_2"])
+        else:
+            await self.help.help(request="lockcommand")
 
 
     @client.event
     async def unlockcommand(self):
-        import os
         lang    = self.lang["UNLOCKCOMMAND"]
+        content = self.message.content.split()
+
+        if len(content) > 1:
+            pass
+        else:
+            await self.help.help(request="unlockcommand")
 
 
     @client.event
     async def lockmodule(self):
-        import os
         lang    = self.lang["LOCKMODULE"]
+        content = self.message.content.split()
+
+        if len(content) > 1:
+            pass
+        else:
+            await self.help.help(request="lockmodule")
 
 
     @client.event
     async def unlockmodule(self):
-        import os
         lang    = self.lang["UNLOCKMODULE"]
+        content = self.message.content.split()
+
+        if len(content) > 1:
+            pass
+        else:
+            await self.help.help(request="unlockmodule")
 
 
     @client.event
     async def lockedcommands(self):
-        import os
         lang    = self.lang["LOCKEDCOMMANDS"]
             
