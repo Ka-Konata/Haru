@@ -140,12 +140,15 @@ class Cmd_configuration:
 
         if len(content) > 1:
             if content[1].lower() in self.aliases.all:
-                if not content[1].lower() in configs["locked_commands"]:
+                if not content[1].lower() in configs["locked_commands"] and not content[1].lower() != self.aliases.unlockcommand:
 
                     configs["locked_commands"].append(content[1].lower())
                     arq = "configs/guilds configs/" + str(self.message.guild.id)
                     self.utils.write_json(arq, configs)
                     await self.message.add_reaction("✅")
+                
+                elif content[1].lower() != self.aliases.unlockcommand:
+                    await self.message.reply(lang["CANT_LOCK_COMMAND"])
 
                 else:
                     await self.message.reply(lang["ALREADY_LOCKED"])
@@ -159,9 +162,21 @@ class Cmd_configuration:
     async def unlockcommand(self):
         lang    = self.lang["UNLOCKCOMMAND"]
         content = self.message.content.split()
+        configs = self.utils.get_guild_configs(self.message.guild)
 
         if len(content) > 1:
-            pass
+            if content[1].lower() in self.aliases.all:
+                if content[1].lower() in configs["locked_commands"]:
+
+                    configs["locked_commands"].remove(content[1].lower())
+                    arq = "configs/guilds configs/" + str(self.message.guild.id)
+                    self.utils.write_json(arq, configs)
+                    await self.message.add_reaction("✅")
+
+                else:
+                    await self.message.reply(lang["ALREADY_UNLOCKED"])
+            else:
+                await self.message.reply(self.lang["CMD_NOT_FOUND_ERROR"] + f"`{content[1]}`" + self.lang["CMD_NOT_FOUND_ERROR_2"])
         else:
             await self.help.help(request="unlockcommand")
 

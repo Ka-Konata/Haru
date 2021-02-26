@@ -405,10 +405,13 @@
     },
 
     "LOCKCOMMAND":{
+        "CANT_LOCK_COMMAND":"ta louco? você não pode bloquear esse comando",
         "ALREADY_LOCKED":"Esse comando já está bloqueado."
     },
 
-    "UNLOCKCOMMAND":{},
+    "UNLOCKCOMMAND":{
+        "ALREADY_UNLOCKED":"Esse comando não está bloqueado."
+    },
 
     "LOCKMODULE":{},
 

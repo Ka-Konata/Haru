@@ -18,136 +18,148 @@ stoprunning = (
 
 # ---------- HELP ----------
 
-help = {
+helpmod = {
+    "help": (
     "help", "ajuda"
+    )
 }
 
 # ---------- CONFIGURATION ----------
 
-setlanguage = (
-    "setlanguage", "changelanguage", "language", "mudaridioma", "idioma"
-)
+configuration = {
+    "setlanguage": (
+        "setlanguage", "changelanguage", "language", "mudaridioma", "idioma"
+    ),
 
-setprefix = (
-    "setprefix", "changeprefix", "prefix", "mudarprefixo", "prefixo"
-)
+    "setprefix": (
+        "setprefix", "changeprefix", "prefix", "mudarprefixo", "prefixo"
+    ),
 
-nsfw = (
-    "nsfw", "notsafeforwork", "nsfwconfigs"
-)
+    "nsfw": (
+        "nsfw", "notsafeforwork", "nsfwconfigs"
+    ),
 
-settings = (
-    "settings", "stts"
-)
+    "settings": (
+        "settings", "stts"
+    ),
 
-lockcommand = (
-    "lockcommand", "lockcmd"
-)
+    "lockcommand": (
+        "lockcommand", "lockcmd"
+    ),
 
-unlockcommand = (
-    "unlockcommand", "unlockcmd"
-)
+    "unlockcommand": (
+        "unlockcommand", "unlockcmd"
+    ),
 
-lockmodule = (
-    "lockmodule", "lockmod"
-)
+    "lockmodule": (
+        "lockmodule", "lockmod"
+    ),
 
-unlockmodule = (
-    "unlockmodule", "unlockmod"
-)
+    "unlockmodule": (
+        "unlockmodule", "unlockmod"
+    ),
 
-lockedcommands = (
-    "lockedcommands", "lockedlist", "lockedcmd"
-)
+    "lockedcommands": (
+        "lockedcommands", "lockedlist", "lockedcmd"
+    )
+}
 
 # ---------- MODERATION ----------
 
-addrole = (
-    "addrole", "addtag", "addcargo", "dartag", "darcargo"
-)
+moderation = {
+    "addrole": (
+        "addrole", "addtag", "addcargo", "dartag", "darcargo"
+    ),
 
-removerole = (
-    "removerole", "removetag", "removercargo", "removertag"
-)
+    "removerole": (
+        "removerole", "removetag", "removercargo", "removertag"
+    ),
 
-permissions = (
-    "permissions", "perms", "permissoes", "permissões"
-)
+    "permissions": (
+        "permissions", "perms", "permissoes", "permissões"
+    )
+}
 
 # ---------- UTILITY ----------
 
-morse = (
-    "morse", "codigomorse", "códigomorse"
-)
+utility = {
+    "morse": (
+        "morse", "codigomorse", "códigomorse"
+    ),
 
-invite = (
-    "invite", "joinserver", "convite"
-)
+    "invite": (
+        "invite", "joinserver", "convite"
+    ),
 
-flipmsg = (
-    "flipmsg", "invertermensagem", "intertermsg", "inverterletras"
-)
+    "flipmsg": (
+        "flipmsg", "invertermensagem", "intertermsg", "inverterletras"
+    ),
 
-avatar = (
-    "avatar", "icon"
-)
+    "avatar": (
+        "avatar", "icon"
+    )
+}
 
 # ---------- GAMES ----------
 
-coinflip = (
-    "coinflip", "cf", "flipcoin"
-)
+games = {
+    "coinflip": (
+        "coinflip", "cf", "flipcoin"
+    ),
 
-dice = (
-    "dice", "die", "dado", "dados"
-)
+    "dice": (
+        "dice", "die", "dado", "dados"
+    ),
 
-guess = (
-    "guess", "guessnumber", "adivinhar", "adivinharnumero"
-)
+    "guess": (
+        "guess", "guessnumber", "adivinhar", "adivinharnumero"
+    ),
 
-jokempo = (
-    "jokempo", "jokempô"
-)
+    "jokempo": (
+        "jokempo", "jokempô"
+    )
+}
 
 # ---------- FUN ----------
 
-say = (
-    "say", "diga", "dizer"
-)
+fun = {
+    "say": (
+        "say", "diga", "dizer"
+    ),
 
-send = (
-    "send", "enviar", "dm"
-)
+    "send": (
+        "send", "enviar", "dm"
+    ),
 
-ship = (
-    "ship", "shippar"
-)
+    "ship": (
+        "ship", "shippar"
+    ),
 
-kiss = (
-    "kiss", "beijar"
-)
+    "kiss": (
+        "kiss", "beijar"
+    ),
 
-hug = (
-    "hug", "abraçar"
-)
+    "hug": (
+        "hug", "abraçar"
+    ),
 
-pat = (
-    "pat", "headpat", "cafune", "cafuné"
-)
+    "pat": (
+        "pat", "headpat", "cafune", "cafuné"
+    ),
 
-slap = (
-    "slap", "tapa", "bater"
-)
+    "slap": (
+        "slap", "tapa", "bater"
+    ),
 
-shoot = (
-    "shoot", "shot", "atirar"
-)
+    "shoot": (
+        "shoot", "shot", "atirar"
+    ),
 
-dance = (
-    "dance", "dançar"
-)
+    "dance": (
+        "dance", "dançar"
+    ),
 
-mugistrong = (
-    "mugistrong", "mugimuscle", "mugiforte"
-)
+    "mugistrong": (
+        "mugistrong", "mugimuscle", "mugiforte"
+    )
+}
