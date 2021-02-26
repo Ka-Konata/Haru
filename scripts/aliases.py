@@ -6,6 +6,10 @@ all = [
     "test", "stoprunning", "help", "setlanguage", "setprefix", "nsfw", "settings", "lockcommand", "unlockcommand", "lockmodule", "unlockmodule", "lockedcommands", "addrole", "addtag", "addcargo", "removerole", "permissions", "morse", "invite", "flipmsg", "avatar", "coinflip", "dice", "guess", "jokempo", "say", "send", "ship", "kiss", "hug", "pat", "slap", "shoot", "dance", "mugistrong"
 ]
 
+modules = [
+    "help", "configuration", "moderation", "utility", "games", "fun"
+]
+
 
 test = (
     "test", "testar", "t"
@@ -18,7 +22,7 @@ stoprunning = (
 
 # ---------- HELP ----------
 
-helpmod = {
+help = {
     "help": (
     "help", "ajuda"
     )

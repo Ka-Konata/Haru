@@ -113,138 +113,138 @@ async def on_message(message):
             # ---------- HELP ----------
 
             # Comando Help
-            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.help)):
+            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.help["help"])):
                 await help.help()
 
             # ---------- CONFIGURATION ----------
 
             # Comando Set Language
-            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.setlanguage)):
+            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.configuration["setlanguage"])):
                 await confgs.setlanguage()
 
             # Comando Set Prefix
-            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.setprefix)):
+            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.configuration["setprefix"])):
                 await confgs.setprefix()
 
             # Comando NSFW
-            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.nsfw)):
+            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.configuration["nsfw"])):
                 await confgs.nsfw()
 
             # Comando Settings
-            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.settings)):
+            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.configuration["settings"])):
                 await confgs.settings()
 
             # Comando Lock Command
-            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.lockcommand)):
+            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.configuration["lockcommand"])):
                 await confgs.lockcommand()
 
             # Comando Unlock Command
-            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.unlockcommand)):
+            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.configuration["unlockcommand"])):
                 await confgs.unlockcommand()
 
             # Comando Lock Module
-            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.lockmodule)):
+            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.configuration["lockmodule"])):
                 await confgs.lockmodule()
 
             # Comando Unlock Module
-            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.unlockmodule)):
+            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.configuration["unlockmodule"])):
                 await confgs.unlockmodule()
 
             # Comando Locked Commands
-            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.lockedcommands)):
+            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.configuration["lockedcommands"])):
                 await confgs.lockedcommands()
 
             # ---------- MODERATION----------
 
             # Comando Add Role
-            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.addrole)):
+            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.moderation["addrole"])):
                 await mod.addrole()
 
             # Comando Remove Role
-            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.removerole)):
+            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.moderation["removerole"])):
                 await mod.removerole()
 
             # Comando Permissions
-            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.permissions)):
+            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.moderation["permissions"])):
                 await mod.permissions(permissions)
 
 
             # ---------- UTILITY ----------
             
             # Comando Morse
-            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.morse)):
+            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.utility["morse"])):
                 await utility.morse(morse_códigos)
 
             # Comando Invite
-            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.invite)):
+            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.utility["invite"])):
                 await utility.invite()
 
             # Comando Flip MSG
-            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.flipmsg)):
+            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.utility["flipmsg"])):
                 await utility.flipmsg()
 
             # Comando Avatar
-            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.avatar)):
+            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.utility["avatar"])):
                 await utility.avatar()
 
             # ---------- GAMES ----------
 
             # Comando coinflip
-            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.coinflip)):
+            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.games["coinflip"])):
                 await games.coinflip()
 
             # Comando Dice
-            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.dice)):
+            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.games["dice"])):
                 await games.dice()
 
             # Comando Guess
-            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.guess)):
+            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.games["guess"])):
                 await games.guess()
 
             # Comando Jokempo
-            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.jokempo)):
+            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.games["jokempo"])):
                 await games.jokempo()
 
             # ---------- FUN ----------
 
             # Comando Say
-            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.say)):
+            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.fun["say"])):
                 await fun.say()
 
             # Comando Send
-            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.send)):
+            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.fun["send"])):
                 await fun.send()
 
             # Comando Ship
-            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.ship)):
+            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.fun["ship"])):
                 await fun.ship(ship, toPNG)
 
             # Comando Kiss
-            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.kiss)):
+            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.fun["kiss"])):
                 await fun.kiss(gifs)
 
             # Comando Hug
-            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.hug)):
+            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.fun["hug"])):
                 await fun.hug(gifs)
 
             # Comando Pat
-            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.pat)):
+            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.fun["pat"])):
                 await fun.pat(gifs)
 
             # Comando Slap
-            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.slap)):
+            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.fun["slap"])):
                 await fun.slap(gifs)
 
             # Comando Shoot
-            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.shoot)):
+            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.fun["shoot"])):
                 await fun.shoot(gifs)
 
             # Comando Dance
-            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.dance)):
+            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.fun["dance"])):
                 await fun.dance(gifs)
 
             # Comando Mugi Strong
-            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.mugistrong)):
+            if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.fun["mugistrong"])):
                 await fun.mugistrong(gifs)
         else:
             await message.reply(lang["COMMAND_LOCKED_ERROR"] + f"`{prefixo}unlockcommand [command]`")

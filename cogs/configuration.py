@@ -147,7 +147,7 @@ class Cmd_configuration:
                     self.utils.write_json(arq, configs)
                     await self.message.add_reaction("✅")
                 
-                elif content[1].lower() != self.aliases.unlockcommand:
+                elif content[1].lower() != self.aliases.configuration["unlockcommand"]:
                     await self.message.reply(lang["CANT_LOCK_COMMAND"])
 
                 else:
