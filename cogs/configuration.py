@@ -19,7 +19,7 @@ class Cmd_configuration:
         lang    = self.lang["SETLANGUAGE"]
         channel = self.message.channel
         guild   = self.message.guild
-        langs   = ("en", "pt_BR")
+        langs   = ("en", "pt-br")
 
         if len(self.message.content.split()) > 1 and self.message.content.split()[1] in langs:
 
@@ -114,6 +114,22 @@ class Cmd_configuration:
     async def settings(self):
         import os
         lang    = self.lang["SETTINGS"]
+        confgs  = self.utils.get_guild_configs(self.message.guild)
+        
+        if confgs["nsfw"]:
+            nsfw = lang["NSFW-ON"]
+        else:
+            nsfw = lang["NSFW-OFF"]
+
+        embed   = discord.Embed(title= lang["EMBED_TITILE"] + self.message.guild.name, description=lang["EMBED_DESC"] + f" `{self.prefixo}help module configuration`", color=self.colors.Thistle)
+        embed.set_author(name=self.message.author, icon_url=self.message.author.avatar_url)
+
+        embed.add_field(name=lang["EMBED_PREFIX_NAME"] , value=confgs["prefix"])
+        embed.add_field(name=lang["EMBED_LANG_NAME"] , value=confgs["language"])
+        embed.add_field(name=lang["EMBED_LOCKED_NAME"] , value=len(confgs["locked_commands"]))
+        embed.add_field(name=lang["EMBED_NSFW_NAME"] , value=nsfw)
+
+        await self.message.reply(embed=embed)
 
 
     @client.event

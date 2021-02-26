@@ -52,7 +52,7 @@ class Cmd_help:
 
             elif cmd in self.aliases.setlanguage:
                 lang     = lang["SETLANGUAGE"]
-                ex_value = f"```{self.prefixo}setlanguage en\n{self.prefixo}setlanguage pt_BR```"
+                ex_value = f"```{self.prefixo}setlanguage en\n{self.prefixo}setlanguage pt-br```"
                 embed = self.utils.embed_model(lang, self.prefixo, self.colors, ex_value, self.aliases.setlanguage, extra1=True)
                 
                 await channel.send(embed=embed)

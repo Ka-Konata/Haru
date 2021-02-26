@@ -50,7 +50,7 @@
             "AUTHOR_NAME1":"Use",
             "AUTHOR_NAME2":"para ver todos os comandos.",
             "EXTRA1_NAME":"Idiomas:",
-            "EXTRA1_VALUE":"```en, pt_BR```",
+            "EXTRA1_VALUE":"```en, pt-br```",
             "EXAMPLE_NAME":"Exemplos:",
             "ALIASES_NAME":"Aliases:"
         },
@@ -387,7 +387,16 @@
         "ALREADY_OFF":"Comandos NSFW já estão desativados neste servidor"
     },
 
-    "SETTINGS":{},
+    "SETTINGS":{
+        "NSFW-ON":"ativado",
+        "NSFW-OFF":"desativado",
+        "EMBED_TITILE":"Configurações - Servidor: ",
+        "EMBED_DESC":"para alterar as configurações leia:",
+        "EMBED_PREFIX_NAME":"**🪧 prefixo: **",
+        "EMBED_LANG_NAME":"**🔤 idioma: **",
+        "EMBED_LOCKED_NAME":"**🔐 comandos bloqueados: **",
+        "EMBED_NSFW_NAME":"**🍩 NSFW: **"
+    },
 
     "LOCKCOMMAND":{},
 

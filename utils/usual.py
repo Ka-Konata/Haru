@@ -61,7 +61,7 @@ class Utils:
         return aliases
 
     
-    def set_language(self, prefix, guild_id):  #message
+    def set_language(self, prefix, guild):  #message
         """
         search the defined language for the guild
         prefix:      guild prefix
@@ -70,18 +70,13 @@ class Utils:
 
         usu          = Utils(self.icon_url, client)
 
-        português_BR = usu.open_json("languages/pt_BR")
+        português_BR = usu.open_json("languages/pt-br")
         english      = usu.open_json("languages/en.json")
-        languages    = {"pt_BR":português_BR, "en":english}
+        languages    = {"pt-br":português_BR, "en":english}
 
-        try:
-            lang     = languages[usu.open_json("languages/guild_languages")[guild_id]]
+        confgs       = usu.get_guild_configs(guild)
+        lang         = languages[confgs["language"]]
 
-        except:
-            guilds_langs           = usu.open_json("languages/guild_languages")
-            guilds_langs[guild_id] = "pt_BR"
-            usu.write_json("languages/guild_languages", guilds_langs)
-            lang     = languages[usu.open_json("languages/guild_languages")[guild_id]]
         return lang
 
     
@@ -126,6 +121,7 @@ class Utils:
 
     def guild_confgs_model(self):
         model = {
+            "language":"pt-br",
             "prefix":"h!",
             "locked_commands":{},
             "nsfw":True

@@ -51,7 +51,7 @@ async def on_message(message):
     channel      = message.channel
     mentions     = message.mentions
         
-    lang = utils.set_language(prefixo, str(message.guild.id))
+    lang = utils.set_language(prefixo, message.guild)
 
     # Security Guild Coding edit
     if message.author.id == 502687173099913216:
@@ -128,7 +128,7 @@ async def on_message(message):
             await confgs.nsfw()
 
         # Comando Settings
-        if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.nsfw)):
+        if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.settings)):
             await confgs.settings()
 
         # Comando Lock Command
@@ -272,7 +272,7 @@ async def on_message(message):
 async def on_reaction_add(reaction, user):
     prefixo = utils.get_prefix(reaction.message.guild.id)
         
-    lang = utils.set_language(prefixo, str(reaction.message.guild.id))
+    lang = utils.set_language(prefixo, reaction.message.guild)
 
     if reaction.message.author.id == 808100198899384352:
         

@@ -27,6 +27,8 @@ async def get_couple(users, toPNG, channel, message):
 
     arq  = "assets/ships" + str(users[0].id) + "+" + str(users[1].id) + ".png"
     arq1 = str(users[0].id) + "+" + str(users[1].id) + ".png"
+    arq3 = "assets/avatar" + str(users[0].id) + ".gif.png"
+    arq4 = "assets/avatar" + str(users[1].id) + ".gif.png"
 
     if users[0].is_avatar_animated():
         url0      = requests.get(users[0].avatar_url_as(format="gif"))
@@ -95,3 +97,7 @@ async def get_couple(users, toPNG, channel, message):
     await message.reply(embed=embed)
 
     remove(arq)
+    if users[0].is_avatar_animated():
+        remove(arq3)
+    if users[1].is_avatar_animated():
+        remove(arq4)
