@@ -18,7 +18,6 @@ class Cmd_configuration:
     @client.event
     async def setlanguage(self):
         lang    = self.lang["SETLANGUAGE"]
-        channel = self.message.channel
         guild   = self.message.guild
         langs   = ("en", "pt-br")
 
@@ -33,11 +32,11 @@ class Cmd_configuration:
 
                 embed = discord.Embed(title=self.message.content.split()[1], color=self.colors.Thistle)
                 embed.set_author(name=lang["AUTHOR_NAME"], icon_url="https://cdn.discordapp.com/avatars/502687173099913216/a_a1113f8f92b108969aad7d6925adb774.gif")
-                await channel.send(embed=embed)
+                await self.message.reply(embed=embed)
 
             else:
                 embed = self.utils.permission_error("administrator", self.lang)
-                await channel.send(embed=embed)
+                await self.message.reply(embed=embed)
         else:
             await self.help.help("setlanguage")
 
@@ -46,7 +45,6 @@ class Cmd_configuration:
     async def setprefix(self):
         import os
         lang    = self.lang["SETPREFIX"]
-        channel = self.message.channel
 
         if len(self.message.content.split()) > 1:
             if len(self.message.content.split()[1]) <= 2:
@@ -66,13 +64,13 @@ class Cmd_configuration:
 
                         embed = discord.Embed(title=lang["EMBED_TITLE"], description=self.message.content.split()[1], color=self.colors.Thistle)
                         embed.set_author(name=lang["AUTHOR_NAME"], icon_url="https://cdn.discordapp.com/avatars/502687173099913216/a_a1113f8f92b108969aad7d6925adb774.gif")
-                        await channel.send(embed=embed)
+                        await self.message.reply(embed=embed)
 
                     except:
-                        await channel.send("`an unexpected error occurred`")
+                        await self.message.reply("`an unexpected error occurred`")
                 else:
                     embed = self.utils.permission_error("administrator", self.lang)
-                    await channel.send(embed=embed)
+                    await self.message.reply(embed=embed)
             else:
                 await self.help.help("setprefix")
         else:
@@ -87,28 +85,32 @@ class Cmd_configuration:
         content = self.message.content.split()
         arq     = "configs/guilds configs/" + str(self.message.guild.id)
 
-        if len(content) > 1:
-            if content[1].lower() in "enable/on":
+        if self.member_perms.admin:
+            if len(content) > 1:
+                if content[1].lower() in "enable/on":
 
-                if configs["nsfw"] == False:
-                    configs["nsfw"] = True
-                    self.utils.write_json(arq, configs)
-                    await self.message.add_reaction("✅")
+                    if configs["nsfw"] == False:
+                        configs["nsfw"] = True
+                        self.utils.write_json(arq, configs)
+                        await self.message.add_reaction("✅")
+                    else:
+                        await self.message.reply(lang["ALREADY_ON"])
+
+                elif content[1].lower() in "disable/off":
+                    if configs["nsfw"] == True:
+                        configs["nsfw"] = False
+                        self.utils.write_json(arq, configs)
+                        await self.message.add_reaction("✅")
+
+                    else:
+                        await self.message.reply(lang["ALREADY_OFF"])
                 else:
-                    await self.message.reply(lang["ALREADY_ON"])
-
-            elif content[1].lower() in "disable/off":
-                if configs["nsfw"] == True:
-                    configs["nsfw"] = False
-                    self.utils.write_json(arq, configs)
-                    await self.message.add_reaction("✅")
-
-                else:
-                    await self.message.reply(lang["ALREADY_OFF"])
+                    await self.help.help(request="nsfw")
             else:
                 await self.help.help(request="nsfw")
         else:
-            await self.help.help(request="nsfw")
+            embed = self.utils.permission_error("administrator", self.lang)
+            await self.message.reply(embed=embed)
 
 
     @client.event
@@ -116,20 +118,24 @@ class Cmd_configuration:
         lang    = self.lang["SETTINGS"]
         confgs  = self.utils.get_guild_configs(self.message.guild)
         
-        if confgs["nsfw"]:
-            nsfw = lang["NSFW-ON"]
+        if self.member_perms.mod:
+            if confgs["nsfw"]:
+                nsfw = lang["NSFW-ON"]
+            else:
+                nsfw = lang["NSFW-OFF"]
+
+            embed   = discord.Embed(title= lang["EMBED_TITILE"] + self.message.guild.name, description=lang["EMBED_DESC"] + f" `{self.prefixo}help module configuration`", color=self.colors.Thistle)
+            embed.set_author(name=self.message.author, icon_url=self.message.author.avatar_url)
+
+            embed.add_field(name=lang["EMBED_PREFIX_NAME"] , value=confgs["prefix"])
+            embed.add_field(name=lang["EMBED_LANG_NAME"] , value=confgs["language"])
+            embed.add_field(name=lang["EMBED_LOCKED_NAME"] , value=len(confgs["locked_commands"]))
+            embed.add_field(name=lang["EMBED_NSFW_NAME"] , value=nsfw)
+
+            await self.message.reply(embed=embed)
         else:
-            nsfw = lang["NSFW-OFF"]
-
-        embed   = discord.Embed(title= lang["EMBED_TITILE"] + self.message.guild.name, description=lang["EMBED_DESC"] + f" `{self.prefixo}help module configuration`", color=self.colors.Thistle)
-        embed.set_author(name=self.message.author, icon_url=self.message.author.avatar_url)
-
-        embed.add_field(name=lang["EMBED_PREFIX_NAME"] , value=confgs["prefix"])
-        embed.add_field(name=lang["EMBED_LANG_NAME"] , value=confgs["language"])
-        embed.add_field(name=lang["EMBED_LOCKED_NAME"] , value=len(confgs["locked_commands"]))
-        embed.add_field(name=lang["EMBED_NSFW_NAME"] , value=nsfw)
-
-        await self.message.reply(embed=embed)
+            embed = self.utils.permission_error("moderator", self.lang)
+            await self.message.reply(embed=embed)
 
 
     @client.event
@@ -138,24 +144,28 @@ class Cmd_configuration:
         content = self.message.content.split()
         configs = self.utils.get_guild_configs(self.message.guild)
 
-        if len(content) > 1:
-            if content[1].lower() in self.aliases.all:
-                if not content[1].lower() in configs["locked_commands"] and not content[1].lower() != self.aliases.unlockcommand:
+        if self.member_perms.admin:
+            if len(content) > 1:
+                if content[1].lower() in self.aliases.all:
+                    if not content[1].lower() in configs["locked_commands"] and not content[1].lower() != self.aliases.unlockcommand:
 
-                    configs["locked_commands"].append(content[1].lower())
-                    arq = "configs/guilds configs/" + str(self.message.guild.id)
-                    self.utils.write_json(arq, configs)
-                    await self.message.add_reaction("✅")
-                
-                elif content[1].lower() != self.aliases.configuration["unlockcommand"]:
-                    await self.message.reply(lang["CANT_LOCK_COMMAND"])
+                        configs["locked_commands"].append(content[1].lower())
+                        arq = "configs/guilds configs/" + str(self.message.guild.id)
+                        self.utils.write_json(arq, configs)
+                        await self.message.add_reaction("✅")
+                    
+                    elif content[1].lower() != self.aliases.configuration["unlockcommand"]:
+                        await self.message.reply(lang["CANT_LOCK_COMMAND"])
 
+                    else:
+                        await self.message.reply(lang["ALREADY_LOCKED"])
                 else:
-                    await self.message.reply(lang["ALREADY_LOCKED"])
+                    await self.message.reply(self.lang["CMD_NOT_FOUND_ERROR"] + f"`{content[1]}`" + self.lang["CMD_NOT_FOUND_ERROR_2"])
             else:
-                await self.message.reply(self.lang["CMD_NOT_FOUND_ERROR"] + f"´{content[1]}´" + self.lang["CMD_NOT_FOUND_ERROR_2"])
+                await self.help.help(request="lockcommand")
         else:
-            await self.help.help(request="lockcommand")
+            embed = self.utils.permission_error("administrator", self.lang)
+            await self.message.reply(embed=embed)
 
 
     @client.event
@@ -164,32 +174,75 @@ class Cmd_configuration:
         content = self.message.content.split()
         configs = self.utils.get_guild_configs(self.message.guild)
 
-        if len(content) > 1:
-            if content[1].lower() in self.aliases.all:
-                if content[1].lower() in configs["locked_commands"]:
+        if self.member_perms.admin:
+            if len(content) > 1:
+                if content[1].lower() in self.aliases.all:
+                    if content[1].lower() in configs["locked_commands"]:
 
-                    configs["locked_commands"].remove(content[1].lower())
-                    arq = "configs/guilds configs/" + str(self.message.guild.id)
-                    self.utils.write_json(arq, configs)
-                    await self.message.add_reaction("✅")
+                        configs["locked_commands"].remove(content[1].lower())
+                        arq = "configs/guilds configs/" + str(self.message.guild.id)
+                        self.utils.write_json(arq, configs)
+                        await self.message.add_reaction("✅")
 
+                    else:
+                        await self.message.reply(lang["ALREADY_UNLOCKED"])
                 else:
-                    await self.message.reply(lang["ALREADY_UNLOCKED"])
+                    await self.message.reply(self.lang["CMD_NOT_FOUND_ERROR"] + f"`{content[1]}`" + self.lang["CMD_NOT_FOUND_ERROR_2"])
             else:
-                await self.message.reply(self.lang["CMD_NOT_FOUND_ERROR"] + f"`{content[1]}`" + self.lang["CMD_NOT_FOUND_ERROR_2"])
+                await self.help.help(request="unlockcommand")
         else:
-            await self.help.help(request="unlockcommand")
+            embed = self.utils.permission_error("administrator", self.lang)
+            await self.message.reply(embed=embed)
 
 
     @client.event
-    async def lockmodule(self):
+    async def lockmodule(self, _modules):
         lang    = self.lang["LOCKMODULE"]
-        content = self.message.content.split()
+        content = self.message.content.lower().split()
+        configs = self.utils.get_guild_configs(self.message.guild)
+        modules = self.aliases.modules
 
-        if len(content) > 1:
-            pass
+        if self.member_perms.admin:
+            if len(content) > 1:
+                if content[1] in modules:
+                    print(_modules)
+                    for mod in _modules:
+                        print("\nmod: ", mod)
+
+                        if content[1] in mod.keys():
+                            commands = list(mod)
+                            commands.remove(commands[0])
+                            print(commands)
+
+                    if content[1] == "configuration":
+                        await self.message.channel.send(lang["CANT_LOCK_SOME_COMMANDS"])
+                        commands.remove("lockcommand")
+                        commands.remove("unlockcommand")
+                        commands.remove("lockmodule")
+                        commands.remove("unlockmodule")
+                    n = 0
+                    for cmd in commands:
+                        if not cmd in configs["locked_commands"]:
+                            configs["locked_commands"].append(cmd)
+                        else:
+                            n += 1
+                        if n == len(commands):
+                            await self.message.reply(lang["MODULE_ALREADY_LOCKED"])
+
+                    arq = "configs/guilds configs/" + str(self.message.guild.id)
+                    self.utils.write_json(arq, configs)
+                    if not n == len(commands):
+                        await self.message.add_reaction("✅")
+                    else:
+                        await self.message.add_reaction("❌")
+
+                else:
+                    await self.message.reply(self.lang["MODULE_NOT_FOUND_ERROR"] + f"`{content[1]}`")
+            else:
+                await self.help.help(request="lockmodule")
         else:
-            await self.help.help(request="lockmodule")
+            embed = self.utils.permission_error("administrator", self.lang)
+            await self.message.reply(embed=embed)
 
 
     @client.event
@@ -197,13 +250,22 @@ class Cmd_configuration:
         lang    = self.lang["UNLOCKMODULE"]
         content = self.message.content.split()
 
-        if len(content) > 1:
-            pass
+        if self.member_perms.admin:
+            if len(content) > 1:
+                pass
+            else:
+                await self.help.help(request="unlockmodule")
         else:
-            await self.help.help(request="unlockmodule")
+            embed = self.utils.permission_error("administrator", self.lang)
+            await self.message.reply(embed=embed)
 
 
     @client.event
     async def lockedcommands(self):
         lang    = self.lang["LOCKEDCOMMANDS"]
-            
+
+        if self.member_perms.mod:
+            pass
+        else:
+            embed = self.utils.permission_error("moderator", self.lang)
+            await self.message.reply(embed=embed)

@@ -9,6 +9,8 @@
 
     "CMD_NOT_FOUND_ERROR_2":" (lembre-se que não pode usar nenhum alias aqui!)",
 
+    "MODULE_NOT_FOUND_ERROR":"Eu não encontrei nenhum módulo chamado ",
+
     "ROLE_NOT_FOUND_ERROR":"Eu não encontrei nenhum cargo com o ID ",
 
     "USER_NOT_FOUND_ERROR":"Eu não encontrei nenhum usuário ou membro com o nome/ID ",
@@ -413,7 +415,10 @@
         "ALREADY_UNLOCKED":"Esse comando não está bloqueado."
     },
 
-    "LOCKMODULE":{},
+    "LOCKMODULE":{
+        "CANT_LOCK_SOME_COMMANDS":"Alguns comandos desse módulo não podem ser bloqueados, mas o resto será inutilizado normalmente.",
+        "MODULE_ALREADY_LOCKED":"todos os comandos desse módulo já estão bloqueados."
+    },
 
     "UNLOCKMODULE":{},
 

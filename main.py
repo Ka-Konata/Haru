@@ -68,8 +68,15 @@ async def on_message(message):
             await message.add_reaction("✅")
             print(guilds_security_coding)
 
+    modules = [aliases.help, aliases.configuration, aliases.utility, aliases.games, aliases.fun] 
+    locked  = []
+    for mod in modules:
+        for cmd in mod:
+            if cmd in (utils.ins_prefix(prefixo, confgs["locked_commands"])):
+                locked.append(cmd)
+
     if message.author.bot == False and str(message.guild.id) in guilds_security_coding:
-        if not message.content.split()[0].lower() in (utils.ins_prefix(prefixo, confgs["locked_commands"])):
+        if not message.content.split()[0].lower() in (utils.ins_prefix(prefixo, locked)):
 
             member_perms = utils.get_permissions(message.author, requeriments)
             bot_perms    = message.guild.get_member(808100198899384352).guild_permissions
@@ -144,7 +151,7 @@ async def on_message(message):
 
             # Comando Lock Module
             if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.configuration["lockmodule"])):
-                await confgs.lockmodule()
+                await confgs.lockmodule(modules)
 
             # Comando Unlock Module
             if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.configuration["unlockmodule"])):

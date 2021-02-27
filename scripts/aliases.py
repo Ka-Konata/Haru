@@ -23,6 +23,7 @@ stoprunning = (
 # ---------- HELP ----------
 
 help = {
+    "_help":True,
     "help": (
     "help", "ajuda"
     )
@@ -31,6 +32,7 @@ help = {
 # ---------- CONFIGURATION ----------
 
 configuration = {
+    "configuration":True,
     "setlanguage": (
         "setlanguage", "changelanguage", "language", "mudaridioma", "idioma"
     ),
@@ -71,6 +73,7 @@ configuration = {
 # ---------- MODERATION ----------
 
 moderation = {
+    "moderation":True,
     "addrole": (
         "addrole", "addtag", "addcargo", "dartag", "darcargo"
     ),
@@ -87,6 +90,7 @@ moderation = {
 # ---------- UTILITY ----------
 
 utility = {
+    "utility":True,
     "morse": (
         "morse", "codigomorse", "códigomorse"
     ),
@@ -107,6 +111,7 @@ utility = {
 # ---------- GAMES ----------
 
 games = {
+    "games":True,
     "coinflip": (
         "coinflip", "cf", "flipcoin"
     ),
@@ -127,6 +132,7 @@ games = {
 # ---------- FUN ----------
 
 fun = {
+    "fun":True,
     "say": (
         "say", "diga", "dizer"
     ),
