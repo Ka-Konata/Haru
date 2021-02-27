@@ -424,7 +424,10 @@
         "MODULE_ALREADY_UNLOCKED":"Nenhum comando deaste módulo está bloqueado."
     },
 
-    "LOCKEDCOMMANDS":{},
+    "LOCKEDCOMMANDS":{
+        "COMMANDS_LOCKEDS_TITLE":"🔐 **Lista de comandos bloqueados nesse servidor**",
+        "NO_COMMANDS_LOCKED":"Ainda não há nenhum comando bloqueado nesse servidor."
+    },
 
     "ADDROLE": {},
 

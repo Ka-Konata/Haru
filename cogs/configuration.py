@@ -285,9 +285,21 @@ class Cmd_configuration:
     @client.event
     async def lockedcommands(self):
         lang    = self.lang["LOCKEDCOMMANDS"]
+        configs = self.utils.get_guild_configs(self.message.guild)
+        locked  = configs["locked_commands"]
 
         if self.member_perms.mod:
-            pass
+            if len(locked) > 0:
+                msg = lang["COMMANDS_LOCKEDS_TITLE"] + ": \n```"
+                for n, cmd in enumerate(locked):
+                    msg += cmd
+                    if n == len(locked) -1:
+                        msg += "```"
+                    else:
+                        msg += ", "
+                await self.message.reply(msg)
+            else:
+                await self.message.reply(lang["NO_COMMANDS_LOCKED"])
         else:
             embed = self.utils.permission_error("moderator", self.lang)
             await self.message.reply(embed=embed)
