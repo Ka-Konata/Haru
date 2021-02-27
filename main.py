@@ -155,7 +155,7 @@ async def on_message(message):
 
             # Comando Unlock Module
             if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.configuration["unlockmodule"])):
-                await confgs.unlockmodule()
+                await confgs.unlockmodule(modules)
 
             # Comando Locked Commands
             if message.content.lower().startswith(utils.ins_prefix(prefixo, aliases.configuration["lockedcommands"])):

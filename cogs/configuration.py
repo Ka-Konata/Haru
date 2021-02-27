@@ -205,14 +205,11 @@ class Cmd_configuration:
         if self.member_perms.admin:
             if len(content) > 1:
                 if content[1] in modules:
-                    print(_modules)
                     for mod in _modules:
-                        print("\nmod: ", mod)
 
                         if content[1] in mod.keys():
                             commands = list(mod)
                             commands.remove(commands[0])
-                            print(commands)
 
                     if content[1] == "configuration":
                         await self.message.channel.send(lang["CANT_LOCK_SOME_COMMANDS"])
@@ -246,13 +243,38 @@ class Cmd_configuration:
 
 
     @client.event
-    async def unlockmodule(self):
+    async def unlockmodule(self, _modules):
         lang    = self.lang["UNLOCKMODULE"]
-        content = self.message.content.split()
+        content = self.message.content.lower().split()
+        configs = self.utils.get_guild_configs(self.message.guild)
+        modules = self.aliases.modules
 
         if self.member_perms.admin:
             if len(content) > 1:
-                pass
+                if content[1] in modules:
+                    for mod in _modules:
+
+                        if content[1] in mod.keys():
+                            commands = list(mod)
+                            commands.remove(commands[0])
+                    n = 0
+                    for cmd in commands:
+                        if cmd in configs["locked_commands"]:
+                            configs["locked_commands"].remove(cmd)
+                        else:
+                            n += 1
+                        if n == len(commands):
+                            await self.message.reply(lang["MODULE_ALREADY_UNLOCKED"])
+
+                    arq = "configs/guilds configs/" + str(self.message.guild.id)
+                    self.utils.write_json(arq, configs)
+                    if not n == len(commands):
+                        await self.message.add_reaction("✅")
+                    else:
+                        await self.message.add_reaction("❌")
+
+                else:
+                    await self.message.reply(self.lang["MODULE_NOT_FOUND_ERROR"] + f"`{content[1]}`")
             else:
                 await self.help.help(request="unlockmodule")
         else:

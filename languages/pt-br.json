@@ -420,7 +420,9 @@
         "MODULE_ALREADY_LOCKED":"todos os comandos desse módulo já estão bloqueados."
     },
 
-    "UNLOCKMODULE":{},
+    "UNLOCKMODULE":{
+        "MODULE_ALREADY_UNLOCKED":"Nenhum comando deaste módulo está bloqueado."
+    },
 
     "LOCKEDCOMMANDS":{},
 
