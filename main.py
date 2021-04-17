@@ -23,6 +23,7 @@ TOKEN   = config.SECRET_TOKEN  # Make your file with your token
 prefixo = "h!"
 utils   = Utils(icon_url, client)
 guilds_security_coding = ["788518735752724480"]  # "796451246864203816" "803997027733471242"
+send_init_message = False
 
 # Cores e Gifs
 from scripts import colors
@@ -37,7 +38,8 @@ msg_user = None
 async def on_ready():
     channel = client.get_channel(788785603105259574)
     embed_msg = discord.Embed(title="BOT ONLINE - HELLO WORLD", color=colors.ciano, description=f"**Bot UserName:**  {client.user.name} \n**Bot UserID:**  {client.user.id} \n**Channel:**  {channel.mention}")
-    await channel.send(embed=embed_msg)
+    if send_init_message:
+        await channel.send(embed=embed_msg)
     print("BOT ONLINE - HELLO WORLD")
     print(client.user.name)
     print(client.user.id)
