@@ -2,13 +2,14 @@ import discord
 import asyncio
 import random
 import requests
+import keep_alive
 from scripts           import ship
 from sys               import exit
 from utils.usual       import Utils
 from utils             import morse
 from scripts           import aliases, requeriments, permissions
 from scripts.format    import toPNG
-from scripts.bot_token import secret_token as token
+from scripts.bot_token import config
 
 morse_códigos = morse.get_morse()
 icon_url = "https://cdn.discordapp.com/avatars/502687173099913216/a_a1113f8f92b108969aad7d6925adb774.gif"
@@ -18,7 +19,7 @@ intents = discord.Intents.default()
 intents.members = True
 
 client  = discord.Client(intents=intents)
-TOKEN   = token.get_token()  # Make your file with your token
+TOKEN   = config.SECRET_TOKEN  # Make your file with your token
 prefixo = "h!"
 utils   = Utils(icon_url, client)
 guilds_security_coding = ["788518735752724480"]  # "796451246864203816" "803997027733471242"
@@ -324,4 +325,8 @@ async def on_reaction_add(reaction, user):
                 await fun.dance(gifs, reply=True)
 
 
+# Creating a Server
+keep_alive.keep_alive()
+
+# Runing the bot
 client.run(TOKEN)
