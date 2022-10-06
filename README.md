@@ -1,7 +1,5 @@
 # Haru
 
-a simple discord bot (for now...)
-
 ## Command list, separeted by modules
 
 &nbsp;
