@@ -1,11 +1,11 @@
 from flask import Flask
 from threading import Thread
 
-app = Flask("Haru v2")
+app = Flask("Haru v3")
 
 @app.route('/')
 def main():
-    return "The bot is alive!"
+    return "Mantendo a Haru funcionando :)"
 
 def run():
   app.run(host="0.0.0.0", port=8080)
