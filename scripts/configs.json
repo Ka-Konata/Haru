@@ -1,0 +1,18 @@
+{
+    "bot_name": "Haru",
+    "bot_icon": "https://media.discordapp.net/attachments/810690029847969833/1048420745937690674/608af0c5be01cd73faba6b46f4a7d1ab.png",
+    "app_icon": "https://media.discordapp.net/attachments/810690029847969833/1048793278054678599/imagem_2022-12-02_211102899.jpg",
+    "defaul_prefix": "h!",
+    "started_at": "04/12/2022 21:48:42",
+    "server-list": [
+        916777792962699315,
+        788518735752724480
+    ],
+    "developer-list": [
+        502687173099913216,
+        744400468712882216
+    ],
+    "manager-list": [
+        744400468712882216
+    ]
+}

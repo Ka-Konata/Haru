@@ -1,7 +1,8 @@
-# O que é
-Um simples bot para o discord, com algumas funcionalidades básicas.
-
-Funciona apenas em servidores, bloqueia o uso em dms.
+# Descrição
+Este é um Rework da Haru (Haru v3)<br/><br/>
+Um simples bot para o discord, com algumas funcionalidades básicas.<br/>
+Funciona apenas em servidores, bloqueia o uso em dms.<br/>
+Enquanto em estágio de desenvolvimento, por segurança o bot só responde à comandos executados em servidores que estiverem na lista de servidores de teste.
 
 ## Níveis de permissão
 * Developer
@@ -31,14 +32,17 @@ Dev Module
 
 name | permission | explanation | stage
 :--- | :--------- | :---------- | :----
-_status | manager | envia um hello world, e os status do bot | ❌
-_quit | developer | força a parar o bot | ❌
-_setsv | manager | Libera o uso do bot no servidor atual| ❌
-_unsetsv | manager | bloqueia o uso do bot no servidor atual | ❌
-_pmtmanager | developer | adiciona um usuário na lista de managers | ❌
-_dmtmanager | developer | remove um usuário da lista de managers | ❌
-_pmtdeveloper | developer | adiciona um usuário na lista de developers | ❌
-_dmtdeveloper | developer | remove um usuário da lista de developers | ❌
+oc_status | manager | envia um hello world, e os status do bot | ✔️
+oc_quit | developer | força a parar o bot | ✔️
+oc_setsv | manager | libera o uso do bot no servidor atual| ✔️
+oc_unsetsv | manager | bloqueia o uso do bot no servidor atual | ✔️
+oc_listsv | manager | lista todos os servidores liberados | ✔️
+oc_pmtmanager | developer | adiciona um usuário na lista de managers | ✔️
+oc_dmtmanager | developer | remove um usuário da lista de managers | ✔️
+oc_listmanager | manager | lista todos os usuários com permissão de manager | ✔️
+oc_pmtdeveloper | developer | adiciona um usuário na lista de developers | ✔️
+oc_dmtdeveloper | developer | remove um usuário da lista de developers | ✔️
+oc_listdeveloper | manager | lista todos os usuários com permissão de developer | ✔️
 
 
 ~~~py
