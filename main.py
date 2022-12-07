@@ -12,6 +12,14 @@ from scripts  import configs, errors
 from decouple import config as getenv
 
 settings = configs.get()
+logger = configs.logging.getLogger('discord')
+
+if len(settings['server-list']) == 0:
+    sv = int(input('Não há nenhum servidor na lista de servidores de teste, insira um.\nID do servidor: '))
+    settings['server-list'].append(sv)
+if len(settings['developer-list']) == 0:
+    dev = int(input('Não há nenhum desenvolvedor na lista, insira um.\nID do usuário: '))
+    settings['developer-list'].append(dev)
 
 TOKEN   = getenv('TOKEN')  # Procura o token nas variáveis de ambiente
 intents = discord.Intents.default()
@@ -22,10 +30,11 @@ bot     = commands.Bot(command_prefix=settings['defaul-prefix'], intents=intents
 
 @bot.event
 async def on_ready():
-    print(f'{bot.user} foi conectada ao discord.')
-
     settings['started-at'] = datetime.datetime.now().strftime('%d/%m/%Y %H:%M:%S')
-    configs.save(settings)
+    configs.save(settings)   
+
+    #print(f'{bot.user} foi conectada ao discord.')
+    logger.info(f'Haru está online. (User: {bot.user}) (ID: {bot.user.id})')
 
     bot.remove_command('help')
     await bot.load_extension('modules.developer')

@@ -7,14 +7,12 @@
     "server-invite": "https://discord.com/invite/ZZHRtsJTCS",
     "site": "https://konata.site/haru/home",
     "defaul-prefix": "h!",
-    "started-at": "06/12/2022 22:50:02",
+    "started-at": "06/12/2022 23:56:20",
     "server-list": [
-        916777792962699315,
         788518735752724480
     ],
     "developer-list": [
-        502687173099913216,
-        744400468712882216
+        502687173099913216
     ],
     "manager-list": []
 }
