@@ -2,11 +2,11 @@
     "bot": {
         "help":["ajuda", "info", "about", "sobre"], 
         "haru":["haruinfo", "botinfo", "aboutme", "aboutharu"], 
-        "invite":["convite"], 
-        "site":[], 
-        "server":["servidor", "suporte"], 
-        "github":["repo", "repositorio"], 
-        "dev":["desenvolvedor"], 
+        "invite":["convite", "invitation", "getinvite"], 
+        "site":["website", "getsite"], 
+        "server":["servidor", "suporte", "getserver", "serverinvite"], 
+        "github":["repo", "repositorio", "getrepo"], 
+        "dev":["desenvolvedor", "ka"], 
         "ping":[]
     }, 
     "configuration": {

@@ -79,11 +79,11 @@ Bot Module
 name | permission | explanation | stage
 :--- | :--------- | :---------- | :---:
 help | member | A list of all commands or an explanation of a specific module/command. | ✔️
-haru | member | Basic information about Haru | ❌
-invite | member | link de invite do bot | ❌
-site | member | link do site do bot | ❌
-server | member | link de invite do servidor oficial do bot | ❌
-github | member | link repositório do bot no github | ❌
+haru | member | Basic information about Haru | ✔️
+invite | member | Send the bot invite link | ✔️
+site | member | Send the bot's official website link | ✔️
+server | member | Send the bot's official server invite link | ✔️
+github | member | Send Haru's repository link on github | ✔️
 dev | member | informações sobre o criador do bot | ❌
 ping | member | saiba se o bot está ativo | ❌
 

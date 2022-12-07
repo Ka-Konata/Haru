@@ -118,9 +118,83 @@ class Bot(commands.Cog):
         embed.add_field(name=lang['COMMAND']['HARU']['SERVER']['NAME'], value=lang['COMMAND']['HARU']['SERVER']['VALUE']+settings['bot-invite']+').', inline=False)
         embed.add_field(name=lang['COMMAND']['HARU']['SITE']['NAME'], value=lang['COMMAND']['HARU']['SITE']['VALUE']+settings['site']+').', inline=False)
         embed.set_footer(text=lang['COMMAND']['HARU']['FOOTER'])
-
         await ctx.send(embed=embed)
+
+
+    @commands.hybrid_command(aliases=modulos['bot']['invite'])
+    @commands.check(configs.Authentication.member)
+    @commands.check(configs.guild_check)
+    async def invite(self, ctx):
+        '''Send the bot invite link'''
+        settings = configs.get()
+        lang = configs.lang[configs.get_guild(ctx.guild.id)['language']]
         
+        embed = discord.Embed(description=lang['COMMAND']['INVITE']['DESCRIPTION']+settings['bot-invite']+').', color=colors.default)
+        embed.set_author(name=lang['COMMAND']['INVITE']['NAME'], icon_url=settings['bot-icon'])
+        embed.set_thumbnail(url=settings['app-icon'])
+        embed.set_footer(text=lang['COMMAND']['INVITE']['FOOTER'])
+        await ctx.send(embed=embed)
+
+
+    @commands.hybrid_command(aliases=modulos['bot']['site'])
+    @commands.check(configs.Authentication.member)
+    @commands.check(configs.guild_check)
+    async def site(self, ctx):
+        '''Send the bot's official website link'''
+        settings = configs.get()
+        lang = configs.lang[configs.get_guild(ctx.guild.id)['language']]
+        
+        embed = discord.Embed(description=lang['COMMAND']['SITE']['DESCRIPTION']+settings['site']+').', color=colors.default)
+        embed.set_author(name=lang['COMMAND']['SITE']['NAME'], icon_url=settings['bot-icon'])
+        embed.set_thumbnail(url=settings['app-icon'])
+        embed.set_footer(text=lang['COMMAND']['SITE']['FOOTER'])
+        await ctx.send(embed=embed)
+
+
+    @commands.hybrid_command(aliases=modulos['bot']['server'])
+    @commands.check(configs.Authentication.member)
+    @commands.check(configs.guild_check)
+    async def server(self, ctx):
+        '''Send the bot's official server invite link'''
+        settings = configs.get()
+        lang = configs.lang[configs.get_guild(ctx.guild.id)['language']]
+        
+        embed = discord.Embed(description=lang['COMMAND']['SERVER']['DESCRIPTION']+settings['server-invite']+').', color=colors.default)
+        embed.set_author(name=lang['COMMAND']['SERVER']['NAME'], icon_url=settings['bot-icon'])
+        embed.set_thumbnail(url=settings['app-icon'])
+        embed.set_footer(text=lang['COMMAND']['SERVER']['FOOTER'])
+        await ctx.send(embed=embed)
+
+
+    @commands.hybrid_command(aliases=modulos['bot']['github'])
+    @commands.check(configs.Authentication.member)
+    @commands.check(configs.guild_check)
+    async def github(self, ctx):
+        '''Send Haru's repository link on github'''
+        settings = configs.get()
+        lang = configs.lang[configs.get_guild(ctx.guild.id)['language']]
+        
+        embed = discord.Embed(description=lang['COMMAND']['GITHUB']['DESCRIPTION']+settings['server-invite']+').', color=colors.default)
+        embed.set_author(name=lang['COMMAND']['GITHUB']['NAME'], icon_url=settings['bot-icon'])
+        embed.set_thumbnail(url=settings['app-icon'])
+        embed.set_footer(text=lang['COMMAND']['GITHUB']['FOOTER'])
+        await ctx.send(embed=embed)
+
+
+    """@commands.hybrid_command(aliases=modulos['bot']['dev'])
+    @commands.check(configs.Authentication.member)
+    @commands.check(configs.guild_check)
+    async def dev(self, ctx):
+        '''Send Haru's repository link on github'''
+        settings = configs.get()
+        lang = configs.lang[configs.get_guild(ctx.guild.id)['language']]
+        
+        embed = discord.Embed(description=lang['COMMAND']['DEV']['DESCRIPTION']+settings['server-invite']+').', color=colors.default)
+        embed.set_author(name=lang['COMMAND']['DEV']['NAME'], icon_url=settings['bot-icon'])
+        embed.set_thumbnail(url=settings['app-icon'])
+        embed.set_footer(text=lang['COMMAND']['DEV']['FOOTER'])
+        await ctx.send(embed=embed)"""
+
 
 async def setup(bot):
     await bot.add_cog(Bot(bot))

@@ -17,6 +17,26 @@
                 "VALUE":"Para conhecer mais sobre ou conferir a documentação completa do bot, você pode acessar o [site oficial da haru]("
             },
             "FOOTER":"Use /help ou h!help para mais informações"
+        },
+        "INVITE": {
+            "DESCRIPTION":"Para adicionar a Haru no seu servidor, você só precisa clicar no link abaixo:\n\n<:r_Happyzin:829906563656712222>  [Link de convide da haru](",
+            "NAME":"Haru - Link de Convite", 
+            "FOOTER":"Use /help ou h!help para mais informações"   
+        },
+        "SITE": {
+            "DESCRIPTION":"Caso queira saber tudo sobre a Haru, você pode acessar o nosso site oficial clicando no link abaixo:\n\n<:r_Happyzin:829906563656712222>  [Link do site ofical da Haru](",
+            "NAME":"Haru - Site Ocifial", 
+            "FOOTER":"Use /help ou h!help para mais informações"   
+        },
+        "SERVER": {
+            "DESCRIPTION":"Caso tenha alguma dúvida ou queria reportar algum erro, você pode entrar no servidor oficial da Haru clicando no link abaixo. Não se esqueça de ler as **regras**!\n\n<:r_Happyzin:829906563656712222>  [Link do servidor ofical da Haru](",
+            "NAME":"Haru - Servidor Ocifial", 
+            "FOOTER":"Use /help ou h!help para mais informações"   
+        },
+        "GITHUB": {
+            "DESCRIPTION":"Caso esteja procurando pelo repositório da Haru no GitHub para dar uma olhada, ou até mesmo ajudar no desenvolvimento do bot, clique no link abaixo. (Atualmente sendo desenvolvida na branch **'rework'**)\n\n<:r_Happyzin:829906563656712222>  [Link do repositório da Haru no GitHub](",
+            "NAME":"Haru - Repositório", 
+            "FOOTER":"Use /help ou h!help para mais informações"   
         }
     },
     "HELP":{
@@ -70,10 +90,26 @@
                 "HOW VALUE":"```/haru```",
                 "EXEMPLE VALUE":"`/haru`"
             }, 
-            "invite":["convite"], 
-            "site":[], 
-            "server":["servidor", "suporte"], 
-            "github":["repo", "repositorio"], 
+            "invite": {
+                "DESCRIPTION":"Envia o link de convite da Haru, para adicioná-la no seu servidor.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "HOW VALUE":"```/invite```",
+                "EXEMPLE VALUE":"`/invite`"
+            }, 
+            "site": {
+                "DESCRIPTION":"Envia o link do site oficial da Haru, para que você possa saber tudo sobre o bot.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "HOW VALUE":"```/site```",
+                "EXEMPLE VALUE":"`/site`"
+            }, 
+            "server": {
+                "DESCRIPTION":"Envia o link do servidor oficial da Haru, para você entrar e tirar suas dúvidas ou reportar os erros que encontrar.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "HOW VALUE":"```/server```",
+                "EXEMPLE VALUE":"`/server`"
+            },  
+            "github": {
+                "DESCRIPTION":"Envia o link do repositório da Haru no GitHub, para que você possa dar uma olhada ou até mesmo ajudar no desenvolvimento do bot.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "HOW VALUE":"```/github```",
+                "EXEMPLE VALUE":"`/github`"
+            },  
             "dev":["desenvolvedor"], 
             "ping":[],
             "prefix":["setprefix", "prefixo"],

@@ -34,7 +34,7 @@ async def on_ready():
     configs.save(settings)   
 
     #print(f'{bot.user} foi conectada ao discord.')
-    logger.info(f'Haru está online. (User: {bot.user}) (ID: {bot.user.id})')
+    logger.info(f'Haru está online (User: {bot.user}) (ID: {bot.user.id})')
 
     bot.remove_command('help')
     await bot.load_extension('modules.developer')
