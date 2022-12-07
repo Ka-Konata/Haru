@@ -1,12 +1,29 @@
 {
     "COMMAND": {
-
+        "HARU": {
+            "TITLE":"Sobre o bot",
+            "DESCRIPTION":"Este é um Rework da Haru. Um simples bot para o discord, com algumas funcionalidades básicas.\n\n<:r_Happyzin:829906563656712222>  [Adicione a Haru no seu servicor clicando aqui!](",
+            "NAME":"Haru - Sobre o Bot",
+            "COMMANDS": {
+                "NAME":"Conheça alguns comandos básicos da Haru:",
+                "VALUE":"`/help [modulo ou comando]` - Te ensina a usar a Haru.\n`/ping` - Te informa se a Haru está funcionando.\n`/avatar [usuário]` - Envia o icon de alguém.\n`/ship <usuário>` - Chances do seu ship dar certo."
+            },
+            "SERVER": {
+                "NAME":"Servidor da Haru:",
+                "VALUE":"Caso tenha alguma dúvida, queira reportar algum erro ou simplesmente estar por dentro de todas as novidades sobre o bot, entre no [servidor de suporte da Haru]("
+            },
+            "SITE": {
+                "NAME":"Site da Haru:",
+                "VALUE":"Para conhecer mais sobre ou conferir a documentação completa do bot, você pode acessar o [site oficial da haru]("
+            },
+            "FOOTER":"Use /help ou h!help para mais informações"
+        }
     },
     "HELP":{
         "DEFAULT":{
             "TITLE":"Sobre o bot",
             "DESCRIPTION":"Este é um Rework da Haru. Um simples bot para o discord, com algumas funcionalidades básicas.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [modulo]** para ler mais sobre um modulo.\nUse **/help [comando]** para ler mais sobre um comando.",
-            "NAME":"Haru - Help",
+            "NAME":"Haru - Sistema de Ajuda",
             "MODULE": {
                 "BOT":"**Modulo: Bot**", 
                 "CONFIGURATION":"**Modulo: Configuration**", 
@@ -14,7 +31,7 @@
                 "FUN":"**Modulo: Fun**", 
                 "INTERACTION":"**Modulo: Interaction**"
             },
-            "FOOTER":"Ainda precisa de ajuda? Use /server ou h!server para entrar no servidor de suporte da Haru!"
+            "FOOTER":"Ainda precisa de ajuda? Use /server ou h!server para entrar no servidor de suporte da Haru"
         },
         "MODULE":{
             "bot": {
@@ -39,7 +56,7 @@
             },
             "NAME":"Haru - Help",
             "FIELD NAME":"Comandos",
-            "FOOTER":"Ainda precisa de ajuda? Use /server ou h!server para entrar no servidor de suporte da Haru!"
+            "FOOTER":"Ainda precisa de ajuda? Use /server ou h!server para entrar no servidor de suporte da Haru"
         },
         "COMMAND":{
                 "TITLE":"Sobre o Comando /",
@@ -48,7 +65,11 @@
                 "HOW VALUE":"```/help [modulo ou comando]```",
                 "EXEMPLE VALUE":"`/help` `/help bot` `/help invite`"
             }, 
-            "haru":["haruinfo"], 
+            "haru": {
+                "DESCRIPTION":"Saiba todas as informações mais essênciais sobre a Haru, uma ótima introdução ao bot.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "HOW VALUE":"```/haru```",
+                "EXEMPLE VALUE":"`/haru`"
+            }, 
             "invite":["convite"], 
             "site":[], 
             "server":["servidor", "suporte"], 
@@ -92,15 +113,18 @@
             "EXEMPLE TITLE":"Exemplos",
             "ALIASES TITLE":"Aliases",
             "NAME":"Haru - Help",
-            "FOOTER":"Ainda precisa de ajuda? Use /server ou h!server para entrar no servidor de suporte da Haru!"
+            "FOOTER":"Ainda precisa de ajuda? Use /server ou h!server para entrar no servidor de suporte da Haru"
         }
     },
     "ERROR":{
-        "AUTHOR":"Haru - Erro",
+        "AUTHOR":"Haru - Erro Detectado",
         "TYPE":"Tipo:",
         "REASON":"Motivo:",
         "TIP":"Dica:",
         "FOOTER":"Use /help ou h!help para mais informações",
+        "CommandNotFound": {
+            "TYPE": "Comando Desconhecido"
+        },
         "GuildNotAllowed": {
             "TYPE": "Servidor não Permitido",
             "REASON": "Como o MODO DE DESENVOLVIMENTO (por segurança) está ativado, use /server para entrar no servidor de suporte e peça à um developer ou manager para liberar o uso da Haru neste servidor."

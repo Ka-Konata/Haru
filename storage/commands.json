@@ -1,7 +1,7 @@
 {
     "bot": {
         "help":["ajuda", "info", "about", "sobre"], 
-        "haru":["haruinfo", "botinfo"], 
+        "haru":["haruinfo", "botinfo", "aboutme", "aboutharu"], 
         "invite":["convite"], 
         "site":[], 
         "server":["servidor", "suporte"], 

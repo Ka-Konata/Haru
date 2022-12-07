@@ -4,8 +4,10 @@
     "bot-icon": "https://media.discordapp.net/attachments/810690029847969833/1048420745937690674/608af0c5be01cd73faba6b46f4a7d1ab.png",
     "app-icon": "https://media.discordapp.net/attachments/810690029847969833/1048793278054678599/imagem_2022-12-02_211102899.jpg",
     "bot-invite": "https://discord.com/api/oauth2/authorize?client_id=808100198899384352&permissions=8&scope=bot",
+    "server-invite": "https://discord.com/invite/ZZHRtsJTCS",
+    "site": "https://konata.site/haru/home",
     "defaul-prefix": "h!",
-    "started-at": "06/12/2022 21:28:20",
+    "started-at": "06/12/2022 22:50:02",
     "server-list": [
         916777792962699315,
         788518735752724480

@@ -12,12 +12,12 @@ class Bot(commands.Cog):
         self.bot     = bot
 
     
-    @commands.hybrid_command(nsfw=True, aliases=modulos['bot']['help'])
-    @app_commands.describe(especify='Input a command or a module.')
+    @commands.hybrid_command(aliases=modulos['bot']['help'])
+    @app_commands.describe(especify='Input a command or module.')
     @commands.check(configs.Authentication.member)
     @commands.check(configs.guild_check)
     async def help(self, ctx, especify : str = None):
-        '''Uma lista com todos os comandos ou uma explicação de um módulo ou comando específico.'''
+        '''A list of all commands or an explanation of a specific module/command.'''
         settings = configs.get()
         lang = configs.lang[configs.get_guild(ctx.guild.id)['language']]
 
@@ -102,6 +102,25 @@ class Bot(commands.Cog):
             return None
         await ctx.send(embed=embed)
 
+
+    @commands.hybrid_command(aliases=modulos['bot']['haru'])
+    @commands.check(configs.Authentication.member)
+    @commands.check(configs.guild_check)
+    async def haru(self, ctx):
+        '''Basic informations about Haru'''
+        settings = configs.get()
+        lang = configs.lang[configs.get_guild(ctx.guild.id)['language']]
+
+        embed = discord.Embed(title=lang['COMMAND']['HARU']['TITLE'], description=lang['COMMAND']['HARU']['DESCRIPTION']+settings['bot-invite']+').', color=colors.default)
+        embed.set_author(name=lang['COMMAND']['HARU']['NAME'], icon_url=settings['bot-icon'])
+        embed.set_thumbnail(url=settings['app-icon'])
+        embed.add_field(name=lang['COMMAND']['HARU']['COMMANDS']['NAME'], value=lang['COMMAND']['HARU']['COMMANDS']['VALUE'], inline=False)
+        embed.add_field(name=lang['COMMAND']['HARU']['SERVER']['NAME'], value=lang['COMMAND']['HARU']['SERVER']['VALUE']+settings['bot-invite']+').', inline=False)
+        embed.add_field(name=lang['COMMAND']['HARU']['SITE']['NAME'], value=lang['COMMAND']['HARU']['SITE']['VALUE']+settings['site']+').', inline=False)
+        embed.set_footer(text=lang['COMMAND']['HARU']['FOOTER'])
+
+        await ctx.send(embed=embed)
+        
 
 async def setup(bot):
     await bot.add_cog(Bot(bot))

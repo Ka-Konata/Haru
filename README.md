@@ -1,8 +1,27 @@
-# Descrição
-Este é um Rework da Haru (Haru v3)<br/><br/>
-Um simples bot para o discord, com algumas funcionalidades básicas.<br/>
-Funciona apenas em servidores, bloqueia o uso em dms.<br/><br/>
-Enquanto em estágio de desenvolvimento, por segurança o bot só responde à comandos executados em servidores que estiverem na lista de servidores de teste.
+# Documentação - Haru (Rework)
+## Descrição
+Este é um Rework da Haru (Haru v3). Um simples bot para o discord, com algumas funcionalidades básicas.<br/>
+
+* Funciona apenas em servidores, bloqueia o uso em dms.
+* Modo de Desenvolvimento: funciona apenas nos servidores pré-definidos
+
+> Atualmente na versão alpha 3.0.0.5
+
+---
+
+## Clonando o Repositório
+Algumas coisas precisam ser feitas para instalar o projeto e colocá-lo para funcionar
+
+1. Clone o repositório
+2. Abra um terminal e navegue até a pasta principal do projeto
+3. Instale as depêndencias usando `pip install -r requirements.txt`
+4. Vá no [developer portal](https://discord.com/developers/applications) do discord, crie uma aplicação e copie o token
+5. Na pasta principal do projeto, crie um arquivo .env e salve o token do bot como uma variável de ambiente
+4. Inicie o programa usando `python main.py`
+5. No terminal, insira o ID do seu servidor de testes
+6. No terminal, Insira o ID do seu usuário no discord
+
+Caso queira desativar o Modo de Desenvolvimento, apenas entre no seu servidor de testes e execute o comando `h!oc_devmode off`
 
 ## Níveis de permissão
 * Developer
@@ -22,6 +41,13 @@ Enquanto em estágio de desenvolvimento, por segurança o bot só responde à co
 
 * Member
 > Nenhum Requisito
+
+## Idiomas
+
+name | code | satage
+:--- | :--- | :-----
+Português | pt-br | ✔️
+Inglês | en | ❌
 
 ## Módulos
 
@@ -52,8 +78,8 @@ Bot Module
 
 name | permission | explanation | stage
 :--- | :--------- | :---------- | :---:
-help | member | uma lista de todos os comandos ou uma explicação de um módulo ou comando específico caso requerido | ✔️
-haru | member | informações básicas sobre o bot | ❌
+help | member | A list of all commands or an explanation of a specific module/command. | ✔️
+haru | member | Basic information about Haru | ❌
 invite | member | link de invite do bot | ❌
 site | member | link do site do bot | ❌
 server | member | link de invite do servidor oficial do bot | ❌
@@ -108,6 +134,7 @@ jankenpon | member | joga jokenpô com o usuário | ❌
 dice | member | joga um dado de 6 lados | ❌
 ship | member | shipa dois usuários, em até 100% | ❌
 guess | member | o usuário tenta adivinhar um número de 1 a 10 | ❌
+mugistrong | member | envia um gif da Mugi-Strong | ❌
 
 
 ~~~py

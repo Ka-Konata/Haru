@@ -46,7 +46,10 @@ async def on_command_error(ctx, error):
         if isinstance(error, err):
             return None
 
-    if isinstance(error, errors.GuildNotAllowed):
+    if isinstance(error, commands.errors.CommandNotFound):
+        embed = errors.get_error_embed(lang, lang['ERROR']['CommandNotFound']['TYPE'])
+
+    elif isinstance(error, errors.GuildNotAllowed):
         embed = errors.get_error_embed(lang, lang['ERROR']['GuildNotAllowed']['TYPE'], lang['ERROR']['GuildNotAllowed']['REASON'])
 
     elif isinstance(error, errors.AuthenticationFailure):
