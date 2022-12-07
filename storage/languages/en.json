@@ -1,0 +1,24 @@
+{
+    "HELP":{
+        "DEFAULT":{
+            
+        },
+        "MODULE":{
+
+        },
+        "COMMAND":{
+
+        }
+    },
+    "ERROR":{
+        "TYPE": {
+
+        },
+        "REASON": {
+
+        }
+    },
+    "COMMAND": {
+
+    }
+}

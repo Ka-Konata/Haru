@@ -14,8 +14,8 @@ class Developer(commands.Cog):
         '''Envia um hello world, e os status do bot'''
         settings = configs.get()
 
-        embed = discord.Embed(title='', description=f'**User do Bot:** {self.bot.user.mention}\n**ID do bot:** {self.bot.user.id}\n**Iniciado em:** {settings["started_at"]}', color=colors.default)
-        embed.set_author(name=settings["bot_name"], icon_url=settings["bot_icon"])
+        embed = discord.Embed(title='', description=f'**User do Bot:** {self.bot.user.mention}\n**ID do bot:** {self.bot.user.id}\n**Iniciado em:** {settings["started-at"]}', color=colors.default)
+        embed.set_author(name=settings["bot-name"], icon_url=settings["bot-icon"])
         embed.add_field(name='Status do Bot', value=f'```🟢Online  |  🏓Ping: {round(self.bot.latency * 1000)}ms```', inline=False)
         await ctx.send(embed=embed)
 
@@ -87,7 +87,7 @@ class Developer(commands.Cog):
         sv_list_str = '```'
         c = 1
         for sv in sv_list:
-            sv_list_str += ctx.bot.get_guild(sv).name + f'({str(sv)})'
+            sv_list_str += ctx.bot.get_guild(sv).name + f' ({str(sv)})'
             if not c == len(sv_list):
                 sv_list_str += ', '
             c += 1
@@ -208,6 +208,36 @@ class Developer(commands.Cog):
         embed=discord.Embed(color=colors.default)
         embed.add_field(name="Lista de Developers:", value=dev_list_str, inline=True)
         embed.set_footer(text=f"Total: {len(dev_list)} developer(s)")
+        await ctx.send(embed=embed)
+
+
+    @commands.hybrid_command()
+    @commands.check(configs.Authentication.developer)
+    @commands.check(configs.guild_check)
+    async def oc_devmode(self, ctx, toggle : str):
+        '''ativa ou desativa o modo de desenvolvimento'''
+        settings = configs.get()
+
+        embed=discord.Embed(color=colors.default)
+        if toggle == 'on':
+            settings['development-mode'] = True
+            embed.add_field(name="Modo de Desenvolvedor:", value="```🟢Ativado```", inline=True)
+        elif toggle == 'off':
+            settings['development-mode'] = False
+            embed.add_field(name="Modo de Desenvolvedor:", value="```🔴Desativado```", inline=True)
+        else:
+            raise errors.DevModeUnknown
+        configs.save(settings)
+        await ctx.send(embed=embed)
+
+
+    @oc_devmode.error
+    async def oc_devmode_error(self, ctx, error):
+        if isinstance(error, errors.DevModeUnknown):
+            lang = configs.lang[configs.get_guild(ctx.guild.id)['language']]
+            embed = errors.get_error_embed(lang, 'Modo Desconhecido', 'Modos conhecidos: on, off')
+        else:
+            return None
         await ctx.send(embed=embed)
 
 

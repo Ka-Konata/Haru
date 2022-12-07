@@ -1,0 +1,126 @@
+{
+    "COMMAND": {
+
+    },
+    "HELP":{
+        "DEFAULT":{
+            "TITLE":"Sobre o bot",
+            "DESCRIPTION":"Este é um Rework da Haru. Um simples bot para o discord, com algumas funcionalidades básicas.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [modulo]** para ler mais sobre um modulo.\nUse **/help [comando]** para ler mais sobre um comando.",
+            "NAME":"Haru - Help",
+            "MODULE": {
+                "BOT":"**Modulo: Bot**", 
+                "CONFIGURATION":"**Modulo: Configuration**", 
+                "UTILITY":"**Modulo: Utility**", 
+                "FUN":"**Modulo: Fun**", 
+                "INTERACTION":"**Modulo: Interaction**"
+            },
+            "FOOTER":"Ainda precisa de ajuda? Use /server ou h!server para entrar no servidor de suporte da Haru!"
+        },
+        "MODULE":{
+            "bot": {
+                "TITLE":"Sobre o Modulo Bot",
+                "DESCRIPTION":"Contém comandos relacionados ao bot, como informações básicas e essênciais.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [comando]** para ler mais sobre um comando."
+            }, 
+            "configuration": {
+                "TITLE":"Sobre o Modulo Configuration",
+                "DESCRIPTION":"Contém comandos relacionados relacionados às configurações somente do servidor.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [comando]** para ler mais sobre um comando."
+            }, 
+            "utility": {
+                "TITLE":"Sobre o Modulo Utility",
+                "DESCRIPTION":"Contém comandos que podem ser considerados úteis, estando relacionados ao discord ou não.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [comando]** para ler mais sobre um comando."
+            }, 
+            "fun": {
+                "TITLE":"Sobre o Modulo Fun",
+                "DESCRIPTION":"Contém comandos feitos para serem divertidos, como jogos ou memes (algumas piadas internas também).\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [comando]** para ler mais sobre um comando."
+            }, 
+            "interaction": {
+                "TITLE":"Sobre o Modulo Interaction",
+                "DESCRIPTION":"Contém comandos feitos para você interagir com outros membos do servidor... e até com a própria Haru!\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [comando]** para ler mais sobre um comando."
+            },
+            "NAME":"Haru - Help",
+            "FIELD NAME":"Comandos",
+            "FOOTER":"Ainda precisa de ajuda? Use /server ou h!server para entrar no servidor de suporte da Haru!"
+        },
+        "COMMAND":{
+                "TITLE":"Sobre o Comando /",
+            "help": {
+                "DESCRIPTION":"Uma lista com todos os comandos ou uma explicação de um módulo ou comando específico.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "HOW VALUE":"```/help [modulo ou comando]```",
+                "EXEMPLE VALUE":"`/help` `/help bot` `/help invite`"
+            }, 
+            "haru":["haruinfo"], 
+            "invite":["convite"], 
+            "site":[], 
+            "server":["servidor", "suporte"], 
+            "github":["repo", "repositorio"], 
+            "dev":["desenvolvedor"], 
+            "ping":[],
+            "prefix":["setprefix", "prefixo"],
+            "language":["setlanguage", "idioma"],
+            "settings":[],
+            "lockcommand":[],
+            "unlockcommand":[],
+            "lockmodule":[],
+            "unlockmodule":[],
+            "lockedcommands":["listlocked"],
+            "avatar":["usericon"],
+            "banner":[],
+            "servericon":[],
+            "permissions":["permissoes"],
+            "userinfo":["whois"],
+            "channelinfo":[],
+            "roleinfo":[],
+            "serverinfo":[],
+            "currency":["convert"],
+            "random":["aleatorio"],
+            "anime":["mal"],
+            "morse":[],
+            "flipmsg":["inverter"],
+            "choose":["escolha"],
+            "coinflip":["caracoroa"],
+            "jankenpon":[],
+            "dice":["dados"],
+            "ship":[],
+            "guess":["adivinhe"],
+            "kiss":["beijar"],
+            "bite":["morder"],
+            "lick":["lamber"],
+            "slap":["tapear"],
+            "hug":["abracar"],
+            "shoot":["atirar"],
+            "HOW TITLE":"Como Usar",
+            "EXEMPLE TITLE":"Exemplos",
+            "ALIASES TITLE":"Aliases",
+            "NAME":"Haru - Help",
+            "FOOTER":"Ainda precisa de ajuda? Use /server ou h!server para entrar no servidor de suporte da Haru!"
+        }
+    },
+    "ERROR":{
+        "AUTHOR":"Haru - Erro",
+        "TYPE":"Tipo:",
+        "REASON":"Motivo:",
+        "TIP":"Dica:",
+        "FOOTER":"Use /help ou h!help para mais informações",
+        "GuildNotAllowed": {
+            "TYPE": "Servidor não Permitido",
+            "REASON": "Como o MODO DE DESENVOLVIMENTO (por segurança) está ativado, use /server para entrar no servidor de suporte e peça à um developer ou manager para liberar o uso da Haru neste servidor."
+        },
+        "AuthenticationFailure": {
+            "TYPE": "Erro de Autênticação",
+            "REASON": "Nível de Permissão Requerido: "
+        },
+        "MemberNotFound": {
+            "TYPE": "Membro não Encontrado"
+        },
+        "UserNotFound": {
+            "TYPE": "Usuário não Encontrado"
+        },
+        "GuildNotFound": {
+            "TYPE": "Servidor não Encontrado"
+        },
+        "MissingRequiredArgument": {
+            "TYPE": "Campo Obrigatório não Preenchido",
+            "REASON": "Parâmetro(s) do Comando: "
+        }
+    }
+}

@@ -1,7 +1,7 @@
 # Descrição
 Este é um Rework da Haru (Haru v3)<br/><br/>
 Um simples bot para o discord, com algumas funcionalidades básicas.<br/>
-Funciona apenas em servidores, bloqueia o uso em dms.<br/>
+Funciona apenas em servidores, bloqueia o uso em dms.<br/><br/>
 Enquanto em estágio de desenvolvimento, por segurança o bot só responde à comandos executados em servidores que estiverem na lista de servidores de teste.
 
 ## Níveis de permissão
@@ -43,6 +43,7 @@ oc_listmanager | manager | lista todos os usuários com permissão de manager | 
 oc_pmtdeveloper | developer | adiciona um usuário na lista de developers | ✔️
 oc_dmtdeveloper | developer | remove um usuário da lista de developers | ✔️
 oc_listdeveloper | manager | lista todos os usuários com permissão de developer | ✔️
+oc_devmode | developer | ativa ou desativa o modo de desenvolvimento | ✔️
 
 
 ~~~py
@@ -51,7 +52,7 @@ Bot Module
 
 name | permission | explanation | stage
 :--- | :--------- | :---------- | :---:
-help | member | uma lista de todos os comandos ou uma explicação de um módulo ou comando específico caso requerido | ❌
+help | member | uma lista de todos os comandos ou uma explicação de um módulo ou comando específico caso requerido | ✔️
 haru | member | informações básicas sobre o bot | ❌
 invite | member | link de invite do bot | ❌
 site | member | link do site do bot | ❌

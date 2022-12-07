@@ -1,0 +1,53 @@
+{
+    "bot": {
+        "help":["ajuda", "info", "about", "sobre"], 
+        "haru":["haruinfo", "botinfo"], 
+        "invite":["convite"], 
+        "site":[], 
+        "server":["servidor", "suporte"], 
+        "github":["repo", "repositorio"], 
+        "dev":["desenvolvedor"], 
+        "ping":[]
+    }, 
+    "configuration": {
+        "prefix":["setprefix", "prefixo"],
+        "language":["setlanguage", "idioma"],
+        "settings":[],
+        "lockcommand":[],
+        "unlockcommand":[],
+        "lockmodule":[],
+        "unlockmodule":[],
+        "lockedcommands":["listlocked"]
+    }, 
+    "utility":{
+        "avatar":["usericon"],
+        "banner":[],
+        "servericon":[],
+        "permissions":["permissoes"],
+        "userinfo":["whois"],
+        "channelinfo":[],
+        "roleinfo":[],
+        "serverinfo":[],
+        "currency":["convert"],
+        "random":["aleatorio"],
+        "anime":["mal"]
+    }, 
+    "fun":{
+        "morse":[],
+        "flipmsg":["inverter"],
+        "choose":["escolha"],
+        "coinflip":["caracoroa"],
+        "jankenpon":[],
+        "dice":["dados"],
+        "ship":[],
+        "guess":["adivinhe"]
+    }, 
+    "interaction":{
+        "kiss":["beijar"],
+        "bite":["morder"],
+        "lick":["lamber"],
+        "slap":["tapear"],
+        "hug":["abracar"],
+        "shoot":["atirar"]
+    }
+}

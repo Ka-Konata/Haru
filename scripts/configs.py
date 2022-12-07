@@ -10,22 +10,55 @@ moderator     = 2
 member        = 1
 
 
-def get():
-    with open('scripts/configs.json') as f:
-        configs = json.load(f)
+def json_open(path):
+    with open(path, encoding='utf8') as f:
+        cmds = json.load(f)
         f.close()
-    return configs
+    return cmds
+
+
+def get_commands():
+    return json_open('storage/commands.json')
+
+
+def get_guild(guild_id : str):
+    guild_id = str(guild_id)
+    guilds = json_open('storage/guilds.json')
+    try:
+        res = guilds[guild_id]
+    except Exception as error:
+        guilds.update({guild_id:{'prefix':'!h', 'language':'pt-br', 'lockedcommands':[]}})
+        res              = guilds[guild_id]
+        obj = json.dumps(guilds, indent=4)
+        with open('storage/guilds.json', 'w') as f:
+            f.write(obj)
+            f.close()
+    return res
+
+
+
+def get_lang(language):
+    return json_open(f'storage/languages/{language}.json')
+
+
+lang = {'pt-br':get_lang('pt-br'), 'en':get_lang('en')}
+
+
+def get():
+    return json_open('storage/configs.json')
 
 
 def save(actualized_configs):
     obj = json.dumps(actualized_configs, indent=4)
-    with open('scripts/configs.json', 'w') as f:
+    with open('storage/configs.json', 'w') as f:
         f.write(obj)
         f.close()
 
 
 def guild_check(ctx):
     settings = get()
+    if settings['development-mode'] == False:
+        return True
     if not ctx.guild.id in settings['server-list']:
         raise errors.GuildNotAllowed
     return True
