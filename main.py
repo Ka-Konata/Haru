@@ -25,7 +25,7 @@ TOKEN   = getenv('TOKEN')  # Procura o token nas variáveis de ambiente
 intents = discord.Intents.default()
 intents.members         = True
 intents.message_content = True
-bot     = commands.Bot(command_prefix=settings['defaul-prefix'], intents=intents)
+bot     = commands.Bot(command_prefix=settings['default-prefix'], intents=intents)
 
 
 @bot.event
@@ -45,6 +45,17 @@ async def on_ready():
     await bot.load_extension('modules.interaction')
 
     await bot.tree.sync()
+
+
+@bot.event
+async def on_message(message):
+    guild = configs.get_guild(message.guild.id)
+    guild_prefix = guild['prefix']
+
+    if  guild_prefix in message.content:
+        message.content = message.content.replace(guild_prefix, settings['default-prefix'])
+
+    await bot.process_commands(message)
 
 
 @bot.event
@@ -84,8 +95,8 @@ async def on_command_error(ctx, error):
         else:
             return None
 
-    #await ctx.send(embed=embed)
-    raise error
+    await ctx.send(embed=embed)
+    #raise error
 
 
 bot.run(TOKEN)

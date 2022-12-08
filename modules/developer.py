@@ -222,7 +222,6 @@ class Developer(commands.Cog):
         if toggle == 'on':
             settings['development-mode'] = True
             embed.add_field(name="Modo de Desenvolvedor:", value="```🟢Ativado```", inline=True)
-        elif toggle == 'off':
             settings['development-mode'] = False
             embed.add_field(name="Modo de Desenvolvedor:", value="```🔴Desativado```", inline=True)
         else:
