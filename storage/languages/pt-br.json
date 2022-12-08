@@ -50,6 +50,20 @@
             },
             "NAME":"Haru - Equipe de Desenvolvimento", 
             "FOOTER":"Use /help ou h!help para mais informações"   
+        },
+        "PREFIX": {
+            "DESCRIPTION":"Prefixo local alterado com sucesso!",
+            "PREFIX NEW":"Novo Prefixo:",
+            "PREFIX OLD":" Prefixo Antigo:",
+            "NAME":"Haru - Selecionando o Prefixo", 
+            "FOOTER":"Use /help ou h!help para mais informações"   
+        },
+        "LANGUAGE": {
+            "DESCRIPTION":"Idioma do bot alterado com sucesso!",
+            "LANGUAGE TITLE":"Idioma Alterado Para:",
+            "LANGUAGE VALUE":"`pt-br` (Português)",
+            "NAME":"Haru - Selecionando o Idioma", 
+            "FOOTER":"Use /help ou h!help para mais informações"   
         }
     },
     "HELP":{
@@ -133,8 +147,16 @@
                 "HOW VALUE":"```/ping```",
                 "EXEMPLE VALUE":"`/ping`"
             }, 
-            "prefix":["setprefix", "prefixo"],
-            "language":["setlanguage", "idioma"],
+            "prefix": {
+                "DESCRIPTION":"Altere o prefixo da Haru neste servidor para impedir conflitos com outros bots.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "HOW VALUE":"```/prefix <novo prefixo>```",
+                "EXEMPLE VALUE":"`/prefix #` `/prefix h!`"
+            }, 
+            "language": {
+                "DESCRIPTION":"Altere o idioma da Haru neste servidor.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nIdiomas Disponíveis: \nPortuguês: `pt-br`\ninglês: `en`",
+                "HOW VALUE":"```/language <código do idioma>```",
+                "EXEMPLE VALUE":"`/language pt-br` `/language en`"
+            }, 
             "settings":[],
             "lockcommand":[],
             "unlockcommand":[],
@@ -179,7 +201,8 @@
         "TYPE":"Tipo:",
         "REASON":"Motivo:",
         "TIP":"Dica:",
-        "FOOTER":"Use /help ou h!help para mais informações",
+        "FOOTER":"Use /help para mais informações",
+        "FOOTER UNKNOWN":"Reporte esse erro usando /server",
         "CommandNotFound": {
             "TYPE": "Comando Desconhecido"
         },
@@ -205,7 +228,16 @@
             "REASON": "Parâmetro(s) do Comando: "
         },
         "CommandOrModuleNotFound": {
-            "TYPE":"Módulo/Comando não Reconhecido"
+            "TYPE": "Módulo/Comando não Reconhecido"
+        },
+        "PrefixVeryBig": {
+            "TYPE": "Tamanho Limite Excedido",
+            "REASON": "O prefixo só pode ter até 2 caracteres."
+        },
+        "LanguageDontExists": {
+            "TYPE": "Idioma não Idêntificado",
+            "REASON": "O comando /language só aceita o código de um idioma (também não idêntifica o nome da idioma).",
+            "TIP": "Use \"/help language\" para conferir os idiomas disponíveis."
         }
     }
 }

@@ -93,14 +93,14 @@ Configuration Module
 
 name | permission | explanation | stage
 :--- | :--------- | :---------- | :---:
-prefix | admin | altera o prefixo do bot | ❌
-language | admin | altera o idioma do bot | ❌
-settings | mod | lista as configurações do bot no servidor | ❌
+prefix | admin | Allows you to change the guild prefix | ✔️
+language | admin | Allows you to change Haru's language | ✔️
 lockcommand | admin | bloqueia o uso de um comando | ❌
 unlockcommand | admin | desbloqueia o uso de um comando | ❌
 lockmodule | admin | bloqueia o uso de um módulo | ❌
 unlockmodule | admin | desbloqueia o uso de um módulo | ❌
 lockedcommands | admin | lista de comandos e/ou módulos bloqueados | ❌
+settings | mod | lista as configurações do bot no servidor | ❌
 
 ~~~py
 Utility Module

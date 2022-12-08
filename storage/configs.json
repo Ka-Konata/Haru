@@ -8,7 +8,12 @@
     "site": "https://konata.site/haru/home",
     "github": "https://github.com/Ka-Konata/Haru",
     "default-prefix": "h!",
-    "started-at": "07/12/2022 21:42:30",
+    "default-language": "pt-br",
+    "languages": [
+        "pt-br",
+        "en"
+    ],
+    "started-at": "08/12/2022 00:06:08",
     "server-list": [
         788518735752724480
     ],

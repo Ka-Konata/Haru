@@ -1,24 +1,238 @@
 {
+    "COMMAND": {
+        "HARU": {
+            "TITLE":"Sobre o bot",
+            "DESCRIPTION":"Este é um Rework da Haru. Um simples bot para o discord, com algumas funcionalidades básicas.\n\n<:r_Happyzin:829906563656712222>  [Adicione a Haru no seu servicor clicando aqui!](",
+            "NAME":"Haru - Sobre o Bot",
+            "COMMANDS": {
+                "NAME":"Conheça alguns comandos básicos da Haru:",
+                "VALUE":"`/help [modulo ou comando]` - Te ensina a usar a Haru.\n`/ping` - Te informa se a Haru está funcionando.\n`/avatar [usuário]` - Envia o icon de alguém.\n`/ship <usuário>` - Chances do seu ship dar certo."
+            },
+            "SERVER": {
+                "NAME":"Servidor da Haru:",
+                "VALUE":"Caso tenha alguma dúvida, queira reportar algum erro ou simplesmente estar por dentro de todas as novidades sobre o bot, entre no [servidor de suporte da Haru]("
+            },
+            "SITE": {
+                "NAME":"Site da Haru:",
+                "VALUE":"Para conhecer mais sobre ou conferir a documentação completa do bot, você pode acessar o [site oficial da haru]("
+            },
+            "FOOTER":"Use /help ou h!help para mais informações"
+        },
+        "INVITE": {
+            "DESCRIPTION":"Para adicionar a Haru no seu servidor, você só precisa clicar no link abaixo:\n\n<:r_Happyzin:829906563656712222>  [Link de convide da haru](",
+            "NAME":"Haru - Link de Convite", 
+            "FOOTER":"Use /help ou h!help para mais informações"   
+        },
+        "SITE": {
+            "DESCRIPTION":"Caso queira saber tudo sobre a Haru, você pode acessar o nosso site oficial clicando no link abaixo:\n\n<:r_Happyzin:829906563656712222>  [Link do site ofical da Haru](",
+            "NAME":"Haru - Site Ocifial", 
+            "FOOTER":"Use /help ou h!help para mais informações"   
+        },
+        "SERVER": {
+            "DESCRIPTION":"Caso tenha alguma dúvida ou queria reportar algum erro, você pode entrar no servidor oficial da Haru clicando no link abaixo. Não se esqueça de ler as **regras**!\n\n<:r_Happyzin:829906563656712222>  [Link do servidor ofical da Haru](",
+            "NAME":"Haru - Servidor Ocifial", 
+            "FOOTER":"Use /help ou h!help para mais informações"   
+        },
+        "GITHUB": {
+            "DESCRIPTION":"Caso esteja procurando pelo repositório da Haru no GitHub para dar uma olhada, ou até mesmo ajudar no desenvolvimento do bot, clique no link abaixo. (Atualmente sendo desenvolvida na branch **'rework'**)\n\n<:r_Happyzin:829906563656712222>  [Link do repositório da Haru no GitHub](",
+            "NAME":"Haru - Repositório", 
+            "FOOTER":"Use /help ou h!help para mais informações"   
+        },
+        "DEV": {
+            "DESCRIPTION":"Quantidade de membros na equipe de desenvolvimento: `",
+            "LIST DEVS": {
+                "TITLE":"Lista de Developers:",
+                "VALUE":"`nenhum`"
+            },
+            "LIST MANAGERS": {
+                "TITLE":" Lista de Managers:",
+                "VALUE":"`nenhum`"
+            },
+            "NAME":"Haru - Equipe de Desenvolvimento", 
+            "FOOTER":"Use /help ou h!help para mais informações"   
+        },
+        "PREFIX": {
+            "DESCRIPTION":"Prefixo local alterado com sucesso!",
+            "PREFIX NEW":"Novo Prefixo:",
+            "PREFIX OLD":" Prefixo Antigo:",
+            "NAME":"Haru - Selecionando o Prefixo", 
+            "FOOTER":"Use /help ou h!help para mais informações"   
+        },
+        "LANGUAGE": {
+            "DESCRIPTION":"Haru's language successfully changed!",
+            "LANGUAGE TITLE":"Language Changed To:",
+            "LANGUAGE VALUE":"`en` (English)",
+            "NAME":"Haru - Selecting Language", 
+            "FOOTER":"Use /help or h!help to get more informations"   
+        }
+    },
     "HELP":{
         "DEFAULT":{
-            
+            "TITLE":"Sobre o bot",
+            "DESCRIPTION":"Este é um Rework da Haru. Um simples bot para o discord, com algumas funcionalidades básicas.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [modulo]** para ler mais sobre um modulo.\nUse **/help [comando]** para ler mais sobre um comando.",
+            "NAME":"Haru - Sistema de Ajuda",
+            "MODULE": {
+                "BOT":"**Modulo: Bot**", 
+                "CONFIGURATION":"**Modulo: Configuration**", 
+                "UTILITY":"**Modulo: Utility**", 
+                "FUN":"**Modulo: Fun**", 
+                "INTERACTION":"**Modulo: Interaction**"
+            },
+            "FOOTER":"Ainda precisa de ajuda? Use /server ou h!server para entrar no servidor de suporte da Haru"
         },
         "MODULE":{
-
+            "bot": {
+                "TITLE":"Sobre o Modulo Bot",
+                "DESCRIPTION":"Contém comandos relacionados ao bot, como informações básicas e essênciais.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [comando]** para ler mais sobre um comando."
+            }, 
+            "configuration": {
+                "TITLE":"Sobre o Modulo Configuration",
+                "DESCRIPTION":"Contém comandos relacionados relacionados às configurações somente do servidor.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [comando]** para ler mais sobre um comando."
+            }, 
+            "utility": {
+                "TITLE":"Sobre o Modulo Utility",
+                "DESCRIPTION":"Contém comandos que podem ser considerados úteis, estando relacionados ao discord ou não.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [comando]** para ler mais sobre um comando."
+            }, 
+            "fun": {
+                "TITLE":"Sobre o Modulo Fun",
+                "DESCRIPTION":"Contém comandos feitos para serem divertidos, como jogos ou memes (algumas piadas internas também).\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [comando]** para ler mais sobre um comando."
+            }, 
+            "interaction": {
+                "TITLE":"Sobre o Modulo Interaction",
+                "DESCRIPTION":"Contém comandos feitos para você interagir com outros membos do servidor... e até com a própria Haru!\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [comando]** para ler mais sobre um comando."
+            },
+            "NAME":"Haru - Help",
+            "FIELD NAME":"Comandos",
+            "FOOTER":"Ainda precisa de ajuda? Use /server ou h!server para entrar no servidor de suporte da Haru"
         },
         "COMMAND":{
-
+                "TITLE":"Sobre o Comando /",
+            "help": {
+                "DESCRIPTION":"Uma lista com todos os comandos ou uma explicação de um módulo ou comando específico.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "HOW VALUE":"```/help [modulo ou comando]```",
+                "EXEMPLE VALUE":"`/help` `/help bot` `/help invite`"
+            }, 
+            "haru": {
+                "DESCRIPTION":"Saiba todas as informações mais essênciais sobre a Haru, uma ótima introdução ao bot.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "HOW VALUE":"```/haru```",
+                "EXEMPLE VALUE":"`/haru`"
+            }, 
+            "invite": {
+                "DESCRIPTION":"Envia o link de convite da Haru, para adicioná-la no seu servidor.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "HOW VALUE":"```/invite```",
+                "EXEMPLE VALUE":"`/invite`"
+            }, 
+            "site": {
+                "DESCRIPTION":"Envia o link do site oficial da Haru, para que você possa saber tudo sobre o bot.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "HOW VALUE":"```/site```",
+                "EXEMPLE VALUE":"`/site`"
+            }, 
+            "server": {
+                "DESCRIPTION":"Envia o link do servidor oficial da Haru, para você entrar e tirar suas dúvidas ou reportar os erros que encontrar.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "HOW VALUE":"```/server```",
+                "EXEMPLE VALUE":"`/server`"
+            },  
+            "github": {
+                "DESCRIPTION":"Envia o link do repositório da Haru no GitHub, para que você possa dar uma olhada ou até mesmo ajudar no desenvolvimento do bot.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "HOW VALUE":"```/github```",
+                "EXEMPLE VALUE":"`/github`"
+            },  
+            "dev": {
+                "DESCRIPTION":"lnformações sobre a equipe de desenvolvimento  do bot.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "HOW VALUE":"```/dev```",
+                "EXEMPLE VALUE":"`/dev`"
+            }, 
+            "ping": {
+                "DESCRIPTION":"Saiba se a Haru está online e qual o tempo de resposta dela atualmente.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "HOW VALUE":"```/ping```",
+                "EXEMPLE VALUE":"`/ping`"
+            }, 
+            "prefix": {
+                "DESCRIPTION":"Altere o prefixo da Haru neste servidor para impedir conflitos com outros bots.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "HOW VALUE":"```/prefix <novo prefixo>```",
+                "EXEMPLE VALUE":"`/prefix #` `/prefix h!`"
+            }, 
+            "language": {
+                "DESCRIPTION":"Altere o idioma da Haru neste servidor.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nIdiomas Disponíveis: \nPortuguês: `pt-br`\ninglês: `en`",
+                "HOW VALUE":"```/language <código do idioma>```",
+                "EXEMPLE VALUE":"`/language pt-br` `/language en`"
+            }, 
+            "settings":[],
+            "lockcommand":[],
+            "unlockcommand":[],
+            "lockmodule":[],
+            "unlockmodule":[],
+            "lockedcommands":["listlocked"],
+            "avatar":["usericon"],
+            "banner":[],
+            "servericon":[],
+            "permissions":["permissoes"],
+            "userinfo":["whois"],
+            "channelinfo":[],
+            "roleinfo":[],
+            "serverinfo":[],
+            "currency":["convert"],
+            "random":["aleatorio"],
+            "anime":["mal"],
+            "morse":[],
+            "flipmsg":["inverter"],
+            "choose":["escolha"],
+            "coinflip":["caracoroa"],
+            "jankenpon":[],
+            "dice":["dados"],
+            "ship":[],
+            "guess":["adivinhe"],
+            "kiss":["beijar"],
+            "bite":["morder"],
+            "lick":["lamber"],
+            "slap":["tapear"],
+            "hug":["abracar"],
+            "shoot":["atirar"],
+            "HOW TITLE":"Como Usar",
+            "EXEMPLE TITLE":"Exemplos",
+            "ALIASES TITLE":"Aliases",
+            "NAME":"Haru - Help",
+            "FOOTER":"Ainda precisa de ajuda? Use /server ou h!server para entrar no servidor de suporte da Haru"
         }
     },
     "ERROR":{
-        "TYPE": {
-
+        "AUTHOR":"Haru - Erro Detectado",
+        "AUTHOR UNKNOWN":"Haru - Erro (Desconhecido) Detectado",
+        "TYPE":"Tipo:",
+        "REASON":"Motivo:",
+        "TIP":"Dica:",
+        "FOOTER":"Use /help para mais informações",
+        "FOOTER UNKNOWN":"Reporte esse erro usando /server",
+        "CommandNotFound": {
+            "TYPE": "Comando Desconhecido"
         },
-        "REASON": {
-
+        "GuildNotAllowed": {
+            "TYPE": "Servidor não Permitido",
+            "REASON": "Como o MODO DE DESENVOLVIMENTO (por segurança) está ativado, use /server para entrar no servidor de suporte e peça à um developer ou manager para liberar o uso da Haru neste servidor."
+        },
+        "AuthenticationFailure": {
+            "TYPE": "Erro de Autênticação",
+            "REASON": "Nível de Permissão Requerido: "
+        },
+        "MemberNotFound": {
+            "TYPE": "Membro não Encontrado"
+        },
+        "UserNotFound": {
+            "TYPE": "Usuário não Encontrado"
+        },
+        "GuildNotFound": {
+            "TYPE": "Servidor não Encontrado"
+        },
+        "MissingRequiredArgument": {
+            "TYPE": "Campo Obrigatório não Preenchido",
+            "REASON": "Parâmetro(s) do Comando: "
+        },
+        "CommandOrModuleNotFound": {
+            "TYPE": "Módulo/Comando não Reconhecido"
+        },
+        "PrefixVeryBig": {
+            "TYPE": "Tamanho Limite Excedido",
+            "REASON": "O prefixo só pode ter até 2 caracteres."
         }
-    },
-    "COMMAND": {
-
     }
 }

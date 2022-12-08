@@ -10,8 +10,12 @@ class CommandOrModuleNotFound(commands.CommandError):
     pass
 class DevModeUnknown(commands.CommandError):
     pass
+class PrefixVeryBig(commands.CommandError):
+    pass
+class LanguageDontExists(commands.CommandError):
+    pass
 
-local_errors = [DevModeUnknown, CommandOrModuleNotFound]
+local_errors = [DevModeUnknown, CommandOrModuleNotFound, PrefixVeryBig, LanguageDontExists]
 global_errors = [GuildNotAllowed, AuthenticationFailure]
 
 def get_error_embed(lang, type, reason = None, tip = None, unknown=False):
@@ -25,5 +29,5 @@ def get_error_embed(lang, type, reason = None, tip = None, unknown=False):
         embed.add_field(name=lang['ERROR']['REASON'], value=f"```{reason}```", inline=True)
     if not tip == None:
         embed.add_field(name=lang['ERROR']['TIP'], value=f"```{tip}```", inline=True)
-    embed.set_footer(text=lang['ERROR']['FOOTER'])
+    embed.set_footer(text=lang['ERROR']['FOOTER'] if unknown == False else lang['ERROR']['FOOTER UNKNOWN'])
     return embed

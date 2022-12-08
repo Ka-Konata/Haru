@@ -10,14 +10,14 @@
         "ping":["alive", "test"]
     }, 
     "configuration": {
-        "prefix":["setprefix", "prefixo"],
-        "language":["setlanguage", "idioma"],
-        "settings":[],
+        "prefix":["setprefix", "chageprefix", "prefixo"],
+        "language":["setlanguage", "setlang", "lang", "idioma"],
         "lockcommand":[],
         "unlockcommand":[],
         "lockmodule":[], 
         "unlockmodule":[],
-        "lockedcommands":["listlocked"]
+        "lockedcommands":["listlocked"],
+        "settings":[]
     }, 
     "utility":{
         "avatar":["usericon"],
@@ -40,7 +40,10 @@
         "jankenpon":[],
         "dice":["dados"],
         "ship":[],
-        "guess":["adivinhe"]
+        "guess":["adivinhe"],
+        "mugistrong":[],
+        "say":[],
+        "dm":[]
     }, 
     "interaction":{
         "kiss":["beijar"],

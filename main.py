@@ -11,8 +11,10 @@ from modules.interaction   import Interaction
 from scripts  import configs, errors
 from decouple import config as getenv
 
+
 settings = configs.get()
-logger = configs.logging.getLogger('discord')
+logger   = configs.logging.getLogger('discord')
+
 
 if len(settings['server-list']) == 0:
     sv = int(input('Não há nenhum servidor na lista de servidores de teste, insira um.\nID do servidor: '))
@@ -20,6 +22,7 @@ if len(settings['server-list']) == 0:
 if len(settings['developer-list']) == 0:
     dev = int(input('Não há nenhum desenvolvedor na lista, insira um.\nID do usuário: '))
     settings['developer-list'].append(dev)
+
 
 TOKEN   = getenv('TOKEN')  # Procura o token nas variáveis de ambiente
 intents = discord.Intents.default()
@@ -52,8 +55,10 @@ async def on_message(message):
     guild = configs.get_guild(message.guild.id)
     guild_prefix = guild['prefix']
 
-    if  guild_prefix in message.content:
-        message.content = message.content.replace(guild_prefix, settings['default-prefix'])
+    if  message.content.startswith(guild_prefix):
+        message.content = message.content.replace(guild_prefix, settings['default-prefix'], 1)
+    elif message.content.startswith(settings['default-prefix']) and settings['default-prefix'] != guild_prefix:
+        return None
 
     await bot.process_commands(message)
 
@@ -95,8 +100,8 @@ async def on_command_error(ctx, error):
         else:
             return None
 
-    await ctx.send(embed=embed)
-    #raise error
+    #await ctx.send(embed=embed)
+    raise error
 
 
 bot.run(TOKEN)

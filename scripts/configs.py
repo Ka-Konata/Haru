@@ -67,14 +67,15 @@ def get_commands():
     return json_open('storage/commands.json')
 
 
-def get_guild(guild_id : str):
+def get_guild(guild_id : str, all=False):
     guild_id = str(guild_id)
     guilds = json_open('storage/guilds.json')
     try:
-        res = guilds[guild_id]
+        res = guilds[guild_id] if not all else guilds
     except Exception as error:
-        guilds.update({guild_id:{'prefix':'!h', 'language':'pt-br', 'lockedcommands':[]}})
-        res              = guilds[guild_id]
+        settings = get()
+        guilds.update({guild_id:{'prefix':settings['default-prefix'], 'language':settings['default-language'], "lockedcommands": [], "lockedcmodules": []}})
+        res              = guilds[guild_id] if not all else guilds
         obj = json.dumps(guilds, indent=4)
         with open('storage/guilds.json', 'w') as f:
             f.write(obj)
@@ -94,9 +95,9 @@ def get():
     return json_open('storage/configs.json')
 
 
-def save(actualized_configs):
+def save(actualized_configs, path='storage/configs.json'):
     obj = json.dumps(actualized_configs, indent=4)
-    with open('storage/configs.json', 'w') as f:
+    with open(path, 'w') as f:
         f.write(obj)
         f.close()
 
