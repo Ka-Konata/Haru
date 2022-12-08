@@ -51,9 +51,8 @@ Inglês | en | ❌
 
 ## Módulos
 
-~~~py
-Dev Module
-~~~
+### Dev Module
+
 > Modulo oculto
 
 name | permission | explanation | stage
@@ -71,10 +70,7 @@ oc_dmtdeveloper | developer | remove um usuário da lista de developers | ✔️
 oc_listdeveloper | manager | lista todos os usuários com permissão de developer | ✔️
 oc_devmode | developer | ativa ou desativa o modo de desenvolvimento | ✔️
 
-
-~~~py
-Bot Module
-~~~
+### Bot Module
 
 name | permission | explanation | stage
 :--- | :--------- | :---------- | :---:
@@ -87,9 +83,7 @@ github | member | Send Haru's repository link on github | ✔️
 dev | member | Information about the bot development team | ✔️
 ping | member | Used to know if haru is alive | ✔️
 
-~~~py
-Configuration Module
-~~~
+### Configuration Module
 
 name | permission | explanation | stage
 :--- | :--------- | :---------- | :---:
@@ -102,9 +96,7 @@ unlockmodule | admin | desbloqueia o uso de um módulo | ❌
 lockedcommands | admin | lista de comandos e/ou módulos bloqueados | ❌
 settings | mod | lista as configurações do bot no servidor | ❌
 
-~~~py
-Utility Module
-~~~
+### Utility Module
 
 name | permission | explanation | stage
 :--- | :--------- | :---------- | :---:
@@ -120,9 +112,7 @@ currency | member | converte um valor de para outra cotação | ❌
 random | member | gera um número aleatório | ❌
 anime | member | informações sobre um anime no my anime list | ❌
 
-~~~py
-Fun Module
-~~~
+### Fun Module
 
 name | permission | explanation | stage
 :--- | :--------- | :---------- | :---:
@@ -139,9 +129,7 @@ say | member | faça a haru dizer alguma coisa | ❌
 dm | member | faça a haru enviar uma dm para alguém | ❌
 
 
-~~~py
-Interaction Module
-~~~
+### Interaction Module
 
 name | permission | explanation | stage
 :--- | :--------- | :---------- | :---:
