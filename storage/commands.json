@@ -6,8 +6,8 @@
         "site":["website", "getsite"], 
         "server":["servidor", "suporte", "getserver", "serverinvite"], 
         "github":["repo", "repositorio", "getrepo"], 
-        "dev":["desenvolvedor", "ka"], 
-        "ping":[]
+        "dev":["devs", "desenvolvedor", "devteam", "devsteam"], 
+        "ping":["alive", "test"]
     }, 
     "configuration": {
         "prefix":["setprefix", "prefixo"],
@@ -15,7 +15,7 @@
         "settings":[],
         "lockcommand":[],
         "unlockcommand":[],
-        "lockmodule":[],
+        "lockmodule":[], 
         "unlockmodule":[],
         "lockedcommands":["listlocked"]
     }, 

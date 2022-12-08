@@ -37,6 +37,19 @@
             "DESCRIPTION":"Caso esteja procurando pelo repositório da Haru no GitHub para dar uma olhada, ou até mesmo ajudar no desenvolvimento do bot, clique no link abaixo. (Atualmente sendo desenvolvida na branch **'rework'**)\n\n<:r_Happyzin:829906563656712222>  [Link do repositório da Haru no GitHub](",
             "NAME":"Haru - Repositório", 
             "FOOTER":"Use /help ou h!help para mais informações"   
+        },
+        "DEV": {
+            "DESCRIPTION":"Quantidade de membros na equipe de desenvolvimento: `",
+            "LIST DEVS": {
+                "TITLE":"Lista de Developers:",
+                "VALUE":"`nenhum`"
+            },
+            "LIST MANAGERS": {
+                "TITLE":" Lista de Managers:",
+                "VALUE":"`nenhum`"
+            },
+            "NAME":"Haru - Equipe de Desenvolvimento", 
+            "FOOTER":"Use /help ou h!help para mais informações"   
         }
     },
     "HELP":{
@@ -110,8 +123,16 @@
                 "HOW VALUE":"```/github```",
                 "EXEMPLE VALUE":"`/github`"
             },  
-            "dev":["desenvolvedor"], 
-            "ping":[],
+            "dev": {
+                "DESCRIPTION":"lnformações sobre a equipe de desenvolvimento  do bot.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "HOW VALUE":"```/dev```",
+                "EXEMPLE VALUE":"`/dev`"
+            }, 
+            "ping": {
+                "DESCRIPTION":"Saiba se a Haru está online e qual o tempo de resposta dela atualmente.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "HOW VALUE":"```/ping```",
+                "EXEMPLE VALUE":"`/ping`"
+            }, 
             "prefix":["setprefix", "prefixo"],
             "language":["setlanguage", "idioma"],
             "settings":[],
@@ -154,6 +175,7 @@
     },
     "ERROR":{
         "AUTHOR":"Haru - Erro Detectado",
+        "AUTHOR UNKNOWN":"Haru - Erro (Desconhecido) Detectado",
         "TYPE":"Tipo:",
         "REASON":"Motivo:",
         "TIP":"Dica:",
@@ -181,6 +203,9 @@
         "MissingRequiredArgument": {
             "TYPE": "Campo Obrigatório não Preenchido",
             "REASON": "Parâmetro(s) do Comando: "
+        },
+        "CommandOrModuleNotFound": {
+            "TYPE":"Módulo/Comando não Reconhecido"
         }
     }
 }

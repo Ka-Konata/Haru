@@ -26,6 +26,13 @@ class Bot(commands.Cog):
         for i in modulos.keys():
             for j in modulos[i]:
                 if especify in modulos[i] or especify in modulos[i][j]:
+
+                    if especify in modulos[i][j]:
+                        for aux in modulos[i].keys():
+                            if especify in modulos[i][aux]:
+                                especify = aux
+                                break
+
                     msg = discord.Embed(title=lang['HELP']['COMMAND']['TITLE']+especify, description=lang['HELP']['COMMAND'][especify]['DESCRIPTION'], color=colors.default)
                     msg.set_author(name=lang['HELP']['COMMAND']['NAME'], icon_url=settings['bot-icon'])
                     msg.set_thumbnail(url=settings['app-icon'])
@@ -97,7 +104,7 @@ class Bot(commands.Cog):
     async def help_error(self, ctx, error):
         if isinstance(error, errors.CommandOrModuleNotFound):
             lang = configs.lang[configs.get_guild(ctx.guild.id)['language']]
-            embed = errors.get_error_embed(lang, 'Não Existe Nenhum Comandulo ou Modulo com Este Nome')
+            embed = errors.get_error_embed(lang, lang['ERROR']['CommandOrModuleNotFound']['TYPE'])
         else:
             return None
         await ctx.send(embed=embed)
@@ -181,19 +188,40 @@ class Bot(commands.Cog):
         await ctx.send(embed=embed)
 
 
-    """@commands.hybrid_command(aliases=modulos['bot']['dev'])
+    @commands.hybrid_command(aliases=modulos['bot']['dev'])
     @commands.check(configs.Authentication.member)
     @commands.check(configs.guild_check)
     async def dev(self, ctx):
-        '''Send Haru's repository link on github'''
+        '''Information about the bot development team'''
         settings = configs.get()
         lang = configs.lang[configs.get_guild(ctx.guild.id)['language']]
-        
-        embed = discord.Embed(description=lang['COMMAND']['DEV']['DESCRIPTION']+settings['server-invite']+').', color=colors.default)
+
+        devs_count = len(settings['developer-list'])
+        devs_str = ''
+        for dev in settings['developer-list']:
+            devs_str += f'{ctx.bot.get_user(dev).mention}\n'
+
+        managers_count = len(settings['manager-list'])
+        managers_str = ''
+        for manager in settings['manager-list']:
+            managers_str += f'{ctx.bot.get_user(manager).mention}\n'
+
+        embed = discord.Embed(description=lang['COMMAND']['DEV']['DESCRIPTION']+str(devs_count + managers_count)+'`.', color=colors.default)
+        embed.add_field(name=lang['COMMAND']['DEV']['LIST DEVS']['TITLE'], value=devs_str if devs_str != '' else lang['COMMAND']['DEV']['LIST DEVS']['VALUE'])
+        embed.add_field(name=lang['COMMAND']['DEV']['LIST MANAGERS']['TITLE'], value=managers_str if managers_str != '' else lang['COMMAND']['DEV']['LIST MANAGERS']['VALUE'])
         embed.set_author(name=lang['COMMAND']['DEV']['NAME'], icon_url=settings['bot-icon'])
         embed.set_thumbnail(url=settings['app-icon'])
         embed.set_footer(text=lang['COMMAND']['DEV']['FOOTER'])
-        await ctx.send(embed=embed)"""
+        await ctx.send(embed=embed)
+
+
+    @commands.hybrid_command(aliases=modulos['bot']['ping'])
+    @commands.check(configs.Authentication.member)
+    @commands.check(configs.guild_check)
+    async def ping(self, ctx):
+        '''Used to know if haru is alive team'''
+
+        await ctx.send(f'`🏓Pong ({round(self.bot.latency * 1000)}ms)`')
 
 
 async def setup(bot):

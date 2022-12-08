@@ -11,13 +11,14 @@ class CommandOrModuleNotFound(commands.CommandError):
 class DevModeUnknown(commands.CommandError):
     pass
 
-local_errors = [DevModeUnknown]
+local_errors = [DevModeUnknown, CommandOrModuleNotFound]
+global_errors = [GuildNotAllowed, AuthenticationFailure]
 
-def get_error_embed(lang, type, reason = None, tip = None):
+def get_error_embed(lang, type, reason = None, tip = None, unknown=False):
     settings = configs.get()
 
     embed=discord.Embed(color=colors.error) # title='Um erro me impediu de executar o comando...',
-    embed.set_author(name=lang['ERROR']['AUTHOR'], icon_url=settings['bot-icon'])
+    embed.set_author(name=lang['ERROR']['AUTHOR'] if unknown == False else lang['ERROR']['AUTHOR UNKNOWN'], icon_url=settings['bot-icon'])
     #embed.set_thumbnail(url=settings['app_icon'])
     embed.add_field(name=lang['ERROR']['TYPE'], value=f'```{type}```', inline=False)
     if not reason == None:

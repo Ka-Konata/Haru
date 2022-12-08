@@ -235,7 +235,7 @@ class Developer(commands.Cog):
     async def oc_devmode_error(self, ctx, error):
         if isinstance(error, errors.DevModeUnknown):
             lang = configs.lang[configs.get_guild(ctx.guild.id)['language']]
-            embed = errors.get_error_embed(lang, 'Modo Desconhecido', 'Modos conhecidos: on, off')
+            embed = errors.get_error_embed(lang, 'Modo Desconhecido', tip='Modos conhecidos: on, off')
         else:
             return None
         await ctx.send(embed=embed)

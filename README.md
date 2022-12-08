@@ -84,8 +84,8 @@ invite | member | Send the bot invite link | ✔️
 site | member | Send the bot's official website link | ✔️
 server | member | Send the bot's official server invite link | ✔️
 github | member | Send Haru's repository link on github | ✔️
-dev | member | informações sobre o criador do bot | ❌
-ping | member | saiba se o bot está ativo | ❌
+dev | member | Information about the bot development team | ✔️
+ping | member | Used to know if haru is alive | ✔️
 
 ~~~py
 Configuration Module
@@ -135,6 +135,8 @@ dice | member | joga um dado de 6 lados | ❌
 ship | member | shipa dois usuários, em até 100% | ❌
 guess | member | o usuário tenta adivinhar um número de 1 a 10 | ❌
 mugistrong | member | envia um gif da Mugi-Strong | ❌
+say | member | faça a haru dizer alguma coisa | ❌
+dm | member | faça a haru enviar uma dm para alguém | ❌
 
 
 ~~~py

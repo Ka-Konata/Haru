@@ -78,10 +78,14 @@ async def on_command_error(ctx, error):
         arg = str(list(ctx.command.clean_params.keys())).replace('[', '').replace(']', '').replace("'", '')
         embed = errors.get_error_embed(lang, lang['ERROR']['MissingRequiredArgument']['TYPE'], tip=lang['ERROR']['MissingRequiredArgument']['REASON']+arg)
     else:
-        embed = errors.get_error_embed(lang, error)
+        if settings['development-mode']:
+            embed = errors.get_error_embed(lang, error, unknown=True)
+            logger.error(f'{error}')
+        else:
+            return None
 
-    await ctx.send(embed=embed)
-    # raise error
+    #await ctx.send(embed=embed)
+    raise error
 
 
 bot.run(TOKEN)
