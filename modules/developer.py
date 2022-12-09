@@ -7,7 +7,7 @@ class Developer(commands.Cog):
         self.bot = bot
     
 
-    @commands.command(aliases=['oc_stts'])
+    @commands.command(aliases=['_stts', '_status'])
     @commands.check(configs.Authentication.manager)
     @commands.check(configs.check_guild)
     async def oc_status(self, ctx):
@@ -20,7 +20,7 @@ class Developer(commands.Cog):
         await ctx.send(embed=embed)
 
 
-    @commands.command()
+    @commands.command(aliases=['_quit'])
     @commands.check(configs.Authentication.developer)
     @commands.check(configs.check_guild)
     async def oc_quit(self, ctx):
@@ -33,7 +33,7 @@ class Developer(commands.Cog):
         quit()
  
 
-    @commands.command()
+    @commands.command(aliases=['_setsv'])
     @commands.check(configs.Authentication.manager)
     async def oc_setsv(self, ctx, guild : discord.Guild = None):
         '''Libera o uso do bot no servidor atual'''
@@ -54,7 +54,7 @@ class Developer(commands.Cog):
         await ctx.send(embed=embed)
 
 
-    @commands.command()
+    @commands.command(aliases=['_unsetsv'])
     @commands.check(configs.Authentication.manager)
     @commands.check(configs.check_guild)
     async def oc_unsetsv(self, ctx, guild : discord.Guild = None):
@@ -76,7 +76,7 @@ class Developer(commands.Cog):
         await ctx.send(embed=embed)
 
 
-    @commands.command()
+    @commands.command(aliases=['_listsv'])
     @commands.check(configs.Authentication.manager)
     @commands.check(configs.check_guild)
     async def oc_listsv(self, ctx):
@@ -99,7 +99,7 @@ class Developer(commands.Cog):
         await ctx.send(embed=embed)
 
 
-    @commands.command()
+    @commands.command(aliases=['_pmtmanager'])
     @commands.check(configs.Authentication.developer)
     @commands.check(configs.check_guild)
     async def oc_pmtmanager(self, ctx, user : discord.User):
@@ -116,7 +116,7 @@ class Developer(commands.Cog):
         await ctx.send(embed=embed)
 
 
-    @commands.command()
+    @commands.command(aliases=['_dmtmanager'])
     @commands.check(configs.Authentication.developer)
     @commands.check(configs.check_guild)
     async def oc_dmtmanager(self, ctx, user : discord.User):
@@ -133,7 +133,7 @@ class Developer(commands.Cog):
         await ctx.send(embed=embed)
 
 
-    @commands.command()
+    @commands.command(aliases=['_listmanager'])
     @commands.check(configs.Authentication.manager)
     @commands.check(configs.check_guild)
     async def oc_listmanager(self, ctx):
@@ -155,7 +155,7 @@ class Developer(commands.Cog):
         await ctx.send(embed=embed)
 
 
-    @commands.command()
+    @commands.command(aliases=['_pmtdeveloper'])
     @commands.check(configs.Authentication.developer)
     @commands.check(configs.check_guild)
     async def oc_pmtdeveloper(self, ctx, user : discord.User):
@@ -172,7 +172,7 @@ class Developer(commands.Cog):
         await ctx.send(embed=embed)
 
 
-    @commands.command()
+    @commands.command(aliases=['_dmtdeveloper'])
     @commands.check(configs.Authentication.developer)
     @commands.check(configs.check_guild)
     async def oc_dmtdeveloper(self, ctx, user : discord.User):
@@ -189,7 +189,7 @@ class Developer(commands.Cog):
         await ctx.send(embed=embed)
 
 
-    @commands.command()
+    @commands.command(aliases=['_listdeveloper'])
     @commands.check(configs.Authentication.manager)
     @commands.check(configs.check_guild)
     async def oc_listdeveloper(self, ctx):
@@ -211,7 +211,7 @@ class Developer(commands.Cog):
         await ctx.send(embed=embed)
 
 
-    @commands.command()
+    @commands.command(aliases=['_devmode'])
     @commands.check(configs.Authentication.developer)
     @commands.check(configs.check_guild)
     async def oc_devmode(self, ctx, toggle : str):
@@ -241,7 +241,7 @@ class Developer(commands.Cog):
         await ctx.send(embed=embed)
 
 
-    @commands.command()
+    @commands.command(aliases=['_errorsmode'])
     @commands.check(configs.Authentication.developer)
     @commands.check(configs.check_guild)
     async def oc_errorsmode(self, ctx, toggle : str):

@@ -122,14 +122,18 @@ morse | member | traduz um texto ou frase para código morse | ❌
 flipmsg | member | inverte a ordem das letras de um texto ou frase | ❌
 choose | member | escolhe algo de uma lista de coisas | ❌
 coinflip | member | gira uma moeda (cara ou coroa) | ❌
-jankenpon | member | joga jokenpô com o usuário | ❌
 dice | member | joga um dado de 6 lados | ❌
 ship | member | shipa dois usuários, em até 100% | ❌
-guess | member | o usuário tenta adivinhar um número de 1 a 10 | ❌
 mugistrong | member | envia um gif da Mugi-Strong | ❌
 say | member | faça a haru dizer alguma coisa | ❌
 dm | member | faça a haru enviar uma dm para alguém | ❌
 
+## Minigames Module
+
+name | permission | explanation | stage
+:--- | :--------- | :---------- | :---:
+guess | member | o usuário tenta adivinhar um número de 1 a 10 | ❌
+jankenpon | member | joga jokenpô com o usuário | ❌
 
 ### Interaction Module
 
@@ -142,3 +146,13 @@ slap | member | da um tapa em algum outro usuário | ❌
 hug | member | abraça algum outro usuário | ❌
 shoot | member | ataca algum outro usuário | ❌
  
+## Ideias: 
+
+- [] Implementar os comandos via dm
+- [] IA chat-bot (biblioteca chatterbot)
+- [] Jogo-da-velha contra usuário e contra IA
+- [] Jogo da forca
+- [] Jogo de roleta russa
+- [] Jogo de adivinhar a linguagem de programação
+- [] Jogo de labirinto
+- [] 
