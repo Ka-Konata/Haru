@@ -21,7 +21,7 @@ Algumas coisas precisam ser feitas para instalar o projeto e colocá-lo para fun
 5. No terminal, insira o ID do seu servidor de testes
 6. No terminal, Insira o ID do seu usuário no discord
 
-Caso queira desativar o Modo de Desenvolvimento, apenas entre no seu servidor de testes e execute o comando `h!oc_devmode off`
+Caso queira desativar o Modo de Desenvolvimento ou o Modo de Debug de Erros, apenas entre no seu servidor de testes e execute o comando equivalente: `h!oc_devmode off` e/ou `h!oc_errorsmode off`
 
 ## Níveis de permissão
 * Developer
