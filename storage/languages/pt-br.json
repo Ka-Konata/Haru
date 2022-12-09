@@ -6,7 +6,7 @@
             "NAME":"Haru - Sobre o Bot",
             "COMMANDS": {
                 "NAME":"Conheça alguns comandos básicos da Haru:",
-                "VALUE":"`/help [modulo ou comando]` - Te ensina a usar a Haru.\n`/ping` - Te informa se a Haru está funcionando.\n`/avatar [usuário]` - Envia o icon de alguém.\n`/ship <usuário>` - Chances do seu ship dar certo."
+                "VALUE":"`/help [módulo ou comando]` - Te ensina a usar a Haru.\n`/ping` - Te informa se a Haru está funcionando.\n`/avatar [usuário]` - Envia o icon de alguém.\n`/ship <usuário>` - Chances do seu ship dar certo."
             },
             "SERVER": {
                 "NAME":"Servidor da Haru:",
@@ -64,41 +64,83 @@
             "LANGUAGE VALUE":"`pt-br` (Português)",
             "NAME":"Haru - Selecionando o Idioma", 
             "FOOTER":"Use /help ou h!help para mais informações"   
+        },
+        "LOCKCOMMAND": {
+            "DESCRIPTION":"🔐 Comando bloquado neste servidor com sucesso!",
+            "TITLE":"Qual Comando:",
+            "NAME":"Haru - Bloqueando Comandos", 
+            "FOOTER":"Use /help ou h!help para mais informações"   
+        },
+        "UNLOCKCOMMAND": {
+            "DESCRIPTION":"🔓 Comando desbloquado neste servidor com sucesso!",
+            "TITLE":"Qual Comando:",
+            "NAME":"Haru - Desbloqueando Comandos", 
+            "FOOTER":"Use /help ou h!help para mais informações"   
+        },
+        "LOCKMODULE": {
+            "DESCRIPTION":"🔐 Todos os comandos deste módulo foram bloqueados neste servidor!",
+            "TITLE":"Qual Módulo:",
+            "NAME":"Haru - Bloqueando Modulos", 
+            "FOOTER":"Use /help ou h!help para mais informações"   
+        },
+        "UNLOCKMODULE": {
+            "DESCRIPTION":"🔓 Todos os comandos deste módulo foram desbloqueados neste servidor!",
+            "TITLE":"Qual Módulo:",
+            "NAME":"Haru - Desbloqueando Modulos", 
+            "FOOTER":"Use /help ou h!help para mais informações"   
+        },
+        "LOCKEDCOMMANDS": {
+            "DESCRIPTION":"Aqui vai a lista de todos os comandos **bloqueados** 🔐 neste servidor.",
+            "TITLE":"Comandos Bloquados:",
+            "NONE":"nenhum",
+            "NAME":"Haru - Bloqueados", 
+            "FOOTER":"Use /help ou h!help para mais informações"   
+        },
+        "SETTINGS": {
+            "DESCRIPTION":"Aqui vai um resumo de **todas** as configurações do servidor.",
+            "TITLE":"Comandos Bloquados:",
+            "PREFIX":"Prefixo",
+            "LANGUAGE":"Idioma do Bot",
+            "LANGUAGE VALUE":"(português)",
+            "LOCKEDCOMMANDS":"Comandos Bloqueados",
+            "NONE":"nenhum",
+            "NAME":"Haru - Configurações", 
+            "FOOTER":"Use /help ou h!help para mais informações"   
         }
     },
     "HELP":{
         "DEFAULT":{
             "TITLE":"Sobre o bot",
-            "DESCRIPTION":"Este é um Rework da Haru. Um simples bot para o discord, com algumas funcionalidades básicas.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [modulo]** para ler mais sobre um modulo.\nUse **/help [comando]** para ler mais sobre um comando.",
+            "DESCRIPTION":"Este é um Rework da Haru. Um simples bot para o discord, com algumas funcionalidades básicas.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [módulo]** para ler mais sobre um módulo.\nUse **/help [comando]** para ler mais sobre um comando.",
             "NAME":"Haru - Sistema de Ajuda",
             "MODULE": {
-                "BOT":"**Modulo: Bot**", 
-                "CONFIGURATION":"**Modulo: Configuration**", 
-                "UTILITY":"**Modulo: Utility**", 
-                "FUN":"**Modulo: Fun**", 
-                "INTERACTION":"**Modulo: Interaction**"
+                "BOT":"**Módulo: Bot**", 
+                "CONFIGURATION":"**Módulo: Configuration**", 
+                "UTILITY":"**Módulo: Utility**", 
+                "FUN":"**Módulo: Fun**", 
+                "INTERACTION":"**Módulo: Interaction**"
             },
             "FOOTER":"Ainda precisa de ajuda? Use /server ou h!server para entrar no servidor de suporte da Haru"
         },
         "MODULE":{
             "bot": {
-                "TITLE":"Sobre o Modulo Bot",
+                "TITLE":"Sobre o Módulo Bot",
                 "DESCRIPTION":"Contém comandos relacionados ao bot, como informações básicas e essênciais.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [comando]** para ler mais sobre um comando."
             }, 
             "configuration": {
-                "TITLE":"Sobre o Modulo Configuration",
+                "TITLE":"Sobre o Módulo Configuration",
                 "DESCRIPTION":"Contém comandos relacionados relacionados às configurações somente do servidor.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [comando]** para ler mais sobre um comando."
             }, 
             "utility": {
-                "TITLE":"Sobre o Modulo Utility",
+                "TITLE":"Sobre o Módulo Utility",
                 "DESCRIPTION":"Contém comandos que podem ser considerados úteis, estando relacionados ao discord ou não.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [comando]** para ler mais sobre um comando."
             }, 
             "fun": {
-                "TITLE":"Sobre o Modulo Fun",
+                "TITLE":"Sobre o Módulo Fun",
                 "DESCRIPTION":"Contém comandos feitos para serem divertidos, como jogos ou memes (algumas piadas internas também).\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [comando]** para ler mais sobre um comando."
             }, 
             "interaction": {
-                "TITLE":"Sobre o Modulo Interaction",
+                "TITLE":"Sobre o Módulo Interaction",
                 "DESCRIPTION":"Contém comandos feitos para você interagir com outros membos do servidor... e até com a própria Haru!\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [comando]** para ler mais sobre um comando."
             },
             "NAME":"Haru - Help",
@@ -109,7 +151,7 @@
                 "TITLE":"Sobre o Comando /",
             "help": {
                 "DESCRIPTION":"Uma lista com todos os comandos ou uma explicação de um módulo ou comando específico.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
-                "HOW VALUE":"```/help [modulo ou comando]```",
+                "HOW VALUE":"```/help [módulo ou comando]```",
                 "EXEMPLE VALUE":"`/help` `/help bot` `/help invite`"
             }, 
             "haru": {
@@ -157,12 +199,36 @@
                 "HOW VALUE":"```/language <código do idioma>```",
                 "EXEMPLE VALUE":"`/language pt-br` `/language en`"
             }, 
-            "settings":[],
-            "lockcommand":[],
-            "unlockcommand":[],
-            "lockmodule":[],
-            "unlockmodule":[],
-            "lockedcommands":["listlocked"],
+            "lockcommand": {
+                "DESCRIPTION":"Bloqueia o uso de algum comando neste servidor. Informe o nome correto de um comando, aliases não funcionam aqui.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n> Existem comandos que por questão de segurança não podem ser bloqueados, afinal, o que você faria se bloqueasse o comando de desbloquear? ><.",
+                "HOW VALUE":"```/lockcommand <comando>```",
+                "EXEMPLE VALUE":"`/lockcommand say` `/lockcommand dm`"
+            },
+            "unlockcommand": {
+                "DESCRIPTION":"Desbloqueia o uso de algum comando neste servidor. Informe o nome correto de um comando, aliases não funcionam aqui.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "HOW VALUE":"```/unlockcommand <comando>```",
+                "EXEMPLE VALUE":"`/unlockcommand ship` `/unlockcommand ping`"
+            },
+            "lockmodule": {
+                "DESCRIPTION":"Bloqueia o uso de todos os comandos de um módulo neste servidor.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n> Existem módulos que por questão de segurança não podem ser bloqueados, afinal, o que você faria se bloqueasse o comando de desbloquear? ><.",
+                "HOW VALUE":"```/lockmodule <módulo>```",
+                "EXEMPLE VALUE":"`/lockmodule fun` `/lockcommand interaction`"
+            },
+            "unlockmodule": {
+                "DESCRIPTION":"Desbloqueia o uso de todos os comandos de um módulo neste servidor.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "HOW VALUE":"```/unlockmodule <módulo>```",
+                "EXEMPLE VALUE":"`/unlockmodule utility` `/unlockcommand bot`"
+            },
+            "lockedcommands": {
+                "DESCRIPTION":"Envia uma lista com todos os comandos que estão bloqueados para uso neste servidor.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "HOW VALUE":"```/lockedcommands`",
+                "EXEMPLE VALUE":"`/lockedcommands`"
+            },
+            "settings": {
+                "DESCRIPTION":"Envia um resumo de todas as configurações do servidor.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "HOW VALUE":"```/settings`",
+                "EXEMPLE VALUE":"`/settings`"
+            },
             "avatar":["usericon"],
             "banner":[],
             "servericon":[],
@@ -191,7 +257,7 @@
             "HOW TITLE":"Como Usar",
             "EXEMPLE TITLE":"Exemplos",
             "ALIASES TITLE":"Aliases",
-            "NAME":"Haru - Help",
+            "NAME":"Haru - Sistema de Ajuda",
             "FOOTER":"Ainda precisa de ajuda? Use /server ou h!server para entrar no servidor de suporte da Haru"
         }
     },
@@ -238,6 +304,20 @@
             "TYPE": "Idioma não Idêntificado",
             "REASON": "O comando /language só aceita o código de um idioma (também não idêntifica o nome da idioma).",
             "TIP": "Use \"/help language\" para conferir os idiomas disponíveis."
+        },
+        "CommandLocked": {
+            "TYPE": "Comando Bloqueado Neste Servidor"
+        },
+        "CommandDontExists": {
+            "TYPE": "Comando Não Encontrado",
+            "TIP": "Para bloquear um comando você precisa escrever o nome exato dele (aliases também não funcionam)."
+        },
+        "ModuleDontExists": {
+            "TYPE": "Módulo Não Encontrado"
+        },
+        "CannotBeLocked": {
+            "TYPE": "Um ou Mais Comandos Não Podem ser bloqueados",
+            "REASON": "Por segurança, alguns comandos (todos os do módulo \"configuration\" por exemplo) não podem ser bloqueados."
         }
     }
 }

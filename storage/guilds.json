@@ -2,7 +2,36 @@
     "788518735752724480": {
         "prefix": "h!",
         "language": "pt-br",
+        "lockedcommands": [
+            "help",
+            "haru",
+            "invite",
+            "site",
+            "server",
+            "github",
+            "dev",
+            "ping",
+            "morse",
+            "flipmsg",
+            "choose",
+            "coinflip",
+            "jankenpon",
+            "dice",
+            "ship",
+            "guess",
+            "mugistrong",
+            "say",
+            "dm"
+        ],
+        "lockedmodules": [
+            "bot",
+            "fun"
+        ]
+    },
+    "916777792962699315": {
+        "prefix": "h!",
+        "language": "pt-br",
         "lockedcommands": [],
-        "lockedcmodules": []
+        "lockedmodules": []
     }
 }

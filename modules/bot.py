@@ -15,10 +15,11 @@ class Bot(commands.Cog):
     @commands.hybrid_command(aliases=modulos['bot']['help'])
     @app_commands.describe(especify='Input a command or module.')
     @commands.check(configs.Authentication.member)
-    @commands.check(configs.guild_check)
+    @commands.check(configs.check_islocked)
+    @commands.check(configs.check_guild)
     async def help(self, ctx, especify : str = None):
         '''A list of all commands or an explanation of a specific module/command.'''
-        settings = configs.get()
+        settings = configs.get_configs()
         lang = configs.lang[configs.get_guild(ctx.guild.id)['language']]
 
         msg = discord.Embed()
@@ -112,10 +113,11 @@ class Bot(commands.Cog):
 
     @commands.hybrid_command(aliases=modulos['bot']['haru'])
     @commands.check(configs.Authentication.member)
-    @commands.check(configs.guild_check)
+    @commands.check(configs.check_islocked)
+    @commands.check(configs.check_guild)
     async def haru(self, ctx):
         '''Basic informations about Haru'''
-        settings = configs.get()
+        settings = configs.get_configs()
         lang = configs.lang[configs.get_guild(ctx.guild.id)['language']]
 
         embed = discord.Embed(title=lang['COMMAND']['HARU']['TITLE'], description=lang['COMMAND']['HARU']['DESCRIPTION']+settings['bot-invite']+').', color=colors.default)
@@ -130,10 +132,11 @@ class Bot(commands.Cog):
 
     @commands.hybrid_command(aliases=modulos['bot']['invite'])
     @commands.check(configs.Authentication.member)
-    @commands.check(configs.guild_check)
+    @commands.check(configs.check_islocked)
+    @commands.check(configs.check_guild)
     async def invite(self, ctx):
         '''Send the bot invite link'''
-        settings = configs.get()
+        settings = configs.get_configs()
         lang = configs.lang[configs.get_guild(ctx.guild.id)['language']]
         
         embed = discord.Embed(description=lang['COMMAND']['INVITE']['DESCRIPTION']+settings['bot-invite']+').', color=colors.default)
@@ -145,10 +148,11 @@ class Bot(commands.Cog):
 
     @commands.hybrid_command(aliases=modulos['bot']['site'])
     @commands.check(configs.Authentication.member)
-    @commands.check(configs.guild_check)
+    @commands.check(configs.check_islocked)
+    @commands.check(configs.check_guild)
     async def site(self, ctx):
         '''Send the bot's official website link'''
-        settings = configs.get()
+        settings = configs.get_configs()
         lang = configs.lang[configs.get_guild(ctx.guild.id)['language']]
         
         embed = discord.Embed(description=lang['COMMAND']['SITE']['DESCRIPTION']+settings['site']+').', color=colors.default)
@@ -160,10 +164,11 @@ class Bot(commands.Cog):
 
     @commands.hybrid_command(aliases=modulos['bot']['server'])
     @commands.check(configs.Authentication.member)
-    @commands.check(configs.guild_check)
+    @commands.check(configs.check_islocked)
+    @commands.check(configs.check_guild)
     async def server(self, ctx):
         '''Send the bot's official server invite link'''
-        settings = configs.get()
+        settings = configs.get_configs()
         lang = configs.lang[configs.get_guild(ctx.guild.id)['language']]
         
         embed = discord.Embed(description=lang['COMMAND']['SERVER']['DESCRIPTION']+settings['server-invite']+').', color=colors.default)
@@ -175,10 +180,11 @@ class Bot(commands.Cog):
 
     @commands.hybrid_command(aliases=modulos['bot']['github'])
     @commands.check(configs.Authentication.member)
-    @commands.check(configs.guild_check)
+    @commands.check(configs.check_islocked)
+    @commands.check(configs.check_guild)
     async def github(self, ctx):
         '''Send Haru's repository link on github'''
-        settings = configs.get()
+        settings = configs.get_configs()
         lang = configs.lang[configs.get_guild(ctx.guild.id)['language']]
         
         embed = discord.Embed(description=lang['COMMAND']['GITHUB']['DESCRIPTION']+settings['server-invite']+').', color=colors.default)
@@ -190,10 +196,11 @@ class Bot(commands.Cog):
 
     @commands.hybrid_command(aliases=modulos['bot']['dev'])
     @commands.check(configs.Authentication.member)
-    @commands.check(configs.guild_check)
+    @commands.check(configs.check_islocked)
+    @commands.check(configs.check_guild)
     async def dev(self, ctx):
         '''Information about the bot development team'''
-        settings = configs.get()
+        settings = configs.get_configs()
         lang = configs.lang[configs.get_guild(ctx.guild.id)['language']]
 
         devs_count = len(settings['developer-list'])
@@ -217,7 +224,8 @@ class Bot(commands.Cog):
 
     @commands.hybrid_command(aliases=modulos['bot']['ping'])
     @commands.check(configs.Authentication.member)
-    @commands.check(configs.guild_check)
+    @commands.check(configs.check_islocked)
+    @commands.check(configs.check_guild)
     async def ping(self, ctx):
         '''Used to know if haru is alive team'''
 

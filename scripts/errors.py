@@ -14,12 +14,21 @@ class PrefixVeryBig(commands.CommandError):
     pass
 class LanguageDontExists(commands.CommandError):
     pass
+class CommandLocked(commands.CommandError):
+    pass
+class CommandDontExists(commands.CommandError):
+    pass
+class ModuleDontExists(commands.CommandError):
+    pass
+class CannotBeLocked(commands.CommandError):
+    pass
+
 
 local_errors = [DevModeUnknown, CommandOrModuleNotFound, PrefixVeryBig, LanguageDontExists]
-global_errors = [GuildNotAllowed, AuthenticationFailure]
+global_errors = [GuildNotAllowed, AuthenticationFailure, CommandLocked, CommandDontExists, ModuleDontExists, CannotBeLocked]
 
 def get_error_embed(lang, type, reason = None, tip = None, unknown=False):
-    settings = configs.get()
+    settings = configs.get_configs()
 
     embed=discord.Embed(color=colors.error) # title='Um erro me impediu de executar o comando...',
     embed.set_author(name=lang['ERROR']['AUTHOR'] if unknown == False else lang['ERROR']['AUTHOR UNKNOWN'], icon_url=settings['bot-icon'])

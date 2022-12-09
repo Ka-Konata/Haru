@@ -73,8 +73,8 @@ def get_guild(guild_id : str, all=False):
     try:
         res = guilds[guild_id] if not all else guilds
     except Exception as error:
-        settings = get()
-        guilds.update({guild_id:{'prefix':settings['default-prefix'], 'language':settings['default-language'], "lockedcommands": [], "lockedcmodules": []}})
+        settings = get_configs()
+        guilds.update({guild_id:{'prefix':settings['default-prefix'], 'language':settings['default-language'], "lockedcommands": [], "lockedmodules": []}})
         res              = guilds[guild_id] if not all else guilds
         obj = json.dumps(guilds, indent=4)
         with open('storage/guilds.json', 'w') as f:
@@ -84,14 +84,14 @@ def get_guild(guild_id : str, all=False):
 
 
 
-def get_lang(language):
+def get_language(language):
     return json_open(f'storage/languages/{language}.json')
 
 
-lang = {'pt-br':get_lang('pt-br'), 'en':get_lang('en')}
+lang = {'pt-br':get_language('pt-br'), 'en':get_language('en')}
 
 
-def get():
+def get_configs():
     return json_open('storage/configs.json')
 
 
@@ -102,8 +102,26 @@ def save(actualized_configs, path='storage/configs.json'):
         f.close()
 
 
-def guild_check(ctx):
-    settings = get()
+def check_islocked(ctx):
+    guild = get_guild(ctx.guild.id)
+    cmmds = get_commands()
+    locks_mod = guild['lockedmodules']
+    locks_cmd = guild['lockedcommands']
+
+    for mod in locks_mod:
+        for c in cmmds[mod]:
+            if not c in locks_cmd:
+                locks_cmd.append(c)
+
+    for cmd in locks_cmd:
+        if cmd == ctx.command.name:
+            raise errors.CommandLocked
+
+    return True
+
+
+def check_guild(ctx):
+    settings = get_configs()
     if settings['development-mode'] == False:
         return True
     if not ctx.guild.id in settings['server-list']:
@@ -111,8 +129,8 @@ def guild_check(ctx):
     return True
 
 
-def check(ctx, lvl):
-    settings = get()
+def check_role(ctx, lvl):
+    settings = get_configs()
     actual_lvl = 0
     if ctx.author.id in settings['developer-list']:
         actual_lvl = developer
@@ -133,30 +151,30 @@ def check(ctx, lvl):
 
 class Authentication:
     def developer(ctx):
-        check(ctx, developer)
+        check_role(ctx, developer)
         return True
 
 
     def manager(ctx):
-        check(ctx, manager)
+        check_role(ctx, manager)
         return True
 
 
     def owner(ctx):
-        check(ctx, owner)
+        check_role(ctx, owner)
         return True
 
 
     def administrator(ctx):
-        check(ctx, administrator)
+        check_role(ctx, administrator)
         return True
 
 
     def moderator(ctx):
-        check(ctx, moderator)
+        check_role(ctx, moderator)
         return True
 
 
     def member(ctx):
-        check(ctx, member)
+        check_role(ctx, member)
         return True

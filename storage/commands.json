@@ -12,12 +12,12 @@
     "configuration": {
         "prefix":["setprefix", "chageprefix", "prefixo"],
         "language":["setlanguage", "setlang", "lang", "idioma"],
-        "lockcommand":[],
-        "unlockcommand":[],
-        "lockmodule":[], 
-        "unlockmodule":[],
-        "lockedcommands":["listlocked"],
-        "settings":[]
+        "lockcommand":["lockcmd", "bancommand", "bancmd", "forbidcmd", "proibircomando"],
+        "unlockcommand":["unlockcmd", "unbancommand", "unbancmd", "liberarcomando"],
+        "lockmodule":["banmodule", "forbidmodule", "proibirmodulo"], 
+        "unlockmodule":["unbanmodule", "liberarmodulo"],
+        "lockedcommands":["listlocked", "seelockeds"],
+        "settings":["configs", "serversettings", "guildsettings"]
     }, 
     "utility":{
         "avatar":["usericon"],

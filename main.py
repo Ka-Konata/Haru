@@ -12,7 +12,7 @@ from scripts  import configs, errors
 from decouple import config as getenv
 
 
-settings = configs.get()
+settings = configs.get_configs()
 logger   = configs.logging.getLogger('discord')
 
 
@@ -93,15 +93,23 @@ async def on_command_error(ctx, error):
     elif isinstance(error, commands.errors.MissingRequiredArgument):
         arg = str(list(ctx.command.clean_params.keys())).replace('[', '').replace(']', '').replace("'", '')
         embed = errors.get_error_embed(lang, lang['ERROR']['MissingRequiredArgument']['TYPE'], tip=lang['ERROR']['MissingRequiredArgument']['REASON']+arg)
+    elif isinstance(error, errors.CommandLocked):
+        embed = errors.get_error_embed(lang, lang['ERROR']['CommandLocked']['TYPE'])
+    elif isinstance(error, errors.CommandDontExists):
+        embed = errors.get_error_embed(lang, lang['ERROR']['CommandDontExists']['TYPE'], tip=lang['ERROR']['CommandDontExists']['TIP'])
+    elif isinstance(error, errors.ModuleDontExists):
+        embed = errors.get_error_embed(lang, lang['ERROR']['ModuleDontExists']['TYPE'])
+    elif isinstance(error, errors.CannotBeLocked):
+        embed = errors.get_error_embed(lang, lang['ERROR']['CannotBeLocked']['TYPE'], reason=lang['ERROR']['CannotBeLocked']['REASON'])
     else:
-        if settings['development-mode']:
+        if settings['errors-mode']:
             embed = errors.get_error_embed(lang, error, unknown=True)
             logger.error(f'{error}')
         else:
             return None
 
-    #await ctx.send(embed=embed)
-    raise error
+    await ctx.send(embed=embed)
+    #raise error
 
 
 bot.run(TOKEN)

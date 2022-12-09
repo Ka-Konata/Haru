@@ -1,5 +1,6 @@
 {
     "development-mode": true,
+    "errors-mode": true,
     "bot-name": "Haru",
     "bot-icon": "https://media.discordapp.net/attachments/810690029847969833/1048420745937690674/608af0c5be01cd73faba6b46f4a7d1ab.png",
     "app-icon": "https://media.discordapp.net/attachments/810690029847969833/1048793278054678599/imagem_2022-12-02_211102899.jpg",
@@ -13,7 +14,7 @@
         "pt-br",
         "en"
     ],
-    "started-at": "08/12/2022 00:06:08",
+    "started-at": "09/12/2022 01:33:22",
     "server-list": [
         788518735752724480
     ],

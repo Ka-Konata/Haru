@@ -69,6 +69,8 @@ oc_pmtdeveloper | developer | adiciona um usuário na lista de developers | ✔�
 oc_dmtdeveloper | developer | remove um usuário da lista de developers | ✔️
 oc_listdeveloper | manager | lista todos os usuários com permissão de developer | ✔️
 oc_devmode | developer | ativa ou desativa o modo de desenvolvimento | ✔️
+oc_errorsmode | developer | ativa ou desativa o modo de debug de erros desconhecidos | ✔️
+oc_botsettings | manager | lista todas as configurações do bot | ❌
 
 ### Bot Module
 
@@ -89,12 +91,12 @@ name | permission | explanation | stage
 :--- | :--------- | :---------- | :---:
 prefix | admin | Allows you to change the guild prefix | ✔️
 language | admin | Allows you to change Haru's language | ✔️
-lockcommand | admin | bloqueia o uso de um comando | ❌
-unlockcommand | admin | desbloqueia o uso de um comando | ❌
-lockmodule | admin | bloqueia o uso de um módulo | ❌
-unlockmodule | admin | desbloqueia o uso de um módulo | ❌
-lockedcommands | admin | lista de comandos e/ou módulos bloqueados | ❌
-settings | mod | lista as configurações do bot no servidor | ❌
+lockcommand | admin | Blocks the use of a command for everyone | ✔️
+unlockcommand | admin | Unlocks the use of a command for everyone | ✔️
+lockmodule | admin | Blocks the use of a module for everyone | ✔️
+unlockmodule | admin | Unlocks the use of a module for everyone | ✔️
+lockedcommands | mod | Sends a list of all locked commands on this guild | ✔️
+settings | mod | Send all guild settings | ✔️
 
 ### Utility Module
 
