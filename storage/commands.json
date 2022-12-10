@@ -20,8 +20,8 @@
         "settings":["configs", "serversettings", "guildsettings"]
     }, 
     "utility":{
-        "avatar":["usericon"],
-        "banner":[],
+        "avatar":["usericon", "pfp", "getpfp"],
+        "banner":["usarbanner", "getbanner"],
         "servericon":[],
         "permissions":["permissoes"],
         "userinfo":["whois"],

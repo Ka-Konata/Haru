@@ -13,12 +13,12 @@ class Bot(commands.Cog):
 
     
     @commands.hybrid_command(aliases=modulos['bot']['help'])
-    @app_commands.describe(especify='Input a command or module.')
+    @app_commands.describe(especify='Input a command or module')
     @commands.check(configs.Authentication.member)
     @commands.check(configs.check_islocked)
     @commands.check(configs.check_guild)
     async def help(self, ctx, especify : str = None):
-        '''A list of all commands or an explanation of a specific module/command.'''
+        '''A list of all commands or an explanation of a specific module/command'''
         settings = configs.get_configs()
         lang = configs.lang[configs.get_guild(ctx.guild.id)['language']]
 
@@ -86,7 +86,7 @@ class Bot(commands.Cog):
             else:
                 raise errors.CommandOrModuleNotFound
 
-        await ctx.send(embed = msg)
+        await ctx.reply(embed = msg)
 
 
     @help.autocomplete('especify')
@@ -108,7 +108,7 @@ class Bot(commands.Cog):
             embed = errors.get_error_embed(lang, lang['ERROR']['CommandOrModuleNotFound']['TYPE'])
         else:
             return None
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
 
     @commands.hybrid_command(aliases=modulos['bot']['haru'])
@@ -127,7 +127,7 @@ class Bot(commands.Cog):
         embed.add_field(name=lang['COMMAND']['HARU']['SERVER']['NAME'], value=lang['COMMAND']['HARU']['SERVER']['VALUE']+settings['bot-invite']+').', inline=False)
         embed.add_field(name=lang['COMMAND']['HARU']['SITE']['NAME'], value=lang['COMMAND']['HARU']['SITE']['VALUE']+settings['site']+').', inline=False)
         embed.set_footer(text=lang['COMMAND']['HARU']['FOOTER'])
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
 
     @commands.hybrid_command(aliases=modulos['bot']['invite'])
@@ -143,7 +143,7 @@ class Bot(commands.Cog):
         embed.set_author(name=lang['COMMAND']['INVITE']['NAME'], icon_url=settings['bot-icon'])
         embed.set_thumbnail(url=settings['app-icon'])
         embed.set_footer(text=lang['COMMAND']['INVITE']['FOOTER'])
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
 
     @commands.hybrid_command(aliases=modulos['bot']['site'])
@@ -159,7 +159,7 @@ class Bot(commands.Cog):
         embed.set_author(name=lang['COMMAND']['SITE']['NAME'], icon_url=settings['bot-icon'])
         embed.set_thumbnail(url=settings['app-icon'])
         embed.set_footer(text=lang['COMMAND']['SITE']['FOOTER'])
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
 
     @commands.hybrid_command(aliases=modulos['bot']['server'])
@@ -175,7 +175,7 @@ class Bot(commands.Cog):
         embed.set_author(name=lang['COMMAND']['SERVER']['NAME'], icon_url=settings['bot-icon'])
         embed.set_thumbnail(url=settings['app-icon'])
         embed.set_footer(text=lang['COMMAND']['SERVER']['FOOTER'])
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
 
     @commands.hybrid_command(aliases=modulos['bot']['github'])
@@ -191,7 +191,7 @@ class Bot(commands.Cog):
         embed.set_author(name=lang['COMMAND']['GITHUB']['NAME'], icon_url=settings['bot-icon'])
         embed.set_thumbnail(url=settings['app-icon'])
         embed.set_footer(text=lang['COMMAND']['GITHUB']['FOOTER'])
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
 
     @commands.hybrid_command(aliases=modulos['bot']['dev'])
@@ -219,7 +219,7 @@ class Bot(commands.Cog):
         embed.set_author(name=lang['COMMAND']['DEV']['NAME'], icon_url=settings['bot-icon'])
         embed.set_thumbnail(url=settings['app-icon'])
         embed.set_footer(text=lang['COMMAND']['DEV']['FOOTER'])
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
 
     @commands.hybrid_command(aliases=modulos['bot']['ping'])
@@ -229,7 +229,7 @@ class Bot(commands.Cog):
     async def ping(self, ctx):
         '''Used to know if haru is alive team'''
 
-        await ctx.send(f'`🏓Pong ({round(self.bot.latency * 1000)}ms)`')
+        await ctx.reply(f'`🏓Pong ({round(self.bot.latency * 1000)}ms)`')
 
 
 async def setup(bot):

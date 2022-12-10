@@ -14,7 +14,7 @@
         "pt-br",
         "en"
     ],
-    "started-at": "09/12/2022 20:43:09",
+    "started-at": "10/12/2022 01:26:30",
     "server-list": [
         788518735752724480
     ],
@@ -22,14 +22,5 @@
         502687173099913216
     ],
     "manager-list": [],
-    "disabled-commands": [
-        "help",
-        "haru",
-        "invite",
-        "site",
-        "server",
-        "github",
-        "dev",
-        "ping"
-    ]
+    "disabled-commands": []
 }

@@ -22,7 +22,7 @@ class Developer(commands.Cog):
         embed = discord.Embed(title='', description=f'**User do Bot:** {self.bot.user.mention}\n**ID do bot:** {self.bot.user.id}\n**Iniciado em:** {settings["started-at"]}', color=colors.default)
         embed.set_author(name=settings["bot-name"], icon_url=settings["bot-icon"])
         embed.add_field(name='Status do Bot', value=f'```🟢Online  |  🏓Ping: {round(self.bot.latency * 1000)}ms```', inline=False)
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
 
     @commands.command(aliases=['_quit'])
@@ -34,7 +34,7 @@ class Developer(commands.Cog):
 
         embed=discord.Embed(color=colors.default)
         embed.add_field(name='Status do Bot', value=f'```🔴Offline  |  🏓Ping: {round(self.bot.latency * 1000)}ms```', inline=True)
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
         quit()
  
 
@@ -56,14 +56,14 @@ class Developer(commands.Cog):
             settings['server-list'].append(guild_id)
             configs.save(settings)
             embed.add_field(name="Resultado:", value="```Servidor adicionado.```", inline=True)
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
 
     @commands.command(aliases=['_unsetsv'])
     @commands.check(configs.Authentication.manager)
     @commands.check(configs.check_guild)
     async def oc_unsetsv(self, ctx, guild : discord.Guild = None):
-        '''bloqueia o uso do bot no servidor atual'''
+        '''Bloqueia o uso do bot no servidor atual'''
         settings = configs.get_configs()
 
         if guild == None:
@@ -78,14 +78,14 @@ class Developer(commands.Cog):
             settings['server-list'].remove(guild_id)
             configs.save(settings)
             embed.add_field(name="Resultado:", value="```Servidor removido.```", inline=True)
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
 
     @commands.command(aliases=['_listsv'])
     @commands.check(configs.Authentication.manager)
     @commands.check(configs.check_guild)
     async def oc_listsv(self, ctx):
-        '''lista todos os servidores liberados'''
+        '''Lista todos os servidores liberados'''
         settings = configs.get_configs()
 
         sv_list = settings['server-list']
@@ -101,14 +101,14 @@ class Developer(commands.Cog):
         embed=discord.Embed(color=colors.default)
         embed.add_field(name="Lista de Servidores Liberados:", value=sv_list_str, inline=True)
         embed.set_footer(text=f"Total: {len(sv_list)} servidor(es)")
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
 
     @commands.command(aliases=['_pmtmanager'])
     @commands.check(configs.Authentication.developer)
     @commands.check(configs.check_guild)
     async def oc_pmtmanager(self, ctx, user : discord.User):
-        '''adiciona um usuário na lista de managers'''
+        '''Adiciona um usuário na lista de managers'''
         settings = configs.get_configs()
 
         embed=discord.Embed(color=colors.default)
@@ -118,14 +118,14 @@ class Developer(commands.Cog):
             settings['manager-list'].append(user.id)
             configs.save(settings)
             embed.add_field(name="Resultado:", value="```Usuário adicionado na lista de managers.```", inline=True)
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
 
     @commands.command(aliases=['_dmtmanager'])
     @commands.check(configs.Authentication.developer)
     @commands.check(configs.check_guild)
     async def oc_dmtmanager(self, ctx, user : discord.User):
-        '''adiciona um usuário na lista de managers'''
+        '''Adiciona um usuário na lista de managers'''
         settings = configs.get_configs()
 
         embed=discord.Embed(color=colors.default)
@@ -135,14 +135,14 @@ class Developer(commands.Cog):
             settings['manager-list'].remove(user.id)
             configs.save(settings)
             embed.add_field(name="Resultado:", value="```Usuário removido da lista de managers.```", inline=True)
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
 
     @commands.command(aliases=['_listmanager'])
     @commands.check(configs.Authentication.manager)
     @commands.check(configs.check_guild)
     async def oc_listmanager(self, ctx):
-        '''lista todos os usuários com permissão de manager'''
+        '''Lista todos os usuários com permissão de manager'''
         settings = configs.get_configs()
 
         mn_list = settings['manager-list']
@@ -157,14 +157,14 @@ class Developer(commands.Cog):
         embed=discord.Embed(color=colors.default)
         embed.add_field(name="Lista de Managers:", value=mn_list_str, inline=True)
         embed.set_footer(text=f"Total: {len(mn_list)} manager(s)")
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
 
     @commands.command(aliases=['_pmtdeveloper'])
     @commands.check(configs.Authentication.developer)
     @commands.check(configs.check_guild)
     async def oc_pmtdeveloper(self, ctx, user : discord.User):
-        '''adiciona um usuário na lista de managers'''
+        '''Adiciona um usuário na lista de managers'''
         settings = configs.get_configs()
 
         embed=discord.Embed(color=colors.default)
@@ -174,14 +174,14 @@ class Developer(commands.Cog):
             settings['developer-list'].append(user.id)
             configs.save(settings)
             embed.add_field(name="Resultado:", value="```Usuário adicionado na lista de developers.```", inline=True)
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
 
     @commands.command(aliases=['_dmtdeveloper'])
     @commands.check(configs.Authentication.developer)
     @commands.check(configs.check_guild)
     async def oc_dmtdeveloper(self, ctx, user : discord.User):
-        '''adiciona um usuário na lista de managers'''
+        '''Adiciona um usuário na lista de managers'''
         settings = configs.get_configs()
 
         embed=discord.Embed(color=colors.default)
@@ -191,14 +191,14 @@ class Developer(commands.Cog):
             settings['developer-list'].remove(user.id)
             configs.save(settings)
             embed.add_field(name="Resultado:", value="```Usuário removido da lista de developers.```", inline=True)
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
 
     @commands.command(aliases=['_listdeveloper'])
     @commands.check(configs.Authentication.manager)
     @commands.check(configs.check_guild)
     async def oc_listdeveloper(self, ctx):
-        '''lista todos os usuários com permissão de manager'''
+        '''Lista todos os usuários com permissão de manager'''
         settings = configs.get_configs()
 
         dev_list = settings['developer-list']
@@ -213,14 +213,14 @@ class Developer(commands.Cog):
         embed=discord.Embed(color=colors.default)
         embed.add_field(name="Lista de Developers:", value=dev_list_str, inline=True)
         embed.set_footer(text=f"Total: {len(dev_list)} developer(s)")
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
 
     @commands.command(aliases=['_devmode'])
     @commands.check(configs.Authentication.developer)
     @commands.check(configs.check_guild)
     async def oc_devmode(self, ctx, toggle : str):
-        '''ativa ou desativa o modo de desenvolvimento'''
+        '''Ativa ou desativa o modo de desenvolvimento'''
         settings = configs.get_configs()
 
         embed=discord.Embed(color=colors.default)
@@ -233,7 +233,7 @@ class Developer(commands.Cog):
         else:
             raise errors.DevModeUnknown
         configs.save(settings)
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
 
     @oc_devmode.error
@@ -243,14 +243,14 @@ class Developer(commands.Cog):
             embed = errors.get_error_embed(lang, 'Modo Desconhecido', tip='Modos conhecidos: on, off')
         else:
             return None
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
 
     @commands.command(aliases=['_errorsmode'])
     @commands.check(configs.Authentication.developer)
     @commands.check(configs.check_guild)
     async def oc_errorsmode(self, ctx, toggle : str):
-        '''ativa ou desativa o modo de debug de erros'''
+        '''Ativa ou desativa o modo de debug de erros'''
         settings = configs.get_configs()
 
         embed=discord.Embed(color=colors.default)
@@ -263,7 +263,7 @@ class Developer(commands.Cog):
         else:
             raise errors.DevModeUnknown
         configs.save(settings)
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
 
     @oc_errorsmode.error
@@ -273,7 +273,7 @@ class Developer(commands.Cog):
             embed = errors.get_error_embed(lang, 'Modo Desconhecido', tip='Modos conhecidos: on, off')
         else:
             return None
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
 
     @commands.command(aliases=['_disablecommand'])
@@ -295,7 +295,7 @@ class Developer(commands.Cog):
 
                 embed = discord.Embed(description=f'O comando `{command}` foi **🔐 DESABILITADO** em **todos** os servidores.', color=colors.default)
 
-                await ctx.send(embed=embed)
+                await ctx.reply(embed=embed)
 
                 return None
         raise errors.CommandDontExists
@@ -315,7 +315,7 @@ class Developer(commands.Cog):
                     configs.save(settings, 'storage/configs.json')
 
                 embed = discord.Embed(description=f'O comando `{command}` foi **🔓 HABILITADO** em **todos** os servidores', color=colors.default)
-                await ctx.send(embed=embed)
+                await ctx.reply(embed=embed)
 
                 return None
         raise errors.CommandDontExists
@@ -346,7 +346,7 @@ class Developer(commands.Cog):
                 embed = discord.Embed(description=f'Todos os comandos do módulo `{module}` foram ** 🔐 DESABILITADOS** globalmente', color=colors.default)
                 embed.add_field(name='Lista de Comandos do Módulo:', value=cmds_str, inline=False)
 
-                await ctx.send(embed=embed)
+                await ctx.reply(embed=embed)
 
                 return None
         raise errors.ModuleDontExists
@@ -371,14 +371,14 @@ class Developer(commands.Cog):
                 embed = discord.Embed(description=f'Todos os comandos do módulo `{module}` foram ** 🔓 HABILITADOS** globalmente', color=colors.default)
                 embed.add_field(name='Lista de Comandos do Módulo:', value=cmds_str, inline=False)
 
-                await ctx.send(embed=embed)
+                await ctx.reply(embed=embed)
 
                 return None
         raise errors.ModuleDontExists
 
     
     @commands.hybrid_command(aliases=['_disabledcommands'])
-    @commands.check(configs.Authentication.moderator)
+    @commands.check(configs.Authentication.manager)
     @commands.check(configs.check_guild)
     async def oc_disabledcommands(self, ctx): #finder
         '''Sends a list of all locked commands on this guild'''
@@ -392,14 +392,14 @@ class Developer(commands.Cog):
 
         embed = discord.Embed(description='Lista com todos os comandos desabilitados **globalmente**', color=colors.default)
         embed.add_field(name='Comandos Desabilitados:', value=cmds_str, inline=True)
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
     
     @commands.hybrid_command(aliases=['_botsettings'])
     @commands.check(configs.Authentication.manager)
     @commands.check(configs.check_guild)
     async def oc_botsettings(self, ctx): 
-        '''lista todas as configurações do bot'''
+        '''Lista todas as configurações do bot'''
         settings = configs.get_configs()
         lang = configs.lang[configs.get_guild(ctx.guild.id)['language']]
         guild = configs.get_guild(ctx.guild.id)
@@ -422,7 +422,7 @@ class Developer(commands.Cog):
         embed.add_field(name='Modos Especiais', value=f'```Desenvolvimento: {devmode} \nDebug de Erros: {errorsmode}```', inline=True)
         embed.add_field(name='Comandos Desabilitados Globalmente', value=lockedcommands, inline=True)
 
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
 
 async def setup(bot):

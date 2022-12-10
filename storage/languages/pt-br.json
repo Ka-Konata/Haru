@@ -106,6 +106,18 @@
             "NONE":"nenhum",
             "NAME":"Haru - Configurações", 
             "FOOTER":"Use /help ou h!help para mais informações"   
+        },
+        "AVATAR": {
+            "DESC 1": "[Clique aqui](",
+            "DESC 2": ") para baixar",
+            "NAME":"Haru - Avatar", 
+            "FOOTER":"Use /help ou h!help para mais informações"   
+        },
+        "BANNER": {
+            "DESC NO BANNER 1": "[Clique aqui](",
+            "DESC NO BANNER 2": ") para baixar",
+            "NAME":"Haru - Banner", 
+            "FOOTER":"Use /help ou h!help para mais informações"   
         }
     },
     "HELP":{
@@ -229,8 +241,16 @@
                 "HOW VALUE":"```/settings`",
                 "EXEMPLE VALUE":"`/settings`"
             },
-            "avatar":["usericon"],
-            "banner":[],
+            "avatar": {
+                "DESCRIPTION":"Baixe o avatar de algum outro usuário, podendo escolher entre o avatar global ou o avatar no servidor.\n(`True`:SIM  e  `False`:NÃO)\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "HOW VALUE":"`/avatar <usuário> [True/False]`",
+                "EXEMPLE VALUE":"`/avatar Haru True` `/avatar Haru False` `/avatar Haru`"
+            },
+            "banner": {
+                "DESCRIPTION":"Baixe o banner de qualquer outro usuário (caso ele tenha um, obviamente).\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "HOW VALUE":"`/banner <usuário>`",
+                "EXEMPLE VALUE":"`/banner Haru` `/banner 808100198899384352`"
+            },
             "servericon":[],
             "permissions":["permissoes"],
             "userinfo":["whois"],

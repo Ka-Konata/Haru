@@ -57,24 +57,24 @@ Inglês | en | ❌
 
 name | permission | explanation | stage
 :--- | :--------- | :---------- | :----
-oc_status | manager | envia um hello world, e os status do bot | ✔️
-oc_quit | developer | força a parar o bot | ✔️
-oc_setsv | manager | libera o uso do bot no servidor atual| ✔️
-oc_unsetsv | manager | bloqueia o uso do bot no servidor atual | ✔️
-oc_listsv | manager | lista todos os servidores liberados | ✔️
-oc_pmtmanager | developer | adiciona um usuário na lista de managers | ✔️
-oc_dmtmanager | developer | remove um usuário da lista de managers | ✔️
-oc_listmanager | manager | lista todos os usuários com permissão de manager | ✔️
-oc_pmtdeveloper | developer | adiciona um usuário na lista de developers | ✔️
-oc_dmtdeveloper | developer | remove um usuário da lista de developers | ✔️
-oc_listdeveloper | manager | lista todos os usuários com permissão de developer | ✔️
-oc_disablecommand | admin | Desabilita o uso de algum comando em todos os servidores | ✔️
-oc_enablecommand | admin | Habilita o uso de algum comando em todos os servidores | ✔️
-oc_disablemodule | admin | Desabilita o uso de algum módulo em todos os servidores | ✔️
-oc_enablemodule | admin | Habilita o uso de algum módulo em todos os servidores | ✔️
-oc_disabledcommands | mod | Informa todos os comandos desabilitados globalmente | ✔️
-oc_devmode | developer | ativa ou desativa o modo de desenvolvimento | ✔️
-oc_errorsmode | developer | ativa ou desativa o modo de debug de erros desconhecidos | ✔️
+oc_status | manager | Envia um hello world, e os status do bot | ✔️
+oc_quit | developer | Força a parar o bot | ✔️
+oc_setsv | manager | Libera o uso do bot no servidor atual| ✔️
+oc_unsetsv | manager | Bloqueia o uso do bot no servidor atual | ✔️
+oc_listsv | manager | Lista todos os servidores liberados | ✔️
+oc_pmtmanager | developer | Adiciona um usuário na lista de managers | ✔️
+oc_dmtmanager | developer | Remove um usuário da lista de managers | ✔️
+oc_listmanager | manager | Lista todos os usuários com permissão de manager | ✔️
+oc_pmtdeveloper | developer | Adiciona um usuário na lista de developers | ✔️
+oc_dmtdeveloper | developer | Remove um usuário da lista de developers | ✔️
+oc_listdeveloper | manager | Lista todos os usuários com permissão de developer | ✔️
+oc_disablecommand | developer | Desabilita o uso de algum comando em todos os servidores | ✔️
+oc_enablecommand | developer | Habilita o uso de algum comando em todos os servidores | ✔️
+oc_disablemodule | developer | Desabilita o uso de algum módulo em todos os servidores | ✔️
+oc_enablemodule | developer | Habilita o uso de algum módulo em todos os servidores | ✔️
+oc_disabledcommands | manager | Informa todos os comandos desabilitados globalmente | ✔️
+oc_devmode | developer | Ativa ou desativa o modo de desenvolvimento | ✔️
+oc_errorsmode | developer | Ativa ou desativa o modo de debug de erros desconhecidos | ✔️
 oc_botsettings | manager | lista todas as configurações do bot | ✔️
 
 ### Bot Module
@@ -107,9 +107,9 @@ settings | mod | Send all guild settings | ✔️
 
 name | permission | explanation | stage
 :--- | :--------- | :---------- | :---:
-avatar | member | envia o avatar de um usuário | ❌
-banner | member | envia o banner de um usuário | ❌
-servericon | member | envia o ícone do servidor | ❌
+avatar | member | Download someone's profile picture | ✔️
+banner | member | Download someone's banner | ✔️
+servericon | member | Download server's icon | ❌
 permissions | member | informa as permissões de um usuário | ❌
 userinfo | member | informações sobre um usuário | ❌
 channelinfo | member | informações sobre um canal | ❌
