@@ -79,13 +79,13 @@
         },
         "LOCKMODULE": {
             "DESCRIPTION":"🔐 Todos os comandos deste módulo foram bloqueados neste servidor!",
-            "TITLE":"Qual Módulo:",
+            "TITLE":"Quais Comandos:",
             "NAME":"Haru - Bloqueando Modulos", 
             "FOOTER":"Use /help ou h!help para mais informações"   
         },
         "UNLOCKMODULE": {
             "DESCRIPTION":"🔓 Todos os comandos deste módulo foram desbloqueados neste servidor!",
-            "TITLE":"Qual Módulo:",
+            "TITLE":"Quais Comandos:",
             "NAME":"Haru - Desbloqueando Modulos", 
             "FOOTER":"Use /help ou h!help para mais informações"   
         },
@@ -307,6 +307,10 @@
         },
         "CommandLocked": {
             "TYPE": "Comando Bloqueado Neste Servidor"
+        },
+        "CommandDisabled": {
+            "TYPE": "Comando Desabilitado Globalmente",
+            "REASON": "Este comando foi desabilitado em todos os servidores por um dos desenvolvedores do bot. Aguarde até que ele seja habilitado novamente."
         },
         "CommandDontExists": {
             "TYPE": "Comando Não Encontrado",

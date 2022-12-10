@@ -1,37 +1,21 @@
 {
     "788518735752724480": {
-        "prefix": "h!",
+        "prefix": "!",
         "language": "pt-br",
         "lockedcommands": [
-            "help",
-            "haru",
-            "invite",
-            "site",
-            "server",
-            "github",
-            "dev",
-            "ping",
-            "morse",
-            "flipmsg",
-            "choose",
-            "coinflip",
-            "jankenpon",
-            "dice",
+            "kiss",
+            "bite",
+            "lick",
+            "slap",
+            "hug",
+            "shoot",
             "ship",
-            "guess",
-            "mugistrong",
-            "say",
-            "dm"
-        ],
-        "lockedmodules": [
-            "bot",
-            "fun"
+            "choose"
         ]
     },
     "916777792962699315": {
         "prefix": "h!",
         "language": "pt-br",
-        "lockedcommands": [],
-        "lockedmodules": []
+        "lockedcommands": []
     }
 }

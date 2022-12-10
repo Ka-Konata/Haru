@@ -14,12 +14,22 @@
         "pt-br",
         "en"
     ],
-    "started-at": "09/12/2022 11:13:04",
+    "started-at": "09/12/2022 20:43:09",
     "server-list": [
         788518735752724480
     ],
     "developer-list": [
         502687173099913216
     ],
-    "manager-list": []
+    "manager-list": [],
+    "disabled-commands": [
+        "help",
+        "haru",
+        "invite",
+        "site",
+        "server",
+        "github",
+        "dev",
+        "ping"
+    ]
 }

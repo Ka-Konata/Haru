@@ -1,6 +1,11 @@
+import typing
 import discord
+from discord import app_commands
 from discord.ext import commands
 from scripts import configs, errors, colors
+
+modulos = configs.get_commands()
+
 
 class Developer(commands.Cog):
     def __init__(self, bot):
@@ -268,6 +273,155 @@ class Developer(commands.Cog):
             embed = errors.get_error_embed(lang, 'Modo Desconhecido', tip='Modos conhecidos: on, off')
         else:
             return None
+        await ctx.send(embed=embed)
+
+
+    @commands.command(aliases=['_disablecommand'])
+    @commands.check(configs.Authentication.developer)
+    @commands.check(configs.check_guild)
+    async def oc_disablecommand(self, ctx, command : str):
+        '''Desabilita o uso de algum comando em todos os servidores'''
+        settings = configs.get_configs()
+
+        for mod in modulos:
+            if command in modulos[mod].keys():
+                if mod in ['configuration']:
+                    print('cannot', mod)
+                    raise errors.CannotBeLocked
+
+                if not command in settings['disabled-commands']:
+                    settings['disabled-commands'].append(command)
+                    configs.save(settings, 'storage/configs.json')
+
+                embed = discord.Embed(description=f'O comando `{command}` foi **🔐 DESABILITADO** em **todos** os servidores.', color=colors.default)
+
+                await ctx.send(embed=embed)
+
+                return None
+        raise errors.CommandDontExists
+
+    
+    @commands.command(aliases=['_enablecommand'])
+    @commands.check(configs.Authentication.developer)
+    @commands.check(configs.check_guild)
+    async def oc_enablecommand(self, ctx, command : str): #finder
+        '''Habilita o uso de algum comando em todos os servidores'''
+        settings = configs.get_configs()
+
+        for mod in modulos:
+            if command in modulos[mod].keys():
+                if command in settings['disabled-commands']:
+                    settings['disabled-commands'].remove(command)
+                    configs.save(settings, 'storage/configs.json')
+
+                embed = discord.Embed(description=f'O comando `{command}` foi **🔓 HABILITADO** em **todos** os servidores', color=colors.default)
+                await ctx.send(embed=embed)
+
+                return None
+        raise errors.CommandDontExists
+
+    
+    @commands.hybrid_command(aliases=['_disablemodule'])
+    @commands.check(configs.Authentication.developer)
+    @commands.check(configs.check_islocked)
+    @commands.check(configs.check_guild)
+    async def oc_disablemodule(self, ctx, module : str):
+        '''Desabilita o uso de algum módulo em todos os servidores'''
+        settings = configs.get_configs()
+
+        if module in ['configuration']:
+            print('cannot', mod)
+            raise errors.CannotBeLocked
+
+        for mod in modulos:
+            if mod == module:
+                cmds_str = ''
+                guild = configs.get_guild(ctx.guild.id, all=True)
+                for cmd in modulos[module].keys():
+                    cmds_str = cmds_str+'`'+cmd+'` '
+                    if not cmd in settings['disabled-commands']:
+                        settings['disabled-commands'].append(cmd)
+                configs.save(settings, 'storage/configs.json')
+
+                embed = discord.Embed(description=f'Todos os comandos do módulo `{module}` foram ** 🔐 DESABILITADOS** globalmente', color=colors.default)
+                embed.add_field(name='Lista de Comandos do Módulo:', value=cmds_str, inline=False)
+
+                await ctx.send(embed=embed)
+
+                return None
+        raise errors.ModuleDontExists
+
+
+    @commands.hybrid_command(aliases=['_enablemodule'])
+    @commands.check(configs.Authentication.developer)
+    @commands.check(configs.check_guild)
+    async def oc_enablemodule(self, ctx, module : str): 
+        '''Habilita o uso de algum módulo em todos os servidores'''
+        settings = configs.get_configs()
+
+        for mod in modulos:
+            if module == mod:
+                cmds_str = ''
+                for cmd in modulos[mod].keys():
+                    cmds_str = cmds_str+'`'+cmd+'` '
+                    if cmd in settings['disabled-commands']:
+                        settings['disabled-commands'].remove(cmd)
+                configs.save(settings, 'storage/configs.json')
+
+                embed = discord.Embed(description=f'Todos os comandos do módulo `{module}` foram ** 🔓 HABILITADOS** globalmente', color=colors.default)
+                embed.add_field(name='Lista de Comandos do Módulo:', value=cmds_str, inline=False)
+
+                await ctx.send(embed=embed)
+
+                return None
+        raise errors.ModuleDontExists
+
+    
+    @commands.hybrid_command(aliases=['_disabledcommands'])
+    @commands.check(configs.Authentication.moderator)
+    @commands.check(configs.check_guild)
+    async def oc_disabledcommands(self, ctx): #finder
+        '''Sends a list of all locked commands on this guild'''
+        settings = configs.get_configs()
+        cmd_list = settings['disabled-commands']
+        cmds_str = ''
+        for cmd in cmd_list:
+            cmds_str = cmds_str+'`'+cmd+'` '
+        if len(cmd_list) == 0:
+            cmds_str = '`nenhum`'
+
+        embed = discord.Embed(description='Lista com todos os comandos desabilitados **globalmente**', color=colors.default)
+        embed.add_field(name='Comandos Desabilitados:', value=cmds_str, inline=True)
+        await ctx.send(embed=embed)
+
+    
+    @commands.hybrid_command(aliases=['_botsettings'])
+    @commands.check(configs.Authentication.manager)
+    @commands.check(configs.check_guild)
+    async def oc_botsettings(self, ctx): 
+        '''lista todas as configurações do bot'''
+        settings = configs.get_configs()
+        lang = configs.lang[configs.get_guild(ctx.guild.id)['language']]
+        guild = configs.get_guild(ctx.guild.id)
+
+        prefix         = settings['default-prefix']
+        language       = settings['default-language']
+        devmode        = '🟢On' if settings['development-mode'] else '🔴Off'
+        errorsmode     = '🟢On' if settings['errors-mode'] else '🔴Off'
+        lockedcommands = ''
+        for cmd in settings['disabled-commands']:
+            lockedcommands = lockedcommands+'`'+cmd+'` '
+        if len(settings['disabled-commands']) == 0:
+            lockedcommands = '`nenhum`'
+
+        embed = discord.Embed(description='', color=colors.default)
+        embed.set_author(name='Informações e Configurações Padrão', icon_url=settings['bot-icon'])
+        embed.add_field(name='Informações do Bot:', value=f'**User:** {self.bot.user.mention}\n**ID:** {self.bot.user.id}\n**Iniciado em:** {settings["started-at"]}', inline=True)
+        embed.add_field(name='Status do Bot', value=f'```🟢Online\n🏓Ping: {round(self.bot.latency * 1000)}ms```', inline=True)
+        embed.add_field(name='Configurações Padrão', value=f'```prefixo: {prefix}\nidioma: {language}```', inline=True)
+        embed.add_field(name='Modos Especiais', value=f'```Desenvolvimento: {devmode} \nDebug de Erros: {errorsmode}```', inline=True)
+        embed.add_field(name='Comandos Desabilitados Globalmente', value=lockedcommands, inline=True)
+
         await ctx.send(embed=embed)
 
 

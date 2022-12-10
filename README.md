@@ -68,9 +68,14 @@ oc_listmanager | manager | lista todos os usuários com permissão de manager | 
 oc_pmtdeveloper | developer | adiciona um usuário na lista de developers | ✔️
 oc_dmtdeveloper | developer | remove um usuário da lista de developers | ✔️
 oc_listdeveloper | manager | lista todos os usuários com permissão de developer | ✔️
+oc_disablecommand | admin | Desabilita o uso de algum comando em todos os servidores | ✔️
+oc_enablecommand | admin | Habilita o uso de algum comando em todos os servidores | ✔️
+oc_disablemodule | admin | Desabilita o uso de algum módulo em todos os servidores | ✔️
+oc_enablemodule | admin | Habilita o uso de algum módulo em todos os servidores | ✔️
+oc_disabledcommands | mod | Informa todos os comandos desabilitados globalmente | ✔️
 oc_devmode | developer | ativa ou desativa o modo de desenvolvimento | ✔️
 oc_errorsmode | developer | ativa ou desativa o modo de debug de erros desconhecidos | ✔️
-oc_botsettings | manager | lista todas as configurações do bot | ❌
+oc_botsettings | manager | lista todas as configurações do bot | ✔️
 
 ### Bot Module
 
@@ -128,7 +133,7 @@ mugistrong | member | envia um gif da Mugi-Strong | ❌
 say | member | faça a haru dizer alguma coisa | ❌
 dm | member | faça a haru enviar uma dm para alguém | ❌
 
-## Minigames Module
+### Minigames Module
 
 name | permission | explanation | stage
 :--- | :--------- | :---------- | :---:
@@ -148,11 +153,10 @@ shoot | member | ataca algum outro usuário | ❌
  
 ## Ideias: 
 
-- [] Implementar os comandos via dm
-- [] IA chat-bot (biblioteca chatterbot)
-- [] Jogo-da-velha contra usuário e contra IA
-- [] Jogo da forca
-- [] Jogo de roleta russa
-- [] Jogo de adivinhar a linguagem de programação
-- [] Jogo de labirinto
-- [] 
+- [ ] Implementar os comandos via dm
+- [ ] IA chat-bot (biblioteca chatterbot)
+- [ ] Jogo-da-velha contra usuário e contra IA
+- [ ] Jogo da forca
+- [ ] Jogo de roleta russa
+- [ ] Jogo de adivinhar a linguagem de programação
+- [ ] Jogo de labirinto

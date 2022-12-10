@@ -188,21 +188,24 @@ class Configuration(commands.Cog):
         settings = configs.get_configs()
         lang = configs.lang[configs.get_guild(ctx.guild.id)['language']]
 
-        for mod in modulos:
-            if module == mod:
-                if module in ['configuration']:
-                    print('cannot', module)
-                    raise errors.CannotBeLocked
+        if module in ['configuration']:
+            print('cannot', mod)
+            raise errors.CannotBeLocked
 
+        for mod in modulos:
+            if mod == module:
+                cmds_str = ''
                 guild = configs.get_guild(ctx.guild.id, all=True)
-                if not module in guild[str(ctx.guild.id)]['lockedmodules']:
-                    guild[str(ctx.guild.id)]['lockedmodules'].append(module)
-                    configs.save(guild, 'storage/guilds.json')
+                for cmd in modulos[module].keys():
+                    cmds_str = cmds_str+'`'+cmd+'` '
+                    if not cmd in guild[str(ctx.guild.id)]['lockedcommands']:
+                        guild[str(ctx.guild.id)]['lockedcommands'].append(cmd)
+                configs.save(guild, 'storage/guilds.json')
 
                 embed = discord.Embed(description=lang['COMMAND']['LOCKMODULE']['DESCRIPTION'], color=colors.default)
                 embed.set_author(name=lang['COMMAND']['LOCKMODULE']['NAME'], icon_url=settings['bot-icon'])
                 embed.set_thumbnail(url=settings['app-icon'])
-                embed.add_field(name=lang['COMMAND']['LOCKMODULE']['TITLE'], value='`'+module+'`', inline=True)
+                embed.add_field(name=lang['COMMAND']['LOCKMODULE']['TITLE'], value=cmds_str, inline=True)
                 embed.set_footer(text=lang['COMMAND']['LOCKMODULE']['FOOTER'])
 
                 await ctx.send(embed=embed)
@@ -219,7 +222,7 @@ class Configuration(commands.Cog):
                 choice_list.append(app_commands.Choice(name=module, value=module))
         return choice_list
 
-    
+
     @commands.hybrid_command(aliases=modulos['configuration']['unlockmodule'])
     @app_commands.describe(module='The module to be unlocked.')
     @commands.check(configs.Authentication.administrator)
@@ -233,14 +236,17 @@ class Configuration(commands.Cog):
         for mod in modulos:
             if module == mod:
                 guild = configs.get_guild(ctx.guild.id, all=True)
-                if module in guild[str(ctx.guild.id)]['lockedmodules']:
-                    guild[str(ctx.guild.id)]['lockedmodules'].remove(module)
-                    configs.save(guild, 'storage/guilds.json')
+                cmds_str = ''
+                for cmd in modulos[mod].keys():
+                    cmds_str = cmds_str+'`'+cmd+'` '
+                    if cmd in guild[str(ctx.guild.id)]['lockedcommands']:
+                        guild[str(ctx.guild.id)]['lockedcommands'].remove(cmd)
+                configs.save(guild, 'storage/guilds.json')
 
                 embed = discord.Embed(description=lang['COMMAND']['UNLOCKMODULE']['DESCRIPTION'], color=colors.default)
                 embed.set_author(name=lang['COMMAND']['UNLOCKMODULE']['NAME'], icon_url=settings['bot-icon'])
                 embed.set_thumbnail(url=settings['app-icon'])
-                embed.add_field(name=lang['COMMAND']['UNLOCKMODULE']['TITLE'], value='`'+module+'`', inline=True)
+                embed.add_field(name=lang['COMMAND']['UNLOCKMODULE']['TITLE'], value=cmds_str, inline=True)
                 embed.set_footer(text=lang['COMMAND']['UNLOCKMODULE']['FOOTER'])
 
                 await ctx.send(embed=embed)
@@ -269,11 +275,6 @@ class Configuration(commands.Cog):
         guild = configs.get_guild(ctx.guild.id)
 
         cmd_list = guild['lockedcommands']
-        mod_list = guild['lockedmodules']
-        for mod in mod_list:
-            for cmd in modulos[mod].keys():
-                if not cmd in cmd_list:
-                    cmd_list.append(cmd)
 
         cmds_str = ''
         for cmd in cmd_list:
@@ -317,7 +318,6 @@ class Configuration(commands.Cog):
         embed.set_footer(text=lang['COMMAND']['SETTINGS']['FOOTER'])
 
         await ctx.send(embed=embed)
-
 
 
 async def setup(bot):

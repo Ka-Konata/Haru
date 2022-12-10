@@ -73,28 +73,24 @@ async def on_command_error(ctx, error):
 
     if isinstance(error, commands.errors.CommandNotFound):
         embed = errors.get_error_embed(lang, lang['ERROR']['CommandNotFound']['TYPE'])
-
     elif isinstance(error, errors.GuildNotAllowed):
         embed = errors.get_error_embed(lang, lang['ERROR']['GuildNotAllowed']['TYPE'], lang['ERROR']['GuildNotAllowed']['REASON'])
-
     elif isinstance(error, errors.AuthenticationFailure):
         auth = ctx.command.checks[1].__name__ if len(ctx.command.checks) > 1 else ctx.command.checks[0].__name__
         embed = errors.get_error_embed(lang, lang['ERROR']['AuthenticationFailure']['TYPE'], lang['ERROR']['AuthenticationFailure']['REASON']+auth)
-
     elif isinstance(error, commands.errors.MemberNotFound):
         embed = errors.get_error_embed(lang, lang['ERROR']['MemberNotFound']['TYPE'])
-
     elif isinstance(error, commands.errors.UserNotFound):
         embed = errors.get_error_embed(lang, lang['ERROR']['UserNotFound']['TYPE'])
-
     elif isinstance(error, commands.errors.GuildNotFound):
         embed = errors.get_error_embed(lang, lang['ERROR']['GuildNotFound']['TYPE'])
-
     elif isinstance(error, commands.errors.MissingRequiredArgument):
         arg = str(list(ctx.command.clean_params.keys())).replace('[', '').replace(']', '').replace("'", '')
         embed = errors.get_error_embed(lang, lang['ERROR']['MissingRequiredArgument']['TYPE'], tip=lang['ERROR']['MissingRequiredArgument']['REASON']+arg)
     elif isinstance(error, errors.CommandLocked):
         embed = errors.get_error_embed(lang, lang['ERROR']['CommandLocked']['TYPE'])
+    elif isinstance(error, errors.CommandDisabled):
+        embed = errors.get_error_embed(lang, lang['ERROR']['CommandDisabled']['TYPE'], reason=lang['ERROR']['CommandDisabled']['REASON'])
     elif isinstance(error, errors.CommandDontExists):
         embed = errors.get_error_embed(lang, lang['ERROR']['CommandDontExists']['TYPE'], tip=lang['ERROR']['CommandDontExists']['TIP'])
     elif isinstance(error, errors.ModuleDontExists):

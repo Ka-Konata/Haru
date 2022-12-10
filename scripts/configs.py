@@ -74,7 +74,7 @@ def get_guild(guild_id : str, all=False):
         res = guilds[guild_id] if not all else guilds
     except Exception as error:
         settings = get_configs()
-        guilds.update({guild_id:{'prefix':settings['default-prefix'], 'language':settings['default-language'], "lockedcommands": [], "lockedmodules": []}})
+        guilds.update({guild_id:{'prefix':settings['default-prefix'], 'language':settings['default-language'], "lockedcommands": []}})
         res              = guilds[guild_id] if not all else guilds
         obj = json.dumps(guilds, indent=4)
         with open('storage/guilds.json', 'w') as f:
@@ -103,19 +103,16 @@ def save(actualized_configs, path='storage/configs.json'):
 
 
 def check_islocked(ctx):
-    guild = get_guild(ctx.guild.id)
-    cmmds = get_commands()
-    locks_mod = guild['lockedmodules']
-    locks_cmd = guild['lockedcommands']
+    local_locks_cmd  = get_guild(ctx.guild.id)['lockedcommands']
+    global_locks_cmd = get_configs()['disabled-commands']
 
-    for mod in locks_mod:
-        for c in cmmds[mod]:
-            if not c in locks_cmd:
-                locks_cmd.append(c)
-
-    for cmd in locks_cmd:
+    for cmd in local_locks_cmd:
         if cmd == ctx.command.name:
             raise errors.CommandLocked
+
+    for cmd in global_locks_cmd:
+        if cmd == ctx.command.name:
+            raise errors.CommandDisabled
 
     return True
 

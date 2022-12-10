@@ -16,6 +16,8 @@ class LanguageDontExists(commands.CommandError):
     pass
 class CommandLocked(commands.CommandError):
     pass
+class CommandDisabled(commands.CommandError):
+    pass
 class CommandDontExists(commands.CommandError):
     pass
 class ModuleDontExists(commands.CommandError):
@@ -25,7 +27,7 @@ class CannotBeLocked(commands.CommandError):
 
 
 local_errors = [DevModeUnknown, CommandOrModuleNotFound, PrefixVeryBig, LanguageDontExists]
-global_errors = [GuildNotAllowed, AuthenticationFailure, CommandLocked, CommandDontExists, ModuleDontExists, CannotBeLocked]
+global_errors = [GuildNotAllowed, AuthenticationFailure, CommandLocked, CommandDontExists, ModuleDontExists, CannotBeLocked, CommandDisabled]
 
 def get_error_embed(lang, type, reason = None, tip = None, unknown=False):
     settings = configs.get_configs()
