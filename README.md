@@ -109,7 +109,7 @@ name | permission | explanation | stage
 :--- | :--------- | :---------- | :---:
 avatar | member | Download someone's profile picture | ✔️
 banner | member | Download someone's banner | ✔️
-servericon | member | Download server's icon | ❌
+servericon | member | Downloads a guild's icon | ❌
 permissions | member | informa as permissões de um usuário | ❌
 userinfo | member | informações sobre um usuário | ❌
 channelinfo | member | informações sobre um canal | ❌

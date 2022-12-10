@@ -338,7 +338,7 @@ class Developer(commands.Cog):
                 cmds_str = ''
                 guild = configs.get_guild(ctx.guild.id, all=True)
                 for cmd in modulos[module].keys():
-                    cmds_str = cmds_str+'`'+cmd+'` '
+                    cmds_str = cmds_str+'`'+cmd+'`\t'
                     if not cmd in settings['disabled-commands']:
                         settings['disabled-commands'].append(cmd)
                 configs.save(settings, 'storage/configs.json')
@@ -363,7 +363,7 @@ class Developer(commands.Cog):
             if module == mod:
                 cmds_str = ''
                 for cmd in modulos[mod].keys():
-                    cmds_str = cmds_str+'`'+cmd+'` '
+                    cmds_str = cmds_str+'`'+cmd+'`\t'
                     if cmd in settings['disabled-commands']:
                         settings['disabled-commands'].remove(cmd)
                 configs.save(settings, 'storage/configs.json')
@@ -386,7 +386,7 @@ class Developer(commands.Cog):
         cmd_list = settings['disabled-commands']
         cmds_str = ''
         for cmd in cmd_list:
-            cmds_str = cmds_str+'`'+cmd+'` '
+            cmds_str = cmds_str+'`'+cmd+'`\t'
         if len(cmd_list) == 0:
             cmds_str = '`nenhum`'
 
@@ -410,7 +410,7 @@ class Developer(commands.Cog):
         errorsmode     = '🟢On' if settings['errors-mode'] else '🔴Off'
         lockedcommands = ''
         for cmd in settings['disabled-commands']:
-            lockedcommands = lockedcommands+'`'+cmd+'` '
+            lockedcommands = lockedcommands+'`'+cmd+'`\t'
         if len(settings['disabled-commands']) == 0:
             lockedcommands = '`nenhum`'
 

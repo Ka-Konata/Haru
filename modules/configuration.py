@@ -197,7 +197,7 @@ class Configuration(commands.Cog):
                 cmds_str = ''
                 guild = configs.get_guild(ctx.guild.id, all=True)
                 for cmd in modulos[module].keys():
-                    cmds_str = cmds_str+'`'+cmd+'` '
+                    cmds_str = cmds_str+'`'+cmd+'`\t'
                     if not cmd in guild[str(ctx.guild.id)]['lockedcommands']:
                         guild[str(ctx.guild.id)]['lockedcommands'].append(cmd)
                 configs.save(guild, 'storage/guilds.json')
@@ -238,7 +238,7 @@ class Configuration(commands.Cog):
                 guild = configs.get_guild(ctx.guild.id, all=True)
                 cmds_str = ''
                 for cmd in modulos[mod].keys():
-                    cmds_str = cmds_str+'`'+cmd+'` '
+                    cmds_str = cmds_str+'`'+cmd+'`\t'
                     if cmd in guild[str(ctx.guild.id)]['lockedcommands']:
                         guild[str(ctx.guild.id)]['lockedcommands'].remove(cmd)
                 configs.save(guild, 'storage/guilds.json')
@@ -278,7 +278,7 @@ class Configuration(commands.Cog):
 
         cmds_str = ''
         for cmd in cmd_list:
-            cmds_str = cmds_str+'`'+cmd+'` '
+            cmds_str = cmds_str+'`'+cmd+'`\t'
         if len(cmd_list) == 0:
             cmds_str = '`'+lang['COMMAND']['LOCKEDCOMMANDS']['NONE']+'`'
 
@@ -305,7 +305,7 @@ class Configuration(commands.Cog):
         language = '`'+guild['language']+' '+lang['COMMAND']['SETTINGS']['LANGUAGE VALUE']+'`'
         lockedcommands = ''
         for cmd in guild['lockedcommands']:
-            lockedcommands = lockedcommands+'`'+cmd+'` '
+            lockedcommands = lockedcommands+'`'+cmd+'`\t'
         if len(guild['lockedcommands']) == 0:
             lockedcommands = '`'+lang['COMMAND']['SETTINGS']['NONE']+'`'
 

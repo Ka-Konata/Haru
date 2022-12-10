@@ -118,6 +118,12 @@
             "DESC NO BANNER 2": ") para baixar",
             "NAME":"Haru - Banner", 
             "FOOTER":"Use /help ou h!help para mais informações"   
+        },
+        "SERVERICON": {
+            "DESC 1": "[Clique aqui](",
+            "DESC 2": ") para baixar",
+            "NAME":"Haru - Icon do Servidor", 
+            "FOOTER":"Use /help ou h!help para mais informações"   
         }
     },
     "HELP":{
@@ -251,7 +257,11 @@
                 "HOW VALUE":"`/banner <usuário>`",
                 "EXEMPLE VALUE":"`/banner Haru` `/banner 808100198899384352`"
             },
-            "servericon":[],
+            "servericon": {
+                "DESCRIPTION":"Baixe o icon de qualquer servidor.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "HOW VALUE":"`/servericon [servidor]`",
+                "EXEMPLE VALUE":"`/banner 788518735752724480` `/banner`"
+            },
             "permissions":["permissoes"],
             "userinfo":["whois"],
             "channelinfo":[],

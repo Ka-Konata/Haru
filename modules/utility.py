@@ -56,26 +56,27 @@ class Utility(commands.Cog):
         await ctx.reply(embed=embed)
 
 
-    #@commands.hybrid_command(aliases=modulos['utility']['servericon'])
-    #@app_commands.describe(user='Whose banner is it')
-    #@commands.check(configs.Authentication.member)
-    #@commands.check(configs.check_islocked)
-    #@commands.check(configs.check_guild)
-    #async def servericon(self, ctx, server : discord.Guild = None):
-    #    '''Download someone's banner'''
-    #    settings = configs.get_configs()
-    #    lang = configs.lang[configs.get_guild(ctx.guild.id)['language']]
-    #
-    #    fuser = await self.bot.fetch_user(user.id)
-    #    if fuser.banner == None:
-    #        embed = discord.Embed(description=lang['COMMAND']['BANNER']['DESC NO BANNER 1']+str(fuser.id)+['COMMAND']['BANNER']['DESC NO BANNER 1'], color=colors.default)
-    #    else:
-    #        embed = discord.Embed(description=lang['COMMAND']['BANNER']['DESC 1']+str(fuser.banner)+lang['COMMAND']['BANNER']['DESC 2'], color=colors.default)
-    #        embed.set_image(url=fuser.banner)
-    #    embed.set_author(name=lang['COMMAND']['BANNER']['NAME'], icon_url=settings['bot-icon'])
-    #    embed.set_thumbnail(url=settings['app-icon'])
-    #    embed.set_footer(text=lang['COMMAND']['BANNER']['FOOTER'])
-    #    await ctx.reply(embed=embed)
+    @commands.hybrid_command(aliases=modulos['utility']['servericon'])
+    @app_commands.describe(server='Guild ID')
+    @commands.check(configs.Authentication.member)
+    @commands.check(configs.check_islocked)
+    @commands.check(configs.check_guild)
+    async def servericon(self, ctx, server : discord.Guild = None):
+        '''Downloads a guild's icon'''
+        settings = configs.get_configs()
+        lang = configs.lang[configs.get_guild(ctx.guild.id)['language']]
+    
+        if server == None:
+            server_icon = ctx.guild.icon
+        else:
+            server_icon = server.icon
+        
+        embed = discord.Embed(description=lang['COMMAND']['SERVERICON']['DESC 1']+str(server_icon)+lang['COMMAND']['SERVERICON']['DESC 2'], color=colors.default)
+        embed.set_image(url=str(server_icon))
+        embed.set_author(name=lang['COMMAND']['SERVERICON']['NAME'], icon_url=settings['bot-icon'])
+        embed.set_thumbnail(url=settings['app-icon'])
+        embed.set_footer(text=lang['COMMAND']['SERVERICON']['FOOTER'])
+        await ctx.reply(embed=embed)
 
 
 async def setup(bot):

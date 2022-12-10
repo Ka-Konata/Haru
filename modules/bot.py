@@ -49,7 +49,7 @@ class Bot(commands.Cog):
                     aliases = modulos[cmd_mod][especify]
                     aliases_str = ''
                     for aliase in aliases:
-                        aliases_str += f'`{aliase}` '
+                        aliases_str += f'`{aliase}`\t'
 
                     msg.add_field(name=lang['HELP']['COMMAND']['ALIASES TITLE'], value=aliases_str, inline=True)
                     msg.set_footer(text=lang['HELP']['COMMAND']['FOOTER'])

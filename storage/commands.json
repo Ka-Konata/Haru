@@ -22,7 +22,7 @@
     "utility":{
         "avatar":["usericon", "pfp", "getpfp"],
         "banner":["usarbanner", "getbanner"],
-        "servericon":[],
+        "servericon":["guildicon", "svicon"],
         "permissions":["permissoes"],
         "userinfo":["whois"],
         "channelinfo":[],
