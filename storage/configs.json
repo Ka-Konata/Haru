@@ -2,7 +2,7 @@
     "development-mode": true,
     "errors-mode": true,
     "bot-name": "Haru",
-    "bot-icon": "https://media.discordapp.net/attachments/810690029847969833/1048420745937690674/608af0c5be01cd73faba6b46f4a7d1ab.png",
+    "bot-icon": "https://cdn.discordapp.com/attachments/810690029847969833/1051621801484099605/Captura_de_tela_2022-12-11_190419.png",
     "app-icon": "https://media.discordapp.net/attachments/810690029847969833/1048793278054678599/imagem_2022-12-02_211102899.jpg",
     "bot-invite": "https://discord.com/api/oauth2/authorize?client_id=808100198899384352&permissions=8&scope=bot",
     "server-invite": "https://discord.com/invite/ZZHRtsJTCS",
@@ -14,7 +14,7 @@
         "pt-br",
         "en"
     ],
-    "started-at": "11/12/2022 04:59:25",
+    "started-at": "11/12/2022 19:28:58",
     "server-list": [
         788518735752724480
     ],

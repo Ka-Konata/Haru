@@ -82,12 +82,12 @@ oc_botsettings | manager | lista todas as configurações do bot | ✔️
 name | permission | explanation | stage
 :--- | :--------- | :---------- | :---:
 help | member | A list of all commands or an explanation of a specific module/command. | ✔️
-haru | member | Basic information about Haru | ✔️
+haru | member | Basic informations about Haru | ✔️
 invite | member | Send the bot invite link | ✔️
 site | member | Send the bot's official website link | ✔️
 server | member | Send the bot's official server invite link | ✔️
 github | member | Send Haru's repository link on github | ✔️
-dev | member | Information about the bot development team | ✔️
+dev | member | Informations about the bot development team | ✔️
 ping | member | Used to know if haru is alive | ✔️
 
 ### Configuration Module
@@ -112,12 +112,12 @@ banner | member | Download someone's banner | ✔️
 servericon | member | Downloads a guild's icon | ✔️
 permissions | member | Get someone's permissions | ✔️
 userinfo | member | Get someone's basic informations | ✔️
-channelinfo | member | Get information about a channel | ✔️
-roleinfo | member | Get information about a role | ✔️
-serverinfo | member | Get information about a guild | ✔️
-currency | member | converte um valor de para outra cotação | ❌
-random | member | gera um número aleatório | ❌
-anime | member | informações sobre um anime no my anime list | ❌
+channelinfo | member | Get informations about a channel | ✔️
+roleinfo | member | Get informations about a role | ✔️
+serverinfo | member | Get informations about a guild | ✔️
+currency | member | Convert a value to another quote | ✔️
+random | member | Get a random number | ✔️
+anime | member | Get informations about an anime on My Anime List | ✔️
 
 ### Fun Module
 

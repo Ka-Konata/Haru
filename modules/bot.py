@@ -199,7 +199,7 @@ class Bot(commands.Cog):
     @commands.check(configs.check_islocked)
     @commands.check(configs.check_guild)
     async def dev(self, ctx):
-        '''Information about the bot development team'''
+        '''Informations about the bot development team'''
         settings = configs.get_configs()
         lang = configs.lang[configs.get_guild(ctx.guild.id)['language']]
 

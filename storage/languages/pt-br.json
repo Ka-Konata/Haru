@@ -200,6 +200,14 @@
             "BOOSTERS": "Boosters",
             "NAME":"Haru - Sobre um Servidor", 
             "FOOTER":"Use /help ou h!help para mais informações"
+        },
+        "CURRENCY": {
+            "DESC":"Data da Conversão",
+            "F1 TITLE": "Original:",
+            "F2 TITLE": "Convertido:",
+            "F3 TITLE": "Cotação:",
+            "NAME":"Haru - Conversor de Moedas", 
+            "FOOTER":"Use /help ou h!help para mais informações"
         }
     },
     "HELP":{
@@ -363,7 +371,11 @@
                 "HOW VALUE":"`/serverinfo [id do servidor]`",
                 "EXEMPLE VALUE":"`/serverinfo 788518735752724480` `/serverinfo`"
             },
-            "currency":["convert"],
+            "currency": {
+                "DESCRIPTION":"Veja um valor convertido de uma cotação para outra.\nAlgumas das cotações disponíveis:\n**AOA:** `Kwanza Angolano`\n**ARS:** `Peso Argentino`\n**BRL:** `Real Brasileiro`\n**BTC:** `Bitcoin`\n**CNY:** `Yuan Chinês`\n**CUP:** `Peso Cubano`\n**EUR:** `Euro`\n**JPY:** `Yen Japonês`\n**KRW:** `Won Sul-Coreano`\n**MXN:** `Peso Mexicano`\n**RUB:** `Rublo Russo`\n**USD:** `Dolar dos Estados Unidos`\n**UYU:** `Peso Uruguaio`\n**VEF:** `Bolívar Venezuelano`\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "HOW VALUE":"`/currency <cotação original> <nova cotação> <valor>`",
+                "EXEMPLE VALUE":"`/currency BRL EUR 10` `/currency jpy brl 5.50`"
+            },
             "random":["aleatorio"],
             "anime":["mal"],
             "morse":[],
@@ -395,6 +407,9 @@
         "TIP":"Dica:",
         "FOOTER":"Use /help para mais informações",
         "FOOTER UNKNOWN":"Reporte esse erro usando /server",
+        "UnknownError": {
+            "TYPE": "Erro Desconhecido"
+        },
         "CommandNotFound": {
             "TYPE": "Comando Desconhecido"
         },
@@ -453,6 +468,18 @@
         "CannotBeLocked": {
             "TYPE": "Um ou Mais Comandos Não Podem ser bloqueados",
             "REASON": "Por segurança, alguns comandos (todos os do módulo \"configuration\" por exemplo) não podem ser bloqueados."
+        },
+        "CurrencyApiError": {
+            "TYPE": "Erro na Conversão",
+            "REASON": "O quê pode ter acontecido:\n1. Uma das cotações inseridas não exista ou está errada.\n2. A API que converte o valor não está funcionando.\n3. A Haru atingiu o limite de 100 conversões gratuítas por mês (plano gratuito da API).",
+            "TIP": "O comando deve ser algo parecido com \"h!currency BRL USD 100\"\nUse \"/help currency\" para verificar algumas das cotações disponíveis."
+        },
+        "StartBiggerThanEnd": {
+            "TYPE": "\"from_num\" Maior que \"until_num\"",
+            "REASON": "O número inicial deve ser menor que o número final, caso um dos dois não seja inserido, esses valores serão usados:\nfrom_num = 0\nuntil_num = 100"
+        },
+        "BadArgument": {
+            "TYPE": "Parâmetro Incorreto"
         }
     },
     "PERMISSIONS": {

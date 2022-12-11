@@ -99,12 +99,14 @@ async def on_command_error(ctx, error):
         embed = errors.get_error_embed(lang, lang['ERROR']['ModuleDontExists']['TYPE'])
     elif isinstance(error, errors.CannotBeLocked):
         embed = errors.get_error_embed(lang, lang['ERROR']['CannotBeLocked']['TYPE'], reason=lang['ERROR']['CannotBeLocked']['REASON'])
+    elif isinstance(error, commands.errors.BadArgument):
+        embed = errors.get_error_embed(lang, lang['ERROR']['BadArgument']['TYPE'])
     else:
         if settings['errors-mode']:
             embed = errors.get_error_embed(lang, error, unknown=True)
-            logger.error(f'{error}')
         else:
-            return None
+            embed = errors.get_error_embed(lang, lang['ERROR']['UnknownError']['TYPE'])
+        logger.error(f'{error}')
 
     await ctx.reply(embed=embed, mention_author=False)
     #raise error

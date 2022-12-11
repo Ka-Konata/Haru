@@ -24,9 +24,13 @@ class ModuleDontExists(commands.CommandError):
     pass
 class CannotBeLocked(commands.CommandError):
     pass
+class CurrencyApiError(commands.CommandError):
+    pass
+class StartBiggerThanEnd(commands.CommandError):
+    pass
 
 
-local_errors = [DevModeUnknown, CommandOrModuleNotFound, PrefixVeryBig, LanguageDontExists]
+local_errors = [DevModeUnknown, CommandOrModuleNotFound, PrefixVeryBig, LanguageDontExists, CurrencyApiError, StartBiggerThanEnd]
 global_errors = [GuildNotAllowed, AuthenticationFailure, CommandLocked, CommandDontExists, ModuleDontExists, CannotBeLocked, CommandDisabled]
 
 def get_error_embed(lang, type, reason = None, tip = None, unknown=False):
