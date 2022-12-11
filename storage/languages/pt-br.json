@@ -153,8 +153,53 @@
                 "YES": "Sim",
                 "NOT": "Não"
             },
-            "NAME":"Haru - Info", 
+            "NAME":"Haru - Sobre um Usuário", 
             "FOOTER":"Use /help ou h!help para mais informações"   
+        },
+        "CHANNELINFO": {
+            "CREATED": "Criado em",
+            "MENTION": "Nome",
+            "NONE":"nenhuma",
+            "NAME":"Haru - Sobre um Canal", 
+            "FOOTER":"Use /help ou h!help para mais informações",
+            "TYPE": {
+                "TITLE": "Tipo",
+                "news": "Canal de Anúncios",
+                "text": "Canal de Texto",
+                "category": "Categoria de Canais",
+                "voice": "Canal de Voz",
+                "stage_voice": "Stage",
+                "forum": "Forum"
+            },
+            "CATEGORY": "Categoria",
+            "GUILD": "Servidor",
+            "URL": "Vá para o canal [clicando aqui](",
+            "CHANEL TITLE": "Informações do Canal"
+        },
+        "ROLELINFO": {
+            "CREATED": "Criado em",
+            "MENTION": "Nome",
+            "ID": "ID",
+            "NAME":"Haru - Sobre um Cargo", 
+            "FOOTER":"Use /help ou h!help para mais informações",
+            "INFO TITLE": "Informações do Cargo",
+            "PERMS TITLE": "Permissões do Cargo"
+        },
+        "SERVERINFO": {
+            "DESC": "Descrição do servidor",
+            "CREATED": "Criado em",
+            "MENTION": "Nome",
+            "ID": "ID",
+            "OWNER": "Dono do servidor",
+            "F1 TITLE": "Informações Básicas: ",
+            "F2 TITLE": "Contadores: ",
+            "ROLES": "Cargos",
+            "TEXT": "Canais de Texto",
+            "VOICE": "Canais de Voz",
+            "MEMBERS": "Membros",
+            "BOOSTERS": "Boosters",
+            "NAME":"Haru - Sobre um Servidor", 
+            "FOOTER":"Use /help ou h!help para mais informações"
         }
     },
     "HELP":{
@@ -303,9 +348,21 @@
                 "HOW VALUE":"`/userinfo [usuário]`",
                 "EXEMPLE VALUE":"`/userinfo Haru` `/userinfo`"
             },
-            "channelinfo":[],
-            "roleinfo":[],
-            "serverinfo":[],
+            "channelinfo": {
+                "DESCRIPTION":"Veja todas as informações básicas de um canal do servidor\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "HOW VALUE":"`/channelinfo [canal]`",
+                "EXEMPLE VALUE":"`/channelinfo 846557373724229642` `/channelinfo`"
+            },
+            "roleinfo": {
+                "DESCRIPTION":"Veja todas as informações básicas de um cargo do servidor (Não funciona com canais de outros servidores)\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "HOW VALUE":"`/roleinfo [canal]`",
+                "EXEMPLE VALUE":"`/roleinfo 881539982370684938` `/roleinfo`"
+            },
+            "serverinfo": {
+                "DESCRIPTION":"Veja todas as informações básicas de um servidor.Tenha em mente de que a haru só pode encontrar informações de servidores dos quais ela mesma esteja.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "HOW VALUE":"`/serverinfo [id do servidor]`",
+                "EXEMPLE VALUE":"`/serverinfo 788518735752724480` `/serverinfo`"
+            },
             "currency":["convert"],
             "random":["aleatorio"],
             "anime":["mal"],
@@ -355,8 +412,13 @@
         "UserNotFound": {
             "TYPE": "Usuário não Encontrado"
         },
+        "ChannelNotFound": {
+            "TYPE": "Canal não Encontrado",
+            "REASON": "Talvez seja de outro servidor ou ele não exista."
+        },
         "GuildNotFound": {
-            "TYPE": "Servidor não Encontrado"
+            "TYPE": "Servidor não Encontrado",
+            "REASON": "Talvez a Haru não esteja neste servidor ou ele não exista."
         },
         "MissingRequiredArgument": {
             "TYPE": "Campo Obrigatório não Preenchido",

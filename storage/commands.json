@@ -24,13 +24,13 @@
         "banner":["usarbanner", "getbanner"],
         "servericon":["guildicon", "svicon"],
         "permissions":["permissoes", "perms", "userperms"],
-        "userinfo":["whois"],
-        "channelinfo":[],
-        "roleinfo":[],
-        "serverinfo":[],
+        "userinfo":["whois", "memberinfo", "usuario", "membro"],
+        "channelinfo":["channel", "canalinfo", "canal"],
+        "roleinfo":["role", "cargoinfo", "cargo"],
+        "serverinfo":["guildinfo", "guild", "servidorinfo"],
         "currency":["convert"],
-        "random":["aleatorio"],
-        "anime":["mal"]
+        "random":["getrandom", "aleatorio"],
+        "anime":["mal", "myanimelist"]
     }, 
     "fun":{
         "morse":[],

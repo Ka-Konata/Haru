@@ -82,8 +82,10 @@ async def on_command_error(ctx, error):
         embed = errors.get_error_embed(lang, lang['ERROR']['MemberNotFound']['TYPE'])
     elif isinstance(error, commands.errors.UserNotFound):
         embed = errors.get_error_embed(lang, lang['ERROR']['UserNotFound']['TYPE'])
+    elif isinstance(error, commands.errors.ChannelNotFound):
+        embed = errors.get_error_embed(lang, lang['ERROR']['ChannelNotFound']['TYPE'], lang['ERROR']['ChannelNotFound']['REASON'])
     elif isinstance(error, commands.errors.GuildNotFound):
-        embed = errors.get_error_embed(lang, lang['ERROR']['GuildNotFound']['TYPE'])
+        embed = errors.get_error_embed(lang, lang['ERROR']['GuildNotFound']['TYPE'], lang['ERROR']['GuildNotFound']['REASON'])
     elif isinstance(error, commands.errors.MissingRequiredArgument):
         arg = str(list(ctx.command.clean_params.keys())).replace('[', '').replace(']', '').replace("'", '')
         embed = errors.get_error_embed(lang, lang['ERROR']['MissingRequiredArgument']['TYPE'], tip=lang['ERROR']['MissingRequiredArgument']['REASON']+arg)

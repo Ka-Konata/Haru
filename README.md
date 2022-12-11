@@ -112,9 +112,9 @@ banner | member | Download someone's banner | ✔️
 servericon | member | Downloads a guild's icon | ✔️
 permissions | member | Get someone's permissions | ✔️
 userinfo | member | Get someone's basic informations | ✔️
-channelinfo | member | informações sobre um canal | ❌
-roleinfo | member | informações sobre um cargo | ❌
-serverinfo | member | informações sobre um servidor | ❌
+channelinfo | member | Get information about a channel | ✔️
+roleinfo | member | Get information about a role | ✔️
+serverinfo | member | Get information about a guild | ✔️
 currency | member | converte um valor de para outra cotação | ❌
 random | member | gera um número aleatório | ❌
 anime | member | informações sobre um anime no my anime list | ❌
