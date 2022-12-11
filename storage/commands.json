@@ -23,7 +23,7 @@
         "avatar":["usericon", "pfp", "getpfp"],
         "banner":["usarbanner", "getbanner"],
         "servericon":["guildicon", "svicon"],
-        "permissions":["permissoes"],
+        "permissions":["permissoes", "perms", "userperms"],
         "userinfo":["whois"],
         "channelinfo":[],
         "roleinfo":[],

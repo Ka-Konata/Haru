@@ -175,3 +175,57 @@ class Authentication:
     def member(ctx):
         check_role(ctx, member)
         return True
+
+
+def get_perms_as_dict(aux):
+    perms = dict()
+
+    perms['add_reactions'] = aux.add_reactions
+    perms['administrator'] = aux.administrator
+    perms['attach_files'] = aux.attach_files
+    perms['ban_members'] = aux.ban_members
+    perms['change_nickname'] = aux.change_nickname
+    perms['connect'] = aux.connect
+    perms['create_instant_invite'] = aux.create_instant_invite
+    perms['create_private_threads'] = aux.create_private_threads
+    perms['create_public_threads'] = aux.create_public_threads
+    perms['deafen_members'] = aux.deafen_members
+    perms['embed_links'] = aux.embed_links
+    perms['external_emojis'] = aux.external_emojis
+    perms['external_stickers'] = aux.external_stickers
+    perms['kick_members'] = aux.kick_members
+    perms['manage_channels'] = aux.manage_channels
+    perms['manage_emojis'] = aux.manage_emojis
+    perms['manage_emojis_and_stickers'] = aux.manage_emojis_and_stickers
+    perms['manage_events'] = aux.manage_events
+    perms['manage_guild'] = aux.manage_guild
+    perms['manage_messages'] = aux.manage_messages
+    perms['manage_nicknames'] = aux.manage_nicknames
+    perms['manage_permissions'] = aux.manage_permissions
+    perms['manage_roles'] = aux.manage_roles
+    perms['manage_threads'] = aux.manage_threads
+    perms['manage_webhooks'] = aux.manage_webhooks
+    perms['mention_everyone'] = aux.mention_everyone
+    perms['moderate_members'] = aux.moderate_members
+    perms['move_members'] = aux.move_members
+    perms['mute_members'] = aux.mute_members
+    perms['priority_speaker'] = aux.priority_speaker
+    perms['read_message_history'] = aux.read_message_history
+    perms['read_messages'] = aux.read_messages
+    perms['request_to_speak'] = aux.request_to_speak
+    perms['send_messages'] = aux.send_messages
+    perms['send_messages_in_threads'] = aux.send_messages_in_threads
+    perms['send_tts_messages'] = aux.send_tts_messages
+    perms['speak'] = aux.speak
+    perms['stream'] = aux.stream
+    perms['use_application_commands'] = aux.use_application_commands
+    perms['use_embedded_activities'] = aux.use_embedded_activities
+    perms['use_external_emojis'] = aux.use_external_emojis
+    perms['use_external_stickers'] = aux.use_external_stickers
+    perms['use_voice_activation'] = aux.use_voice_activation
+    perms['value'] = aux.value
+    perms['view_audit_log'] = aux.view_audit_log
+    perms['view_channel'] = aux.view_channel
+    perms['view_guild_insights'] = aux.view_guild_insights
+
+    return perms

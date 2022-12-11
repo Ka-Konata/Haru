@@ -104,7 +104,7 @@ async def on_command_error(ctx, error):
         else:
             return None
 
-    await ctx.reply(embed=embed)
+    await ctx.reply(embed=embed, mention_author=False)
     #raise error
 
 

@@ -109,9 +109,9 @@ name | permission | explanation | stage
 :--- | :--------- | :---------- | :---:
 avatar | member | Download someone's profile picture | ✔️
 banner | member | Download someone's banner | ✔️
-servericon | member | Downloads a guild's icon | ❌
-permissions | member | informa as permissões de um usuário | ❌
-userinfo | member | informações sobre um usuário | ❌
+servericon | member | Downloads a guild's icon | ✔️
+permissions | member | Get someone's permissions | ✔️
+userinfo | member | Get someone's basic informations | ✔️
 channelinfo | member | informações sobre um canal | ❌
 roleinfo | member | informações sobre um cargo | ❌
 serverinfo | member | informações sobre um servidor | ❌

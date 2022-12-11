@@ -124,6 +124,37 @@
             "DESC 2": ") para baixar",
             "NAME":"Haru - Icon do Servidor", 
             "FOOTER":"Use /help ou h!help para mais informações"   
+        },
+        "PERMISSIONS": {
+            "DESCRIPTION 1": "Todas as Permissões do Usuário: ",
+            "DESCRIPTION 2": "\nMaior Cargo: ",
+            "PERMS TITLE": "Permissões Concedidas:", 
+            "NONE": "```nenhuma```",
+            "NAME":"Haru - Lista de Permissões", 
+            "FOOTER":"Use /help ou h!help para mais informações"   
+        },
+        "USERINFO": {
+            "DESCRIPTION": "Todas as informações básicas de um usuário/membro",
+            "USER": {
+                "TITLE": "Informações do Usuário:",
+                "USER": "Usuário",
+                "ID": "ID",
+                "CREATED": "Criado em"
+            },
+            "MEMBER": {
+                "TITLE": "Informações do Membro:",
+                "NICK": "Apelido",
+                "BOT": "É um bot",
+                "JOINED": "Entrou em",
+                "ROLE": "Cargo mais alto",
+                "ROLES": "Todos os cargos"
+            },
+            "IS A BOT": {
+                "YES": "Sim",
+                "NOT": "Não"
+            },
+            "NAME":"Haru - Info", 
+            "FOOTER":"Use /help ou h!help para mais informações"   
         }
     },
     "HELP":{
@@ -159,7 +190,7 @@
             }, 
             "interaction": {
                 "TITLE":"Sobre o Módulo Interaction",
-                "DESCRIPTION":"Contém comandos feitos para você interagir com outros membos do servidor... e até com a própria Haru!\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [comando]** para ler mais sobre um comando."
+                "DESCRIPTION":"Contém comandos feitos para você interagir com outros membros do servidor... e até com a própria Haru!\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [comando]** para ler mais sobre um comando."
             },
             "NAME":"Haru - Help",
             "FIELD NAME":"Comandos",
@@ -262,8 +293,16 @@
                 "HOW VALUE":"`/servericon [servidor]`",
                 "EXEMPLE VALUE":"`/banner 788518735752724480` `/banner`"
             },
-            "permissions":["permissoes"],
-            "userinfo":["whois"],
+            "permissions": {
+                "DESCRIPTION":"Veja todas as permissões de alguém neste servidor.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "HOW VALUE":"`/permissions [usuário]`",
+                "EXEMPLE VALUE":"`/permissions Haru` `/permissions`"
+            },
+            "userinfo": {
+                "DESCRIPTION":"Veja todas as informações básicas de um usuário (caso o usuário esteja no servidor, você também verá um campo chamado \"Informações do Membro\"): \n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "HOW VALUE":"`/userinfo [usuário]`",
+                "EXEMPLE VALUE":"`/userinfo Haru` `/userinfo`"
+            },
             "channelinfo":[],
             "roleinfo":[],
             "serverinfo":[],
@@ -353,5 +392,50 @@
             "TYPE": "Um ou Mais Comandos Não Podem ser bloqueados",
             "REASON": "Por segurança, alguns comandos (todos os do módulo \"configuration\" por exemplo) não podem ser bloqueados."
         }
+    },
+    "PERMISSIONS": {
+        "add_reactions": "adicionar reações",
+        "administrator": "administrador",
+        "attach_files": "anexar arquivos",
+        "ban_members": "banir membros",
+        "change_nickname": "alterar apelido",
+        "connect": "conectar",
+        "create_instant_invite": "criar convite",
+        "create_private_threads": "criar tópicos privados",
+        "create_public_threads": "criar tópicos públicos",
+        "deafen_members": "ensurdecer membros",
+        "embed_links": "inserir links",
+        "external_emojis": "usar emojis externos",
+        "external_stickers": "usar figurinhas externas",
+        "kick_members": "expulsar membros",
+        "manage_channels": "gerenciar canais",
+        "manage_emojis": "gerenciar emojis",
+        "manage_emojis_and_stickers": "gerenciar emojis e figurinhas",
+        "manage_events": "gerenciar eventos",
+        "manage_guild": "gerenciar servidor",
+        "manage_messages": "gerenciar mensagens",
+        "manage_nicknames": "gerenciar apelidos",
+        "manage_permissions": "gerenciar permissões",
+        "manage_roles": "gerenciar cargos",
+        "manage_threads": "gerenciar tópicos",
+        "manage_webhooks": "gerenciar webhooks",
+        "mention_everyone": "mencionar @everyone",
+        "moderate_members": "moderar membros",
+        "move_members": "mover membros",
+        "mute_members": "silenciar membros",
+        "priority_speaker": "voz prioritária",
+        "read_message_history": "ver histórico de mensagens",
+        "read_messages": "ler mensagens",
+        "request_to_speak": "pedir para falar",
+        "send_messages": "enviar mensagens",
+        "send_messages_in_threads": "enviar mensagens em tópicos",
+        "send_tts_messages": "enviar mensagens em texto-para-voz",
+        "speak": "falar",
+        "stream": "vídeo",
+        "use_application_commands": "usar comandos de aplicativo",
+        "use_embedded_activities": "usar atividades incorporadas",
+        "use_external_emojis": "usar emojis externos",
+        "use_external_stickers": "usar figurinhas externas",
+        "view_channel": "ver canais"
     }
 }

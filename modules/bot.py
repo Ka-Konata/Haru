@@ -86,7 +86,7 @@ class Bot(commands.Cog):
             else:
                 raise errors.CommandOrModuleNotFound
 
-        await ctx.reply(embed = msg)
+        await ctx.reply(embed = msg, mention_author=False)
 
 
     @help.autocomplete('especify')
@@ -108,7 +108,7 @@ class Bot(commands.Cog):
             embed = errors.get_error_embed(lang, lang['ERROR']['CommandOrModuleNotFound']['TYPE'])
         else:
             return None
-        await ctx.reply(embed=embed)
+        await ctx.reply(embed=embed, mention_author=False)
 
 
     @commands.hybrid_command(aliases=modulos['bot']['haru'])
@@ -127,7 +127,7 @@ class Bot(commands.Cog):
         embed.add_field(name=lang['COMMAND']['HARU']['SERVER']['NAME'], value=lang['COMMAND']['HARU']['SERVER']['VALUE']+settings['bot-invite']+').', inline=False)
         embed.add_field(name=lang['COMMAND']['HARU']['SITE']['NAME'], value=lang['COMMAND']['HARU']['SITE']['VALUE']+settings['site']+').', inline=False)
         embed.set_footer(text=lang['COMMAND']['HARU']['FOOTER'])
-        await ctx.reply(embed=embed)
+        await ctx.reply(embed=embed, mention_author=False)
 
 
     @commands.hybrid_command(aliases=modulos['bot']['invite'])
@@ -143,7 +143,7 @@ class Bot(commands.Cog):
         embed.set_author(name=lang['COMMAND']['INVITE']['NAME'], icon_url=settings['bot-icon'])
         embed.set_thumbnail(url=settings['app-icon'])
         embed.set_footer(text=lang['COMMAND']['INVITE']['FOOTER'])
-        await ctx.reply(embed=embed)
+        await ctx.reply(embed=embed, mention_author=False)
 
 
     @commands.hybrid_command(aliases=modulos['bot']['site'])
@@ -159,7 +159,7 @@ class Bot(commands.Cog):
         embed.set_author(name=lang['COMMAND']['SITE']['NAME'], icon_url=settings['bot-icon'])
         embed.set_thumbnail(url=settings['app-icon'])
         embed.set_footer(text=lang['COMMAND']['SITE']['FOOTER'])
-        await ctx.reply(embed=embed)
+        await ctx.reply(embed=embed, mention_author=False)
 
 
     @commands.hybrid_command(aliases=modulos['bot']['server'])
@@ -175,7 +175,7 @@ class Bot(commands.Cog):
         embed.set_author(name=lang['COMMAND']['SERVER']['NAME'], icon_url=settings['bot-icon'])
         embed.set_thumbnail(url=settings['app-icon'])
         embed.set_footer(text=lang['COMMAND']['SERVER']['FOOTER'])
-        await ctx.reply(embed=embed)
+        await ctx.reply(embed=embed, mention_author=False)
 
 
     @commands.hybrid_command(aliases=modulos['bot']['github'])
@@ -191,7 +191,7 @@ class Bot(commands.Cog):
         embed.set_author(name=lang['COMMAND']['GITHUB']['NAME'], icon_url=settings['bot-icon'])
         embed.set_thumbnail(url=settings['app-icon'])
         embed.set_footer(text=lang['COMMAND']['GITHUB']['FOOTER'])
-        await ctx.reply(embed=embed)
+        await ctx.reply(embed=embed, mention_author=False)
 
 
     @commands.hybrid_command(aliases=modulos['bot']['dev'])
@@ -219,7 +219,7 @@ class Bot(commands.Cog):
         embed.set_author(name=lang['COMMAND']['DEV']['NAME'], icon_url=settings['bot-icon'])
         embed.set_thumbnail(url=settings['app-icon'])
         embed.set_footer(text=lang['COMMAND']['DEV']['FOOTER'])
-        await ctx.reply(embed=embed)
+        await ctx.reply(embed=embed, mention_author=False)
 
 
     @commands.hybrid_command(aliases=modulos['bot']['ping'])
@@ -229,7 +229,7 @@ class Bot(commands.Cog):
     async def ping(self, ctx):
         '''Used to know if haru is alive team'''
 
-        await ctx.reply(f'`🏓Pong ({round(self.bot.latency * 1000)}ms)`')
+        await ctx.reply(f'`🏓Pong ({round(self.bot.latency * 1000)}ms)`', mention_author=False)
 
 
 async def setup(bot):

@@ -37,7 +37,7 @@ class Configuration(commands.Cog):
         embed.add_field(name=lang['COMMAND']['PREFIX']['PREFIX OLD'], value='`'+old_prefix+'`', inline=True)
         embed.set_footer(text=lang['COMMAND']['PREFIX']['FOOTER'])
 
-        await ctx.reply(embed=embed)
+        await ctx.reply(embed=embed, mention_author=False)
 
 
     @prefix.error
@@ -47,7 +47,7 @@ class Configuration(commands.Cog):
             embed = errors.get_error_embed(lang, lang['ERROR']['PrefixVeryBig']['TYPE'], lang['ERROR']['PrefixVeryBig']['REASON'])
         else:
             return None
-        await ctx.reply(embed=embed)
+        await ctx.reply(embed=embed, mention_author=False)
 
     
     @commands.hybrid_command(aliases=modulos['configuration']['language'])
@@ -73,7 +73,7 @@ class Configuration(commands.Cog):
         embed.add_field(name=lang['COMMAND']['LANGUAGE']['LANGUAGE TITLE'], value=lang['COMMAND']['LANGUAGE']['LANGUAGE VALUE'])
         embed.set_footer(text=lang['COMMAND']['LANGUAGE']['FOOTER'])
 
-        await ctx.reply(embed=embed)
+        await ctx.reply(embed=embed, mention_author=False)
 
 
     @language.error
@@ -83,7 +83,7 @@ class Configuration(commands.Cog):
             embed = errors.get_error_embed(lang, lang['ERROR']['LanguageDontExists']['TYPE'], reason=lang['ERROR']['LanguageDontExists']['REASON'], tip=lang['ERROR']['LanguageDontExists']['TIP'])
         else:
             return None
-        await ctx.reply(embed=embed)
+        await ctx.reply(embed=embed, mention_author=False)
         
     
     @language.autocomplete('language_code')
@@ -123,7 +123,7 @@ class Configuration(commands.Cog):
                 embed.add_field(name=lang['COMMAND']['LOCKCOMMAND']['TITLE'], value='`'+command+'`', inline=True)
                 embed.set_footer(text=lang['COMMAND']['LOCKCOMMAND']['FOOTER'])
 
-                await ctx.reply(embed=embed)
+                await ctx.reply(embed=embed, mention_author=False)
 
                 return None
         raise errors.CommandDontExists
@@ -162,7 +162,7 @@ class Configuration(commands.Cog):
                 embed.add_field(name=lang['COMMAND']['UNLOCKCOMMAND']['TITLE'], value='`'+command+'`', inline=True)
                 embed.set_footer(text=lang['COMMAND']['UNLOCKCOMMAND']['FOOTER'])
 
-                await ctx.reply(embed=embed)
+                await ctx.reply(embed=embed, mention_author=False)
 
                 return None
         raise errors.CommandDontExists
@@ -208,7 +208,7 @@ class Configuration(commands.Cog):
                 embed.add_field(name=lang['COMMAND']['LOCKMODULE']['TITLE'], value=cmds_str, inline=True)
                 embed.set_footer(text=lang['COMMAND']['LOCKMODULE']['FOOTER'])
 
-                await ctx.reply(embed=embed)
+                await ctx.reply(embed=embed, mention_author=False)
 
                 return None
         raise errors.ModuleDontExists
@@ -249,7 +249,7 @@ class Configuration(commands.Cog):
                 embed.add_field(name=lang['COMMAND']['UNLOCKMODULE']['TITLE'], value=cmds_str, inline=True)
                 embed.set_footer(text=lang['COMMAND']['UNLOCKMODULE']['FOOTER'])
 
-                await ctx.reply(embed=embed)
+                await ctx.reply(embed=embed, mention_author=False)
 
                 return None
         raise errors.ModuleDontExists
@@ -288,7 +288,7 @@ class Configuration(commands.Cog):
         embed.add_field(name=lang['COMMAND']['LOCKEDCOMMANDS']['TITLE'], value=cmds_str, inline=True)
         embed.set_footer(text=lang['COMMAND']['LOCKEDCOMMANDS']['FOOTER'])
 
-        await ctx.reply(embed=embed)
+        await ctx.reply(embed=embed, mention_author=False)
 
     
     @commands.hybrid_command(aliases=modulos['configuration']['settings'])
@@ -317,7 +317,7 @@ class Configuration(commands.Cog):
         embed.add_field(name=lang['COMMAND']['SETTINGS']['LOCKEDCOMMANDS'], value=lockedcommands, inline=False)
         embed.set_footer(text=lang['COMMAND']['SETTINGS']['FOOTER'])
 
-        await ctx.reply(embed=embed)
+        await ctx.reply(embed=embed, mention_author=False)
 
 
 async def setup(bot):
