@@ -40,14 +40,16 @@
         "flipmsg":["inverter"],
         "choose":["escolha"],
         "coinflip":["caracoroa"],
-        "jankenpon":[],
         "dice":["dados"],
         "ship":[],
-        "guess":["adivinhe"],
         "mugistrong":[],
         "say":[],
         "dm":[]
     }, 
+    "minigame": {
+        "jankenpon":[],
+        "guess":["adivinhe"]
+    },
     "interaction":{
         "kiss":["beijar"],
         "bite":["morder"],

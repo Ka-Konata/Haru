@@ -239,7 +239,11 @@
             }, 
             "fun": {
                 "TITLE":"Sobre o Módulo Fun",
-                "DESCRIPTION":"Contém comandos feitos para serem divertidos, como jogos ou memes (algumas piadas internas também).\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [comando]** para ler mais sobre um comando."
+                "DESCRIPTION":"Contém vários comandos feitos para serem divertidos (algumas piadas internas também).\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [comando]** para ler mais sobre um comando."
+            }, 
+            "minigame": {
+                "TITLE":"Sobre o Módulo Minigame",
+                "DESCRIPTION":"Contém todos os comandos relacionados à minigames, do mais simples ao mais complexo.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [comando]** para ler mais sobre um comando."
             }, 
             "interaction": {
                 "TITLE":"Sobre o Módulo Interaction",
@@ -252,9 +256,9 @@
         "COMMAND":{
                 "TITLE":"Sobre o Comando /",
             "help": {
-                "DESCRIPTION":"Uma lista com todos os módulos e comandos\nConfira também os subcomandos:\n`/help view`\n`/help module`\n`/help command`\n\n**Nota:** Usar este comando é exatamente a mesma coisa que usar `/help view`\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
-                "HOW VALUE":"```/help view```",
-                "EXEMPLE VALUE":"`/help view` `h!help`"
+                "DESCRIPTION":"Uma lista com todos os módulos e comandos\nConfira também os subcomandos:\n`/help view`\n`/help module`\n`/help command`\n\n**Nota:** Este é o único comando que não pode ser usado como comando slash, como alternativa, você pode usar o comando `/help view` que é a exata mesma coisa\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "HOW VALUE":"```h!help```",
+                "EXEMPLE VALUE":"`h!help`"
             }, 
             "view": {
                 "DESCRIPTION":"Uma lista com todos os módulos e comandos.\nConfira também:\n`/help module`\n`/help command`\n\n**Nota:** Usar este comando é exatamente a mesma coisa que usar `!help`\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",

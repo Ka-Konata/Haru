@@ -5,6 +5,9 @@ from discord.ext import commands
 from scripts import configs, errors, colors
 
 modulos = configs.get_commands()
+categories = {
+    "help": ['view', 'command', 'module']
+}
 
 
 class Bot(commands.Cog):
@@ -106,7 +109,15 @@ class Bot(commands.Cog):
                                 command = aux
                                 break
 
-                    msg = discord.Embed(title=lang['HELP']['COMMAND']['TITLE']+command, description=lang['HELP']['COMMAND'][command]['DESCRIPTION'], color=colors.default)
+                    prefix = None
+                    for category in categories.keys():
+                        if command in categories[category]:
+                            prefix = str(category) + ' '
+                    if prefix != None:
+                        msg = discord.Embed(title=lang['HELP']['COMMAND']['TITLE']+prefix+command, description=lang['HELP']['COMMAND'][command]['DESCRIPTION'], color=colors.default)
+                    else:
+                        msg = discord.Embed(title=lang['HELP']['COMMAND']['TITLE']+command, description=lang['HELP']['COMMAND'][command]['DESCRIPTION'], color=colors.default)
+                    
                     msg.set_author(name=lang['HELP']['COMMAND']['NAME'], icon_url=settings['bot-icon'])
                     msg.set_thumbnail(url=settings['app-icon'])
 
@@ -140,7 +151,14 @@ class Bot(commands.Cog):
         for module in modulos.keys():
             for cmd in modulos[module].keys():
                 if current.lower() in cmd.lower() and len(choice_list) < 25:
-                    choice_list.append(app_commands.Choice(name=cmd, value=cmd))
+                    prefix = None
+                    for category in categories.keys():
+                        if cmd in categories[category]:
+                            prefix = str(category) + ' '
+                    if prefix != None:
+                        choice_list.append(app_commands.Choice(name=prefix+cmd, value=cmd))
+                    else:
+                        choice_list.append(app_commands.Choice(name=cmd, value=cmd))
         return choice_list
 
 
