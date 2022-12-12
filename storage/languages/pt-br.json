@@ -213,7 +213,7 @@
     "HELP":{
         "DEFAULT":{
             "TITLE":"Sobre o bot",
-            "DESCRIPTION":"Este é um Rework da Haru. Um simples bot para o discord, com algumas funcionalidades básicas.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [módulo]** para ler mais sobre um módulo.\nUse **/help [comando]** para ler mais sobre um comando.",
+            "DESCRIPTION":"Este é um Rework da Haru. Um simples bot para o discord, com algumas funcionalidades básicas.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [módulo]** para ler mais sobre um módulo.\nUse **/help [comando]** para ler mais sobre um comando.",
             "NAME":"Haru - Sistema de Ajuda",
             "MODULE": {
                 "BOT":"**Módulo: Bot**", 
@@ -227,23 +227,23 @@
         "MODULE":{
             "bot": {
                 "TITLE":"Sobre o Módulo Bot",
-                "DESCRIPTION":"Contém comandos relacionados ao bot, como informações básicas e essênciais.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [comando]** para ler mais sobre um comando."
+                "DESCRIPTION":"Contém comandos relacionados ao bot, como informações básicas e essênciais.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [comando]** para ler mais sobre um comando."
             }, 
             "configuration": {
                 "TITLE":"Sobre o Módulo Configuration",
-                "DESCRIPTION":"Contém comandos relacionados relacionados às configurações somente do servidor.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [comando]** para ler mais sobre um comando."
+                "DESCRIPTION":"Contém comandos relacionados relacionados às configurações somente do servidor.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [comando]** para ler mais sobre um comando."
             }, 
             "utility": {
                 "TITLE":"Sobre o Módulo Utility",
-                "DESCRIPTION":"Contém comandos que podem ser considerados úteis, estando relacionados ao discord ou não.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [comando]** para ler mais sobre um comando."
+                "DESCRIPTION":"Contém comandos que podem ser considerados úteis, estando relacionados ao discord ou não.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [comando]** para ler mais sobre um comando."
             }, 
             "fun": {
                 "TITLE":"Sobre o Módulo Fun",
-                "DESCRIPTION":"Contém comandos feitos para serem divertidos, como jogos ou memes (algumas piadas internas também).\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [comando]** para ler mais sobre um comando."
+                "DESCRIPTION":"Contém comandos feitos para serem divertidos, como jogos ou memes (algumas piadas internas também).\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [comando]** para ler mais sobre um comando."
             }, 
             "interaction": {
                 "TITLE":"Sobre o Módulo Interaction",
-                "DESCRIPTION":"Contém comandos feitos para você interagir com outros membros do servidor... e até com a própria Haru!\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [comando]** para ler mais sobre um comando."
+                "DESCRIPTION":"Contém comandos feitos para você interagir com outros membros do servidor... e até com a própria Haru!\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [comando]** para ler mais sobre um comando."
             },
             "NAME":"Haru - Help",
             "FIELD NAME":"Comandos",
@@ -252,142 +252,142 @@
         "COMMAND":{
                 "TITLE":"Sobre o Comando /",
             "help": {
-                "DESCRIPTION":"Uma lista com todos os módulos e comandos\nConfira também os subcomandos:\n`/help view`\n`/help module`\n`/help command`\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "DESCRIPTION":"Uma lista com todos os módulos e comandos\nConfira também os subcomandos:\n`/help view`\n`/help module`\n`/help command`\n\n**Nota:** Usar este comando é exatamente a mesma coisa que usar `/help view`\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
                 "HOW VALUE":"```/help view```",
                 "EXEMPLE VALUE":"`/help view` `h!help`"
             }, 
             "view": {
-                "DESCRIPTION":"Uma lista com todos os módulos e comandos\nConfira também:\n`/help module`\n`/help command`\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "DESCRIPTION":"Uma lista com todos os módulos e comandos.\nConfira também:\n`/help module`\n`/help command`\n\n**Nota:** Usar este comando é exatamente a mesma coisa que usar `!help`\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
                 "HOW VALUE":"```/help view```",
                 "EXEMPLE VALUE":"`/help view` `h!help`"
             }, 
             "module": {
-                "DESCRIPTION":"Uma explicação detalhada de todos os modulos\nConfira também:\n`/help view`\n`/help command`\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "DESCRIPTION":"Uma explicação detalhada de todos os modulos\nConfira também:\n`/help view`\n`/help command`\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
                 "HOW VALUE":"```/help module```",
                 "EXEMPLE VALUE":"`/help module`"
             }, 
             "command": {
-                "DESCRIPTION":"Uma explicação detalhada de todos os modulos\nConfira também:\n`/help view`\n`/help module`\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "DESCRIPTION":"Uma explicação detalhada de todos os modulos\nConfira também:\n`/help view`\n`/help module`\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
                 "HOW VALUE":"```/help command```",
                 "EXEMPLE VALUE":"`/help command`"
             }, 
             "haru": {
-                "DESCRIPTION":"Saiba todas as informações mais essênciais sobre a Haru, uma ótima introdução ao bot.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "DESCRIPTION":"Saiba todas as informações mais essênciais sobre a Haru, uma ótima introdução ao bot.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
                 "HOW VALUE":"```/haru```",
                 "EXEMPLE VALUE":"`/haru`"
             }, 
             "invite": {
-                "DESCRIPTION":"Envia o link de convite da Haru, para adicioná-la no seu servidor.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "DESCRIPTION":"Envia o link de convite da Haru, para adicioná-la no seu servidor.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
                 "HOW VALUE":"```/invite```",
                 "EXEMPLE VALUE":"`/invite`"
             }, 
             "site": {
-                "DESCRIPTION":"Envia o link do site oficial da Haru, para que você possa saber tudo sobre o bot.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "DESCRIPTION":"Envia o link do site oficial da Haru, para que você possa saber tudo sobre o bot.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
                 "HOW VALUE":"```/site```",
                 "EXEMPLE VALUE":"`/site`"
             }, 
             "server": {
-                "DESCRIPTION":"Envia o link do servidor oficial da Haru, para você entrar e tirar suas dúvidas ou reportar os erros que encontrar.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "DESCRIPTION":"Envia o link do servidor oficial da Haru, para você entrar e tirar suas dúvidas ou reportar os erros que encontrar.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
                 "HOW VALUE":"```/server```",
                 "EXEMPLE VALUE":"`/server`"
             },  
             "github": {
-                "DESCRIPTION":"Envia o link do repositório da Haru no GitHub, para que você possa dar uma olhada ou até mesmo ajudar no desenvolvimento do bot.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "DESCRIPTION":"Envia o link do repositório da Haru no GitHub, para que você possa dar uma olhada ou até mesmo ajudar no desenvolvimento do bot.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
                 "HOW VALUE":"```/github```",
                 "EXEMPLE VALUE":"`/github`"
             },  
             "dev": {
-                "DESCRIPTION":"lnformações sobre a equipe de desenvolvimento  do bot.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "DESCRIPTION":"lnformações sobre a equipe de desenvolvimento  do bot.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
                 "HOW VALUE":"```/dev```",
                 "EXEMPLE VALUE":"`/dev`"
             }, 
             "ping": {
-                "DESCRIPTION":"Saiba se a Haru está online e qual o tempo de resposta dela atualmente.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "DESCRIPTION":"Saiba se a Haru está online e qual o tempo de resposta dela atualmente.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
                 "HOW VALUE":"```/ping```",
                 "EXEMPLE VALUE":"`/ping`"
             }, 
             "prefix": {
-                "DESCRIPTION":"Altere o prefixo da Haru neste servidor para impedir conflitos com outros bots.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "DESCRIPTION":"Altere o prefixo da Haru neste servidor para impedir conflitos com outros bots.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
                 "HOW VALUE":"```/prefix <novo prefixo>```",
                 "EXEMPLE VALUE":"`/prefix #` `/prefix h!`"
             }, 
             "language": {
-                "DESCRIPTION":"Altere o idioma da Haru neste servidor.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nIdiomas Disponíveis: \nPortuguês: `pt-br`\ninglês: `en`",
+                "DESCRIPTION":"Altere o idioma da Haru neste servidor.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nIdiomas Disponíveis: \nPortuguês: `pt-br`\ninglês: `en`",
                 "HOW VALUE":"```/language <código do idioma>```",
                 "EXEMPLE VALUE":"`/language pt-br` `/language en`"
             }, 
             "lockcommand": {
-                "DESCRIPTION":"Bloqueia o uso de algum comando neste servidor. Informe o nome correto de um comando, aliases não funcionam aqui.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n> Existem comandos que por questão de segurança não podem ser bloqueados, afinal, o que você faria se bloqueasse o comando de desbloquear? ><.",
+                "DESCRIPTION":"Bloqueia o uso de algum comando neste servidor. Informe o nome correto de um comando, aliases não funcionam aqui.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n> Existem comandos que por questão de segurança não podem ser bloqueados, afinal, o que você faria se bloqueasse o comando de desbloquear? ><.",
                 "HOW VALUE":"```/lockcommand <comando>```",
                 "EXEMPLE VALUE":"`/lockcommand say` `/lockcommand dm`"
             },
             "unlockcommand": {
-                "DESCRIPTION":"Desbloqueia o uso de algum comando neste servidor. Informe o nome correto de um comando, aliases não funcionam aqui.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "DESCRIPTION":"Desbloqueia o uso de algum comando neste servidor. Informe o nome correto de um comando, aliases não funcionam aqui.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
                 "HOW VALUE":"```/unlockcommand <comando>```",
                 "EXEMPLE VALUE":"`/unlockcommand ship` `/unlockcommand ping`"
             },
             "lockmodule": {
-                "DESCRIPTION":"Bloqueia o uso de todos os comandos de um módulo neste servidor.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n> Existem módulos que por questão de segurança não podem ser bloqueados, afinal, o que você faria se bloqueasse o comando de desbloquear? ><.",
+                "DESCRIPTION":"Bloqueia o uso de todos os comandos de um módulo neste servidor.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n> Existem módulos que por questão de segurança não podem ser bloqueados, afinal, o que você faria se bloqueasse o comando de desbloquear? ><.",
                 "HOW VALUE":"```/lockmodule <módulo>```",
                 "EXEMPLE VALUE":"`/lockmodule fun` `/lockcommand interaction`"
             },
             "unlockmodule": {
-                "DESCRIPTION":"Desbloqueia o uso de todos os comandos de um módulo neste servidor.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "DESCRIPTION":"Desbloqueia o uso de todos os comandos de um módulo neste servidor.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
                 "HOW VALUE":"```/unlockmodule <módulo>```",
                 "EXEMPLE VALUE":"`/unlockmodule utility` `/unlockcommand bot`"
             },
             "lockedcommands": {
-                "DESCRIPTION":"Envia uma lista com todos os comandos que estão bloqueados para uso neste servidor.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "DESCRIPTION":"Envia uma lista com todos os comandos que estão bloqueados para uso neste servidor.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
                 "HOW VALUE":"```/lockedcommands`",
                 "EXEMPLE VALUE":"`/lockedcommands`"
             },
             "settings": {
-                "DESCRIPTION":"Envia um resumo de todas as configurações do servidor.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "DESCRIPTION":"Envia um resumo de todas as configurações do servidor.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
                 "HOW VALUE":"```/settings`",
                 "EXEMPLE VALUE":"`/settings`"
             },
             "avatar": {
-                "DESCRIPTION":"Baixe o avatar de algum outro usuário, podendo escolher entre o avatar global ou o avatar no servidor.\n(`True`:SIM  e  `False`:NÃO)\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "DESCRIPTION":"Baixe o avatar de algum outro usuário, podendo escolher entre o avatar global ou o avatar no servidor.\n(`True`:SIM  e  `False`:NÃO)\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
                 "HOW VALUE":"`/avatar <usuário> [True/False]`",
                 "EXEMPLE VALUE":"`/avatar Haru True` `/avatar Haru False` `/avatar Haru`"
             },
             "banner": {
-                "DESCRIPTION":"Baixe o banner de qualquer outro usuário (caso ele tenha um, obviamente).\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "DESCRIPTION":"Baixe o banner de qualquer outro usuário (caso ele tenha um, obviamente).\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
                 "HOW VALUE":"`/banner <usuário>`",
                 "EXEMPLE VALUE":"`/banner Haru` `/banner 808100198899384352`"
             },
             "servericon": {
-                "DESCRIPTION":"Baixe o icon de qualquer servidor.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "DESCRIPTION":"Baixe o icon de qualquer servidor.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
                 "HOW VALUE":"`/servericon [servidor]`",
                 "EXEMPLE VALUE":"`/banner 788518735752724480` `/banner`"
             },
             "permissions": {
-                "DESCRIPTION":"Veja todas as permissões de alguém neste servidor.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "DESCRIPTION":"Veja todas as permissões de alguém neste servidor.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
                 "HOW VALUE":"`/permissions [usuário]`",
                 "EXEMPLE VALUE":"`/permissions Haru` `/permissions`"
             },
             "userinfo": {
-                "DESCRIPTION":"Veja todas as informações básicas de um usuário (caso o usuário esteja no servidor, você também verá um campo chamado \"Informações do Membro\"): \n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "DESCRIPTION":"Veja todas as informações básicas de um usuário (caso o usuário esteja no servidor, você também verá um campo chamado \"Informações do Membro\"): \n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
                 "HOW VALUE":"`/userinfo [usuário]`",
                 "EXEMPLE VALUE":"`/userinfo Haru` `/userinfo`"
             },
             "channelinfo": {
-                "DESCRIPTION":"Veja todas as informações básicas de um canal do servidor\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "DESCRIPTION":"Veja todas as informações básicas de um canal do servidor\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
                 "HOW VALUE":"`/channelinfo [canal]`",
                 "EXEMPLE VALUE":"`/channelinfo 846557373724229642` `/channelinfo`"
             },
             "roleinfo": {
-                "DESCRIPTION":"Veja todas as informações básicas de um cargo do servidor (Não funciona com canais de outros servidores)\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "DESCRIPTION":"Veja todas as informações básicas de um cargo do servidor (Não funciona com canais de outros servidores)\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
                 "HOW VALUE":"`/roleinfo [canal]`",
                 "EXEMPLE VALUE":"`/roleinfo 881539982370684938` `/roleinfo`"
             },
             "serverinfo": {
-                "DESCRIPTION":"Veja todas as informações básicas de um servidor.Tenha em mente de que a haru só pode encontrar informações de servidores dos quais ela mesma esteja.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "DESCRIPTION":"Veja todas as informações básicas de um servidor.Tenha em mente de que a haru só pode encontrar informações de servidores dos quais ela mesma esteja.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
                 "HOW VALUE":"`/serverinfo [id do servidor]`",
                 "EXEMPLE VALUE":"`/serverinfo 788518735752724480` `/serverinfo`"
             },
             "currency": {
-                "DESCRIPTION":"Veja um valor convertido de uma cotação para outra.\nAlgumas das cotações disponíveis:\n**AOA:** `Kwanza Angolano`\n**ARS:** `Peso Argentino`\n**BRL:** `Real Brasileiro`\n**BTC:** `Bitcoin`\n**CNY:** `Yuan Chinês`\n**CUP:** `Peso Cubano`\n**EUR:** `Euro`\n**JPY:** `Yen Japonês`\n**KRW:** `Won Sul-Coreano`\n**MXN:** `Peso Mexicano`\n**RUB:** `Rublo Russo`\n**USD:** `Dolar dos Estados Unidos`\n**UYU:** `Peso Uruguaio`\n**VEF:** `Bolívar Venezuelano`\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "DESCRIPTION":"Veja um valor convertido de uma cotação para outra.\nAlgumas das cotações disponíveis:\n**AOA:** `Kwanza Angolano`\n**ARS:** `Peso Argentino`\n**BRL:** `Real Brasileiro`\n**BTC:** `Bitcoin`\n**CNY:** `Yuan Chinês`\n**CUP:** `Peso Cubano`\n**EUR:** `Euro`\n**JPY:** `Yen Japonês`\n**KRW:** `Won Sul-Coreano`\n**MXN:** `Peso Mexicano`\n**RUB:** `Rublo Russo`\n**USD:** `Dolar dos Estados Unidos`\n**UYU:** `Peso Uruguaio`\n**VEF:** `Bolívar Venezuelano`\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
                 "HOW VALUE":"`/currency <cotação original> <nova cotação> <valor>`",
                 "EXEMPLE VALUE":"`/currency BRL EUR 10` `/currency jpy brl 5.50`"
             },

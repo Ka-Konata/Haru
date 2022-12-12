@@ -133,7 +133,7 @@ mugistrong | member | envia um gif da Mugi-Strong | ❌
 say | member | faça a haru dizer alguma coisa | ❌
 dm | member | faça a haru enviar uma dm para alguém | ❌
 
-### Minigames Module
+### Minigame Module
 
 name | permission | explanation | stage
 :--- | :--------- | :---------- | :---:
