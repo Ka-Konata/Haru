@@ -321,7 +321,7 @@ class Developer(commands.Cog):
         raise errors.CommandDontExists
 
     
-    @commands.hybrid_command(aliases=['_disablemodule'])
+    @commands.command(aliases=['_disablemodule'])
     @commands.check(configs.Authentication.developer)
     @commands.check(configs.check_islocked)
     @commands.check(configs.check_guild)
@@ -352,7 +352,7 @@ class Developer(commands.Cog):
         raise errors.ModuleDontExists
 
 
-    @commands.hybrid_command(aliases=['_enablemodule'])
+    @commands.command(aliases=['_enablemodule'])
     @commands.check(configs.Authentication.developer)
     @commands.check(configs.check_guild)
     async def oc_enablemodule(self, ctx, module : str): 
@@ -377,7 +377,7 @@ class Developer(commands.Cog):
         raise errors.ModuleDontExists
 
     
-    @commands.hybrid_command(aliases=['_disabledcommands'])
+    @commands.command(aliases=['_disabledcommands'])
     @commands.check(configs.Authentication.manager)
     @commands.check(configs.check_guild)
     async def oc_disabledcommands(self, ctx): #finder
@@ -395,7 +395,7 @@ class Developer(commands.Cog):
         await ctx.reply(embed=embed, mention_author=False)
 
     
-    @commands.hybrid_command(aliases=['_botsettings'])
+    @commands.command(aliases=['_botsettings'])
     @commands.check(configs.Authentication.manager)
     @commands.check(configs.check_guild)
     async def oc_botsettings(self, ctx): 

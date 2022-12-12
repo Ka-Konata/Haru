@@ -6,7 +6,7 @@ class GuildNotAllowed(commands.CommandError):
     pass
 class AuthenticationFailure(commands.CommandError):
     pass
-class CommandOrModuleNotFound(commands.CommandError):
+class ModuleNotFound(commands.CommandError):
     pass
 class DevModeUnknown(commands.CommandError):
     pass
@@ -30,8 +30,8 @@ class StartBiggerThanEnd(commands.CommandError):
     pass
 
 
-local_errors = [DevModeUnknown, CommandOrModuleNotFound, PrefixVeryBig, LanguageDontExists, CurrencyApiError, StartBiggerThanEnd]
-global_errors = [GuildNotAllowed, AuthenticationFailure, CommandLocked, CommandDontExists, ModuleDontExists, CannotBeLocked, CommandDisabled]
+local_errors = [DevModeUnknown, PrefixVeryBig, LanguageDontExists, CurrencyApiError, StartBiggerThanEnd]
+global_errors = [GuildNotAllowed, AuthenticationFailure, CommandLocked, CommandDontExists, ModuleDontExists, CannotBeLocked, CommandDisabled, ModuleNotFound]
 
 def get_error_embed(lang, type, reason = None, tip = None, unknown=False):
     settings = configs.get_configs()

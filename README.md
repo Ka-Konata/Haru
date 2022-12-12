@@ -117,7 +117,7 @@ roleinfo | member | Get informations about a role | ✔️
 serverinfo | member | Get informations about a guild | ✔️
 currency | member | Convert a value to another quote | ✔️
 random | member | Get a random number | ✔️
-anime | member | Get informations about an anime on My Anime List | ✔️
+anime | member | Get informations about an anime on My Anime List | ❌
 
 ### Fun Module
 

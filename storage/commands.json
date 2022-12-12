@@ -1,6 +1,9 @@
 {
     "bot": {
         "help":["ajuda", "info", "about", "sobre"], 
+        "view":["vizualizar"],
+        "module":["modulo"],
+        "command":["comando"],
         "haru":["haruinfo", "botinfo", "aboutme", "aboutharu"], 
         "invite":["convite", "invitation", "getinvite"], 
         "site":["website", "getsite"], 

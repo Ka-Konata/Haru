@@ -16,27 +16,27 @@
                 "NAME":"Site da Haru:",
                 "VALUE":"Para conhecer mais sobre ou conferir a documentação completa do bot, você pode acessar o [site oficial da haru]("
             },
-            "FOOTER":"Use /help ou h!help para mais informações"
+            "FOOTER":"Use /help view ou h!help para mais informações"
         },
         "INVITE": {
             "DESCRIPTION":"Para adicionar a Haru no seu servidor, você só precisa clicar no link abaixo:\n\n<:r_Happyzin:829906563656712222>  [Link de convide da haru](",
             "NAME":"Haru - Link de Convite", 
-            "FOOTER":"Use /help ou h!help para mais informações"   
+            "FOOTER":"Use /help view ou h!help para mais informações"   
         },
         "SITE": {
             "DESCRIPTION":"Caso queira saber tudo sobre a Haru, você pode acessar o nosso site oficial clicando no link abaixo:\n\n<:r_Happyzin:829906563656712222>  [Link do site ofical da Haru](",
             "NAME":"Haru - Site Ocifial", 
-            "FOOTER":"Use /help ou h!help para mais informações"   
+            "FOOTER":"Use /help view ou h!help para mais informações"   
         },
         "SERVER": {
             "DESCRIPTION":"Caso tenha alguma dúvida ou queria reportar algum erro, você pode entrar no servidor oficial da Haru clicando no link abaixo. Não se esqueça de ler as **regras**!\n\n<:r_Happyzin:829906563656712222>  [Link do servidor ofical da Haru](",
             "NAME":"Haru - Servidor Ocifial", 
-            "FOOTER":"Use /help ou h!help para mais informações"   
+            "FOOTER":"Use /help view ou h!help para mais informações"   
         },
         "GITHUB": {
             "DESCRIPTION":"Caso esteja procurando pelo repositório da Haru no GitHub para dar uma olhada, ou até mesmo ajudar no desenvolvimento do bot, clique no link abaixo. (Atualmente sendo desenvolvida na branch **'rework'**)\n\n<:r_Happyzin:829906563656712222>  [Link do repositório da Haru no GitHub](",
             "NAME":"Haru - Repositório", 
-            "FOOTER":"Use /help ou h!help para mais informações"   
+            "FOOTER":"Use /help view ou h!help para mais informações"   
         },
         "DEV": {
             "DESCRIPTION":"Quantidade de membros na equipe de desenvolvimento: `",
@@ -49,52 +49,52 @@
                 "VALUE":"`nenhum`"
             },
             "NAME":"Haru - Equipe de Desenvolvimento", 
-            "FOOTER":"Use /help ou h!help para mais informações"   
+            "FOOTER":"Use /help view ou h!help para mais informações"   
         },
         "PREFIX": {
             "DESCRIPTION":"Prefixo local alterado com sucesso!",
             "PREFIX NEW":"Novo Prefixo:",
             "PREFIX OLD":" Prefixo Antigo:",
             "NAME":"Haru - Selecionando o Prefixo", 
-            "FOOTER":"Use /help ou h!help para mais informações"   
+            "FOOTER":"Use /help view ou h!help para mais informações"   
         },
         "LANGUAGE": {
             "DESCRIPTION":"Idioma do bot alterado com sucesso!",
             "LANGUAGE TITLE":"Idioma Alterado Para:",
             "LANGUAGE VALUE":"`pt-br` (Português)",
             "NAME":"Haru - Selecionando o Idioma", 
-            "FOOTER":"Use /help ou h!help para mais informações"   
+            "FOOTER":"Use /help view ou h!help para mais informações"   
         },
         "LOCKCOMMAND": {
             "DESCRIPTION":"🔐 Comando bloquado neste servidor com sucesso!",
             "TITLE":"Qual Comando:",
             "NAME":"Haru - Bloqueando Comandos", 
-            "FOOTER":"Use /help ou h!help para mais informações"   
+            "FOOTER":"Use /help view ou h!help para mais informações"   
         },
         "UNLOCKCOMMAND": {
             "DESCRIPTION":"🔓 Comando desbloquado neste servidor com sucesso!",
             "TITLE":"Qual Comando:",
             "NAME":"Haru - Desbloqueando Comandos", 
-            "FOOTER":"Use /help ou h!help para mais informações"   
+            "FOOTER":"Use /help view ou h!help para mais informações"   
         },
         "LOCKMODULE": {
             "DESCRIPTION":"🔐 Todos os comandos deste módulo foram bloqueados neste servidor!",
             "TITLE":"Quais Comandos:",
             "NAME":"Haru - Bloqueando Modulos", 
-            "FOOTER":"Use /help ou h!help para mais informações"   
+            "FOOTER":"Use /help view ou h!help para mais informações"   
         },
         "UNLOCKMODULE": {
             "DESCRIPTION":"🔓 Todos os comandos deste módulo foram desbloqueados neste servidor!",
             "TITLE":"Quais Comandos:",
             "NAME":"Haru - Desbloqueando Modulos", 
-            "FOOTER":"Use /help ou h!help para mais informações"   
+            "FOOTER":"Use /help view ou h!help para mais informações"   
         },
         "LOCKEDCOMMANDS": {
             "DESCRIPTION":"Aqui vai a lista de todos os comandos **bloqueados** 🔐 neste servidor.",
             "TITLE":"Comandos Bloquados:",
             "NONE":"nenhum",
             "NAME":"Haru - Bloqueados", 
-            "FOOTER":"Use /help ou h!help para mais informações"   
+            "FOOTER":"Use /help view ou h!help para mais informações"   
         },
         "SETTINGS": {
             "DESCRIPTION":"Aqui vai um resumo de **todas** as configurações do servidor.",
@@ -105,25 +105,25 @@
             "LOCKEDCOMMANDS":"Comandos Bloqueados",
             "NONE":"nenhum",
             "NAME":"Haru - Configurações", 
-            "FOOTER":"Use /help ou h!help para mais informações"   
+            "FOOTER":"Use /help view ou h!help para mais informações"   
         },
         "AVATAR": {
             "DESC 1": "[Clique aqui](",
             "DESC 2": ") para baixar",
             "NAME":"Haru - Avatar", 
-            "FOOTER":"Use /help ou h!help para mais informações"   
+            "FOOTER":"Use /help view ou h!help para mais informações"   
         },
         "BANNER": {
             "DESC NO BANNER 1": "[Clique aqui](",
             "DESC NO BANNER 2": ") para baixar",
             "NAME":"Haru - Banner", 
-            "FOOTER":"Use /help ou h!help para mais informações"   
+            "FOOTER":"Use /help view ou h!help para mais informações"   
         },
         "SERVERICON": {
             "DESC 1": "[Clique aqui](",
             "DESC 2": ") para baixar",
             "NAME":"Haru - Icon do Servidor", 
-            "FOOTER":"Use /help ou h!help para mais informações"   
+            "FOOTER":"Use /help view ou h!help para mais informações"   
         },
         "PERMISSIONS": {
             "DESCRIPTION 1": "Todas as Permissões do Usuário: ",
@@ -131,7 +131,7 @@
             "PERMS TITLE": "Permissões Concedidas:", 
             "NONE": "```nenhuma```",
             "NAME":"Haru - Lista de Permissões", 
-            "FOOTER":"Use /help ou h!help para mais informações"   
+            "FOOTER":"Use /help view ou h!help para mais informações"   
         },
         "USERINFO": {
             "DESCRIPTION": "Todas as informações básicas de um usuário/membro",
@@ -154,14 +154,14 @@
                 "NOT": "Não"
             },
             "NAME":"Haru - Sobre um Usuário", 
-            "FOOTER":"Use /help ou h!help para mais informações"   
+            "FOOTER":"Use /help view ou h!help para mais informações"   
         },
         "CHANNELINFO": {
             "CREATED": "Criado em",
             "MENTION": "Nome",
             "NONE":"nenhuma",
             "NAME":"Haru - Sobre um Canal", 
-            "FOOTER":"Use /help ou h!help para mais informações",
+            "FOOTER":"Use /help view ou h!help para mais informações",
             "TYPE": {
                 "TITLE": "Tipo",
                 "news": "Canal de Anúncios",
@@ -181,7 +181,7 @@
             "MENTION": "Nome",
             "ID": "ID",
             "NAME":"Haru - Sobre um Cargo", 
-            "FOOTER":"Use /help ou h!help para mais informações",
+            "FOOTER":"Use /help view ou h!help para mais informações",
             "INFO TITLE": "Informações do Cargo",
             "PERMS TITLE": "Permissões do Cargo"
         },
@@ -199,7 +199,7 @@
             "MEMBERS": "Membros",
             "BOOSTERS": "Boosters",
             "NAME":"Haru - Sobre um Servidor", 
-            "FOOTER":"Use /help ou h!help para mais informações"
+            "FOOTER":"Use /help view ou h!help para mais informações"
         },
         "CURRENCY": {
             "DESC":"Data da Conversão",
@@ -207,7 +207,7 @@
             "F2 TITLE": "Convertido:",
             "F3 TITLE": "Cotação:",
             "NAME":"Haru - Conversor de Moedas", 
-            "FOOTER":"Use /help ou h!help para mais informações"
+            "FOOTER":"Use /help view ou h!help para mais informações"
         }
     },
     "HELP":{
@@ -252,9 +252,24 @@
         "COMMAND":{
                 "TITLE":"Sobre o Comando /",
             "help": {
-                "DESCRIPTION":"Uma lista com todos os comandos ou uma explicação de um módulo ou comando específico.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
-                "HOW VALUE":"```/help [módulo ou comando]```",
-                "EXEMPLE VALUE":"`/help` `/help bot` `/help invite`"
+                "DESCRIPTION":"Uma lista com todos os módulos e comandos\nConfira também os subcomandos:\n`/help view`\n`/help module`\n`/help command`\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "HOW VALUE":"```/help view```",
+                "EXEMPLE VALUE":"`/help view` `h!help`"
+            }, 
+            "view": {
+                "DESCRIPTION":"Uma lista com todos os módulos e comandos\nConfira também:\n`/help module`\n`/help command`\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "HOW VALUE":"```/help view```",
+                "EXEMPLE VALUE":"`/help view` `h!help`"
+            }, 
+            "module": {
+                "DESCRIPTION":"Uma explicação detalhada de todos os modulos\nConfira também:\n`/help view`\n`/help command`\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "HOW VALUE":"```/help module```",
+                "EXEMPLE VALUE":"`/help module`"
+            }, 
+            "command": {
+                "DESCRIPTION":"Uma explicação detalhada de todos os modulos\nConfira também:\n`/help view`\n`/help module`\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "HOW VALUE":"```/help command```",
+                "EXEMPLE VALUE":"`/help command`"
             }, 
             "haru": {
                 "DESCRIPTION":"Saiba todas as informações mais essênciais sobre a Haru, uma ótima introdução ao bot.\n\nLembrete: no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
@@ -405,7 +420,7 @@
         "TYPE":"Tipo:",
         "REASON":"Motivo:",
         "TIP":"Dica:",
-        "FOOTER":"Use /help para mais informações",
+        "FOOTER":"Use /help view para mais informações",
         "FOOTER UNKNOWN":"Reporte esse erro usando /server",
         "UnknownError": {
             "TYPE": "Erro Desconhecido"
@@ -439,8 +454,8 @@
             "TYPE": "Campo Obrigatório não Preenchido",
             "REASON": "Parâmetro(s) do Comando: "
         },
-        "CommandOrModuleNotFound": {
-            "TYPE": "Módulo/Comando não Reconhecido"
+        "ModuleNotFound": {
+            "TYPE": "Módulo Desconhecido"
         },
         "PrefixVeryBig": {
             "TYPE": "Tamanho Limite Excedido",
@@ -449,7 +464,7 @@
         "LanguageDontExists": {
             "TYPE": "Idioma não Idêntificado",
             "REASON": "O comando /language só aceita o código de um idioma (também não idêntifica o nome da idioma).",
-            "TIP": "Use \"/help language\" para conferir os idiomas disponíveis."
+            "TIP": "Use \"/help command language\" para conferir os idiomas disponíveis."
         },
         "CommandLocked": {
             "TYPE": "Comando Bloqueado Neste Servidor"
@@ -472,7 +487,7 @@
         "CurrencyApiError": {
             "TYPE": "Erro na Conversão",
             "REASON": "O quê pode ter acontecido:\n1. Uma das cotações inseridas não exista ou está errada.\n2. A API que converte o valor não está funcionando.\n3. A Haru atingiu o limite de 100 conversões gratuítas por mês (plano gratuito da API).",
-            "TIP": "O comando deve ser algo parecido com \"h!currency BRL USD 100\"\nUse \"/help currency\" para verificar algumas das cotações disponíveis."
+            "TIP": "O comando deve ser algo parecido com \"h!currency BRL USD 100\"\nUse \"/help command currency\" para verificar algumas das cotações disponíveis."
         },
         "StartBiggerThanEnd": {
             "TYPE": "\"from_num\" Maior que \"until_num\"",
