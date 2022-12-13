@@ -17,10 +17,10 @@ logger   = configs.logging.getLogger('discord')
 
 
 if len(settings['server-list']) == 0:
-    sv = int(input('Não há nenhum servidor na lista de servidores de teste, insira um.\nID do servidor: '))
+    sv = int(input('NO SERVER REGISTERED. INSERT YOUR SERVER ID: '))
     settings['server-list'].append(sv)
 if len(settings['developer-list']) == 0:
-    dev = int(input('Não há nenhum desenvolvedor na lista, insira um.\nID do usuário: '))
+    dev = int(input('NO DEVELOPER REGISTERED. INSERT YOUR USER ID: '))
     settings['developer-list'].append(dev)
 
 
@@ -108,8 +108,8 @@ async def on_command_error(ctx, error):
             embed = errors.get_error_embed(lang, lang['ERROR']['UnknownError']['TYPE'])
         logger.error(f'{error}')
 
-    await ctx.reply(embed=embed, mention_author=False)
-    #raise error
+    #await ctx.reply(embed=embed, mention_author=False)
+    raise error
 
 
 bot.run(TOKEN)

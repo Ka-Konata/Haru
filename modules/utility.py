@@ -1,7 +1,7 @@
-import discord, requests, typing
+import discord, requests, typing, malclient
 from discord import app_commands
 from discord.ext import commands
-from scripts import configs, errors, colors
+from scripts import configs, errors, colors, mal_token
 from decouple import config as getenv
 from datetime import datetime
 
@@ -11,7 +11,16 @@ quotes = ['AED', 'AFN', 'ALL', 'AMD', 'ANG', 'AOA', 'ARS', 'AUD', 'AWG', 'AZN', 
 
 class Utility(commands.Cog):
     def __init__(self, bot):
-        self.bot = bot
+        CLIENT_ID     = getenv('CLIENT_ID')
+        CLIENT_SECRET = getenv('CLIENT_SECRET')
+        token         = mal_token.get_token(CLIENT_ID, CLIENT_SECRET)
+        mal_client    = malclient.Client(access_token=token.access_token, nsfw=True)
+
+        self.client_id     = CLIENT_ID
+        self.client_secret = CLIENT_SECRET
+        self.mal_token     = token
+        self.mal_client    = mal_client
+        self.bot           = bot
 
 
     @commands.hybrid_command(aliases=modulos['utility']['avatar'])
@@ -353,20 +362,26 @@ class Utility(commands.Cog):
         await ctx.reply(embed=embed, mention_author=False)
 
 
-    #@commands.hybrid_group(aliases=modulos['utility']['anime'])
-    #async def anime(self, ctx):
-    #    '''Get informations about an anime on My Anime List'''
-    #    await ctx.reply('anime')
-#
-#
-    #@anime.command()
-    #@app_commands.describe(name="Anime's name")
-    #@commands.check(configs.Authentication.member)
-    #@commands.check(configs.check_islocked)
-    #@commands.check(configs.check_guild)
-    #async def user(self, ctx, name : str):
-    #    '''Get informations about an anime on My Anime List'''
-    #    await ctx.reply('anime user')
+    @commands.hybrid_group(aliases=modulos['utility']['mal'])
+    async def mal(self, ctx):
+        '''...'''
+        await ctx.reply('anime')
+        
+
+    @mal.command()
+    @app_commands.describe(user="...")
+    async def user(self, ctx, user : str):
+        '''...'''
+        self.mal_client.refresh_bearer_token(self.client_id, self.client_secret, self.mal_token.refresh_token)
+        search = self.mal_client.get_user_anime_list(user)
+
+        res = ''
+        c = 0
+        for anime in search:
+            res += f'{c}- {anime}'
+            c += 1
+
+        await ctx.reply(res)
 
 
 
