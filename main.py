@@ -17,10 +17,10 @@ logger   = configs.logging.getLogger('discord')
 
 
 if len(settings['server-list']) == 0:
-    sv = int(input('NO SERVER REGISTERED. INSERT YOUR SERVER ID: '))
+    sv = int(input('BOT INFO | NO SERVER REGISTERED. INSERT YOUR SERVER ID: '))
     settings['server-list'].append(sv)
 if len(settings['developer-list']) == 0:
-    dev = int(input('NO DEVELOPER REGISTERED. INSERT YOUR USER ID: '))
+    dev = int(input('BOT INFO | NO DEVELOPER REGISTERED. INSERT YOUR USER ID: '))
     settings['developer-list'].append(dev)
 
 
@@ -48,6 +48,7 @@ async def on_ready():
     await bot.load_extension('modules.interaction')
 
     await bot.tree.sync()
+    print('BOT INFO | FOR NOW, EVERYTHING IS WORKING WELL')
 
 
 @bot.event

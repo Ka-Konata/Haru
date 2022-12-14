@@ -378,9 +378,13 @@ class Utility(commands.Cog):
         res = ''
         c = 0
         for anime in search:
-            res += f'{c}- {anime}'
+            res += f'{c}- {anime}\n'
             c += 1
 
+        if len(res) > 2000:
+            res = res[:2000]
+
+        #await ctx.channel.send(res)
         await ctx.reply(res)
 
 

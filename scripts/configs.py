@@ -1,4 +1,4 @@
-import json, logging
+import json, logging, os
 from logging.config import dictConfig
 from scripts import errors
 
@@ -53,6 +53,9 @@ LOGGER = {
     }
 }
 
+if not os.path.exists('logs'):
+    os.mkdir('logs')
+    print('DIRECTORY "LOGS" CREATED')
 dictConfig(LOGGER)
 
 

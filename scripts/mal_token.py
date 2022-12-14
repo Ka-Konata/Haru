@@ -1,8 +1,10 @@
-import json
-import requests
-import secrets
-import webbrowser
+import json, requests, secrets, webbrowser, malclient, os
 from decouple import config as getenv
+
+
+class Token:
+    access_token = None
+    refresh_token = None
 
 
 def get_new_code_verifier() -> str:
@@ -14,7 +16,7 @@ def print_new_authorisation_url(code_challenge: str, client_id: str):
 
     url = f'https://myanimelist.net/v1/oauth2/authorize?response_type=code&client_id={client_id}&code_challenge={code_challenge}'
     webbrowser.open(url=url, new=2)
-    print(f'GO TO: {url}\n'+'-'*110+'\n')
+    print(f'BOT INFO | GO TO: {url}')
 
 
 def generate_new_token(authorisation_code: str, code_verifier: str, client_id: str, client_secret: str) -> dict:
@@ -33,7 +35,7 @@ def generate_new_token(authorisation_code: str, code_verifier: str, client_id: s
 
     token = response.json()
     response.close()
-    print('TOKEN GENERATED SUCCESSFULLY')
+    print('BOT INFO | TOKEN GENERATED SUCCESSFULLY')
 
     #with open('token.json', 'w') as file:
     #    json.dump(token, file, indent = 4)
@@ -52,20 +54,40 @@ def print_user_info(access_token: str):
     user = response.json()
     response.close()
 
-    print(f"LOGGED AS {user['name']}!")
+    print(f"BOT INFO | LOGGED AS {user['name']}")
 
 
 def get_token(client_id: str, client_secret: str):
-    print('MY ANIME LIST: APP LOGIN INTERFACE')
+    # Cheking if is necessary to get a new token
+    try:
+        print('BOT INFO | TRYING TO GET STORED TOKENS')
+        token_obj = Token
+        token_obj.access_token  = getenv('MAL_ACCESS_TOKEN')
+        token_obj.refresh_token = getenv('MAL_REFRESH_TOKEN')
+        print(token_obj.access_token, token_obj.refresh_token)
+        print_user_info()
+        return token_obj
+    except:
+        print('BOT INFO | INVALID TOKEN ENTERED')
+
+    print('BOT INFO | FAILED. ENTERING ON APP LOGIN INTERFACE (MAL)')
+    print('BOT INFO | MY ANIME LIST: APP LOGIN INTERFACE')
     code_verifier = code_challenge = get_new_code_verifier()
     print_new_authorisation_url(code_challenge, client_id)
 
-    authorisation_code = input('PASTE THE CODE HERE ').strip()
+    authorisation_code = input('BOT INFO | PASTE THE CODE HERE ').strip()
     token = generate_new_token(authorisation_code, code_verifier, client_id, client_secret)
 
-    class Token:
-        access_token = token['access_token']
-        refresh_token = token['refresh_token']
+    token_obj                       = Token
+    token_obj.access_token          = token['access_token']
+    token_obj.refresh_token         = token['refresh_token']
+    
+    with open('.env', 'r+') as f:
+        old = f.read()
+        if not 'MAL' in str(old):
+            M1 = f'\nMAL_ACCESS_TOKEN={token_obj.access_token}'
+            M2 = f'\nMAL_REFRESH_TOKEN={token_obj.refresh_token}'
+            f.writelines(M1 + M2)
 
-    print_user_info(token['access_token'])
-    return Token
+    print_user_info(token_obj.access_token)
+    return token_obj
