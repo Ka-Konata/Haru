@@ -44,17 +44,24 @@ def generate_new_token(authorisation_code: str, code_verifier: str, client_id: s
     return token
 
 
-def print_user_info(access_token: str):
-    url = 'https://api.myanimelist.net/v2/users/@me'
-    response = requests.get(url, headers = {
-        'Authorization': f'Bearer {access_token}'
-        })
-    
-    response.raise_for_status()
-    user = response.json()
-    response.close()
+def print_user_info(token_obj: Token, refresh: bool = False, client_id: str = None, client_secret: str = None):
+    if refresh:
+        client = malclient.Client(access_token=token_obj.access_token) 
+        client.refresh_bearer_token(client_id, client_secret, token_obj.refresh_token)
+        user   = client.get_user_info()
+        (f"BOT INFO | LOGGED AS {user.name}")
 
-    print(f"BOT INFO | LOGGED AS {user['name']}")
+    else:
+        url = 'https://api.myanimelist.net/v2/users/@me'
+        response = requests.get(url, headers = {
+            'Authorization': f'Bearer {token_obj.access_token}'
+            })
+        
+        response.raise_for_status()
+        user = response.json()
+        response.close()
+
+        print(f"BOT INFO | LOGGED AS {user['name']}")
 
 
 def get_token(client_id: str, client_secret: str):
@@ -64,8 +71,7 @@ def get_token(client_id: str, client_secret: str):
         token_obj = Token
         token_obj.access_token  = getenv('MAL_ACCESS_TOKEN')
         token_obj.refresh_token = getenv('MAL_REFRESH_TOKEN')
-        print(token_obj.access_token, token_obj.refresh_token)
-        print_user_info()
+        print_user_info(token_obj, refresh=True, client_id=client_id, client_secret=client_secret)
         return token_obj
     except:
         print('BOT INFO | INVALID TOKEN ENTERED')
@@ -89,5 +95,5 @@ def get_token(client_id: str, client_secret: str):
             M2 = f'\nMAL_REFRESH_TOKEN={token_obj.refresh_token}'
             f.writelines(M1 + M2)
 
-    print_user_info(token_obj.access_token)
+    #print_user_info(token_obj)
     return token_obj
