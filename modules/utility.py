@@ -385,7 +385,7 @@ class Utility(commands.Cog):
             res = res[:2000]
 
         #await ctx.channel.send(res)
-        ctx.defer()
+        await ctx.defer()
         await ctx.reply(res)
 
 

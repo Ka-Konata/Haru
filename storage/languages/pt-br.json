@@ -427,43 +427,59 @@
         "FOOTER":"Use /help view para mais informações",
         "FOOTER UNKNOWN":"Reporte esse erro usando /server",
         "UnknownError": {
-            "TYPE": "Erro Desconhecido"
+            "TYPE": "Erro Desconhecido",
+            "REASON": null, 
+            "TIP": null
         },
         "CommandNotFound": {
-            "TYPE": "Comando Desconhecido"
+            "TYPE": "Comando Desconhecido",
+            "REASON": null, 
+            "TIP": null
         },
         "GuildNotAllowed": {
             "TYPE": "Servidor não Permitido",
-            "REASON": "Como o MODO DE DESENVOLVIMENTO (por segurança) está ativado, use /server para entrar no servidor de suporte e peça à um developer ou manager para liberar o uso da Haru neste servidor."
+            "REASON": "Como o MODO DE DESENVOLVIMENTO (por segurança) está ativado, use /server para entrar no servidor de suporte e peça à um developer ou manager para liberar o uso da Haru neste servidor.",
+            "TIP": null
         },
         "AuthenticationFailure": {
             "TYPE": "Erro de Autênticação",
-            "REASON": "Nível de Permissão Requerido: "
+            "REASON": "Nível de Permissão Requerido: ",
+            "TIP": null
         },
         "MemberNotFound": {
-            "TYPE": "Membro não Encontrado"
+            "TYPE": "Membro não Encontrado",
+            "REASON": null, 
+            "TIP": null
         },
         "UserNotFound": {
-            "TYPE": "Usuário não Encontrado"
+            "TYPE": "Usuário não Encontrado",
+            "REASON": null, 
+            "TIP": null
         },
         "ChannelNotFound": {
             "TYPE": "Canal não Encontrado",
-            "REASON": "Talvez seja de outro servidor ou ele não exista."
+            "REASON": "Talvez seja de outro servidor ou ele não exista.",
+            "TIP": null
         },
         "GuildNotFound": {
             "TYPE": "Servidor não Encontrado",
-            "REASON": "Talvez a Haru não esteja neste servidor ou ele não exista."
+            "REASON": "Talvez a Haru não esteja neste servidor ou ele não exista.",
+            "TIP": null
         },
         "MissingRequiredArgument": {
             "TYPE": "Campo Obrigatório não Preenchido",
-            "REASON": "Parâmetro(s) do Comando: "
+            "REASON": null,
+            "TIP": "Parâmetro(s) do Comando: "
         },
         "ModuleNotFound": {
-            "TYPE": "Módulo Desconhecido"
+            "TYPE": "Módulo Desconhecido",
+            "REASON": null, 
+            "TIP": null
         },
         "PrefixVeryBig": {
             "TYPE": "Tamanho Limite Excedido",
-            "REASON": "O prefixo só pode ter até 2 caracteres."
+            "REASON": "O prefixo só pode ter até 2 caracteres.",
+            "TIP": null
         },
         "LanguageDontExists": {
             "TYPE": "Idioma não Idêntificado",
@@ -471,22 +487,29 @@
             "TIP": "Use \"/help command language\" para conferir os idiomas disponíveis."
         },
         "CommandLocked": {
-            "TYPE": "Comando Bloqueado Neste Servidor"
+            "TYPE": "Comando Bloqueado Neste Servidor",
+            "REASON": null, 
+            "TIP": null
         },
         "CommandDisabled": {
             "TYPE": "Comando Desabilitado Globalmente",
-            "REASON": "Este comando foi desabilitado em todos os servidores por um dos desenvolvedores do bot. Aguarde até que ele seja habilitado novamente."
+            "REASON": "Este comando foi desabilitado em todos os servidores por um dos desenvolvedores do bot. Aguarde até que ele seja habilitado novamente.",
+            "TIP": null
         },
         "CommandDontExists": {
             "TYPE": "Comando Não Encontrado",
+            "REASON": null, 
             "TIP": "Para bloquear um comando você precisa escrever o nome exato dele (aliases também não funcionam)."
         },
         "ModuleDontExists": {
-            "TYPE": "Módulo Não Encontrado"
+            "TYPE": "Módulo Não Encontrado",
+            "REASON": null, 
+            "TIP": null
         },
         "CannotBeLocked": {
             "TYPE": "Um ou Mais Comandos Não Podem ser bloqueados",
-            "REASON": "Por segurança, alguns comandos (todos os do módulo \"configuration\" por exemplo) não podem ser bloqueados."
+            "REASON": "Por segurança, alguns comandos (todos os do módulo \"configuration\" por exemplo) não podem ser bloqueados.",
+            "TIP": null
         },
         "CurrencyApiError": {
             "TYPE": "Erro na Conversão",
@@ -495,10 +518,13 @@
         },
         "StartBiggerThanEnd": {
             "TYPE": "\"from_num\" Maior que \"until_num\"",
-            "REASON": "O número inicial deve ser menor que o número final, caso um dos dois não seja inserido, esses valores serão usados:\nfrom_num = 0\nuntil_num = 100"
+            "REASON": "O número inicial deve ser menor que o número final, caso um dos dois não seja inserido, esses valores serão usados:\nfrom_num = 0\nuntil_num = 100",
+            "TIP": null
         },
         "BadArgument": {
-            "TYPE": "Parâmetro Incorreto"
+            "TYPE": "Parâmetro Incorreto",
+            "REASON": null, 
+            "TIP": null
         }
     },
     "PERMISSIONS": {

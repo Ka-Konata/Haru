@@ -1,6 +1,16 @@
-import json, logging, os
+import json, os, pathlib, logging
 from logging.config import dictConfig
 from scripts import errors
+
+ROOT_DIR = pathlib.Path(__file__).parent.parent
+COGS     = list()
+COGS.append(ROOT_DIR / 'cog_developer')
+COGS.append(ROOT_DIR / 'cog_bot')
+COGS.append(ROOT_DIR / 'cog_configuration')
+COGS.append(ROOT_DIR / 'cog_utility')
+COGS.append(ROOT_DIR / 'cog_fun')
+COGS.append(ROOT_DIR / 'cog_minigame')
+COGS.append(ROOT_DIR / 'cog_interaction')
 
 developer     = 6
 manager       = 5

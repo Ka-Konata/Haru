@@ -1,12 +1,12 @@
 import discord, datetime
 from discord.ext import commands
 
-from modules.developer     import Developer
+"""from modules.developer     import Developer
 from modules.bot           import Bot
 from modules.configuration import Configuration
 from modules.utility       import Utility
 from modules.fun           import Fun
-from modules.interaction   import Interaction
+from modules.interaction   import Interaction"""
 
 from scripts  import configs, errors
 from decouple import config as getenv
@@ -40,6 +40,9 @@ async def on_ready():
     logger.info(f'Haru está online (User: {bot.user}) (ID: {bot.user.id})')
 
     bot.remove_command('help')
+
+
+
     await bot.load_extension('modules.developer')
     await bot.load_extension('modules.bot')
     await bot.load_extension('modules.configuration')
@@ -67,50 +70,35 @@ async def on_message(message):
 @bot.event
 async def on_command_error(ctx, error):
     lang = configs.lang[configs.get_guild(ctx.guild.id)['language']]
+    name = error.__class__.__name__
 
     for err in errors.local_errors:
         if isinstance(error, err):
             return None
-
-    if isinstance(error, commands.errors.CommandNotFound):
-        embed = errors.get_error_embed(lang, lang['ERROR']['CommandNotFound']['TYPE'])
-    elif isinstance(error, errors.GuildNotAllowed):
-        embed = errors.get_error_embed(lang, lang['ERROR']['GuildNotAllowed']['TYPE'], lang['ERROR']['GuildNotAllowed']['REASON'])
-    elif isinstance(error, errors.AuthenticationFailure):
-        auth = ctx.command.checks[1].__name__ if len(ctx.command.checks) > 1 else ctx.command.checks[0].__name__
-        embed = errors.get_error_embed(lang, lang['ERROR']['AuthenticationFailure']['TYPE'], lang['ERROR']['AuthenticationFailure']['REASON']+auth)
-    elif isinstance(error, commands.errors.MemberNotFound):
-        embed = errors.get_error_embed(lang, lang['ERROR']['MemberNotFound']['TYPE'])
-    elif isinstance(error, commands.errors.UserNotFound):
-        embed = errors.get_error_embed(lang, lang['ERROR']['UserNotFound']['TYPE'])
-    elif isinstance(error, commands.errors.ChannelNotFound):
-        embed = errors.get_error_embed(lang, lang['ERROR']['ChannelNotFound']['TYPE'], lang['ERROR']['ChannelNotFound']['REASON'])
-    elif isinstance(error, commands.errors.GuildNotFound):
-        embed = errors.get_error_embed(lang, lang['ERROR']['GuildNotFound']['TYPE'], lang['ERROR']['GuildNotFound']['REASON'])
+    
+    arg   = ''
+    if isinstance(error, errors.AuthenticationFailure):
+        arg = ctx.command.checks[1].__name__ if len(ctx.command.checks) > 1 else ctx.command.checks[0].__name__
     elif isinstance(error, commands.errors.MissingRequiredArgument):
         arg = str(list(ctx.command.clean_params.keys())).replace('[', '').replace(']', '').replace("'", '')
-        embed = errors.get_error_embed(lang, lang['ERROR']['MissingRequiredArgument']['TYPE'], tip=lang['ERROR']['MissingRequiredArgument']['REASON']+arg)
-    elif isinstance(error, errors.CommandLocked):
-        embed = errors.get_error_embed(lang, lang['ERROR']['CommandLocked']['TYPE'])
-    elif isinstance(error, errors.CommandDisabled):
-        embed = errors.get_error_embed(lang, lang['ERROR']['CommandDisabled']['TYPE'], reason=lang['ERROR']['CommandDisabled']['REASON'])
-    elif isinstance(error, errors.CommandDontExists):
-        embed = errors.get_error_embed(lang, lang['ERROR']['CommandDontExists']['TYPE'], tip=lang['ERROR']['CommandDontExists']['TIP'])
-    elif isinstance(error, errors.ModuleDontExists):
-        embed = errors.get_error_embed(lang, lang['ERROR']['ModuleDontExists']['TYPE'])
-    elif isinstance(error, errors.CannotBeLocked):
-        embed = errors.get_error_embed(lang, lang['ERROR']['CannotBeLocked']['TYPE'], reason=lang['ERROR']['CannotBeLocked']['REASON'])
-    elif isinstance(error, commands.errors.BadArgument):
-        embed = errors.get_error_embed(lang, lang['ERROR']['BadArgument']['TYPE'])
-    else:
+
+    embed = None
+    for err in errors.global_errors:
+        if isinstance(error, err):
+            type   = lang['ERROR'][name]['TYPE']
+            reason = lang['ERROR'][name]['REASON'] if arg == '' else lang['ERROR'][name]['REASON']+arg
+            tip    = lang['ERROR'][name]['TIP'] if arg == '' else lang['ERROR'][name]['TIP']+arg
+            embed  = errors.get_error_embed(lang, type, reason, tip)
+
+    if embed == None:
         if settings['errors-mode']:
             embed = errors.get_error_embed(lang, error, unknown=True)
         else:
             embed = errors.get_error_embed(lang, lang['ERROR']['UnknownError']['TYPE'])
         logger.error(f'{error}')
 
-    #await ctx.reply(embed=embed, mention_author=False)
-    raise error
+    await ctx.reply(embed=embed, mention_author=False)
+    #raise error
 
 
 bot.run(TOKEN)
