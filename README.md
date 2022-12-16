@@ -51,6 +51,10 @@ Inglês | en | ❌
 
 ## Módulos
 
+> Limite de 100 Comandos (com 25 subcomandos cada)
+>
+> Usado: 44/100 
+
 ### Dev Module
 
 > Modulo oculto

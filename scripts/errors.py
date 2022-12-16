@@ -31,7 +31,7 @@ class StartBiggerThanEnd(commands.CommandError):
 
 
 local_errors = [DevModeUnknown, PrefixVeryBig, LanguageDontExists, CurrencyApiError, StartBiggerThanEnd]
-global_errors = [commands.errors.CommandNotFound, commands.errors.MemberNotFound, commands.errors.UserNotFound, commands.errors.ChannelNotFound, commands.errors.GuildNotFound, commands.errors.MissingRequiredArgument, commands.errors.BadArgument, GuildNotAllowed, AuthenticationFailure, CommandLocked, CommandDontExists, ModuleDontExists, CannotBeLocked, CommandDisabled, ModuleNotFound]
+global_errors = [commands.errors.CommandNotFound, commands.errors.MemberNotFound, commands.errors.UserNotFound, commands.errors.RoleNotFound, commands.errors.ChannelNotFound, commands.errors.GuildNotFound, commands.errors.MissingRequiredArgument, commands.errors.BadArgument, GuildNotAllowed, AuthenticationFailure, CommandLocked, CommandDontExists, ModuleDontExists, CannotBeLocked, CommandDisabled, ModuleNotFound]
 
 def get_error_embed(lang, type, reason = None, tip = None, unknown=False):
     settings = configs.get_configs()

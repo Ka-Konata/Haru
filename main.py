@@ -1,16 +1,7 @@
 import discord, datetime
 from discord.ext import commands
-
-"""from modules.developer     import Developer
-from modules.bot           import Bot
-from modules.configuration import Configuration
-from modules.utility       import Utility
-from modules.fun           import Fun
-from modules.interaction   import Interaction"""
-
 from scripts  import configs, errors
 from decouple import config as getenv
-
 
 settings = configs.get_configs()
 logger   = configs.logging.getLogger('discord')
@@ -37,18 +28,15 @@ async def on_ready():
     configs.save(settings)   
 
     #print(f'{bot.user} foi conectada ao discord.')
-    logger.info(f'Haru está online (User: {bot.user}) (ID: {bot.user.id})')
+    logger.info(f'Haru is online (User: {bot.user}) (ID: {bot.user.id})')
 
     bot.remove_command('help')
 
-
-
-    await bot.load_extension('modules.developer')
-    await bot.load_extension('modules.bot')
-    await bot.load_extension('modules.configuration')
-    await bot.load_extension('modules.utility')
-    await bot.load_extension('modules.fun')
-    await bot.load_extension('modules.interaction')
+    for cog_directory in configs.COGS:
+        for cog_file in cog_directory.glob('*.py'):
+            if cog_file.name != '__init__.py':
+                await bot.load_extension(f'modules.{cog_directory.name}.{cog_file.name[:-3]}')
+                logger.info(f'Extension loaded (Name: modules.{cog_directory.name}.{cog_file.name[:-3]})')
 
     await bot.tree.sync()
     print('BOT INFO | FOR NOW, EVERYTHING IS WORKING WELL')
@@ -69,6 +57,7 @@ async def on_message(message):
 
 @bot.event
 async def on_command_error(ctx, error):
+    settings = configs.get_configs()
     lang = configs.lang[configs.get_guild(ctx.guild.id)['language']]
     name = error.__class__.__name__
 
@@ -76,18 +65,18 @@ async def on_command_error(ctx, error):
         if isinstance(error, err):
             return None
     
-    arg   = ''
+    tip_arg = rea_arg = ''
     if isinstance(error, errors.AuthenticationFailure):
-        arg = ctx.command.checks[1].__name__ if len(ctx.command.checks) > 1 else ctx.command.checks[0].__name__
+        rea_arg = ctx.command.checks[1].__name__ if len(ctx.command.checks) > 1 else ctx.command.checks[0].__name__
     elif isinstance(error, commands.errors.MissingRequiredArgument):
-        arg = str(list(ctx.command.clean_params.keys())).replace('[', '').replace(']', '').replace("'", '')
+        tip_arg = str(list(ctx.command.clean_params.keys())).replace('[', '').replace(']', '').replace("'", '')
 
     embed = None
     for err in errors.global_errors:
         if isinstance(error, err):
             type   = lang['ERROR'][name]['TYPE']
-            reason = lang['ERROR'][name]['REASON'] if arg == '' else lang['ERROR'][name]['REASON']+arg
-            tip    = lang['ERROR'][name]['TIP'] if arg == '' else lang['ERROR'][name]['TIP']+arg
+            reason = lang['ERROR'][name]['REASON'] if rea_arg == '' else lang['ERROR'][name]['REASON']+rea_arg
+            tip    = lang['ERROR'][name]['TIP'] if tip_arg == '' else lang['ERROR'][name]['TIP']+tip_arg
             embed  = errors.get_error_embed(lang, type, reason, tip)
 
     if embed == None:
@@ -97,8 +86,8 @@ async def on_command_error(ctx, error):
             embed = errors.get_error_embed(lang, lang['ERROR']['UnknownError']['TYPE'])
         logger.error(f'{error}')
 
-    await ctx.reply(embed=embed, mention_author=False)
-    #raise error
+    #await ctx.reply(embed=embed, mention_author=False)
+    raise error
 
 
 bot.run(TOKEN)

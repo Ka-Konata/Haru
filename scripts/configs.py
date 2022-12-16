@@ -4,13 +4,13 @@ from scripts import errors
 
 ROOT_DIR = pathlib.Path(__file__).parent.parent
 COGS     = list()
-COGS.append(ROOT_DIR / 'cog_developer')
-COGS.append(ROOT_DIR / 'cog_bot')
-COGS.append(ROOT_DIR / 'cog_configuration')
-COGS.append(ROOT_DIR / 'cog_utility')
-COGS.append(ROOT_DIR / 'cog_fun')
-COGS.append(ROOT_DIR / 'cog_minigame')
-COGS.append(ROOT_DIR / 'cog_interaction')
+COGS.append(ROOT_DIR / 'modules/cog_developer')
+COGS.append(ROOT_DIR / 'modules/cog_bot')
+COGS.append(ROOT_DIR / 'modules/cog_configuration')
+COGS.append(ROOT_DIR / 'modules/cog_utility')
+COGS.append(ROOT_DIR / 'modules/cog_fun')
+COGS.append(ROOT_DIR / 'modules/cog_minigame')
+COGS.append(ROOT_DIR / 'modules/cog_interaction')
 
 developer     = 6
 manager       = 5

@@ -1,14 +1,8 @@
 {
     "788518735752724480": {
-        "prefix": "!",
+        "prefix": "h!",
         "language": "pt-br",
         "lockedcommands": [
-            "kiss",
-            "bite",
-            "lick",
-            "slap",
-            "hug",
-            "shoot",
             "ship",
             "choose"
         ]

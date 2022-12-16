@@ -38,7 +38,7 @@
             "NAME":"Haru - Repositório", 
             "FOOTER":"Use /help view ou h!help para mais informações"   
         },
-        "DEV": {
+        "DEVS": {
             "DESCRIPTION":"Quantidade de membros na equipe de desenvolvimento: `",
             "LIST DEVS": {
                 "TITLE":"Lista de Developers:",
@@ -114,8 +114,10 @@
             "FOOTER":"Use /help view ou h!help para mais informações"   
         },
         "BANNER": {
-            "DESC NO BANNER 1": "[Clique aqui](",
-            "DESC NO BANNER 2": ") para baixar",
+            "DESC 1": "[Clique aqui](",
+            "DESC 2": ") para baixar",
+            "DESC NO BANNER 1": "O usuário ",
+            "DESC NO BANNER 2": " não tem um banner...",
             "NAME":"Haru - Banner", 
             "FOOTER":"Use /help view ou h!help para mais informações"   
         },
@@ -300,10 +302,10 @@
                 "HOW VALUE":"```/github```",
                 "EXEMPLE VALUE":"`/github`"
             },  
-            "dev": {
+            "devs": {
                 "DESCRIPTION":"lnformações sobre a equipe de desenvolvimento  do bot.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
-                "HOW VALUE":"```/dev```",
-                "EXEMPLE VALUE":"`/dev`"
+                "HOW VALUE":"```/devs```",
+                "EXEMPLE VALUE":"`/devs`"
             }, 
             "ping": {
                 "DESCRIPTION":"Saiba se a Haru está online e qual o tempo de resposta dela atualmente.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
@@ -453,6 +455,11 @@
         },
         "UserNotFound": {
             "TYPE": "Usuário não Encontrado",
+            "REASON": null, 
+            "TIP": null
+        },
+        "RoleNotFound": {
+            "TYPE": "Cargo não Encontrado",
             "REASON": null, 
             "TIP": null
         },

@@ -10,7 +10,7 @@ categories = {
 }
 
 
-class Bot(commands.Cog):
+class Help(commands.Cog):
     def __init__(self, bot):
         self.bot     = bot
 
@@ -163,5 +163,5 @@ class Bot(commands.Cog):
 
 
 async def setup(bot):
-    await bot.add_cog(Bot(bot))
+    await bot.add_cog(Help(bot))
  

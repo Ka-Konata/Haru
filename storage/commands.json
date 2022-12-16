@@ -9,7 +9,7 @@
         "site":["website", "getsite"], 
         "server":["servidor", "suporte", "getserver", "serverinvite"], 
         "github":["repo", "repositorio", "getrepo"], 
-        "dev":["devs", "desenvolvedor", "devteam", "devsteam"], 
+        "devs":["desenvolvedores", "devteam", "devsteam"], 
         "ping":["alive", "test"]
     }, 
     "configuration": {

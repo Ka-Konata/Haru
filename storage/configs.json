@@ -1,5 +1,5 @@
 {
-    "development-mode": true,
+    "development-mode": false,
     "errors-mode": true,
     "bot-name": "Haru",
     "bot-icon": "https://cdn.discordapp.com/attachments/810690029847969833/1051621801484099605/Captura_de_tela_2022-12-11_190419.png",
@@ -14,7 +14,7 @@
         "pt-br",
         "en"
     ],
-    "started-at": "15/12/2022 17:31:00",
+    "started-at": "15/12/2022 21:56:06",
     "server-list": [
         788518735752724480
     ],
@@ -22,5 +22,16 @@
         502687173099913216
     ],
     "manager-list": [],
-    "disabled-commands": []
+    "disabled-commands": [
+        "help",
+        "view",
+        "module",
+        "command",
+        "haru",
+        "invite",
+        "site",
+        "server",
+        "github",
+        "devs"
+    ]
 }
