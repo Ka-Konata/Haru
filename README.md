@@ -144,6 +144,7 @@ ship | member | shipa dois usuários, em até 100% | ❌
 mugistrong | member | envia um gif da Mugi-Strong | ❌
 say | member | faça a haru dizer alguma coisa | ❌
 dm | member | faça a haru enviar uma dm para alguém | ❌
+profile | member | mostra o perfil do usuário
 marry | member | peça alguém em casamento | ❌
 divorce | member | se divorcia de alguém | ❌
 store | member | mostra toda a loja | ❌
@@ -167,7 +168,7 @@ checkers | member | jogo da dama | ❌
 chat start | member | inicia uma conversa com a haru | ❌
 chat stop | member | encerra uma conversa com a haru | ❌
 chat channel | admin | limita o uso dos comandos chat para apenas um canal | ❌
-coins | member | ensina sobra a categoria coins | ❌
+coins | member | ensina sobra os sistema de coins da haru | ❌
 coins wallet | member | mostra a carteira do usuário | ❌
 coins give | member | dá coins à outro usuário | ❌
 coins bet | member | aposta coins com outro usuário | ❌
@@ -190,7 +191,8 @@ shoot | member | ataca algum outro usuário | ❌
 ## Ideias: 
 
 - [] Implementar os comandos via dm
-- [❌] Sistema de Enocomia nos minigames
+- [✔️] Sistema de Enocomia nos minigames
+- [✔️] Sistema de Loja (personalização do perfil e comandos)
 - [✔️] IA chat-bot (biblioteca chatterbot)
 - [✔️] Jogo-da-velha contra usuário e contra IA
 - [✔️] Jogo da forca
