@@ -2,3 +2,4 @@ discord.py>=2.1.0
 malclient-upgraded==1.3.1
 python-decouple
 requests
+flask

@@ -8,10 +8,12 @@ logger   = configs.logging.getLogger('discord')
 
 
 if len(settings['server-list']) == 0:
-    sv = int(input('BOT INFO | NO SERVER REGISTERED. INSERT YOUR SERVER ID: '))
+    logger.error(f'No registered server')
+    sv = int(input('Insert your server ID: '))
     settings['server-list'].append(sv)
 if len(settings['developer-list']) == 0:
-    dev = int(input('BOT INFO | NO DEVELOPER REGISTERED. INSERT YOUR USER ID: '))
+    logger.error(f'No registered developer')
+    dev = int(input('Insert your user ID: '))
     settings['developer-list'].append(dev)
 
 
@@ -39,7 +41,7 @@ async def on_ready():
                 logger.info(f'Extension loaded (Name: modules.{cog_directory.name}.{cog_file.name[:-3]})')
 
     await bot.tree.sync()
-    print('BOT INFO | FOR NOW, EVERYTHING IS WORKING WELL')
+    logger.info('For now, everything is working well')
 
 
 @bot.event

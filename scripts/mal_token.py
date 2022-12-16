@@ -1,7 +1,9 @@
-import json, requests, secrets, webbrowser, malclient, os
+import requests, secrets, webbrowser, malclient
 from decouple import config as getenv
+from scripts import configs
 
 
+logger  = configs.logging.getLogger('discord')
 class Token:
     access_token = None
     refresh_token = None
@@ -16,7 +18,7 @@ def print_new_authorisation_url(code_challenge: str, client_id: str):
 
     url = f'https://myanimelist.net/v1/oauth2/authorize?response_type=code&client_id={client_id}&code_challenge={code_challenge}'
     webbrowser.open(url=url, new=2)
-    print(f'BOT INFO | GO TO: {url}')
+    logger.info(f'Go to this url and copy the code after being redirected: {url}')
 
 
 def generate_new_token(authorisation_code: str, code_verifier: str, client_id: str, client_secret: str) -> dict:
@@ -35,11 +37,7 @@ def generate_new_token(authorisation_code: str, code_verifier: str, client_id: s
 
     token = response.json()
     response.close()
-    print('BOT INFO | TOKEN GENERATED SUCCESSFULLY')
-
-    #with open('token.json', 'w') as file:
-    #    json.dump(token, file, indent = 4)
-    #    print('TOKEN SAVED AT: "token.json"')
+    logger.info('Token gererated successfully')
 
     return token
 
@@ -49,7 +47,7 @@ def print_user_info(token_obj: Token, refresh: bool = False, client_id: str = No
         client = malclient.Client(access_token=token_obj.access_token) 
         client.refresh_bearer_token(client_id, client_secret, token_obj.refresh_token)
         user   = client.get_user_info()
-        (f"BOT INFO | LOGGED AS {user.name}")
+        logger.info(f'Logged as: {user.name}')
 
     else:
         url = 'https://api.myanimelist.net/v2/users/@me'
@@ -61,27 +59,27 @@ def print_user_info(token_obj: Token, refresh: bool = False, client_id: str = No
         user = response.json()
         response.close()
 
-        print(f"BOT INFO | LOGGED AS {user['name']}")
+        logger.info(f'Logged as: {user["name"]}')
 
 
-def get_token(client_id: str, client_secret: str):
+def get_token(client_id: str, client_secret: str) -> Token:
     # Cheking if is necessary to get a new token
     try:
-        print('BOT INFO | TRYING TO GET STORED TOKENS')
+        logger.info('Trying to get stored token')
         token_obj = Token
         token_obj.access_token  = getenv('MAL_ACCESS_TOKEN')
         token_obj.refresh_token = getenv('MAL_REFRESH_TOKEN')
         print_user_info(token_obj, refresh=True, client_id=client_id, client_secret=client_secret)
         return token_obj
     except:
-        print('BOT INFO | INVALID TOKEN ENTERED')
+        logger.error('Invalid token entered')
 
-    print('BOT INFO | FAILED. ENTERING ON APP LOGIN INTERFACE (MAL)')
-    print('BOT INFO | MY ANIME LIST: APP LOGIN INTERFACE')
+    logger.info('Entering the App Login Interface (MAL)')
+    logger.info('My Anime List: App Login Interface')
     code_verifier = code_challenge = get_new_code_verifier()
     print_new_authorisation_url(code_challenge, client_id)
 
-    authorisation_code = input('BOT INFO | PASTE THE CODE HERE ').strip()
+    authorisation_code = input('Paste the code here > ').strip()
     token = generate_new_token(authorisation_code, code_verifier, client_id, client_secret)
 
     token_obj                       = Token
@@ -95,5 +93,4 @@ def get_token(client_id: str, client_secret: str):
             M2 = f'\nMAL_REFRESH_TOKEN={token_obj.refresh_token}'
             f.writelines(M1 + M2)
 
-    #print_user_info(token_obj)
     return token_obj

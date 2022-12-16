@@ -24,6 +24,7 @@ Algumas coisas precisam ser feitas para instalar o projeto e colocá-lo para fun
 Caso queira desativar o Modo de Desenvolvimento ou o Modo de Debug de Erros, apenas entre no seu servidor de testes e execute o comando equivalente: `h!oc_devmode off` e/ou `h!oc_errorsmode off`
 
 ## Níveis de permissão
+
 * Developer
 > Lista fechada
 
@@ -85,7 +86,10 @@ oc_botsettings | manager | lista todas as configurações do bot | ✔️
 
 name | permission | explanation | stage
 :--- | :--------- | :---------- | :---:
-help | member | A list of all commands or an explanation of a specific module/command. | ✔️
+help | member | A list of all modules and commands | ✔️
+help view | member | A list of all modules and commands | ✔️
+help module | member | Get explanation about a specific module | ✔️
+help command | member | Get explanation about a specific command | ✔️
 haru | member | Basic informations about Haru | ✔️
 invite | member | Send the bot invite link | ✔️
 site | member | Send the bot's official website link | ✔️
@@ -93,6 +97,7 @@ server | member | Send the bot's official server invite link | ✔️
 github | member | Send Haru's repository link on github | ✔️
 dev | member | Informations about the bot development team | ✔️
 ping | member | Used to know if haru is alive | ✔️
+vote | member | link para votar na haru no top.gg | ❌
 
 ### Configuration Module
 
@@ -121,7 +126,10 @@ roleinfo | member | Get informations about a role | ✔️
 serverinfo | member | Get informations about a guild | ✔️
 currency | member | Convert a value to another quote | ✔️
 random | member | Get a random number | ✔️
-mal | member | . . . | ❌
+mal anime | member | . . . | ❌
+mal manga | member | . . . | ❌
+mal user_anime | member | . . . | ❌
+mal user_manga | member | . . . | ❌
 
 ### Fun Module
 
@@ -136,6 +144,14 @@ ship | member | shipa dois usuários, em até 100% | ❌
 mugistrong | member | envia um gif da Mugi-Strong | ❌
 say | member | faça a haru dizer alguma coisa | ❌
 dm | member | faça a haru enviar uma dm para alguém | ❌
+marry | member | peça alguém em casamento | ❌
+divorce | member | se divorcia de alguém | ❌
+store | member | mostra toda a loja | ❌
+store color | member | compra/seleciona uma cor | ❌
+store icon | member | compra/seleciona um icon | ❌
+store banner | member | compra/seleciona um banner | ❌
+store badge | member | compra/seleciona um badge | ❌
+store ring | member | compra/seleciona um anel | ❌
 
 ### Minigame Module
 
@@ -143,6 +159,22 @@ name | permission | explanation | stage
 :--- | :--------- | :---------- | :---:
 guess | member | o usuário tenta adivinhar um número de 1 a 10 | ❌
 jankenpon | member | joga jokenpô com o usuário | ❌
+hangman | member | jogo da forca | ❌
+roulette | member | jogo da roleta russa | ❌
+script | member | jogo para adivinhar a linguagem | ❌
+tictactoe | member | jogo da velha | ❌
+checkers | member | jogo da dama | ❌
+chat start | member | inicia uma conversa com a haru | ❌
+chat stop | member | encerra uma conversa com a haru | ❌
+chat channel | admin | limita o uso dos comandos chat para apenas um canal | ❌
+coins | member | ensina sobra a categoria coins | ❌
+coins wallet | member | mostra a carteira do usuário | ❌
+coins give | member | dá coins à outro usuário | ❌
+coins bet | member | aposta coins com outro usuário | ❌
+coins daily | member | pega a recompensa de coins diária | ❌
+coins rank_local | member | envia o rank local de coins | ❌
+coins rank_global | member | envia o rank global de coins | ❌
+
 
 ### Interaction Module
 
@@ -157,10 +189,11 @@ shoot | member | ataca algum outro usuário | ❌
  
 ## Ideias: 
 
-- [ ] Implementar os comandos via dm
-- [ ] IA chat-bot (biblioteca chatterbot)
-- [ ] Jogo-da-velha contra usuário e contra IA
-- [ ] Jogo da forca
-- [ ] Jogo de roleta russa
-- [ ] Jogo de adivinhar a linguagem de programação
-- [ ] Jogo de labirinto
+- [] Implementar os comandos via dm
+- [❌] Sistema de Enocomia nos minigames
+- [✔️] IA chat-bot (biblioteca chatterbot)
+- [✔️] Jogo-da-velha contra usuário e contra IA
+- [✔️] Jogo da forca
+- [✔️] Jogo de roleta russa
+- [✔️] Jogo de adivinhar a linguagem de programação
+- [❌] Jogo de labirinto
