@@ -33,7 +33,8 @@
         "serverinfo":["guildinfo", "guild", "servidorinfo"],
         "currency":["convert"],
         "random":["getrandom", "aleatorio"],
-        "mal":["myanimelist"]
+        "mal":["myanimelist"],
+        "user_anime":["useranime", "user_anime_list"]
     }, 
     "fun":{
         "morse":[],
