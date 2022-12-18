@@ -1,4 +1,47 @@
-# Documentação - Haru (Rework)
+
+<!--<div align="center">
+    <div>
+        <img src="https://media.discordapp.net/attachments/810690029847969833/1053831385963561043/ayumudestacada.png?width=760&height=480">
+    </div>
+    <h1>Haru (Rework) - Overview</h1>
+    <h2>Configuration, Utilities, Minigames and more...</h2>
+    <div>
+        <a href="https://discord.com/invite/ZZHRtsJTCS", target="_blank">
+            <img src="https://img.shields.io/discord/788518735752724480?color=light%20green&label=support%20server&logo=discord&logoColor=discord" alt="Support Server">
+        </a>
+        <a href="https://konata.site/haru/", target="_blank">
+            <img src="https://img.shields.io/website?color=light%20green&down_color=red&down_message=offline&label=site&logo=github&up_color=blue&up_message=online&url=https%3A%2F%2Fkonata.site%2Fharu%2F" alt="Support Server">
+        </a>
+        <a href="https://www.python.org/downloads/release/python-3913/", target="_blank">
+            <img src="https://img.shields.io/badge/python-3.9.13-blue" alt="Support Server">
+        </a>
+        <a href="https://discordpy.readthedocs.io/en/stable/", target="_blank">
+            <img src="https://img.shields.io/badge/discord-py-blue" alt="Support Server">
+        </a>
+        <a href="https://konata.site/haru/en/commands", target="_blank">
+            <img src="https://img.shields.io/badge/help-95%20slash%20commands-blue" alt="Support Server">
+        </a>
+        <p>
+            <img src="https://img.shields.io/badge/-supports%20hybrid%20commands-gray">
+            <img src="https://img.shields.io/badge/-security%20module-gray">
+            <img src="https://img.shields.io/badge/-some%20AI%20implementation-gray">
+        </p>
+        <p>
+            <a href="#descrição">Description</a>
+            •
+            <a href="#clonando-o-repositório">Fork</a>
+            •
+            <a href="#níveis-de-permissão">Perms System</a>
+            •
+            <a href="#idiomas">Languages</a>
+            •
+            <a href="#módulos">Modules</a>
+        </p>
+    </div>
+</div>
+-->
+
+# Documentação
 ## Descrição
 Este é um Rework da Haru (Haru v3). Um simples bot para o discord, com algumas funcionalidades básicas.<br/>
 
@@ -128,8 +171,8 @@ currency | member | Convert a value to another quote | ✔️
 random | member | Get a random number | ✔️
 mal anime | member | . . . | ❌
 mal manga | member | . . . | ❌
-mal user_anime | member | . . . | ❌
-mal user_manga | member | . . . | ❌
+mal animelist | member | . . . | ❌
+mal mangalist | member | . . . | ❌
 
 ### Fun Module
 
@@ -190,12 +233,33 @@ shoot | member | ataca algum outro usuário | ❌
  
 ## Ideias: 
 
-- [] Implementar os comandos via dm
-- [✔️] Sistema de Enocomia nos minigames
-- [✔️] Sistema de Loja (personalização do perfil e comandos)
-- [✔️] IA chat-bot (biblioteca chatterbot)
-- [✔️] Jogo-da-velha contra usuário e contra IA
-- [✔️] Jogo da forca
-- [✔️] Jogo de roleta russa
-- [✔️] Jogo de adivinhar a linguagem de programação
-- [❌] Jogo de labirinto
+- [ ] Implementar os comandos via dm
+- [x] Sistema de Enocomia nos minigames
+- [x] Sistema de Loja (personalização do perfil e comandos)
+- [x] IA chat-bot (biblioteca chatterbot)
+- [x] Jogo-da-velha contra usuário e contra IA
+- [x] Jogo da forca
+- [x] Jogo de roleta russa
+- [x] Jogo de adivinhar a linguagem de programação
+- [ ] Jogo de labirinto
+## Site
+
+### Estrutura
+~~~
+konata.site
+    haru
+        en
+            home
+            commands
+            contact
+            support
+            privacy-policy
+            terms-of-service
+        pt-br
+            home
+            comandos
+            contato
+            suporte
+            politica-de-privacidade
+            termos-de-servico
+~~~

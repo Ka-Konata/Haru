@@ -15,7 +15,10 @@ class Currency(commands.Cog):
 
 
     @commands.hybrid_command(aliases=modulos['utility']['currency'])
-    @app_commands.describe(original='The original quote', new='The new quote you want to convert to', value='The value you want to convert')
+    @app_commands.describe(
+        original='The original quote', 
+        new='The new quote you want to convert to', 
+        value='The value you want to convert')
     @commands.check(configs.Authentication.member)
     @commands.check(configs.check_islocked)
     @commands.check(configs.check_guild)

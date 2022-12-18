@@ -34,7 +34,10 @@
         "currency":["convert"],
         "random":["getrandom", "aleatorio"],
         "mal":["myanimelist"],
-        "user_anime":["useranime", "user_anime_list"]
+        "animelist":["anime_list", "user_anime_list"],
+        "mangalist":["manga_list", "user_manga_list"],
+        "anime":["searchanime", "search_anime", "getanime"],
+        "manga":["searchmanga", "search_manga", "getmanga"]
     }, 
     "fun":{
         "morse":[],

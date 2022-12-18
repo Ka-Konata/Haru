@@ -210,6 +210,21 @@
             "F3 TITLE": "Cotação:",
             "NAME":"Haru - Conversor de Moedas", 
             "FOOTER":"Use /help view ou h!help para mais informações"
+        },
+        "MAL USER_ANIME_LIST": {
+            "TITLE 1": "**[MyAnimeList - Lista de: ",
+            "TITLE 2": "**\nPágina: ",
+            "TITLE 3": " animes encontrados)",
+            "EMBED 1": "[ver anime]",
+            "EMBED 2": "[ver perfil]",
+            "EMBED": {
+                "RANK": "Rank: ",
+                "SCORE": "**Score: **",
+                "STATUS": "**Status: **"
+            },
+            "LIST":  "[ver no site]",
+            "FOOTER 1":"Página: ",
+            "FOOTER 2":"Dúvidas? Use /help or h!help"
         }
     },
     "HELP":{

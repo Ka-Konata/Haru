@@ -12,7 +12,9 @@ class Avatar(commands.Cog):
 
 
     @commands.hybrid_command(aliases=modulos['utility']['avatar'])
-    @app_commands.describe(user='Whose profile picture is it', local='Do you want the pfp from the server?')
+    @app_commands.describe(
+        user='Whose profile picture is it', 
+        local='Do you want the pfp from the server?')
     @commands.check(configs.Authentication.member)
     @commands.check(configs.check_islocked)
     @commands.check(configs.check_guild)

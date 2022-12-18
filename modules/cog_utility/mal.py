@@ -8,7 +8,7 @@ from math import ceil
 
 modulos     = configs.get_commands()
 #sorters     = malclient.MyAnimeListSorting()
-status_list = ["watching", "completed", "on_hold", "dropped", "plan_to_watch"]
+status_list = ["watching", "completed", "on_hold", "dropped", "plan_to_watch", "all"]
 sort_list   = ['update', 'score', 'start', 'title']
 sort_dict   = {'update': 'list_updated_at', 'score': 'list_score', 'start': 'anime_start_date', 'title': 'anime_title'}
 
@@ -21,36 +21,35 @@ class PaginationView(discord.ui.View):
         self.storage     = ''
         self.embeded     = False
         self.user_list   = False
-        self.user_name   = ''
+        self.username   = ''
         self.pages       = 0
         self.page_actual = 0
-        self.timedout    = False
+        self.interaction = None
 
         super().__init__(timeout=timeout)
 
 
     async def on_timeout(self) -> None:
-        self.timedout = True
-        self.disable_or_enable_buttons()
-        return await super().on_timeout()
+        for btn in self.children:
+            btn.disabled = True
+        await self.message.edit(embed=self.create_list(), view=self)
 
 
     def create_list(self): 
         settings = configs.get_configs()
-        lang = configs.lang[configs.get_guild(self.ctx.guild.id)['language']]
+        lang = configs.lang[configs.get_guild(self.ctx.guild.id)['language']]['COMMAND']['MAL USER_ANIME_LIST']
         if self.user_list:
-            embed = discord.Embed(description=f'**[MyAnimeList Username: {self.user_name}](https://myanimelist.net/profile/{self.user_name})**\npage: {self.page_actual+1}/{self.pages} ({len(self.storage)} animes found)', color=colors.default)
+            embed = discord.Embed(description=lang['TITLE 1']+self.username+f'](https://myanimelist.net/profile/{self.username})'+lang['TITLE 2']+f'{self.page_actual+1}/{self.pages} ({len(self.storage)}'+lang['TITLE 3'], color=colors.default)
         else:
             embed = discord.Embed()
 
         if self.embeded:
             item = self.storage[self.page_actual]
-            embed.title = f'MyAnimeList Username: {self.user_name}'
-            embed.description = f'[{item.title}](https://myanimelist.net/anime/{item.id})'
-            print(str(item.main_picture.medium), item.main_picture.medium, item.main_picture, item.main_picture.large)
+            embed.title = f'{item.title}'
+            embed.description = lang['EMBED 1']+f'(https://myanimelist.net/anime/{item.id}) | '+lang['EMBED 2']+f'(https://myanimelist.net/profile/{self.username})'
             embed.set_image(url=str(item.main_picture.medium))
             if self.user_list:
-                embed.add_field(name=f'rank: {item.rank} ({item.popularity})', value=f'**[ver no site](https://myanimelist.net/anime/{item.id}) \nscore: **`{item.my_list_status.score}`\n**status: **`{item.my_list_status.status}` `{item.my_list_status.num_episodes_watched}/{item.num_episodes}`')
+                embed.add_field(name=lang['EMBED']['RANK']+f'{item.rank} ({item.mean})', value=lang['EMBED']['SCORE']+f'`{item.my_list_status.score}`\n'+lang['EMBED']['STATUS']+f'`{item.my_list_status.status}` `{item.my_list_status.num_episodes_watched}/{item.num_episodes}`')
             else:
                 pass
         else:
@@ -58,26 +57,32 @@ class PaginationView(discord.ui.View):
             res = ''
             animes = self.storage[c:(self.page_actual+1)*20] if len(self.storage) > (self.page_actual+1)*20 else self.storage[c:]
             for anime in animes:
+                #print(animes)
+                #break
+
                 c += 1
                 if self.user_list:
-                    embed.add_field(name=f'{c}. {anime.title}', value=f'**[ver no site](https://myanimelist.net/anime/{anime.id}) \nscore: **`{anime.my_list_status.score}`\n**status: **`{anime.my_list_status.status}` `{anime.my_list_status.num_episodes_watched}/{anime.num_episodes}`', inline=False)
+                    score  = 'N/A'
+                    status = 'N/A'
+                    eps_wt = 'N/A'
+                    if anime.my_list_status != None:
+                        score  = anime.my_list_status.score
+                        status = anime.my_list_status.status
+                        eps_wt = anime.my_list_status.num_episodes_watched
+                    else:
+                        print('Nonetype', anime)
+
+                    embed.add_field(name=f'{c}. {anime.title}', value=lang['LIST']+f'(https://myanimelist.net/anime/{anime.id}) \n'+lang['EMBED']['SCORE']+f'`{score}`\n'+lang['EMBED']['STATUS']+f'`{status}` `{eps_wt}/{anime.num_episodes}`', inline=False)
                 else:
                     res = res + f'**{c}.** {anime}\n'
-        embed.set_author(name=lang['COMMAND']['CURRENCY']['NAME'], icon_url=settings['bot-icon'])
-        # embed.set_thumbnail(url=settings['app-icon'])
-        embed.set_footer(text=lang['COMMAND']['CURRENCY']['FOOTER'])
+        embed.set_footer(text=lang['FOOTER 1']+f'{self.page_actual}/{self.pages} | '+lang['FOOTER 2'])
         return embed
 
 
     def disable_or_enable_buttons(self):
         btn_previous = self.children[0]
-        btn_att      = self.children[1]
         btn_next     = self.children[2]
-        print(self.page_actual*20, len(self.storage))
-        if self.timedout:
-            btn_next.disabled = True
-            btn_previous.disabled = True
-        elif self.page_actual == 0:  # First Page
+        if self.page_actual == 0:  # First Page
             btn_next.disabled = False
             btn_previous.disabled = True
         elif self.page_actual == self.pages-1:  # Last Page
@@ -88,7 +93,7 @@ class PaginationView(discord.ui.View):
             btn_previous.disabled = False
 
     
-    async def actualize_embed(self, interaction: discord.Interaction):
+    async def actualize_embed(self, interaction: discord.Interaction = None):
         anime_list = self.create_list()
         self.disable_or_enable_buttons()
         await interaction.response.edit_message(embed=anime_list, view=self)
@@ -100,7 +105,7 @@ class PaginationView(discord.ui.View):
         await self.actualize_embed(interaction)
 
 
-    @discord.ui.button(label='📖', style=discord.ButtonStyle.success)
+    @discord.ui.button(label='📖 Change View', style=discord.ButtonStyle.gray)
     async def change_vizualization(self, interaction: discord.Interaction, button: discord.ui.Button):
         if self.embeded:
             self.embeded = False
@@ -135,31 +140,37 @@ class Mal(commands.Cog):
     @commands.hybrid_group(aliases=modulos['utility']['mal'])
     async def mal(self, ctx):
         '''...'''
-        pass
+        raise commands.errors.CommandNotFound
         
 
     @mal.command()
-    @app_commands.describe(user_name="...")
-    async def user_anime(self, ctx, user_name: str, with_status: str = None, sorted_by: str = None):
-        '''...'''
+    @app_commands.describe(
+        username='Must be exactly the same as the username on the website', 
+        status='Search for animes with only one status type', 
+        sortedby='How the list will be sorted')
+    async def animelist(self, ctx, username: str, status: str = 'all', sortedby: str = 'score'):
+        '''Search for someone's anime list on MyAnimeList'''
         await ctx.defer()
-        print(not sorted_by in sort_list, not with_status in status_list)
-        if not sorted_by in sort_list or not with_status in status_list:
+        if not sortedby in sort_list or not status in status_list:
             raise commands.errors.BadArgument
 
-        if sorted_by != None:
-            sorted_by = sort_dict[sorted_by] 
+        sortedby = sort_dict[sortedby] 
+        if status == 'all':
+            status = None
+
+        fields__ = malclient.ListStatusFields()
+        fields__.status = fields__.score = fields__.num_episodes_watched = True
         fields = malclient.Fields()
-        fields.num_episodes = fields.rank = fields.popularity = fields.main_picture = True
+        fields.num_episodes = fields.rank = fields.main_picture = fields.mean = True
         self.mal_client.refresh_bearer_token(self.client_id, self.client_secret, self.mal_token.refresh_token)
-        search = self.mal_client.get_user_anime_list(user_name, limit=1000, fields=fields, sort=sorted_by, status=with_status)
+        search = self.mal_client.get_user_anime_list(username, limit=1000, fields=fields, list_status_fields=fields__, sort=sortedby, status=status)
 
         view             = PaginationView(ctx=ctx)
         view.pages       = ceil(len(search) / 20)
         view.storage     = search
         view.page_actual = 0
         view.user_list   = True
-        view.user_name   = user_name
+        view.username   = username
         view.disable_or_enable_buttons()
 
         anime_list = view.create_list()
@@ -169,7 +180,7 @@ class Mal(commands.Cog):
         await view.wait()
 
 
-    @user_anime.autocomplete('with_status')
+    @animelist.autocomplete('status')
     async def command_autocomplete(self, interaction : discord.Interaction, current : str) -> typing.List[app_commands.Choice[str]]:
         choice_list = []
         for choice in status_list:
@@ -178,7 +189,7 @@ class Mal(commands.Cog):
         return choice_list
 
 
-    @user_anime.autocomplete('sorted_by')
+    @animelist.autocomplete('sortedby')
     async def command_autocomplete(self, interaction : discord.Interaction, current : str) -> typing.List[app_commands.Choice[str]]:
         choice_list = []
         for choice in sort_list:
@@ -187,27 +198,22 @@ class Mal(commands.Cog):
         return choice_list
 
 
-
-
 async def setup(bot):
     await bot.add_cog(Mal(bot))
 
 
-"""AnimeObject = id=1535, 
- title='Death Note', 
- main_picture=Asset(large=HttpUrl('https://api-cdn.myanimelist.net/images/anime/9/9453l.jpg', ), medium=HttpUrl('https://api-cdn.myanimelist.net/images/anime/9/9453.jpg', )), 
- alternative_titles=None, 
- start_date=None, 
- end_date=None, 
- synopsis=None, 
- mean=None, 
- rank=None, 
- popularity=None, 
- num_list_users=None, 
- num_scoring_users=None, 
- nsfw=None, genres=None, 
- created_at=None, 
- updated_at=None, 
- media_type=None, 
- status=None, 
- my_list_status=MyAnimeListStatus(score=10, status='completed', is_rewatching=False, updated_at=datetime.datetime(2022, 9, 15, 14, 52, 33, tzinfo=datetime.timezone.utc), num_episodes_watched=37, start_date=None, finish_date=None), num_episodes=None, start_season=None, broadcast=None, source=None, average_episode_duration=None, rating=None, studios=None, pictures=None, background=None, related_anime=None, related_manga=None, recommendations=None, statistics=None, videos=None),"""
+"""id=19, 
+title='Monster', 
+main_picture=Asset(large=HttpUrl('https://api-cdn.myanimelist.net/images/anime/10/18793l.jpg', ), medium=HttpUrl('https://api-cdn.myanimelist.net/images/anime/10/18793.jpg', )), 
+alternative_titles=None, 
+start_date=None, 
+end_date=None, 
+synopsis=None, 
+mean=8.85, 
+rank=23, 
+popularity=None, 
+num_list_users=None, 
+num_scoring_users=None, 
+nsfw=None, genres=None, created_at=None, 
+updated_at=None, media_type=None, status=None, 
+my_list_status=MyAnimeListStatus(score=0, status='on_hold', is_rewatching=False, updated_at=datetime.datetime(2022, 9, 15, 15, 2, 15, tzinfo=datetime.timezone.utc), num_episodes_watched=5, start_date=None, finish_date=None), num_episodes=74, start_season=None, broadcast=None, source=None, average_episode_duration=None, rating=None, studios=None, pictures=None, background=None, related_anime=None, related_manga=None, recommendations=None, statistics=None, videos=None"""

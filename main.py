@@ -88,8 +88,9 @@ async def on_command_error(ctx, error):
             embed = errors.get_error_embed(lang, lang['ERROR']['UnknownError']['TYPE'])
         logger.error(f'{error}')
 
-    #await ctx.reply(embed=embed, mention_author=False)
+    await ctx.reply(embed=embed, mention_author=False)
     raise error
 
 
 bot.run(TOKEN)
+commands.Context

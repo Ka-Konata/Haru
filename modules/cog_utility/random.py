@@ -12,7 +12,9 @@ class Random(commands.Cog):
 
 
     @commands.hybrid_command(aliases=modulos['utility']['random'])
-    @app_commands.describe(until_num='Until the number', from_num='From the number')
+    @app_commands.describe(
+        until_num='Until the number', 
+        from_num='From the number')
     @commands.check(configs.Authentication.member)
     @commands.check(configs.check_islocked)
     @commands.check(configs.check_guild)
