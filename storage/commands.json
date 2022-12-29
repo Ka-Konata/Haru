@@ -47,7 +47,7 @@
         "dice":["dados"],
         "ship":[],
         "mugistrong":[],
-        "say":[],
+        "say":["falar"],
         "dm":[]
     }, 
     "minigame": {

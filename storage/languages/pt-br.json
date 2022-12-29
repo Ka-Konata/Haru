@@ -421,6 +421,11 @@
             "jankenpon":[],
             "dice":["dados"],
             "ship":[],
+            "say": {
+                "DESCRIPTION":"Finja que me controla e me faça falar alguma coisa.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "HOW VALUE":"`/say <texto>`",
+                "EXEMPLE VALUE":"`/say olá`"
+            },
             "guess":["adivinhe"],
             "kiss":["beijar"],
             "bite":["morder"],
