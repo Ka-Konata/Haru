@@ -89,7 +89,7 @@ class Mal(commands.Cog):
 
             embed_1.set_thumbnail(url=profile.image)
             embed_1.title = f'**{profile.username}** `id: {profile.id}`\n'
-            embed_1.description = lang['COMMAND']['MAL USER']['LINK']+link+f') \n'+lang['COMMAND']['MAL USER']['LAST ON']+f'`{online}`\n'+lang['COMMAND']['MAL USER']['JOINED']+f'`{joined}`'
+            embed_1.description = lang['COMMAND']['MAL USER']['LINK']+link+f') \n'+lang['COMMAND']['MAL USER']['LAST ON']+f'`{online}`\n'+lang['COMMAND']['MAL USER']['JOINED']+f'`{joined}`\n\n'+lang['COMMAND']['MAL USER']['DESC 1']
             embed_1.add_field(name='ANIME STATS', value=anime_stat)
             embed_1.add_field(name='MANGA STATS', value=manga_stat)
 
@@ -97,7 +97,30 @@ class Mal(commands.Cog):
             embed_2.set_author(name=lang['COMMAND']['MAL USER']['NAME'], icon_url=settings['bot-icon'])
             embed_2.set_footer(text=lang['COMMAND']['MAL USER']['FOOTER'])
             embed_2.set_thumbnail(url=profile.image)
-            embed_2.description = embed_1.description 
+            embed_2.description = lang['COMMAND']['MAL USER']['LINK']+link+f') \n'+lang['COMMAND']['MAL USER']['LAST ON']+f'`{online}`\n'+lang['COMMAND']['MAL USER']['JOINED']+f'`{joined}`\n\n'+lang['COMMAND']['MAL USER']['DESC 2'] 
+
+            c = 1
+            fav_animes = ''
+            for anime in profile.favorites.animes:
+                fav_animes += f'**{c}.** [{anime.title}](https://myanimelist.net/anime/{anime.id}/)\n'
+                c += 1
+            fav_mangas = ''
+            for manga in profile.favorites.mangas:
+                fav_mangas += f'**{c}.** [{manga.title}](https://myanimelist.net/anime/{manga.id}/)\n'
+                c += 1
+            fav_peoples = ''
+            for people in profile.favorites.peoples:
+                fav_peoples += f'**{c}.** [{people.name}](https://myanimelist.net/anime/{people.id}/)\n'
+                c += 1
+            fav_characters = ''
+            for character in profile.favorites.characters:
+                fav_characters += f'**{c}.** [{character.name}](https://myanimelist.net/anime/{character.id}/)\n'
+                c += 1
+
+            embed_2.add_field(name=lang['COMMAND']['MAL USER']['ANIME FAVS'], value=fav_animes, inline=False)
+            embed_2.add_field(name=lang['COMMAND']['MAL USER']['MANGA FAVS'], value=fav_mangas, inline=False)
+            embed_2.add_field(name=lang['COMMAND']['MAL USER']['PEOPLE FAVS'], value=fav_peoples, inline=False)
+            embed_2.add_field(name=lang['COMMAND']['MAL USER']['CHARACTER FAVS'], value=fav_characters, inline=False)
 
             view             = mal_profile_view.ProfileView(ctx=ctx)
             view.page_actual = 0

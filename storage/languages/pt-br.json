@@ -238,6 +238,8 @@
         },
         "MAL USER": {
             "DESC": "Usuário não encontrado.",
+            "DESC 1": "**ESTATÍSTICAS DO USUÁRIO:**.",
+            "DESC 2": "**LISTAS DE FAVORITOS:**",
             "TIMEOUT": "O MyAnimeList demorou muito tempo para responder",
             "LINK": "[ver no site](",
             "LAST ON": "**Última vez online: **",
@@ -267,6 +269,10 @@
                 "chapters_read": "**capítulos lidos:** `",
                 "volumes_read": "**volumes lidos:** `"
             },
+            "ANIME FAVS": "ANIMES",
+            "MANGA FAVS": "MANGAS",
+            "PEOPLE FAVS": "PESSOAS",
+            "CHARACTER FAVS": "PERSONAGENS",
             "NAME":"Haru - Perfil no MyAnimeList", 
             "FOOTER":"Dúvidas? Use /help or h!help"
         }
@@ -456,8 +462,33 @@
                 "HOW VALUE":"`/currency <cotação original> <nova cotação> <valor>`",
                 "EXEMPLE VALUE":"`/currency BRL EUR 10` `/currency jpy brl 5.50`"
             },
-            "random":["aleatorio"],
+            "random": {
+                "DESCRIPTION":"Me faça gerar um número (pseudo)aleatório!\nVocê pode delimitar um número mínimo e um máximo. Caso nenhum desses valores sejam informados, o numéro gerado será algum entre **1** e **100** por padrão.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "HOW VALUE":"`/random [número mínimo] [número máximo]`",
+                "EXEMPLE VALUE":"`/random` `/random 50` `/random 10 1000`"
+            },
+            "mal": {
+                "DESCRIPTION":"É uma categoria que possui vários comandos relacionados ao MyAnimeList. São eles:\n`/mal user` - ver um perfil.\n`/mal anime` - pesquisar por um anime.\n`/mal manga` - pesquisar por um mangá.\n`/mal animelist` - ver a lista de animes de alguém.\n`/mal mangalist` - ver a lista de mangás de alguém.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "HOW VALUE":"`NÃO UTILIZÁVEL`",
+                "EXEMPLE VALUE":"`NÃO UTILIZÁVEL`"
+            },
+            "user": {
+                "DESCRIPTION":"Procure pelo perfil de algum usuário do MyAnimeList!\nCom esse comando você pode conferir as estatísticas e listas de favoritos de um usuário.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "HOW VALUE":"`/mal user <nome do usuário>`",
+                "EXEMPLE VALUE":"`/mal user Nome123`"
+            },
             "anime":["mal"],
+            "manga":["mal"],
+            "animelist": {
+                "DESCRIPTION":"Procure pela lista de animes de algum usuário do MyAnimeList.\nVocê pode alterar a forma de visualização (clicando em **change view**) para ver também a imagem de cada anime!\n\nExistem dois parâmetros opicionais nesse comando que servem como filtros:\n**status**: Limite para que apareçam animes com apenas um único tipo de status.\n**sortedby**: Descreva a forma como a lista deverá ser organizada.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "HOW VALUE":"`/mal animelist <nome do usuário> [status] [sortedby]`",
+                "EXEMPLE VALUE":"`/mal animelist Nome123` `/mal animelist Nome123 completed` `/mal animelist Nome123 all score`"
+            },
+            "mangalist": {
+                "DESCRIPTION":"Procure pela lista de mangás de algum usuário do MyAnimeList.\nVocê pode alterar a forma de visualização (clicando em **change view**) para ver também a imagem de cada mangá!\n\nExistem dois parâmetros opicionais nesse comando que servem como filtros:\n**status**: Limite para que apareçam mangás com apenas um único tipo de status.\n**sortedby**: Descreva a forma como a lista deverá ser organizada.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "HOW VALUE":"`/mal mangalist <nome do usuário> [status] [sortedby]`",
+                "EXEMPLE VALUE":"`/mal mangalist Nome123` `/mal mangalist Nome123 completed` `/mal mangalist Nome123 all score`"
+            },
             "morse":[],
             "flipmsg":["inverter"],
             "choose":["escolha"],
