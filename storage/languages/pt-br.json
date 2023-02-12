@@ -214,17 +214,61 @@
         "MAL USER_ANIME_LIST": {
             "TITLE 1": "**[MyAnimeList - Lista de: ",
             "TITLE 2": "**\nPágina: ",
-            "TITLE 3": " animes encontrados)",
+            "TITLE 3": " itens nessa lista)",
             "EMBED 1": "[ver anime]",
             "EMBED 2": "[ver perfil]",
             "EMBED": {
                 "RANK": "Rank: ",
-                "SCORE": "**Score: **",
-                "STATUS": "**Status: **"
+                "SCORE": "**Nota: **",
+                "STATUS": "**Status: **",
+                "STATUS LIST": {
+                    "watching":"`assistindo`",
+                    "reading":"`lendo`",
+                    "completed":"`concluído`",
+                    "on_hold":"`em espera`",
+                    "dropped":"`dropado`",
+                    "plan_to_watch":"`planejando assistir`",
+                    "plan_to_read":"`planejando ler`",
+                    "all":"`todos`"
+                }
             },
             "LIST":  "[ver no site]",
             "FOOTER 1":"Página: ",
             "FOOTER 2":"Dúvidas? Use /help or h!help"
+        },
+        "MAL USER": {
+            "DESC": "Usuário não encontrado.",
+            "TIMEOUT": "O MyAnimeList demorou muito tempo para responder",
+            "LINK": "[ver no site](",
+            "LAST ON": "**Última vez online: **",
+            "JOINED":"**Entrou em: **",
+            "ANIME STAT": {
+                "days_watched": "**dias assistindo:** `",
+                "mean_score": "**nota média:** `",
+                "watching": "**:green_book: assistindo:** `",
+                "completed": "**:blue_book: concluído:** `",
+                "on_hold": "**:orange_book: em espera:** `",
+                "dropped": "**:closed_book: dropado:** `",
+                "plan_to_watch": "**:notebook: planejando assistir:** `",
+                "total_entries": "**:books: total:** `",
+                "rewatched": "**reassistidos:** `",
+                "episodes_watched": "**episódios vistos:** `"
+            },
+            "MANGA STAT": {
+                "days_read": "**dias lendo:** `",
+                "mean_score": "**nota média:** `",
+                "reading": "**:green_book: lendo:** `",
+                "completed": "**:blue_book: concluído:** `",
+                "on_hold": "**:orange_book: em espera:** `",
+                "dropped": "**:closed_book: dropado:** `",
+                "plan_to_read": "**:notebook: planejando ler:** `",
+                "total_entries": "**:books: total:** `",
+                "reread": "** relidos:** `",
+                "chapters_read": "**capítulos lidos:** `",
+                "volumes_read": "**volumes lidos:** `"
+            },
+            "NAME":"Haru - Perfil no MyAnimeList", 
+            "FOOTER":"Dúvidas? Use /help or h!help"
         }
     },
     "HELP":{

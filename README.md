@@ -169,10 +169,11 @@ roleinfo | member | Get informations about a role | ✔️
 serverinfo | member | Get informations about a guild | ✔️
 currency | member | Convert a value to another quote | ✔️
 random | member | Get a random number | ✔️
+mal user | member | Serach for someone's profile on MyAnimeList | ❌
 mal anime | member | . . . | ❌
 mal manga | member | . . . | ❌
-mal animelist | member | . . . | ❌
-mal mangalist | member | . . . | ❌
+mal animelist | member | Search for someone's anime list on MyAnimeList | ✔️
+mal mangalist | member | Search for someone's manga list on MyAnimeList | ✔️
 
 ### Fun Module
 
