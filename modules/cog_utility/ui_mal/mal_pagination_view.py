@@ -46,7 +46,7 @@ class PaginationView(discord.ui.View):
                 total_ep_or_ch = item.num_episodes if self.list_type == 'anime' else item.num_chapters
                 volumes_read   = f'`(Vol. {item.list_status.num_volumes_read}/{item.num_volumes if item.num_volumes > 0 else "?"})`' if self.list_type == 'manga' else ''
                 
-                embed.add_field(name=lang['EMBED']['RANK']+f'{item.rank} ({item.mean})', value=lang['EMBED']['SCORE']+f'`{score}`\n'+lang['EMBED']['STATUS']+lang['EMBED']['STATUS LIST'][status]+f' `{done_ep_or_ch}/{total_ep_or_ch}` {volumes_read}')
+                embed.add_field(name=lang['EMBED']['RANK']+f'#{item.rank} ({item.mean})', value=lang['EMBED']['SCORE']+f'`{score}`\n'+lang['EMBED']['STATUS']+lang['EMBED']['STATUS LIST'][status]+f' `{done_ep_or_ch}/{total_ep_or_ch}` {volumes_read}')
             else:
                 pass
         else:

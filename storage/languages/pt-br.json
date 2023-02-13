@@ -282,8 +282,20 @@
             "NAME":"Haru - Anime no MyAnimeList", 
             "FOOTER":"Dúvidas? Use /help or h!help",
             "RANK": "Rank: ",
-            "DESC": "[ver anime]",
+            "DESC": "[clique aqui para ver no site]",
             "EMBED 1": "\n**Transmitido:**",
+            "EMBED 2": "\n**Títulos alternativos:**\n",
+            "EMBED 3": "\n**Popularidade:**",
+            "EMBED 4": "\n**Na lista de:**"
+        },
+        "MAL MANGA": {
+            "PLACEHOLDER": "Selecione uma opção",
+            "RESULTS": "Aqui estão os resultados da pesquisa:",
+            "NAME":"Haru - Manga no MyAnimeList", 
+            "FOOTER":"Dúvidas? Use /help or h!help",
+            "RANK": "Rank: ",
+            "DESC": "[clique aqui para ver no site]",
+            "EMBED 1": "\n**Publicado:**",
             "EMBED 2": "\n**Títulos alternativos:**\n",
             "EMBED 3": "\n**Popularidade:**",
             "EMBED 4": "\n**Na lista de:**"
@@ -489,8 +501,16 @@
                 "HOW VALUE":"```/mal user <nome do usuário>```",
                 "EXEMPLE VALUE":"`/mal user Nome123`"
             },
-            "anime":["mal"],
-            "manga":["mal"],
+            "anime": {
+                "DESCRIPTION":"Procure por algum anime no MyAnimeList! Tudo que você precisa é saber um pedaço do título desse anime.\nBusca disponível em diversos idiomas.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "HOW VALUE":"```/mal anime <título>```",
+                "EXEMPLE VALUE":"`/mal anime Death Note` `/mal anime けいおん`"
+            },
+            "manga": {
+                "DESCRIPTION":"Procure por algum mangá no MyAnimeList! Tudo que você precisa é saber um pedaço do título desse mangá.\nBusca disponível em diversos idiomas.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "HOW VALUE":"```/mal manga <título>```",
+                "EXEMPLE VALUE":"`/mal manga Death Note` `/mal manga けいおん`"
+            },
             "animelist": {
                 "DESCRIPTION":"Procure pela lista de animes de algum usuário do MyAnimeList.\nVocê pode alterar a forma de visualização (clicando em **change view**) para ver também a imagem de cada anime!\n\nExistem dois parâmetros opicionais nesse comando que servem como filtros:\n**status**: Limite para que apareçam animes com apenas um único tipo de status.\n**sortedby**: Descreva a forma como a lista deverá ser organizada.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
                 "HOW VALUE":"```/mal animelist <nome do usuário> [status] [sortedby]```",

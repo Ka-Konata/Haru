@@ -1,13 +1,6 @@
-import discord, typing, myanimelist
-from discord import app_commands
-from discord.ext import commands
+import discord
 from scripts import configs, colors
-from decouple import config as getenv
 from modules.cog_utility.ui_mal import mal_results_view
-from modules.cog_utility.category_mal import user as mal_user
-from modules.cog_utility.category_mal import animelist as mal_animelist
-from modules.cog_utility.category_mal import mangalist as mal_mangalist
-from math import ceil
 
 
 class Cmd:
@@ -33,8 +26,8 @@ class Cmd:
 
             titles     = ''
             titles     = titles + f'`{anime.en_title}` ' if anime.en_title != None else ''
-            titles     = titles + f'`{anime.ja_title}`' if anime.ja_title != None else ''
-            date       = f' `{anime.start_date.strftime("%d/%m/%Y") if anime.start_date != None else "?"} - {anime.end_date.strftime("%d/%m/%Y") if anime.end_date != None else "?"}`'
+            titles     = titles + f'\n`{anime.ja_title}`' if anime.ja_title != None else ''
+            date       = f' `{anime.start_date.replace("-", "/") if anime.start_date != None else "?"}` - `{anime.end_date.replace("-", "/") if anime.end_date != None else "?"}`'
             popularity = f' `#{anime.popularity}`'
             list_users = f' `{anime.num_list_users}`'
 
