@@ -323,7 +323,7 @@
         "COMMAND":{
                 "TITLE":"Sobre o Comando /",
             "help": {
-                "DESCRIPTION":"Uma lista com todos os módulos e comandos\nConfira também os subcomandos:\n`/help view`\n`/help module`\n`/help command`\n\n**Nota:** Este é o único comando que não pode ser usado como comando slash, como alternativa, você pode usar o comando `/help view` que é a exata mesma coisa\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
+                "DESCRIPTION":"Uma lista com todos os módulos e comandos\nConfira também os subcomandos:\n`/help view`\n`/help module`\n`/help command`\n\n**Nota:** Este é um comando que não pode ser usado como comando slash, como alternativa, você pode usar o comando `/help view` que é a exata mesma coisa\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.",
                 "HOW VALUE":"```h!help```",
                 "EXEMPLE VALUE":"`h!help`"
             }, 
