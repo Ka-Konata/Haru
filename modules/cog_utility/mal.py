@@ -5,6 +5,8 @@ from scripts import configs
 from decouple import config as getenv
 from modules.cog_utility.ui_mal import mal_pagination_view
 from modules.cog_utility.category_mal import user as mal_user
+from modules.cog_utility.category_mal import anime as mal_anime
+from modules.cog_utility.category_mal import manga as mal_manga
 from modules.cog_utility.category_mal import animelist as mal_animelist
 from modules.cog_utility.category_mal import mangalist as mal_mangalist
 from math import ceil
@@ -45,6 +47,20 @@ class Mal(commands.Cog):
     async def user(self, ctx, username: str):
         '''Serach for someone's profile on MyAnimeList'''
         await mal_user.Cmd.user(self, ctx, username)
+
+
+    @mal.command()
+    @app_commands.describe(anime='Must be exactly the same as the username on the website')
+    async def anime(self, ctx, anime: str):
+        '''Serach for any anime on MyAnimeList'''
+        await mal_anime.Cmd.anime(self, ctx, anime)
+
+
+    @mal.command()
+    @app_commands.describe(manga='Must be exactly the same as the username on the website')
+    async def manga(self, ctx, manga: str):
+        '''Serach for any manga on MyAnimeList'''
+        await mal_manga.Cmd.manga(self, ctx, manga)
 
 
     @mal.command()

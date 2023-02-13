@@ -170,8 +170,8 @@ serverinfo | member | Get informations about a guild | ✔️
 currency | member | Convert a value to another quote | ✔️
 random | member | Get a random number | ✔️
 mal user | member | Serach for someone's profile on MyAnimeList | ✔️
-mal anime | member | . . . | ❌
-mal manga | member | . . . | ❌
+mal anime | member | Serach for any anime on MyAnimeList | ❌
+mal manga | member | Serach for any manga on MyAnimeList | ❌
 mal animelist | member | Search for someone's anime list on MyAnimeList | ✔️
 mal mangalist | member | Search for someone's manga list on MyAnimeList | ✔️
 

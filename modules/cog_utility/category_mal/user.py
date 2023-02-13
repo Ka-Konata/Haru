@@ -13,7 +13,6 @@ class Cmd:
         embed_1.set_author(name=lang['COMMAND']['MAL USER']['NAME'], icon_url=settings['bot-icon'])
         embed_1.set_footer(text=lang['COMMAND']['MAL USER']['FOOTER'])
 
-        #profile = await asyncio.wait_for(self.mal_client.get.user(username), timeout=1)
         try:
             profile = await asyncio.wait_for(parent.mal_client.get.user(username), timeout=0.1)
         except asyncio.TimeoutError:

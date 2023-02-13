@@ -275,6 +275,18 @@
             "CHARACTER FAVS": "PERSONAGENS",
             "NAME":"Haru - Perfil no MyAnimeList", 
             "FOOTER":"Dúvidas? Use /help or h!help"
+        },
+        "MAL ANIME": {
+            "PLACEHOLDER": "Selecione uma opção",
+            "RESULTS": "Aqui estão os resultados da pesquisa:",
+            "NAME":"Haru - Anime no MyAnimeList", 
+            "FOOTER":"Dúvidas? Use /help or h!help",
+            "RANK": "Rank: ",
+            "DESC": "[ver anime]",
+            "EMBED 1": "\n**Transmitido:**",
+            "EMBED 2": "\n**Títulos alternativos:**\n",
+            "EMBED 3": "\n**Popularidade:**",
+            "EMBED 4": "\n**Na lista de:**"
         }
     },
     "HELP":{
@@ -409,84 +421,84 @@
             },
             "lockedcommands": {
                 "DESCRIPTION":"Envia uma lista com todos os comandos que estão bloqueados para uso neste servidor.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
-                "HOW VALUE":"```/lockedcommands`",
+                "HOW VALUE":"```/lockedcommands```",
                 "EXEMPLE VALUE":"`/lockedcommands`"
             },
             "settings": {
                 "DESCRIPTION":"Envia um resumo de todas as configurações do servidor.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
-                "HOW VALUE":"```/settings`",
+                "HOW VALUE":"```/settings```",
                 "EXEMPLE VALUE":"`/settings`"
             },
             "avatar": {
                 "DESCRIPTION":"Baixe o avatar de algum outro usuário, podendo escolher entre o avatar global ou o avatar no servidor.\n(`True`:SIM  e  `False`:NÃO)\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
-                "HOW VALUE":"`/avatar <usuário> [True/False]`",
+                "HOW VALUE":"```/avatar <usuário> [True/False]```",
                 "EXEMPLE VALUE":"`/avatar Haru True` `/avatar Haru False` `/avatar Haru`"
             },
             "banner": {
                 "DESCRIPTION":"Baixe o banner de qualquer outro usuário (caso ele tenha um, obviamente).\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
-                "HOW VALUE":"`/banner <usuário>`",
+                "HOW VALUE":"```/banner <usuário>```",
                 "EXEMPLE VALUE":"`/banner Haru` `/banner 808100198899384352`"
             },
             "servericon": {
                 "DESCRIPTION":"Baixe o icon de qualquer servidor.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
-                "HOW VALUE":"`/servericon [servidor]`",
+                "HOW VALUE":"```/servericon [servidor]```",
                 "EXEMPLE VALUE":"`/banner 788518735752724480` `/banner`"
             },
             "permissions": {
                 "DESCRIPTION":"Veja todas as permissões de alguém neste servidor.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
-                "HOW VALUE":"`/permissions [usuário]`",
+                "HOW VALUE":"```/permissions [usuário]```",
                 "EXEMPLE VALUE":"`/permissions Haru` `/permissions`"
             },
             "userinfo": {
                 "DESCRIPTION":"Veja todas as informações básicas de um usuário (caso o usuário esteja no servidor, você também verá um campo chamado \"Informações do Membro\"): \n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
-                "HOW VALUE":"`/userinfo [usuário]`",
+                "HOW VALUE":"```/userinfo [usuário]```",
                 "EXEMPLE VALUE":"`/userinfo Haru` `/userinfo`"
             },
             "channelinfo": {
                 "DESCRIPTION":"Veja todas as informações básicas de um canal do servidor\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
-                "HOW VALUE":"`/channelinfo [canal]`",
+                "HOW VALUE":"```/channelinfo [canal]```",
                 "EXEMPLE VALUE":"`/channelinfo 846557373724229642` `/channelinfo`"
             },
             "roleinfo": {
                 "DESCRIPTION":"Veja todas as informações básicas de um cargo do servidor (Não funciona com canais de outros servidores)\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
-                "HOW VALUE":"`/roleinfo [canal]`",
+                "HOW VALUE":"```/roleinfo [canal]```",
                 "EXEMPLE VALUE":"`/roleinfo 881539982370684938` `/roleinfo`"
             },
             "serverinfo": {
                 "DESCRIPTION":"Veja todas as informações básicas de um servidor.Tenha em mente de que a haru só pode encontrar informações de servidores dos quais ela mesma esteja.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
-                "HOW VALUE":"`/serverinfo [id do servidor]`",
+                "HOW VALUE":"```/serverinfo [id do servidor]```",
                 "EXEMPLE VALUE":"`/serverinfo 788518735752724480` `/serverinfo`"
             },
             "currency": {
                 "DESCRIPTION":"Veja um valor convertido de uma cotação para outra.\nAlgumas das cotações disponíveis:\n**AOA:** `Kwanza Angolano`\n**ARS:** `Peso Argentino`\n**BRL:** `Real Brasileiro`\n**BTC:** `Bitcoin`\n**CNY:** `Yuan Chinês`\n**CUP:** `Peso Cubano`\n**EUR:** `Euro`\n**JPY:** `Yen Japonês`\n**KRW:** `Won Sul-Coreano`\n**MXN:** `Peso Mexicano`\n**RUB:** `Rublo Russo`\n**USD:** `Dolar dos Estados Unidos`\n**UYU:** `Peso Uruguaio`\n**VEF:** `Bolívar Venezuelano`\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
-                "HOW VALUE":"`/currency <cotação original> <nova cotação> <valor>`",
+                "HOW VALUE":"```/currency <cotação original> <nova cotação> <valor>```",
                 "EXEMPLE VALUE":"`/currency BRL EUR 10` `/currency jpy brl 5.50`"
             },
             "random": {
                 "DESCRIPTION":"Me faça gerar um número (pseudo)aleatório!\nVocê pode delimitar um número mínimo e um máximo. Caso nenhum desses valores sejam informados, o numéro gerado será algum entre **1** e **100** por padrão.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
-                "HOW VALUE":"`/random [número mínimo] [número máximo]`",
+                "HOW VALUE":"```/random [número mínimo] [número máximo]```",
                 "EXEMPLE VALUE":"`/random` `/random 50` `/random 10 1000`"
             },
             "mal": {
                 "DESCRIPTION":"É uma categoria que possui vários comandos relacionados ao MyAnimeList. São eles:\n`/mal user` - ver um perfil.\n`/mal anime` - pesquisar por um anime.\n`/mal manga` - pesquisar por um mangá.\n`/mal animelist` - ver a lista de animes de alguém.\n`/mal mangalist` - ver a lista de mangás de alguém.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
-                "HOW VALUE":"`NÃO UTILIZÁVEL`",
+                "HOW VALUE":"```NÃO UTILIZÁVEL```",
                 "EXEMPLE VALUE":"`NÃO UTILIZÁVEL`"
             },
             "user": {
                 "DESCRIPTION":"Procure pelo perfil de algum usuário do MyAnimeList!\nCom esse comando você pode conferir as estatísticas e listas de favoritos de um usuário.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
-                "HOW VALUE":"`/mal user <nome do usuário>`",
+                "HOW VALUE":"```/mal user <nome do usuário>```",
                 "EXEMPLE VALUE":"`/mal user Nome123`"
             },
             "anime":["mal"],
             "manga":["mal"],
             "animelist": {
                 "DESCRIPTION":"Procure pela lista de animes de algum usuário do MyAnimeList.\nVocê pode alterar a forma de visualização (clicando em **change view**) para ver também a imagem de cada anime!\n\nExistem dois parâmetros opicionais nesse comando que servem como filtros:\n**status**: Limite para que apareçam animes com apenas um único tipo de status.\n**sortedby**: Descreva a forma como a lista deverá ser organizada.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
-                "HOW VALUE":"`/mal animelist <nome do usuário> [status] [sortedby]`",
+                "HOW VALUE":"```/mal animelist <nome do usuário> [status] [sortedby]```",
                 "EXEMPLE VALUE":"`/mal animelist Nome123` `/mal animelist Nome123 completed` `/mal animelist Nome123 all score`"
             },
             "mangalist": {
                 "DESCRIPTION":"Procure pela lista de mangás de algum usuário do MyAnimeList.\nVocê pode alterar a forma de visualização (clicando em **change view**) para ver também a imagem de cada mangá!\n\nExistem dois parâmetros opicionais nesse comando que servem como filtros:\n**status**: Limite para que apareçam mangás com apenas um único tipo de status.\n**sortedby**: Descreva a forma como a lista deverá ser organizada.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
-                "HOW VALUE":"`/mal mangalist <nome do usuário> [status] [sortedby]`",
+                "HOW VALUE":"```/mal mangalist <nome do usuário> [status] [sortedby]```",
                 "EXEMPLE VALUE":"`/mal mangalist Nome123` `/mal mangalist Nome123 completed` `/mal mangalist Nome123 all score`"
             },
             "morse":[],
@@ -498,7 +510,7 @@
             "ship":[],
             "say": {
                 "DESCRIPTION":"Finja que me controla e me faça falar alguma coisa.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
-                "HOW VALUE":"`/say <texto>`",
+                "HOW VALUE":"```/say <texto>```",
                 "EXEMPLE VALUE":"`/say olá`"
             },
             "guess":["adivinhe"],

@@ -9,7 +9,7 @@ sort_list         = ['score', 'update', 'title', 'start']
 
 
 class Cmd:
-    async def mangalist(self, ctx, username: str, status: str = 'all', sortedby: str = 'score'):
+    async def mangalist(parent, ctx, username: str, status: str = 'all', sortedby: str = 'score'):
         await ctx.defer()
         if not sortedby in sort_list or not status in manga_status_list:
             raise commands.errors.BadArgument
@@ -18,7 +18,7 @@ class Cmd:
         if status == 'all':
             status = None
 
-        mangas = await self.mal_client.get.manga_list(username, status, sortedby, limit=1000)
+        mangas = await parent.mal_client.get.manga_list(username, status, sortedby, limit=1000)
         res = ""
         for manga in mangas:
             res += f"\n {manga.title}"

@@ -9,7 +9,7 @@ sort_list         = ['score', 'update', 'title', 'start']
 
 
 class Cmd:
-    async def animelist(self, ctx, username: str, status: str = 'all', sortedby: str = 'score'):
+    async def animelist(parent, ctx, username: str, status: str = 'all', sortedby: str = 'score'):
         await ctx.defer()
         if not sortedby in sort_list or not status in anime_status_list:
             raise commands.errors.BadArgument
@@ -18,7 +18,7 @@ class Cmd:
         if status == 'all':
             status = None
 
-        animes = await self.mal_client.get.anime_list(username, status, sortedby, limit=1000)
+        animes = await parent.mal_client.get.anime_list(username, status, sortedby, limit=1000)
         res = ""
         for anime in animes:
             res += f"\n {anime.title}"
