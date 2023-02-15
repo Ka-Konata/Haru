@@ -41,8 +41,8 @@
         "mangalist":["manga_list", "user_manga_list"]
     }, 
     "fun":{
-        "morse":[],
-        "flipmsg":["inverter"],
+        "morse":["morseconverter", "morse_converter", "tomorse", "to_morse"],
+        "flipmsg":["inverter", "flip", "fliptext"],
         "choose":["escolha"],
         "coinflip":["caracoroa"],
         "dice":["dados"],

@@ -299,6 +299,18 @@
             "EMBED 2": "\n**Títulos alternativos:**\n",
             "EMBED 3": "\n**Popularidade:**",
             "EMBED 4": "\n**Na lista de:**"
+        },
+        "MORSE": {
+            "INVALIDS": "Caracteres que não puderam ser traduzidos: ",
+            "DESC 1": "Texto original:",
+            "DESC 2": "Texto convertido:",
+            "NAME":"Haru - Conversor de Código Morse", 
+            "FOOTER":"Dúvidas? Use /help or h!help"
+        },
+        "FLIPMSG": {
+            "DESC": "O texto invertido:",
+            "NAME":"Haru - Invertendo Textos", 
+            "FOOTER":"Dúvidas? Use /help or h!help"
         }
     },
     "HELP":{
@@ -521,7 +533,11 @@
                 "HOW VALUE":"```/mal mangalist <nome do usuário> [status] [sortedby]```",
                 "EXEMPLE VALUE":"`/mal mangalist Nome123` `/mal mangalist Nome123 completed` `/mal mangalist Nome123 all score`"
             },
-            "morse":[],
+            "morse": {
+                "DESCRIPTION":"Use esse comando para:\n**1°** - Converter um texto para código morse\n**2°** - Traduzir um código morse para letras do alfabeto\n\n**Nota:** para usar a 2° funcionalidade, é preciso usar o parâmetro `inverter` como `True`, caso queira usar a 1°, use esse mesmo parâmetro como `False`.\n\n**Nota:** O bot só consegue traduzir códigos escritos com . e -\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "HOW VALUE":"```/morse <traduzir> <texto>```",
+                "EXEMPLE VALUE":"`/morse False Olá` `/morse True --- .-.. .- `"
+            },
             "flipmsg":["inverter"],
             "choose":["escolha"],
             "coinflip":["caracoroa"],
@@ -659,6 +675,11 @@
             "TYPE": "Parâmetro Incorreto",
             "REASON": null, 
             "TIP": null
+        },
+        "BadBoolArgument": {
+            "TYPE": "Parâmetro Incorreto",
+            "REASON": "Neste comando, há um ou mais parâmetros que só podem ser respondidos com True ou False.", 
+            "TIP":  "Use /help command <comando> para saber quais parâmetros."
         }
     },
     "PERMISSIONS": {

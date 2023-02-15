@@ -44,6 +44,9 @@ class Mal(commands.Cog):
 
     @mal.command()
     @app_commands.describe(username='Must be exactly the same as the username on the website')
+    @commands.check(configs.Authentication.member)
+    @commands.check(configs.check_islocked)
+    @commands.check(configs.check_guild)
     async def user(self, ctx, username: str):
         '''Serach for someone's profile on MyAnimeList'''
         await mal_user.Cmd.user(self, ctx, username)
@@ -51,6 +54,9 @@ class Mal(commands.Cog):
 
     @mal.command()
     @app_commands.describe(anime='Must be exactly the same as the username on the website')
+    @commands.check(configs.Authentication.member)
+    @commands.check(configs.check_islocked)
+    @commands.check(configs.check_guild)
     async def anime(self, ctx, anime: str):
         '''Serach for any anime on MyAnimeList'''
         await mal_anime.Cmd.anime(self, ctx, anime)
@@ -58,6 +64,9 @@ class Mal(commands.Cog):
 
     @mal.command()
     @app_commands.describe(manga='Must be exactly the same as the username on the website')
+    @commands.check(configs.Authentication.member)
+    @commands.check(configs.check_islocked)
+    @commands.check(configs.check_guild)
     async def manga(self, ctx, manga: str):
         '''Serach for any manga on MyAnimeList'''
         await mal_manga.Cmd.manga(self, ctx, manga)
@@ -68,6 +77,9 @@ class Mal(commands.Cog):
         username='Must be exactly the same as the username on the website', 
         status='Search for animes with only one status type', 
         sortedby='How the list will be sorted')
+    @commands.check(configs.Authentication.member)
+    @commands.check(configs.check_islocked)
+    @commands.check(configs.check_guild)
     async def animelist(self, ctx, username: str, status: str = 'all', sortedby: str = 'score'):
         '''Search for someone's anime list on MyAnimeList'''
         await mal_animelist.Cmd.animelist(self, ctx, username, status, sortedby)
@@ -96,6 +108,9 @@ class Mal(commands.Cog):
         username='Must be exactly the same as the username on the website', 
         status='Search for mangas with only one status type', 
         sortedby='How the list will be sorted')
+    @commands.check(configs.Authentication.member)
+    @commands.check(configs.check_islocked)
+    @commands.check(configs.check_guild)
     async def mangalist(self, ctx, username: str, status: str = 'all', sortedby: str = 'score'):
         '''Search for someone's manga list on MyAnimeList'''
         await mal_mangalist.Cmd.mangalist(self, ctx, username, status, sortedby)
