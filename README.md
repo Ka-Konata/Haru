@@ -180,7 +180,7 @@ mal mangalist | member | Search for someone's manga list on MyAnimeList | ✔️
 name | permission | explanation | stage
 :--- | :--------- | :---------- | :---:
 morse | member | Convert a text to morse code or translate from morse code | ✔️
-flipmsg | member | inverte a ordem das letras de um texto ou frase | ✔️
+flipmsg | member | Reverses the position of letters in a text | ✔️
 choose | member | escolhe algo de uma lista de coisas | ❌
 coinflip | member | gira uma moeda (cara ou coroa) | ❌
 dice | member | joga um dado de 6 lados | ❌

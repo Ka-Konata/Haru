@@ -43,7 +43,7 @@
     "fun":{
         "morse":["morseconverter", "morse_converter", "tomorse", "to_morse"],
         "flipmsg":["inverter", "flip", "fliptext"],
-        "choose":["escolha"],
+        "choose":["escolher", "sortear"],
         "coinflip":["caracoroa"],
         "dice":["dados"],
         "ship":[],
