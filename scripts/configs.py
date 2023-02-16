@@ -66,7 +66,7 @@ LOGGER = {
 if not os.path.exists('logs'):
     os.mkdir('logs')
     print('DIRECTORY "LOGS" CREATED')
-dictConfig(LOGGER)
+dictConfig(LOGGER)  
 
 
 def json_open(path):

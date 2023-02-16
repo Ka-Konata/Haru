@@ -76,7 +76,6 @@ async def on_command_error(ctx, error):
     embed = None
     for err in errors.global_errors:
         if isinstance(error, err):
-            print(error.__class__, err)
             type   = lang['ERROR'][name]['TYPE']
             reason = lang['ERROR'][name]['REASON'] if rea_arg == '' else lang['ERROR'][name]['REASON']+rea_arg
             tip    = lang['ERROR'][name]['TIP'] if tip_arg == '' else lang['ERROR'][name]['TIP']+tip_arg
@@ -85,13 +84,14 @@ async def on_command_error(ctx, error):
     if embed == None:
         if settings['errors-mode']:
             embed = errors.get_error_embed(lang, error, unknown=True)
+            logger.error(f'{error}')
+            await ctx.reply(embed=embed, mention_author=False)
+            raise error
         else:
             embed = errors.get_error_embed(lang, lang['ERROR']['UnknownError']['TYPE'])
-        logger.error(f'{error}')
+            logger.error(f'{error}')
 
-    print(error)
     await ctx.reply(embed=embed, mention_author=False)
-    raise error
 
 
 bot.run(TOKEN)

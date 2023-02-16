@@ -46,7 +46,6 @@ class Choose(commands.Cog):
         if ctx.interaction == None:
             print(ctx.message.content)
             msg = ctx.message.content.split('$')
-            print(msg, '\n')
             msg[0] = msg[0].split(' ', 1)[1]
             options = msg
 

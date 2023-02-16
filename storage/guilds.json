@@ -3,7 +3,6 @@
         "prefix": "h!",
         "language": "pt-br",
         "lockedcommands": [
-            "ship",
             "choose"
         ]
     },

@@ -549,9 +549,9 @@
                 "EXEMPLE VALUE":"`/flipmsg Hello World!`"
             },
             "choose": {
-                "DESCRIPTION":"Caso esteja com dificuldade em fazer alguma escolha, use esse comando! Eu terei o trabalho de fazer essa escolha aleatóriamente.\n\n**Nota:** caso for usar esse comando no modo **comando de texto**, note que você deverá separar as opções por `h!`, por exemplo: `h!choice option1 h! option2 h! option3`.\n\n**Nota:** no modo de **comando de texto**, não há limite na quantidade de opções, diferentemente do modo **comando slash**, que tem um limite de 20 opções.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "DESCRIPTION":"Caso esteja com dificuldade em fazer alguma escolha, use esse comando! Eu terei o trabalho de fazer essa escolha aleatóriamente.\n\n**Nota:** caso for usar esse comando no modo **comando de texto**, note que você deverá separar as opções por `$`, por exemplo: `h!choice option1 h! option2 $ option3`.\n\n**Nota:** no modo de **comando de texto**, não há limite na quantidade de opções, diferentemente do modo **comando slash**, que tem um limite de 20 opções.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
                 "HOW VALUE":"```/choice <opção1> <opção2> [+18 opções...]```",
-                "EXEMPLE VALUE":"`/choice opção1 opção2` `h!choice opção1 h! opção2`"
+                "EXEMPLE VALUE":"`/choice opção1 opção2` `h!choice opção1 $ opção2`"
             },
             "coinflip":["caracoroa"],
             "jankenpon":[],
