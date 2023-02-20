@@ -181,8 +181,8 @@ name | permission | explanation | stage
 :--- | :--------- | :---------- | :---:
 morse | member | Convert a text to morse code or translate from morse code | ✔️
 flipmsg | member | Reverses the position of letters in a text | ✔️
-choose | member | escolhe algo de uma lista de coisas | ❌
-coinflip | member | gira uma moeda (cara ou coroa) | ❌
+choose | member | Make me pick something for you | ✔️
+coinflip | member | I toss a coin and tell you the result | ✔️
 dice | member | joga um dado de 6 lados | ❌
 ship | member | shipa dois usuários, em até 100% | ❌
 mugistrong | member | envia um gif da Mugi-Strong | ❌

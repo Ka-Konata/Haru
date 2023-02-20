@@ -44,7 +44,7 @@
         "morse":["morseconverter", "morse_converter", "tomorse", "to_morse"],
         "flipmsg":["inverter", "flip", "fliptext"],
         "choose":["escolher", "sortear"],
-        "coinflip":["caracoroa"],
+        "coinflip":["flipcoin", "tosscoin"],
         "dice":["dados"],
         "ship":[],
         "mugistrong":[],

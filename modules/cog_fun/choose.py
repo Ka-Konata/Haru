@@ -39,12 +39,11 @@ class Choose(commands.Cog):
     @commands.check(configs.check_islocked)
     @commands.check(configs.check_guild)
     async def choose(self, ctx, choice1, choice2, choice3 = None, choice4 = None, choice5 = None, choice6 = None, choice7 = None, choice8 = None, choice9 = None, choice10 = None, choice11 = None, choice12 = None, choice13 = None, choice14 = None, choice15 = None, choice16 = None, choice17 = None, choice18 = None, choice19 = None, choice20 = None):
-        '''Description'''
+        '''Make me choose something for you'''
         settings = configs.get_configs()
         lang = configs.lang[configs.get_guild(ctx.guild.id)['language']]
 
         if ctx.interaction == None:
-            print(ctx.message.content)
             msg = ctx.message.content.split('$')
             msg[0] = msg[0].split(' ', 1)[1]
             options = msg

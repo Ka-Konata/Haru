@@ -316,6 +316,15 @@
             "DESC": "Minha escolha foi:",
             "NAME":"Haru - Escolha Aleatória", 
             "FOOTER":"Dúvidas? Use /help or h!help"
+        },
+        "COINFLIP": {
+            "CHOICES": ["cara", "coroa"],
+            "CHOSED": "Seu chute foi: **",
+            "RESULT": "e o resultado foi: **",
+            "WIN": "**:white_check_mark: Você venceu!**",
+            "LOSE": "**:x: Você perdeu...**",
+            "NAME":"Haru - Cara ou Coroa", 
+            "FOOTER":"Dúvidas? Use /help or h!help"
         }
     },
     "HELP":{
@@ -553,7 +562,11 @@
                 "HOW VALUE":"```/choice <opção1> <opção2> [+18 opções...]```",
                 "EXEMPLE VALUE":"`/choice opção1 opção2` `h!choice opção1 $ opção2`"
             },
-            "coinflip":["caracoroa"],
+            "coinflip": {
+                "DESCRIPTION":"Vamos jogar cara ou coroa! Escolha entre cara ou coroa e veremos quem ganha.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "HOW VALUE":"```/coinflip <cara ou coroa>```",
+                "EXEMPLE VALUE":"`/coinflip cara` `/coinflip coroa`"
+            },
             "jankenpon":[],
             "dice":["dados"],
             "ship":[],
