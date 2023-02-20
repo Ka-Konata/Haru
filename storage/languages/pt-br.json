@@ -325,6 +325,11 @@
             "LOSE": "**:x: Você perdeu...**",
             "NAME":"Haru - Cara ou Coroa", 
             "FOOTER":"Dúvidas? Use /help or h!help"
+        },
+        "DICE": {
+            "TITLE": "O resultado foi:",
+            "NAME":"Haru - Dados", 
+            "FOOTER":"Dúvidas? Use /help or h!help"
         }
     },
     "HELP":{
@@ -567,8 +572,12 @@
                 "HOW VALUE":"```/coinflip <cara ou coroa>```",
                 "EXEMPLE VALUE":"`/coinflip cara` `/coinflip coroa`"
             },
+            "dice": {
+                "DESCRIPTION":"Vou jogar um dado de 6 lados pra você.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "HOW VALUE":"```/dice```",
+                "EXEMPLE VALUE":"`/dice`"
+            },
             "jankenpon":[],
-            "dice":["dados"],
             "ship":[],
             "say": {
                 "DESCRIPTION":"Finja que me controla e me faça falar alguma coisa.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",

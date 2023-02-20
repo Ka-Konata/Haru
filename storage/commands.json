@@ -45,7 +45,7 @@
         "flipmsg":["inverter", "flip", "fliptext"],
         "choose":["escolher", "sortear"],
         "coinflip":["flipcoin", "tosscoin"],
-        "dice":["dados"],
+        "dice":["die", "rolladie", "d6"],
         "ship":[],
         "mugistrong":[],
         "say":["falar"],
