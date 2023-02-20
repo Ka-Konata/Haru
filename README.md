@@ -1,10 +1,9 @@
-
-<!--<div align="center">
+<div align="center">
     <div>
         <img src="https://media.discordapp.net/attachments/810690029847969833/1053831385963561043/ayumudestacada.png?width=760&height=480">
     </div>
     <h1>Haru (Rework) - Overview</h1>
-    <h2>Configuration, Utilities, Minigames and more...</h2>
+    <h2>Minigames, utilities, fun and more...</h2>
     <div>
         <a href="https://discord.com/invite/ZZHRtsJTCS", target="_blank">
             <img src="https://img.shields.io/discord/788518735752724480?color=light%20green&label=support%20server&logo=discord&logoColor=discord" alt="Support Server">
@@ -39,91 +38,85 @@
         </p>
     </div>
 </div>
--->
+
 
 # Documentação
 ## Descrição
-Este é um Rework da Haru (Haru v3). Um simples bot para o discord, com algumas funcionalidades básicas.<br/>
+This is a rework of Haru (Haru v3). A simple bot for discord, with minigames and some utilities.<br/>
 
-* Funciona apenas em servidores, bloqueia o uso em dms.
+* Only works in guilds. all commands except help cannot be used in dms.
 * Modo de Desenvolvimento: funciona apenas nos servidores pré-definidos
 
-> Atualmente na versão alpha 3.0.0.5
+> Actual version: alpha 3.0.0
 
 ---
 
-## Clonando o Repositório
-Algumas coisas precisam ser feitas para instalar o projeto e colocá-lo para funcionar
+## Cloning the Repository
+Before copying the repository and starting the bot, a few things need to be done.<br/>
+1. Clone the repository
+2. Install the dependences using `pip install -r requirements.txt`
+3. Install MAL-Easy-Client by following these steps: [Mal-easy-client README](https://github.com/Ka-Konata/MAL-easy-client#mal-easy-client)
+4. Create your bot in the [developer portal](https://discord.com/developers/applications) and paste your token at `.env` file (included in the repository).
+5. Start the bot with `python main.py`
 
-1. Clone o repositório
-2. Abra um terminal e navegue até a pasta principal do projeto
-3. Instale as depêndencias usando `pip install -r requirements.txt`
-4. Vá no [developer portal](https://discord.com/developers/applications) do discord, crie uma aplicação e copie o token
-5. Na pasta principal do projeto, crie um arquivo .env e salve o token do bot como uma variável de ambiente
-4. Inicie o programa usando `python main.py`
-5. No terminal, insira o ID do seu servidor de testes
-6. No terminal, Insira o ID do seu usuário no discord
+If you want to disable **Developer Mode** or **Debug Mode**, just log into your developer server and use the following commands: `h!oc_devmode off` and `h!oc_errorsmode off`.
 
-Caso queira desativar o Modo de Desenvolvimento ou o Modo de Debug de Erros, apenas entre no seu servidor de testes e execute o comando equivalente: `h!oc_devmode off` e/ou `h!oc_errorsmode off`
+## Permission Levels
 
-## Níveis de permissão
+* **Developer**
+> Selected people
 
-* Developer
-> Lista fechada
+* **Manager**
+> Selected people
 
-* Manager
-> Lista fechada
+* **Owner**
+> Server owner
 
-* Owner
-> Posse do servidor
+* **Administrator**
+> Admin permission
 
-* Administrator
-> Permissão de administrador
+* **Moderator**
+> Permission to ban members
 
-* Moderator
-> Permissão para banir membros
+* **Member**
+> None (default level)
 
-* Member
-> Nenhum Requisito
-
-## Idiomas
+## Languages
 
 name | code | satage
 :--- | :--- | :-----
-Português | pt-br | ✔️
+Portuguese | pt-br | ✔️
 Inglês | en | ❌
 
-## Módulos
+## Modules
 
-> Limite de 100 Comandos (com 25 subcomandos cada)
->
-> Usado: 44/100 
+> Total Commands: 44/100 
 
 ### Dev Module
 
-> Modulo oculto
+> Hidden module
 
 name | permission | explanation | stage
 :--- | :--------- | :---------- | :----
-oc_status | manager | Envia um hello world, e os status do bot | ✔️
-oc_quit | developer | Força a parar o bot | ✔️
-oc_setsv | manager | Libera o uso do bot no servidor atual| ✔️
-oc_unsetsv | manager | Bloqueia o uso do bot no servidor atual | ✔️
-oc_listsv | manager | Lista todos os servidores liberados | ✔️
-oc_pmtmanager | developer | Adiciona um usuário na lista de managers | ✔️
-oc_dmtmanager | developer | Remove um usuário da lista de managers | ✔️
-oc_listmanager | manager | Lista todos os usuários com permissão de manager | ✔️
-oc_pmtdeveloper | developer | Adiciona um usuário na lista de developers | ✔️
-oc_dmtdeveloper | developer | Remove um usuário da lista de developers | ✔️
-oc_listdeveloper | manager | Lista todos os usuários com permissão de developer | ✔️
-oc_disablecommand | developer | Desabilita o uso de algum comando em todos os servidores | ✔️
-oc_enablecommand | developer | Habilita o uso de algum comando em todos os servidores | ✔️
-oc_disablemodule | developer | Desabilita o uso de algum módulo em todos os servidores | ✔️
-oc_enablemodule | developer | Habilita o uso de algum módulo em todos os servidores | ✔️
-oc_disabledcommands | manager | Informa todos os comandos desabilitados globalmente | ✔️
-oc_devmode | developer | Ativa ou desativa o modo de desenvolvimento | ✔️
-oc_errorsmode | developer | Ativa ou desativa o modo de debug de erros desconhecidos | ✔️
-oc_botsettings | manager | lista todas as configurações do bot | ✔️
+oc_status | manager | Sends a hello world, and the status of the bot | ✔️
+oc_quit | developer | Force stop the bot | ✔️
+oc_setsv | manager | Allows use of the bot on the current server| ✔️
+oc_unsetsv | manager | Blocks the use of the bot on the current server | ✔️
+oc_listsv | manager | List all allowed servers | ✔️
+oc_pmtmanager | developer | Adds a user to the manager list | ✔️
+oc_dmtmanager | developer | Removes a user to the manager list
+oc_listmanager | manager | Lists all users with manager permission | ✔️
+oc_pmtdeveloper | developer | Adds a user to the developer list | ✔️
+oc_dmtdeveloper | developer | Removes a user to the developer list | ✔️
+oc_listdeveloper | manager | Lists all users with developer permission | ✔️
+oc_disablecommand | developer | Disables the use of any command on all servers | ✔️
+oc_enablecommand | developer | Enables the use of any command on all servers | ✔️
+oc_disablemodule | developer | Disables the use of any module on all servers | ✔️
+oc_enablemodule | developer | Enables the use of any module on all servers | ✔️
+oc_disabledcommands | manager | Says which are all globally disabled commands | ✔️
+oc_devmode | developer | Enable or disable development mode | ✔️
+oc_errorsmode | developer | Enable or disable debug mode for unknown errors| ✔️
+oc_botsettings | manager | Says what all the bot settings are | ✔️
 
 ### Bot Module
 
@@ -232,7 +225,7 @@ slap | member | da um tapa em algum outro usuário | ❌
 hug | member | abraça algum outro usuário | ❌
 shoot | member | ataca algum outro usuário | ❌
  
-## Ideias: 
+## Ideas: 
 
 - [ ] Implementar os comandos via dm
 - [x] Sistema de Enocomia nos minigames
@@ -243,9 +236,10 @@ shoot | member | ataca algum outro usuário | ❌
 - [x] Jogo de roleta russa
 - [x] Jogo de adivinhar a linguagem de programação
 - [ ] Jogo de labirinto
+
 ## Site
 
-### Estrutura
+### Structure
 ~~~
 konata.site
     haru
