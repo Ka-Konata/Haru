@@ -1,6 +1,6 @@
 import discord
 from scripts import configs, colors
-from modules.cog_utility.ui_mal import mal_results_view
+from modules.cog_utility.ui import mal_results_view
 
 
 class Cmd:

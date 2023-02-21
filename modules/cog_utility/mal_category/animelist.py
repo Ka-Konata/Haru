@@ -1,5 +1,5 @@
 from discord.ext import commands
-from modules.cog_utility.ui_mal import mal_pagination_view
+from modules.cog_utility.ui import mal_pagination_view
 from math import ceil
 
 

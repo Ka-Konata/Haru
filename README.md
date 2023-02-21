@@ -176,7 +176,7 @@ morse | member | Convert a text to morse code or translate from morse code | ✔
 flipmsg | member | Reverses the position of letters in a text | ✔️
 choose | member | Make me pick something for you | ✔️
 coinflip | member | I toss a coin and tell you the result | ✔️
-dice | member | Roll a D6 die | ❌
+dice | member | Roll a D6 die | ✔️
 ship | member | shipa dois usuários, em até 100% | ❌
 mugistrong | member | envia um gif da Mugi-Strong | ❌
 say | member | faça a haru dizer alguma coisa | ❌

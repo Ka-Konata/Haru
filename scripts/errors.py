@@ -1,4 +1,4 @@
-import discord
+import discord, requests
 from discord.ext import commands
 from scripts import colors, configs
 
@@ -31,7 +31,7 @@ class StartBiggerThanEnd(commands.CommandError):
 
 
 local_errors = [DevModeUnknown, PrefixVeryBig, LanguageDontExists, CurrencyApiError, StartBiggerThanEnd]
-global_errors = [commands.errors.BadBoolArgument, commands.errors.CommandNotFound, commands.errors.MemberNotFound, commands.errors.UserNotFound, commands.errors.RoleNotFound, commands.errors.ChannelNotFound, commands.errors.GuildNotFound, commands.errors.MissingRequiredArgument, GuildNotAllowed, AuthenticationFailure, CommandLocked, CommandDontExists, ModuleDontExists, CannotBeLocked, CommandDisabled, ModuleNotFound, commands.errors.BadArgument]
+global_errors = [commands.errors.BadBoolArgument, commands.errors.CommandNotFound, commands.errors.MemberNotFound, commands.errors.UserNotFound, commands.errors.RoleNotFound, commands.errors.ChannelNotFound, commands.errors.GuildNotFound, commands.errors.MissingRequiredArgument, GuildNotAllowed, AuthenticationFailure, CommandLocked, CommandDontExists, ModuleDontExists, CannotBeLocked, CommandDisabled, ModuleNotFound, commands.errors.BadArgument, requests.exceptions.HTTPError]
 
 def get_error_embed(lang, type, reason = None, tip = None, unknown=False):
     settings = configs.get_configs()

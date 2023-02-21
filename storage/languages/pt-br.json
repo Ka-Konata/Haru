@@ -715,6 +715,10 @@
             "TYPE": "Parâmetro Incorreto",
             "REASON": "Neste comando, há um ou mais parâmetros que só podem ser respondidos com True ou False.", 
             "TIP":  "Use /help command <comando> para saber quais parâmetros."
+        },
+        "HTTPError": {
+            "TYPE": "Erro com a API",
+            "REASON": "Ocorreu algum erro com a API que este comando utiliza, tente novamente mais tarde."
         }
     },
     "PERMISSIONS": {

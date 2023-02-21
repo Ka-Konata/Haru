@@ -3,12 +3,12 @@ from discord import app_commands
 from discord.ext import commands
 from scripts import configs
 from decouple import config as getenv
-from modules.cog_utility.ui_mal import mal_pagination_view
-from modules.cog_utility.category_mal import user as mal_user
-from modules.cog_utility.category_mal import anime as mal_anime
-from modules.cog_utility.category_mal import manga as mal_manga
-from modules.cog_utility.category_mal import animelist as mal_animelist
-from modules.cog_utility.category_mal import mangalist as mal_mangalist
+from modules.cog_utility.ui import mal_pagination_view
+from modules.cog_utility.mal_category import user as mal_user
+from modules.cog_utility.mal_category import anime as mal_anime
+from modules.cog_utility.mal_category import manga as mal_manga
+from modules.cog_utility.mal_category import animelist as mal_animelist
+from modules.cog_utility.mal_category import mangalist as mal_mangalist
 from math import ceil
 
 

@@ -1,6 +1,7 @@
 import discord, asyncio
 from scripts import configs, colors
-from modules.cog_utility.ui_mal import mal_profile_view
+from modules.cog_utility.ui import mal_profile_view
+from requests.exceptions import HTTPError
 
 
 class Cmd:
@@ -13,17 +14,13 @@ class Cmd:
         embed_1.set_author(name=lang['COMMAND']['MAL USER']['NAME'], icon_url=settings['bot-icon'])
         embed_1.set_footer(text=lang['COMMAND']['MAL USER']['FOOTER'])
 
-        try:
-            profile = await asyncio.wait_for(parent.mal_client.get.user(username), timeout=0.1)
-        except asyncio.TimeoutError:
-            embed_1.description = lang['COMMAND']['MAL USER']['TIMEOUT']
-            await ctx.reply(embed=embed_1, mention_author=False)
+        profile = await asyncio.wait_for(parent.mal_client.get.user(username), timeout=0.1)
 
         if profile != None:
 
             link   = profile.url
-            online = profile.last_online.strftime('%d/%m/%Y') if profile.last_online != None else 'N/A'
-            joined = profile.joined.strftime('%d/%m/%Y') if profile.joined != None else 'N/A'
+            online = profile.last_online.replace('-', '/') if profile.last_online != None else 'N/A'
+            joined = profile.joined.replace('-', '/') if profile.joined != None else 'N/A'
 
             anime_stat  = lang['COMMAND']['MAL USER']['ANIME STAT']['days_watched']+str(profile.statistics.animes.days_watched)+'`\n'
             anime_stat += lang['COMMAND']['MAL USER']['ANIME STAT']['mean_score']+str(profile.statistics.animes.mean_score)+'`\n\n'
@@ -71,19 +68,19 @@ class Cmd:
             c = 1
             fav_mangas = ''
             for manga in profile.favorites.mangas:
-                fav_mangas += f'**{c}.** [{manga.title}](https://myanimelist.net/anime/{manga.id}/)\n'
+                fav_mangas += f'**{c}.** [{manga.title}](https://myanimelist.net/manga/{manga.id}/)\n'
                 c += 1
 
             c = 1
             fav_peoples = ''
             for people in profile.favorites.peoples:
-                fav_peoples += f'**{c}.** [{people.name}](https://myanimelist.net/anime/{people.id}/)\n'
+                fav_peoples += f'**{c}.** [{people.name}](https://myanimelist.net/people/{people.id}/)\n'
                 c += 1
                 
             c = 1
             fav_characters = ''
             for character in profile.favorites.characters:
-                fav_characters += f'**{c}.** [{character.name}](https://myanimelist.net/anime/{character.id}/)\n'
+                fav_characters += f'**{c}.** [{character.name}](https://myanimelist.net/character/{character.id}/)\n'
                 c += 1
 
             embed_2.add_field(name=lang['COMMAND']['MAL USER']['ANIME FAVS'], value=fav_animes, inline=False)
