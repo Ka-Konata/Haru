@@ -75,7 +75,6 @@ async def on_command_error(ctx, error):
 
     embed = None
     for err in errors.global_errors:
-        print(error, err)
         if isinstance(error, err):
             type   = lang['ERROR'][name]['TYPE']
             reason = lang['ERROR'][name]['REASON'] if rea_arg == '' else lang['ERROR'][name]['REASON']+rea_arg

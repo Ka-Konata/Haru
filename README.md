@@ -179,7 +179,7 @@ coinflip | member | I toss a coin and tell you the result | ✔️
 dice | member | Roll a D6 die | ✔️
 ship | member | shipa dois usuários, em até 100% | ❌
 mugistrong | member | envia um gif da Mugi-Strong | ❌
-say | member | faça a haru dizer alguma coisa | ❌
+say | member | faça a haru dizer alguma coisa | ✔️
 dm | member | faça a haru enviar uma dm para alguém | ❌
 profile | member | mostra o perfil do usuário
 marry | member | peça alguém em casamento | ❌
