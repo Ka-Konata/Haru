@@ -26,22 +26,22 @@
             <img src="https://img.shields.io/badge/-some%20AI%20implementation-gray">
         </p>
         <p>
-            <a href="#descrição">Description</a>
+            <a href="#description">Description</a>
             •
-            <a href="#clonando-o-repositório">Fork</a>
+            <a href="#permission-levels">Perms System</a>
             •
-            <a href="#níveis-de-permissão">Perms System</a>
+            <a href="#languages">Languages</a>
             •
-            <a href="#idiomas">Languages</a>
+            <a href="#modules">Modules</a>
             •
-            <a href="#módulos">Modules</a>
+            <a href="#cloning-the-repository">Fork</a>
         </p>
     </div>
 </div>
 
 
 # Documentação
-## Descrição
+## Description
 This is a rework of Haru (Haru v3). A simple bot for discord, with minigames and some utilities.<br/>
 
 * Only works in guilds. all commands except help cannot be used in dms.
@@ -50,16 +50,6 @@ This is a rework of Haru (Haru v3). A simple bot for discord, with minigames and
 > Actual version: alpha 3.0.0
 
 ---
-
-## Cloning the Repository
-Before copying the repository and starting the bot, a few things need to be done.<br/>
-1. Clone the repository
-2. Install the dependences using `pip install -r requirements.txt`
-3. Install MAL-Easy-Client by following these steps: [Mal-easy-client README](https://github.com/Ka-Konata/MAL-easy-client#mal-easy-client)
-4. Create your bot in the [developer portal](https://discord.com/developers/applications) and paste your token at `.env` file (included in the repository).
-5. Start the bot with `python main.py`
-
-If you want to disable **Developer Mode** or **Debug Mode**, just log into your developer server and use the following commands: `h!oc_devmode off` and `h!oc_errorsmode off`.
 
 ## Permission Levels
 
@@ -179,8 +169,8 @@ coinflip | member | I toss a coin and tell you the result | ✔️
 dice | member | Roll a D6 die | ✔️
 ship | member | shipa dois usuários, em até 100% | ❌
 mugistrong | member | envia um gif da Mugi-Strong | ❌
-say | member | faça a haru dizer alguma coisa | ✔️
-dm | member | faça a haru enviar uma dm para alguém | ❌
+say | member | Make me say something | ✔️
+dm | member | Make me dm someone | ✔️
 profile | member | mostra o perfil do usuário
 marry | member | peça alguém em casamento | ❌
 divorce | member | se divorcia de alguém | ❌
@@ -258,3 +248,17 @@ konata.site
             politica-de-privacidade
             termos-de-servico
 ~~~
+
+---
+
+## Cloning the Repository
+Before copying the repository and starting the bot, a few things need to be done.<br/>
+1. Clone the repository
+2. Install the dependences using `pip install -r requirements.txt`
+3. Install MAL-Easy-Client by following these steps: [Mal-easy-client README](https://github.com/Ka-Konata/MAL-easy-client#mal-easy-client)
+4. Create your bot in the [developer portal](https://discord.com/developers/applications)
+5. Go to [this blog](https://myanimelist.net/blog.php?eid=835707) and get your **Client ID** and **Client Secret**
+5. Create a `.env` and put the following parameters: `TOKEN`, `CLIENT-ID` and `CLIENT_SECRET`
+6. Start the bot with `python main.py`
+
+If you want to disable **Developer Mode** or **Debug Mode**, just log into your developer server and use the following commands: `h!oc_devmode off` and `h!oc_errorsmode off`.

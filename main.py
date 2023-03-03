@@ -27,6 +27,7 @@ bot     = commands.Bot(command_prefix=settings['default-prefix'], intents=intent
 @bot.event
 async def on_ready():
     settings['started-at'] = datetime.datetime.now().strftime('%d/%m/%Y %H:%M:%S')
+    settings['bot-id']     = bot.user.id
     configs.save(settings)   
 
     #print(f'{bot.user} foi conectada ao discord.')
@@ -46,6 +47,8 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
+    if message.author.id == settings["bot-id"]:
+        return None
     guild = configs.get_guild(message.guild.id)
     guild_prefix = guild['prefix']
 

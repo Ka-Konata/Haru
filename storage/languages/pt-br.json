@@ -599,7 +599,7 @@
         }
     },
     "ERROR":{
-        "AUTHOR":"Haru - Erro Detectado",
+        "AUTHOR":"Haru - Um erro ocorreu",
         "AUTHOR UNKNOWN":"Haru - Erro (Desconhecido) Detectado",
         "TYPE":"Tipo:",
         "REASON":"Motivo:",
@@ -718,7 +718,13 @@
         },
         "HTTPError": {
             "TYPE": "Erro com a API",
-            "REASON": "Ocorreu algum erro com a API que este comando utiliza, tente novamente mais tarde."
+            "REASON": "Ocorreu algum erro com a API que este comando utiliza, tente novamente mais tarde.", 
+            "TIP": null
+        },
+        "HybridCommandError": {
+            "TYPE": "Não posso enviar mensagens diretas para este usuário.",
+            "REASON": null, 
+            "TIP": null
         }
     },
     "PERMISSIONS": {

@@ -49,7 +49,7 @@
         "ship":[],
         "mugistrong":[],
         "say":["falar"],
-        "dm":[]
+        "dm":["send", "send_dm"]
     }, 
     "minigame": {
         "jankenpon":[],

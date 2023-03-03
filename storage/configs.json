@@ -1,6 +1,7 @@
 {
     "development-mode": false,
     "errors-mode": true,
+    "bot-id": 808100198899384352,
     "bot-name": "Haru",
     "bot-icon": "https://media.discordapp.net/attachments/810690029847969833/1048420745937690674/608af0c5be01cd73faba6b46f4a7d1ab.png",
     "app-icon": "https://media.discordapp.net/attachments/810690029847969833/1048793278054678599/imagem_2022-12-02_211102899.jpg",
@@ -14,7 +15,7 @@
         "pt-br",
         "en"
     ],
-    "started-at": "23/02/2023 23:09:16",
+    "started-at": "03/03/2023 17:34:30",
     "server-list": [
         788518735752724480,
         1057766123271114833,
@@ -29,6 +30,7 @@
         596737589231222804
     ],
     "disabled-commands": [
-        "say"
+        "say",
+        "dm"
     ]
 }
