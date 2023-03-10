@@ -2,7 +2,7 @@
     "COMMAND": {
         "HARU": {
             "TITLE":"Sobre o bot",
-            "DESCRIPTION":"Este é um Rework da Haru. Um simples bot para o discord, com algumas funcionalidades básicas.\n\n<:r_Happyzin:829906563656712222>  [Adicione a Haru no seu servicor clicando aqui!](",
+            "DESCRIPTION":"Este é um Rework da Haru. Um bot de minigames para o discord, com várias outras funcionalides úteis e divertidas.\n\n<:r_Happyzin:829906563656712222>  [Adicione a Haru no seu servicor clicando aqui!](",
             "NAME":"Haru - Sobre o Bot",
             "COMMANDS": {
                 "NAME":"Conheça alguns comandos básicos da Haru:",
@@ -376,13 +376,14 @@
     "HELP":{
         "DEFAULT":{
             "TITLE":"Sobre o bot",
-            "DESCRIPTION":"Este é um Rework da Haru. Um simples bot para o discord, com algumas funcionalidades básicas.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse **/help [módulo]** para ler mais sobre um módulo.\nUse **/help [comando]** para ler mais sobre um comando.",
+            "DESCRIPTION":"Este é um **Rework da Haru (v3)**. Um bot de minigames para o discord, com várias outras funcionalides úteis e divertidas.\n\nNo momento, em fase de desenvolvimento **(ALPHA 0.1)**, portanto boa parte dos comandos ainda não funcionam. Use `/github` para conferir as futuras novidades da Haru!\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\nUse `/help module [módulo]` para ler mais sobre um módulo.\nUse `/help command [comando]` para ler mais sobre um comando.",
             "NAME":"Haru - Sistema de Ajuda",
             "MODULE": {
                 "BOT":"**Módulo: Bot**", 
                 "CONFIGURATION":"**Módulo: Configuration**", 
                 "UTILITY":"**Módulo: Utility**", 
                 "FUN":"**Módulo: Fun**", 
+                "MINIGAME": "**Módulo: Minigame**",
                 "INTERACTION":"**Módulo: Interaction**"
             },
             "FOOTER":"Ainda precisa de ajuda? Use /server ou h!server para entrar no servidor de suporte da Haru"
@@ -618,14 +619,16 @@
                 "HOW VALUE":"```/dice```",
                 "EXEMPLE VALUE":"`/dice`"
             },
-            "jankenpon":[],
-            "ship":[],
+            "mugistrong": {
+                "DESCRIPTION":"Vou enviar um gif da Mugistrong para que todos possam apreciar!\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "HOW VALUE":"```/mugistrong```",
+                "EXEMPLE VALUE":"`/mugistrong`"
+            },
             "say": {
                 "DESCRIPTION":"Finja que me controla e me faça falar alguma coisa.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
                 "HOW VALUE":"```/say <texto>```",
                 "EXEMPLE VALUE":"`/say olá`"
             },
-            "guess":["adivinhe"],
             "kiss": {
                 "DESCRIPTION":"Use para dar um beijo alguém. Eu vou marcar a pessoa e enviar um gif.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
                 "HOW VALUE":"```/kiss <user>```",

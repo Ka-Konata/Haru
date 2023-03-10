@@ -168,10 +168,10 @@ choose | member | Make me pick something for you | ✔️
 coinflip | member | I toss a coin and tell you the result | ✔️
 dice | member | Roll a D6 die | ✔️
 ship | member | shipa dois usuários, em até 100% | ❌
-mugistrong | member | envia um gif da Mugi-Strong | ❌
+mugistrong | member | Send a gif of Mugi-Strong | ✔️
 say | member | Make me say something | ✔️
 dm | member | Make me dm someone | ✔️
-profile | member | mostra o perfil do usuário
+profile | member | mostra o perfil do usuário | ❌
 marry | member | peça alguém em casamento | ❌
 divorce | member | se divorcia de alguém | ❌
 store | member | mostra toda a loja | ❌

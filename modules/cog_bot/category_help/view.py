@@ -26,6 +26,9 @@ class Cmd:
         fun = str(list(modulos['fun'].keys())).replace('[', '').replace(']', '').replace("'", '')
         msg.add_field(name=lang['HELP']['DEFAULT']['MODULE']['FUN'], value=f'```{fun}```', inline=False)
 
+        minigame = str(list(modulos['minigame'].keys())).replace('[', '').replace(']', '').replace("'", '')
+        msg.add_field(name=lang['HELP']['DEFAULT']['MODULE']['MINIGAME'], value=f'```{minigame}```', inline=False)
+
         interaction = str(list(modulos['interaction'].keys())).replace('[', '').replace(']', '').replace("'", '')
         msg.add_field(name=lang['HELP']['DEFAULT']['MODULE']['INTERACTION'], value=f'```{interaction}```', inline=False)
         msg.set_footer(text=lang['HELP']['DEFAULT']['FOOTER'])

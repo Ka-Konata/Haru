@@ -46,14 +46,12 @@
         "choose":["escolher", "sortear"],
         "coinflip":["flipcoin", "tosscoin"],
         "dice":["die", "rolladie", "d6"],
-        "ship":[],
-        "mugistrong":[],
+        "mugistrong":["mugi", "mugi_strong"],
         "say":["falar"],
         "dm":["send", "send_dm"]
     }, 
     "minigame": {
-        "jankenpon":[],
-        "guess":["adivinhe"]
+        "   ":[]
     },
     "interaction":{
         "kiss":["beijar"],
