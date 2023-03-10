@@ -626,12 +626,46 @@
                 "EXEMPLE VALUE":"`/say olá`"
             },
             "guess":["adivinhe"],
-            "kiss":["beijar"],
-            "bite":["morder"],
-            "lick":["lamber"],
-            "slap":["tapear"],
-            "hug":["abracar"],
-            "shoot":["atirar"],
+            "kiss": {
+                "DESCRIPTION":"Use para dar um beijo alguém. Eu vou marcar a pessoa e enviar um gif.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "HOW VALUE":"```/kiss <user>```",
+                "EXEMPLE VALUE":"`/kiss @Haru` `/kiss 808100198899384352`"
+            },
+            "dance": {
+                "DESCRIPTION":"Use para dançar com alguém. Eu vou marcar a pessoa e enviar um gif.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "HOW VALUE":"```/dance <user>```",
+                "EXEMPLE VALUE":"`/dance @Haru` `/dance 808100198899384352`"
+            },
+            "shoot": {
+                "DESCRIPTION":"Use para atirar em alguém (?). Eu vou marcar a pessoa e enviar um gif.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "HOW VALUE":"```/shoot <user>```",
+                "EXEMPLE VALUE":"`/shoot @Haru` `/shoot 808100198899384352`"
+            },
+            "hug": {
+                "DESCRIPTION":"Use para dar um abraço em alguém. Eu vou marcar a pessoa e enviar um gif.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "HOW VALUE":"```/hug <user>```",
+                "EXEMPLE VALUE":"`/hug @Haru` `/hug 808100198899384352`"
+            },
+            "slap": {
+                "DESCRIPTION":"Use para dar um tapa em alguém. Eu vou marcar a pessoa e enviar um gif.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "HOW VALUE":"```/slap <user>```",
+                "EXEMPLE VALUE":"`/slap @Haru` `/slap 808100198899384352`"
+            },
+            "pat": {
+                "DESCRIPTION":"Use para fazer um cafuné em alguém. Eu vou marcar a pessoa e enviar um gif.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "HOW VALUE":"```/pat <user>```",
+                "EXEMPLE VALUE":"`/pat @Haru` `/pat 808100198899384352`"
+            },
+            "lick": {
+                "DESCRIPTION":"Use para dar uma lambidinha em alguém (que estranho né?). Eu vou marcar a pessoa e enviar um gif.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "HOW VALUE":"```/lick <user>```",
+                "EXEMPLE VALUE":"`/lick @Haru` `/lick 808100198899384352`"
+            },
+            "bite": {
+                "DESCRIPTION":"Use para dar uma mordida em alguém. Eu vou marcar a pessoa e enviar um gif.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "HOW VALUE":"```/bite <user>```",
+                "EXEMPLE VALUE":"`/bite @Haru` `/bite 808100198899384352`"
+            },
             "HOW TITLE":"Como Usar",
             "EXEMPLE TITLE":"Exemplos",
             "ALIASES TITLE":"Aliases",
