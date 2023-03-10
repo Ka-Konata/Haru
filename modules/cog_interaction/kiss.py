@@ -1,10 +1,9 @@
-import discord, requests, typing
+import discord
 from discord import app_commands
 from discord.ext import commands
-from scripts import configs, errors, colors
-from decouple import config as getenv
-from datetime import datetime
-from modules.cog_interaction.ui import base_view
+from scripts import configs, colors
+from random import randint
+from modules.cog_interaction.ui import base_view, generate_embed
 
 
 modulos = configs.get_commands()
@@ -23,15 +22,13 @@ class Kiss(commands.Cog):
     async def kiss(self, ctx, user: discord.User):
         '''Makes you kiss someone'''
         settings = configs.get_configs()
-        lang = configs.lang[configs.get_guild(ctx.guild.id)['language']]
+        lang     = configs.lang[configs.get_guild(ctx.guild.id)['language']]
 
-        embed = discord.Embed(title=lang['COMMAND']['DICE']['TITLE'], description=f':game_die: **{"res"}**', color=colors.default)
-        embed.set_author(name=lang['COMMAND']['DICE']['NAME'], icon_url=settings['bot-icon'])
-        embed.set_thumbnail(url=settings['app-icon'])
-        embed.set_footer(text=lang['COMMAND']['DICE']['FOOTER'])
-        await ctx.reply(embed=embed, mention_author=False)
+        gen = generate_embed.generate(type='kiss', lang=lang, settings=settings, user1=ctx.author, user2=user)
+        view = base_view.BaseView(type='kiss', lang=lang, settings=settings, user1=ctx.author, user2=user)
+        message = await ctx.reply(gen['title'], view=view, embed=gen['embed'], mention_author=False) 
+        view.message = message
 
 
 async def setup(bot):
     await bot.add_cog(Kiss(bot))
- 

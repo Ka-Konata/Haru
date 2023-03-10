@@ -330,6 +330,12 @@
             "TITLE": "O resultado foi:",
             "NAME":"Haru - Dados", 
             "FOOTER":"Dúvidas? Use /help or h!help"
+        },
+        "KISS": {
+            "TITLE": " beijou ",
+            "NAME":"Haru - Kiss", 
+            "FOOTER":"Dúvidas? Use /help or h!help",
+            "WRONG": "Isso não foi pra você!"
         }
     },
     "HELP":{
