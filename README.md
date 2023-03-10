@@ -208,12 +208,14 @@ coins rank_global | member | envia o rank global de coins | ❌
 
 name | permission | explanation | stage
 :--- | :--------- | :---------- | :---:
-kiss | member | beija algum outro usuário | ❌
-bite | member | morder algum outro usuário | ❌
-lick | member | lambe algum outro usuário | ❌
-slap | member | da um tapa em algum outro usuário | ❌
-hug | member | abraça algum outro usuário | ❌
-shoot | member | ataca algum outro usuário | ❌
+kiss | member | Makes you kiss someone | ✔️
+bite | member | Makes you bite someone | ✔️
+lick | member | Makes you lick someone | ✔️
+slap | member | Makes you slap someone | ✔️
+hug | member | Makes you hug someone | ✔️
+shoot | member | Makes you shoot someone (not really) | ✔️
+dance | member | Makes you dance with someone | ✔️ 
+pat | member | Makes you pat someone | ✔️
  
 ## Ideas: 
 

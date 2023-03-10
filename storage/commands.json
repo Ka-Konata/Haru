@@ -57,9 +57,11 @@
     },
     "interaction":{
         "kiss":["beijar"],
+        "dance":["dancar"],
         "bite":["morder"],
         "lick":["lamber"],
-        "slap":["tapear"],
+        "slap":["tapa"],
+        "pat":["cafune"],
         "hug":["abracar"],
         "shoot":["atirar"]
     }

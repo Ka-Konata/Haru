@@ -336,6 +336,41 @@
             "NAME":"Haru - Kiss", 
             "FOOTER":"Dúvidas? Use /help or h!help",
             "WRONG": "Isso não foi pra você!"
+        },
+        "DANCE": {
+            "TITLE": " dançou com ",
+            "NAME":"Haru - Dance", 
+            "FOOTER":"Dúvidas? Use /help or h!help"
+        },
+        "SHOOT": {
+            "TITLE": " atirou em ",
+            "NAME":"Haru - Shoot", 
+            "FOOTER":"Dúvidas? Use /help or h!help"
+        },
+        "HUG": {
+            "TITLE": " abraçou ",
+            "NAME":"Haru - Hug", 
+            "FOOTER":"Dúvidas? Use /help or h!help"
+        },
+        "SLAP": {
+            "TITLE": " deu um tapa em ",
+            "NAME":"Haru - Slap", 
+            "FOOTER":"Dúvidas? Use /help or h!help"
+        },
+        "PAT": {
+            "TITLE": " fez carinho em ",
+            "NAME":"Haru - Pat", 
+            "FOOTER":"Dúvidas? Use /help or h!help"
+        },
+        "LICK": {
+            "TITLE": " lambeu ",
+            "NAME":"Haru - Lick", 
+            "FOOTER":"Dúvidas? Use /help or h!help"
+        },
+        "BITE": {
+            "TITLE": " mordeu ",
+            "NAME":"Haru - Bite", 
+            "FOOTER":"Dúvidas? Use /help or h!help"
         }
     },
     "HELP":{
@@ -606,7 +641,7 @@
     },
     "ERROR":{
         "AUTHOR":"Haru - Um erro ocorreu",
-        "AUTHOR UNKNOWN":"Haru - Erro (Desconhecido) Detectado",
+        "AUTHOR UNKNOWN":"Haru - Um erro (desconhecido) ocorreu",
         "TYPE":"Tipo:",
         "REASON":"Motivo:",
         "TIP":"Dica:",
