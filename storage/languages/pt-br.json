@@ -234,7 +234,7 @@
             },
             "LIST":  "[ver no site]",
             "FOOTER 1":"Página: ",
-            "FOOTER 2":"Dúvidas? Use /help or h!help"
+            "FOOTER 2":"Dúvidas? Use /help ou h!help"
         },
         "MAL USER": {
             "DESC": "Usuário não encontrado.",
@@ -274,13 +274,13 @@
             "PEOPLE FAVS": "PESSOAS",
             "CHARACTER FAVS": "PERSONAGENS",
             "NAME":"Haru - Perfil no MyAnimeList", 
-            "FOOTER":"Dúvidas? Use /help or h!help"
+            "FOOTER":"Dúvidas? Use /help ou h!help"
         },
         "MAL ANIME": {
             "PLACEHOLDER": "Selecione uma opção",
             "RESULTS": "Aqui estão os resultados da pesquisa:",
             "NAME":"Haru - Anime no MyAnimeList", 
-            "FOOTER":"Dúvidas? Use /help or h!help",
+            "FOOTER":"Dúvidas? Use /help ou h!help",
             "RANK": "Rank: ",
             "DESC": "[clique aqui para ver no site]",
             "EMBED 1": "\n**Transmitido:**",
@@ -292,7 +292,7 @@
             "PLACEHOLDER": "Selecione uma opção",
             "RESULTS": "Aqui estão os resultados da pesquisa:",
             "NAME":"Haru - Manga no MyAnimeList", 
-            "FOOTER":"Dúvidas? Use /help or h!help",
+            "FOOTER":"Dúvidas? Use /help ou h!help",
             "RANK": "Rank: ",
             "DESC": "[clique aqui para ver no site]",
             "EMBED 1": "\n**Publicado:**",
@@ -305,17 +305,17 @@
             "DESC 1": "Texto original:",
             "DESC 2": "Texto convertido:",
             "NAME":"Haru - Conversor de Código Morse", 
-            "FOOTER":"Dúvidas? Use /help or h!help"
+            "FOOTER":"Dúvidas? Use /help ou h!help"
         },
         "FLIPMSG": {
             "DESC": "O texto invertido:",
             "NAME":"Haru - Invertendo Textos", 
-            "FOOTER":"Dúvidas? Use /help or h!help"
+            "FOOTER":"Dúvidas? Use /help ou h!help"
         },
         "CHOICE": {
             "DESC": "Minha escolha foi:",
             "NAME":"Haru - Escolha Aleatória", 
-            "FOOTER":"Dúvidas? Use /help or h!help"
+            "FOOTER":"Dúvidas? Use /help ou h!help"
         },
         "COINFLIP": {
             "CHOICES": ["cara", "coroa"],
@@ -324,53 +324,53 @@
             "WIN": "**:white_check_mark: Você venceu!**",
             "LOSE": "**:x: Você perdeu...**",
             "NAME":"Haru - Cara ou Coroa", 
-            "FOOTER":"Dúvidas? Use /help or h!help"
+            "FOOTER":"Dúvidas? Use /help ou h!help"
         },
         "DICE": {
             "TITLE": "O resultado foi:",
             "NAME":"Haru - Dados", 
-            "FOOTER":"Dúvidas? Use /help or h!help"
+            "FOOTER":"Dúvidas? Use /help ou h!help"
         },
         "KISS": {
             "TITLE": " beijou ",
             "NAME":"Haru - Kiss", 
-            "FOOTER":"Dúvidas? Use /help or h!help",
+            "FOOTER":"Dúvidas? Use /help ou h!help",
             "WRONG": "Isso não foi pra você!"
         },
         "DANCE": {
             "TITLE": " dançou com ",
             "NAME":"Haru - Dance", 
-            "FOOTER":"Dúvidas? Use /help or h!help"
+            "FOOTER":"Dúvidas? Use /help ou h!help"
         },
         "SHOOT": {
             "TITLE": " atirou em ",
             "NAME":"Haru - Shoot", 
-            "FOOTER":"Dúvidas? Use /help or h!help"
+            "FOOTER":"Dúvidas? Use /help ou h!help"
         },
         "HUG": {
             "TITLE": " abraçou ",
             "NAME":"Haru - Hug", 
-            "FOOTER":"Dúvidas? Use /help or h!help"
+            "FOOTER":"Dúvidas? Use /help ou h!help"
         },
         "SLAP": {
             "TITLE": " deu um tapa em ",
             "NAME":"Haru - Slap", 
-            "FOOTER":"Dúvidas? Use /help or h!help"
+            "FOOTER":"Dúvidas? Use /help ou h!help"
         },
         "PAT": {
             "TITLE": " fez carinho em ",
             "NAME":"Haru - Pat", 
-            "FOOTER":"Dúvidas? Use /help or h!help"
+            "FOOTER":"Dúvidas? Use /help ou h!help"
         },
         "LICK": {
             "TITLE": " lambeu ",
             "NAME":"Haru - Lick", 
-            "FOOTER":"Dúvidas? Use /help or h!help"
+            "FOOTER":"Dúvidas? Use /help ou h!help"
         },
         "BITE": {
             "TITLE": " mordeu ",
             "NAME":"Haru - Bite", 
-            "FOOTER":"Dúvidas? Use /help or h!help"
+            "FOOTER":"Dúvidas? Use /help ou h!help"
         }
     },
     "HELP":{
@@ -630,7 +630,7 @@
                 "EXEMPLE VALUE":"`/say olá`"
             },
             "kiss": {
-                "DESCRIPTION":"Use para dar um beijo alguém. Eu vou marcar a pessoa e enviar um gif.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
+                "DESCRIPTION":"Use para dar um beijo em alguém. Eu vou marcar a pessoa e enviar um gif.\n\n**Nota:** no **Como Usar** dos comandos, **[arg]** são para parâmetros opcionais e **<arg>** para parâmetros obrigatórios.\n\n",
                 "HOW VALUE":"```/kiss <user>```",
                 "EXEMPLE VALUE":"`/kiss @Haru` `/kiss 808100198899384352`"
             },
