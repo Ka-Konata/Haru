@@ -1,4 +1,4 @@
-import discord, typing, myanimelist
+import discord, typing#, myanimelist
 from discord import app_commands
 from discord.ext import commands
 from scripts import configs
@@ -25,14 +25,11 @@ class Mal(commands.Cog):
     def __init__(self, bot):
         CLIENT_ID     = getenv('CLIENT_ID')
         CLIENT_SECRET = getenv('CLIENT_SECRET')
-        #token         = mal_token.get_token(CLIENT_ID, CLIENT_SECRET)
-        #mal_client    = malclient.Client(access_token=token.access_token, nsfw=True)
-        mal_client    = myanimelist.Connect(getenv('CLIENT_ID'))
+        ## ATIVAR ESSA LINHA DPS mal_client    = myanimelist.Connect(getenv('CLIENT_ID'))
 
         self.client_id     = CLIENT_ID
         self.client_secret = CLIENT_SECRET
-        #self.mal_token     = token
-        self.mal_client    = mal_client
+        ## ATIVAR ESSA LINHA DPS self.mal_client    = mal_client
         self.bot           = bot
 
 
@@ -41,7 +38,7 @@ class Mal(commands.Cog):
         '''...'''
         raise commands.errors.CommandNotFound
 
-
+    """
     @mal.command()
     @app_commands.describe(username='Must be exactly the same as the username on the website')
     @commands.check(configs.Authentication.member)
@@ -132,7 +129,7 @@ class Mal(commands.Cog):
             if current.lower() in choice:
                 choice_list.append(app_commands.Choice(name=choice, value=choice))
         return choice_list
-
+    """
 
 async def setup(bot):
     await bot.add_cog(Mal(bot))
