@@ -1,6 +1,6 @@
 import json, requests
 from datetime import datetime, date
-from myanimelist.cogs.errors import *
+from scripts.myanimelist.cogs.errors import *
 
 
 class Fields:

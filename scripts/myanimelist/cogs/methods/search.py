@@ -1,6 +1,6 @@
 import asyncio
-from myanimelist.cogs.errors import *
-from myanimelist.cogs.classes import *
+from scripts.myanimelist.cogs.errors import *
+from scripts.myanimelist.cogs.classes import *
 
 class Search:
     '''Contain commands to search for a couple type os datas'''

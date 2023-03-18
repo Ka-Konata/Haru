@@ -27,4 +27,4 @@ Avaiable commands
 \n`get.manga_list()` - Get an user manga list
 '''
 
-from myanimelist.cogs.client import *
+from scripts.myanimelist.cogs.client import *

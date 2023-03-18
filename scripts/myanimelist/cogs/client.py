@@ -1,8 +1,8 @@
 import requests, json, urllib
-from myanimelist.cogs.errors import *
-from myanimelist.cogs.classes import *
-from myanimelist.cogs.methods.get import *
-from myanimelist.cogs.methods.search import *
+from scripts.myanimelist.cogs.errors import *
+from scripts.myanimelist.cogs.classes import *
+from scripts.myanimelist.cogs.methods.get import *
+from scripts.myanimelist.cogs.methods.search import *
 
 
 class Connect(Conection):
