@@ -2,6 +2,7 @@ import discord, datetime
 from discord.ext import commands
 from scripts  import configs, errors
 from decouple import config as getenv
+import keep_alive
 
 settings = configs.get_configs()
 logger   = configs.logging.getLogger('discord')
@@ -96,6 +97,8 @@ async def on_command_error(ctx, error):
 
     await ctx.reply(embed=embed, mention_author=False)
 
+# Creating a Server
+keep_alive.keep_alive()
 
 bot.run(TOKEN)
 commands.Context
